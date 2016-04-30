@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25.04.2016, 12:00:13
+    Author     : Curo
+*/
+
+#PageName{
+    text-align: center;
+    font-size: 800%;
+}
+
+#NaviListe{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#NaviItem{
+    margin-bottom: 30px;
+}
+
+#Rangliste{
+    text-align: center;
+}
+
+#ProgressBars{
+}
+
+#CreditPointsBar{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#XpBar{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#RightBody{
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+body{
+    
+}
