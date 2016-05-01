@@ -1,0 +1,1 @@
+Alle Placeholder, Namen etc etc werden am Ende des Projekts per PHP aus der Datenbank ausgelesen & eingefügt^^
