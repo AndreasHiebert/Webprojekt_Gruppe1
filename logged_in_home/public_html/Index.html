@@ -12,38 +12,44 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<!-- Custom theme -->
 	<link rel="stylesheet" type="text/css" href="CSS/HomePageUser.css">
+	<link rel="stylesheet" type="text/css" href="CSS/NavBar.css">
+	<!-- Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	
 </head>
 
 <body>
 	<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-        	<a class="navbar-brand" href="#">
-        	<img id="navLogo" alt="Brand" src="IMG/logo.jpg">
-          	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            	<span class="sr-only">Toggle navigation</span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-            	<span class="icon-bar"></span>
-          	</button>
-          	<a class="navbar-brand" href="#">Study Buddy</a>
+		<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="#">Study Buddy</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#Fitnesspoints">Fitnesspoints</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#Rangliste">Rangliste</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#Achievements">Achievements</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li class="inactive"><a href="./">Tim K.<span class="sr-only">(current)</span></a></li>
+              <li class="divider-vertical"></li>
               <li><a href="#Achievements">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav>	
+    </nav>
 
 	<div class="container">
 		<div class="row">
@@ -65,25 +71,18 @@
 				<div>Main Body Container Placeholder</div>
 				<div>Main Body Container Placeholder</div>
 				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
-				<div>Main Body Container Placeholder</div>
+
 			</div>
 			<div class="col-md-3 col-ld-3">
 				<div class="row">
-					<div class="col-xs-12">CP
+					<div id="prog_cp" class="col-xs-12">CP
 						<div><div class="progress">
 				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 20.4%">
 				45/220 (20.4%)
 				</div>
 				</div></div>
 					</div>
-					<div class="col-xs-12">Experience
+					<div id="prog_exp" class="col-xs-12">Experience
 						<div>	<div class="progress">
 				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
 				45/100 (45%)
@@ -128,12 +127,17 @@
 
 			<p>
 				<small>footer</small></p>
+				<button type="button" class="btn btn-lg btn-success" id="btn1">CP+</button>
+				<button type="button" class="btn btn-lg btn-primary" id="btn2">EXP+</button>
+				<button type="button" class="btn btn-lg btn-warning" id="btn3">twice to clear</button>
 		
 		</div> <!-- end container -->
 	</footer>
 		
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- Personal JS -->
+	<script src="JS/home.js"></script>
 </body>	
 </html>

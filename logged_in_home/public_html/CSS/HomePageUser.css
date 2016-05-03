@@ -1,3 +1,8 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+ }
+/* Grid Border */
 .col-ld-9{
 	border-width:1px;	
     border-style:outset;
@@ -34,11 +39,4 @@
 	border: 1px solid white;
 }
 
-body {
-  padding-top: 50px;
-  padding-bottom: 20px;
- }
 
-#navLogo {
-	
-}
