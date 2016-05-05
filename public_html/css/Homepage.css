@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05.05.2016, 20:05:24
+    Author     : Curo
+*/
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+ }
+/* Grid Border */
+.col-ld-9{
+	border-width:1px;	
+    border-style:outset;
+}
+.col-ld-6{
+	border: 1px solid;
+}
+.col-ld-3{
+	border: 1px solid white;
+}
+
+.col-md-9{
+	border-width:1px;	
+    border-style:solid;
+}
+.col-md-6{
+	border: 1px solid;
+}
+.col-md-3{
+	border: 1px solid;
+}
+
+.col-xs-12{
+	border: 1px solid white;
+}
+
+.col-xs-9{
+	border: 1px solid;
+}
+.col-xs-6{
+	border: 1px solid;
+}
+.col-xs-3{
+	border: 1px solid white;
+}

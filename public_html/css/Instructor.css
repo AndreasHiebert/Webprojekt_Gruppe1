@@ -1,0 +1,80 @@
+header {
+	display:block;
+	position: fixed;
+	top:0px;
+	width:100%;
+	font-size: 2em;
+	border:1px solid black;
+	background-color: #FFFFFF;
+	z-index: 5;
+	padding-bottom: 2px;
+}
+
+#headerHeadline {
+	display:inline;
+	float: left;
+	left:2px;
+}
+
+#headerMenu {
+	display:inline;
+	float: right;
+	right:2px;
+}
+
+
+
+
+#bodyContainer {
+	margin-top:5%;
+}
+
+
+
+
+
+.listItem {
+	border:1px solid gray;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.listItem:hover {
+	background-color: lightsteelblue;
+}
+
+.listItemArea {
+	display:none;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+}
+
+#listItemArea2 {
+	border-bottom:1px solid gray;
+}
+
+
+.form-control[readonly] {
+	background-color: white;
+}
+
+.form-control {
+	box-shadow: 0px 0px 5px 2px lightgray;
+	-moz-box-shadow: 0px 0px 5px 2px lightgray;
+	-webkit-box-shadow: 0px 0px 5px 2px lightgray;
+}
+
+
+.userTable {
+	display:none;
+}
+
+
+#achievementsListTable {
+	display:none;
+}
+
+
+.glyphicon {
+	font-size:0.8em;
+}
