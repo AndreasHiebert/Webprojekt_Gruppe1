@@ -39,3 +39,11 @@ body {
 .col-xs-3{
 	border: 1px solid white;
 }
+
+#maincontent{
+	width: 100%;
+}
+
+#statusbar{
+	float: right;
+}
