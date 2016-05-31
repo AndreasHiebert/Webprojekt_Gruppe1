@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webprojekt</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>The users are:</h1>
+        <ul>
+            {foreach from=$users item=$user}
+            <li>
+                <a href="index.php?controller=User&action=apply&id={$user->getId()}">{$user->getId()}</a>
+                <a href="index.php?controller=User&action=apply&username={$user->getUsername()}">{$user->getUsername()}</a>
+                <a href="index.php?controller=User&action=apply&password={$user->getPassword()}">{$user->getPassword()}</a>
+                <a href="index.php?controller=User&action=apply&regdate={$user->getRegdate()}">{$user->getRegdate()}</a>
+                <a href="index.php?controller=User&action=apply&email={$user->getEmail()}">{$user->getEmail()}</a>
+                <a href="index.php?controller=User&action=apply&type={$user->getType()}">{$user->getType()}</a>
+            </li>
+            {/foreach}
+        </ul>
+        <div>Those are the users and their data saved in the database</div>
+    </body>
+</html>

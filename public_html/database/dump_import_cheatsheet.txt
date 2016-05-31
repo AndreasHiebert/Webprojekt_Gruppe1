@@ -1,0 +1,9 @@
+dump:
+mysqldump -u root -p webprojekt > C:\xampp\htdocs\WebProjekt\public_html\database\webprojekt.sql
+
+import:
+mysqldump -u root -p webprojekt < C:\xampp\htdocs\WebProjekt\public_html\database\webprojekt.sql
+
+
+note:
+press enter when asked for password.
