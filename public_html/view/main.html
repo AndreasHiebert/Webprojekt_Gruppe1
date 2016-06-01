@@ -62,11 +62,11 @@ Welcome, {$name}!
 
 foreach / array: (page 50)
 ----------------
-{* create array and assign *}
+create array and assign
 $arr = array( 1001,1002,1003);
 $smarty->assign('custid', $arr);
 
-{* dieses Beispiel gibt alle Werte aus dem $KundenId Array aus *}
+dieses Beispiel gibt alle Werte aus dem $KundenId Array aus
 {foreach from=$KundenId item=aktuelle_id}
 id: {$aktuelle_id}<br>
 {/foreach}
@@ -81,7 +81,7 @@ id: 1002<br>
 counter: (page 80)
 --------
 {counter} (Zähler)
-{* zähler initialisieren *}
+zähler initialisieren
 {counter start=0 skip=2}<br />
 {counter}<br />
 {counter}<br />
