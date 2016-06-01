@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-01 14:03:37
+/* Smarty version 3.1.29, created on 2016-06-01 16:11:49
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574ecf19532275_87872935',
+  'unifunc' => 'content_574eed256d3484_68390466',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1464782597,
+      1 => 1464790291,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574ecf19532275_87872935 ($_smarty_tpl) {
+function content_574eed256d3484_68390466 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,6 +41,7 @@ function content_574ecf19532275_87872935 ($_smarty_tpl) {
                 <img src="img/Logo.png" width="200" height="150"/>
             </div>
         </div>
+        <form action="loginAction.php" method="get">
         <div id="LoginContainer" class="container">
             <div id="EMailRow" class="row">
                 <div class="col-sm-4"></div>
@@ -48,7 +49,7 @@ function content_574ecf19532275_87872935 ($_smarty_tpl) {
                     <label id="EMailTag" for="email">Email:</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="email" class="form-control" id="EMailForm" placeholder="Enter E-Mail">
+                    <input type="email" name="email_txt" class="form-control" id="EMailForm" placeholder="Enter E-Mail">
                 </div>
             </div>
             <div id="PwdRow" class="row">
@@ -57,7 +58,7 @@ function content_574ecf19532275_87872935 ($_smarty_tpl) {
                     <label id="PasswordTag" for="pwd">Password:</label>
                 </div>
                 <div class="col-sm-2">
-                    <input type="password" class="form-control" id="PasswordForm" placeholder="Enter Password">
+                    <input type="password" name="pass_txt" class="form-control" id="PasswordForm" placeholder="Enter Password">
                 </div>
                 <div class="col-sm-1">
                     <button type="submit" class="btn btn-default">Login</button>
@@ -76,6 +77,7 @@ function content_574ecf19532275_87872935 ($_smarty_tpl) {
                 </div>
             </div>
         </div>
+        </form>
     </body>
     <!-- jQuery library -->
     <?php echo '<script'; ?>

@@ -1,5 +1,5 @@
 <?php
-
+// login
 require 'vendor/autoload.php';
 require 'model/User.php';
 require 'model/UserRepository.php';
@@ -9,6 +9,7 @@ $smarty->template_dir = "view";
 $smarty->compile_dir = "compile";
 $smarty->cache_dir = "cache";
 
+// connect to db
 try {
     $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
