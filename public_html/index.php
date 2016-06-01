@@ -18,9 +18,11 @@ try {
 }
 
 $repo = new UserRepository();
-$objects = $repo->getAllUsers();
+$userObjects = $repo->getAllUsers();
+$smarty->assign("users", $userObjects);
 
-$smarty->assign("users", $objects);
 //$smarty->display("Homepage.html");
 $smarty->display("Login.html");
 $smarty->display("main.html");
+
+?>

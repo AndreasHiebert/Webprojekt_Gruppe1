@@ -5,7 +5,7 @@ class UserRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("select * from users order by id");
+        $stmt = $db->query("SELECT * from users order by id");
         foreach ($stmt as $row) {
             $result[] = new User($row);
         }
@@ -13,3 +13,4 @@ class UserRepository {
         return $result;
     }
 }
+?>

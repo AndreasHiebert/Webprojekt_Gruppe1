@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-31 01:44:57
+/* Smarty version 3.1.29, created on 2016-06-01 13:06:25
   from "C:\xampp\htdocs\WebProjekt\public_html\view\main.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574cd079bb5f22_83115476',
+  'unifunc' => 'content_574ec1b17eba14_74662713',
   'file_dependency' => 
   array (
     'ab61bcfe3fc8a891e5327a9ffd6348638a22e5e5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\main.html',
-      1 => 1464651726,
+      1 => 1464779181,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574cd079bb5f22_83115476 ($_smarty_tpl) {
+function content_574ec1b17eba14_74662713 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,6 +31,7 @@ function content_574cd079bb5f22_83115476 ($_smarty_tpl) {
     <body>
         <h1>The users are:</h1>
         <ul>
+            
             <?php
 $_from = $_smarty_tpl->tpl_vars['users']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -74,5 +75,7 @@ $_smarty_tpl->tpl_vars['user'] = $__foreach_user_0_saved_item;
         <div>Those are the users and their data saved in the database</div>
     </body>
 </html>
+
+
 <?php }
 }
