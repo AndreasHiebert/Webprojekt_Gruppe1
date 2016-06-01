@@ -3,6 +3,8 @@
 require 'vendor/autoload.php';
 require 'model/User.php';
 require 'model/UserRepository.php';
+require 'model/Module.php';
+require 'model/ModuleRepository.php';
 
 $smarty = new Smarty();
 $smarty->template_dir = "view";
@@ -21,6 +23,9 @@ try {
 $repo = new UserRepository();
 $userObjects = $repo->getAllUsers();
 $smarty->assign("users", $userObjects);
+$repo=new ModuleRepository();
+$moduleObjects=$repo->getAllModules();
+$smarty->assign("modules", $moduleObjects);
 
 //$smarty->display("Homepage.html");
 $smarty->display("Login.html");
