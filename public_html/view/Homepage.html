@@ -41,9 +41,9 @@
             <li><a id="achievements" href="#Achievements">Achievements</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li class="inactive"><a href="./">Tim K.<span class="sr-only">(current)</span></a></li>
+              <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
               <li class="divider-vertical"></li>
-              <li><a href="#Achievements">Logout</a></li>
+              <li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -52,7 +52,7 @@
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div>Main Body Container Placeholder</div>
+				<div>{$body_content}</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
 

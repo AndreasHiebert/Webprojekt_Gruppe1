@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-31 01:40:27
+/* Smarty version 3.1.29, created on 2016-06-02 18:50:19
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Fitnesspoints.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574ccf6bcc2051_39049721',
+  'unifunc' => 'content_575063cb158306_89126891',
   'file_dependency' => 
   array (
     '4da083731c0d8f8ed7ed63c13af292df1efe0ed5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Fitnesspoints.html',
-      1 => 1464642763,
+      1 => 1464655173,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574ccf6bcc2051_39049721 ($_smarty_tpl) {
+function content_575063cb158306_89126891 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

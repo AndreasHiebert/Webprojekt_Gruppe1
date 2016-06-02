@@ -13,7 +13,7 @@ class UserRepository {
         return $result;
     }
 
-    public static function saveUser($topic) {
+    public static function saveUser($user) {
         global $db;
 
         $stmt = $db->prepare("INSERT into users (name, password, email, activeCourse) "
@@ -22,7 +22,7 @@ class UserRepository {
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
         $stmt->bindValue(':activeCourse', $user->getActiveCourse(), PDO::PARAM_INT);
-        
+
         $stmt->execute();
     }
 }

@@ -1,21 +1,19 @@
 <?php
 
-class User {
+class Instructor {
     private $id = 0;
     private $name = "";
-    private $password = "";
-    private $regDate = "";
     private $email = "";
-    private $activeCourse = 0;
+   private $password = "";
+    private $approved = 0;
 
     public static function fromArray($row) {
-      $obj = new User();
+      $obj = new Instructor();
       $obj->setId($row["id"]);
       $obj->setName($row["name"]);
-      $obj->setPassword($row["password"]);
-      $obj->setRegDate($row["regDate"]);
       $obj->setEmail($row["email"]);
-      $obj->setActiveCourse($row["activeCourse"]);
+      $obj->setPassword($row["password"]);
+      $obj->setApproved($row["approved"]);
       return $obj;
     }
 
@@ -43,14 +41,6 @@ class User {
         $this->password = $value;
     }
 
-    public function getRegDate() {
-        return $this->regDate;
-    }
-
-    public function setRegDate($value) {
-        $this->regDate = $value;
-    }
-
     public function getEmail() {
         return $this->email;
     }
@@ -59,12 +49,12 @@ class User {
         $this->email = $value;
     }
 
-    public function getActiveCourse() {
-        return $this->activeCourse;
+    public function getApproved() {
+        return $this->approved;
     }
 
-    public function setActiveCourse($value) {
-        $this->activeCourse = $value;
+    public function setApproved($value) {
+        $this->approved = $value;
     }
 
     public function validate() {

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-01 16:11:49
+/* Smarty version 3.1.29, created on 2016-06-02 19:25:51
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574eed256d3484_68390466',
+  'unifunc' => 'content_57506c1f7f8d87_57894233',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1464790291,
+      1 => 1464887285,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574eed256d3484_68390466 ($_smarty_tpl) {
+function content_57506c1f7f8d87_57894233 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +41,6 @@ function content_574eed256d3484_68390466 ($_smarty_tpl) {
                 <img src="img/Logo.png" width="200" height="150"/>
             </div>
         </div>
-        <form action="loginAction.php" method="get">
         <div id="LoginContainer" class="container">
             <div id="EMailRow" class="row">
                 <div class="col-sm-4"></div>
@@ -61,7 +60,7 @@ function content_574eed256d3484_68390466 ($_smarty_tpl) {
                     <input type="password" name="pass_txt" class="form-control" id="PasswordForm" placeholder="Enter Password">
                 </div>
                 <div class="col-sm-1">
-                    <button type="submit" class="btn btn-default">Login</button>
+                    <button class="btn btn-default" href="index.php?controller=UserController&action=login">Login</button>
                 </div>
             </div>
             <div id="RegisterRow" class="row">

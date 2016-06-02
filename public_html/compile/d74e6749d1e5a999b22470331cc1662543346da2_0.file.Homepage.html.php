@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-30 23:15:06
+/* Smarty version 3.1.29, created on 2016-06-02 18:42:47
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574cad5a064495_47390244',
+  'unifunc' => 'content_57506207e6f0e3_99706139',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1464642782,
+      1 => 1464885766,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574cad5a064495_47390244 ($_smarty_tpl) {
+function content_57506207e6f0e3_99706139 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +64,7 @@ function content_574cad5a064495_47390244 ($_smarty_tpl) {
             <li><a id="achievements" href="#Achievements">Achievements</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li class="inactive"><a href="./">Tim K.<span class="sr-only">(current)</span></a></li>
+              <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
               <li class="divider-vertical"></li>
               <li><a href="#Achievements">Logout</a></li>
             </ul>
