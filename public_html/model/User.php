@@ -2,7 +2,7 @@
 
 class User {
     private $id = 0;
-    private $username = "";
+    private $name = "";
     private $password = "";
     private $regDate = "";
     private $email = "";
@@ -11,7 +11,7 @@ class User {
     public static function fromArray($row) {
       obj = new User();
       obj->setId($row["id"]);
-      obj->setUsername($row["username"]);
+      obj->setUsername($row["name"]);
       obj->setPassword($row["password"]);
       obj->setRegDate($row["regDate"]);
       obj->setEmail($row["email"]);
@@ -27,11 +27,11 @@ class User {
       $this->id = $value;
     }
 
-    public function getUsername() {
+    public function getName() {
         return $this->username;
     }
 
-    public function setUsername($value) {
+    public function setName($value) {
         $this->username = $value;
     }
 
