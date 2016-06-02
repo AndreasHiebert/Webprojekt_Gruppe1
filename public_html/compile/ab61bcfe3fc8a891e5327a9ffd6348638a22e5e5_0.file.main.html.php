@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-01 16:11:49
+/* Smarty version 3.1.29, created on 2016-06-02 17:32:01
   from "C:\xampp\htdocs\WebProjekt\public_html\view\main.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574eed2570c8f2_77500596',
+  'unifunc' => 'content_575051716d7674_72298076',
   'file_dependency' => 
   array (
     'ab61bcfe3fc8a891e5327a9ffd6348638a22e5e5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\main.html',
-      1 => 1464782725,
+      1 => 1464881435,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574eed2570c8f2_77500596 ($_smarty_tpl) {
+function content_575051716d7674_72298076 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,14 +54,14 @@ $__foreach_user_0_saved_local_item = $_smarty_tpl->tpl_vars['user'];
                 <a href="index.php?controller=User&action=apply&password=<?php echo $_smarty_tpl->tpl_vars['user']->value->getPassword();?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value->getPassword();?>
 </a>
-                <a href="index.php?controller=User&action=apply&regdate=<?php echo $_smarty_tpl->tpl_vars['user']->value->getRegdate();?>
+                <a href="index.php?controller=User&action=apply&regDate=<?php echo $_smarty_tpl->tpl_vars['user']->value->getRegdate();?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value->getRegdate();?>
 </a>
                 <a href="index.php?controller=User&action=apply&email=<?php echo $_smarty_tpl->tpl_vars['user']->value->getEmail();?>
 "><?php echo $_smarty_tpl->tpl_vars['user']->value->getEmail();?>
 </a>
-                <a href="index.php?controller=User&action=apply&type=<?php echo $_smarty_tpl->tpl_vars['user']->value->getType();?>
-"><?php echo $_smarty_tpl->tpl_vars['user']->value->getType();?>
+                <a href="index.php?controller=User&action=apply&activeCourse=<?php echo $_smarty_tpl->tpl_vars['user']->value->getActiveCourse();?>
+"><?php echo $_smarty_tpl->tpl_vars['user']->value->getActiveCourse();?>
 </a>
             </li>
             <?php

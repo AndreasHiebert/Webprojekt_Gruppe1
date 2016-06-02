@@ -9,13 +9,13 @@ class User {
     private $activeCourse = 0;
 
     public static function fromArray($row) {
-      obj = new User();
-      obj->setId($row["id"]);
-      obj->setName($row["name"]);
-      obj->setPassword($row["password"]);
-      obj->setRegDate($row["regDate"]);
-      obj->setEmail($row["email"]);
-      obj->setActiveCourse($row["activeCourse"]);
+      $obj = new User();
+      $obj->setId($row["id"]);
+      $obj->setName($row["name"]);
+      $obj->setPassword($row["password"]);
+      $obj->setRegDate($row["regDate"]);
+      $obj->setEmail($row["email"]);
+      $obj->setActiveCourse($row["activeCourse"]);
       return $obj;
     }
 
@@ -47,7 +47,7 @@ class User {
         return $this->regDate;
     }
 
-    public function setRegData($value) {
+    public function setRegDate($value) {
         $this->regDate = $value;
     }
 
