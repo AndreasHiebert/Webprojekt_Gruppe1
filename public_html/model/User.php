@@ -11,7 +11,7 @@ class User {
     public static function fromArray($row) {
       obj = new User();
       obj->setId($row["id"]);
-      obj->setUsername($row["name"]);
+      obj->setName($row["name"]);
       obj->setPassword($row["password"]);
       obj->setRegDate($row["regDate"]);
       obj->setEmail($row["email"]);
