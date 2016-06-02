@@ -2,43 +2,83 @@
 
 class User {
     private $id = 0;
-    private $username = "name";
-    private $password = "password";
-    private $regdate = "";
+    private $username = "";
+    private $password = "";
+    private $regDate = "";
     private $email = "";
-    private $type = "student";
+    private $activeCourse = 0;
 
-    public function __construct($row) {
-        $this->id = $row['id'];
-        $this->username = $row['username'];
-        $this->password = $row['password'];
-        $this->regdate = $row['regdate'];
-        $this->email = $row['email'];
-        $this->type = $row['type'];
+    public static function fromArray($row) {
+      obj = new User();
+      obj->setId($row["id"]);
+      obj->setUsername($row["username"]);
+      obj->setPassword($row["password"]);
+      obj->setRegDate($row["regDate"]);
+      obj->setEmail($row["email"]);
+      obj->setActiveCourse($row["activeCourse"]);
+      return $obj;
     }
 
     public function getId() {
         return $this->id;
     }
 
+    public function setId($value) {
+      $this->id = $value;
+    }
+
     public function getUsername() {
         return $this->username;
+    }
+
+    public function setUsername($value) {
+        $this->username = $value;
     }
 
     public function getPassword() {
         return $this->password;
     }
 
-    public function getRegdate() {
-        return $this->regdate;
+    public function setPassword($value) {
+        $this->password = $value;
+    }
+
+    public function getRegDate() {
+        return $this->regDate;
+    }
+
+    public function setRegData($value) {
+        $this->regDate = $value;
     }
 
     public function getEmail() {
         return $this->email;
     }
 
-    public function getType() {
-        return $this->type;
+    public function setEmail($value) {
+        $this->email = $value;
+    }
+
+    public function getActiveCourse() {
+        return $this->activeCourse;
+    }
+
+    public function setActiveCourse($value) {
+        $this->activeCourse = $value;
+    }
+
+    public function validate() {
+        $error = new ValidationError();
+
+        if (empty($this->getEmail())) {
+            $error->addError("email_empty");
+        }
+
+        if (empty($this->getPassword())) {
+            $error->addError("password_empty");
+        }
+
+        return $error;
     }
 }
 ?>
