@@ -1,16 +1,29 @@
 <?php
 
 class Course{
-
+    private $id = 0;
     private $name = "";
     private $abbreviation="";
-    private $id = 0;
-    private $description="";
     private $module = 0;
     private $moduleList = 0;
-    private $participants = 0;
+    private $countParticipants = 0;
     private $maxCp = 0;
-    private $numberModule = 0;
+    private $moduleNumber = 0;
+    private $description="";
+
+    public static function fromArray($row) {
+      $obj = new Course();
+      $obj->setId($row["id"]);
+      $obj->setName($row["name"]);
+      $obj->setAbbreviation($row["abbreviation"]);
+      $obj->setModule($row["module"]);
+      $obj->setModuleList($row["moduleList"]);
+      $obj->setCountParticipants($row["countParticipants"]);
+      $obj->setMaxCp($row["maxCp"]);
+      $obj->setModuleNumber($row["moduleNumber"]);
+      $obj->setDescription($row["description"]);
+      return $obj;
+    }
 
     public function getName(){
         return $this->name;
@@ -60,12 +73,12 @@ class Course{
         $this->moduleList = $value;
     }
 
-    public function getParticipants(){
+    public function getCountParticipants(){
         return $this->participants;
     }
 
-    public function setParticipants($value){
-        $this->participants = $value;
+    public function setCountParticipants($value){
+        $this->countParticipants = $value;
     }
 
     public function getMaxCp(){

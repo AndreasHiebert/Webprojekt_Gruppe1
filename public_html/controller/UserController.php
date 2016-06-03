@@ -1,12 +1,9 @@
 <?php
 
-$registrationurl="../view/Registration.html"
+$loginurl="../view/Login.html";
+$registrationurl="../view/Registration.html";
 $userurl="../view/Homepage.html";
-$instructorurl="../view/Instructor.html";
 $errorurl="../view/Error404.html";
-
-$user = "user";
-$instructor = "instructor";
 
 class UserController {
   public function saveUser() {
@@ -19,26 +16,35 @@ class UserController {
           $smarty->assign("error", $error);
           return $smarty->display($registrationurl);
       } else {
-          TopicRepository::saveTopic($topic);
+          UserRepository::saveUser($user);
       }
   }
+/*
+  public function login(){
+    global $smarty;
+    $user = User::fromArray($_REQUEST);
+
+    if ($error->hasErrors()) {
+        $smarty->assign("user", $user);
+        $smarty->assign("error", $error);
+        return $smarty->display($registrationurl);
+    } else {
+        {foreach from={$users} item=$user_item} //?  Parse error: syntax error, unexpected 'from' (T_STRING), expecting '(' in C:\xampp\htdocs\WebProjekt\public_html\controller\UserController.php on line 32
+          if ($user->getEmail === $user_item->getEmail) {
+            if($user->getPassword === $user_item->getPassword){
+              $currentUser = $user_item;
+              $smarty->display($userurl);
+            } else {
+              $smarty->assign("error_failPass", $error);
+            }
+          } else {
+            $smarty->assign("error_failEmail", $error);
+          }
+
+        {/foreach}
+      }
+  }
+*/
 }
 
-/*
-{foreach from=$users item=$user}
-  if($entered_email==={$user->getEmail()}){
-    if($entered_pass==={$user->getPassword()}){
-      if($user->getType==={$instructor}){
-        header("location:$instructorurl");
-      }else{
-        header("location:$studeturl");
-      }
-    } else{
-      header("location:fail.$errorurl");
-    }
-  } else{
-    header("location:fail.$errorurl");
-  }
-{/foreach}
-*/
 ?>

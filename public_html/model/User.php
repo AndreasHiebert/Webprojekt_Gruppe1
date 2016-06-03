@@ -24,7 +24,7 @@ class User {
     }
 
     public function setId($value) {
-      $this->id = $value;
+        $this->id = $value;
     }
 
     public function getName() {

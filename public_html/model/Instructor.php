@@ -4,7 +4,7 @@ class Instructor {
     private $id = 0;
     private $name = "";
     private $email = "";
-   private $password = "";
+    private $password = "";
     private $approved = 0;
 
     public static function fromArray($row) {

@@ -1,7 +1,6 @@
 <?php
 
 class Grade {
-
     private $id = 0;
     private $grade = 0;
     private $date = "";
@@ -40,4 +39,3 @@ class Grade {
 
 }
 ?>
-

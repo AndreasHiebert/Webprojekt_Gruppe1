@@ -1,46 +1,71 @@
 <?php
 
 class Module {
-    
-    private $name;
-    private $id;
-    private $abbrieviation;
-    private $description;
-    private $status;
-    private $cp;
-    
-    public function __construct($row){
-        $this->name=$row['name'];
-        $this->id=$row['id'];
-        $this->abbrieviation=$row['abbreviation'];
-        $this->description=$row['description'];
-        $this->status=$row['status'];
-        $this->cp=$row['cp'];
-        
+    private $name = "";
+    private $id = 0;
+    private $abbrieviation = "";
+    private $description = "";
+    private $status = 0;
+    private $cp = 0;
+
+    public static function fromArray($row) {
+        $obj = new Module();
+        $obj->setName($row["name"]);
+        $obj->setId($row["id"]);
+        $obj->setAbbrieviation($row["abbrieviation"]);
+        $obj->setDescription($row["description"]);
+        $obj->setStatus($row["status"]);
+        $obj->setCp($row["cp"]);
+        return $obj;
     }
-    public function getname(){
-        return $this->name;  
+
+    public function getName(){
+      return $this->name;
     }
-   
-    public function getid(){
-        return $this->id;
+
+    public function setName($value) {
+      $this->name = $value;
     }
-    
-    public function getabreviation(){
-        return $this->abbreviation;
+
+    public function getId(){
+      return $this->id;
     }
-    
-    public function getdescription(){
-        return $this->description;
+
+    public function setId($value) {
+      $this->id = $value;
     }
-    
-    public function getstatus(){
-        return $this->status;  
+
+    public function getAbreviation(){
+      return $this->abbreviation;
     }
-   
-    public function getcp(){
-        return $this->cp;
+
+    public function setAbreviation($value) {
+      $this->abreviation = $value;
     }
-    
+
+    public function getDescription(){
+      return $this->description;
+    }
+
+    public function setDescription($value) {
+      $this->description = $value;
+    }
+
+    public function getStatus(){
+      return $this->status;
+    }
+
+    public function setStatus($value) {
+      $this->status = $value;
+    }
+
+    public function getCp(){
+      return $this->cp;
+    }
+
+    public function setCp($value) {
+      $this->cp = $value;
+    }
+
 }
 ?>

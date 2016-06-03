@@ -1,16 +1,16 @@
 <?php
 
 class AchievementRepository{
- public function getAllAchievements() {
+    public function getAllAchievements() {
         global $db;
         $result = array();
-        
-        $stmt = $db->query("select * from achievements order by id");
+
+        $stmt = $db->query("SELECT * from achievements order by id");
         foreach ($stmt as $row) {
-            $result[] = new Achievement($row);
+            $result[] = Achievement::fromArray($row);
         }
-        
+
         return $result;
-    }   
+    }
 }
 ?>
