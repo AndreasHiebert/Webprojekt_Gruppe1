@@ -28,11 +28,11 @@ class User {
     }
 
     public function getName() {
-        return $this->username;
+        return $this->name;
     }
 
     public function setName($value) {
-        $this->username = $value;
+        $this->name = $value;
     }
 
     public function getPassword() {
@@ -68,7 +68,7 @@ class User {
     }
 
     public function validate() {
-        $error = new ValidationError();
+        $error = new ValidationError(); // create ValidationError class
 
         if (empty($this->getEmail())) {
             $error->addError("email_empty");

@@ -1,0 +1,93 @@
+{* smarty cheatsheet for.. (source: smarty 2.0 german documentation)
+
+variables: (page 16)
+----------
+{$foo} <-- Zeigt einfache Variable an (kein Array oder Objekt)
+{$foo[4]} <-- Zeigt 5. Element von einem Array an, deren Schlussel bei 0 beginnen
+{$foo.bar} <-- Zeigt das Element zum Schlüssel "bar" des Arrays an (wie PHPs $foo['bar'])
+{$foo.$bar} <-- Zeigt das Element eines variablen Schlüssels an (wie PHPs $foo[$bar])
+{$foo->bar} <-- Zeigt eine Eigenschaft "bar" des Objekts $foo an
+{$foo->bar()} <-- Zeigt den Rückgabewert der Objectmethode "bar" an
+{"foo"} <-- Statische (konstante) Werte sind auch erlaubt
+
+-------------------------------------------------------------------------------------------------
+
+global variables: (page 48)
+-----------------
+# globale Variablen
+seitenTitel = "Hauptmenü"
+bodyHintergrundFarbe = #000000
+
+usage:
+<title>{#seitenTitel#}</title>
+<body bgcolor="{#bodyHintergrundFarbe#}">
+
+-------------------------------------------------------------------------------------------------
+
+if else: (page 16)
+--------
+{if $highlight_name}
+Welcome, <font color="{#fontColor#}">{$name}!</font>
+{else}
+Welcome, {$name}!
+{/if}
+
+-------------------------------------------------------------------------------------------------
+
+foreach / array: (page 50)
+----------------
+{* create array and assign *}
+$arr = array( 1001,1002,1003);
+$smarty->assign('custid', $arr);
+
+{* dieses Beispiel gibt alle Werte aus dem $KundenId Array aus *}
+{foreach from=$KundenId item=aktuelle_id}
+id: {$aktuelle_id}<br>
+{/foreach}
+
+Das obige Beispiel erzeugt folgende Ausgabe:
+id: 1000<br>
+id: 1001<br>
+id: 1002<br>
+
+-------------------------------------------------------------------------------------------------
+
+counter: (page 80)
+--------
+{counter} (Zähler)
+{* zähler initialisieren *}
+{counter start=0 skip=2}<br />
+{counter}<br />
+{counter}<br />
+{counter}<br />
+
+AUSGABE:
+0<br />
+2<br />
+4<br />
+6<br />
+
+-------------------------------------------------------------------------------------------------
+
+cycle: (page 82)
+------
+{cycle} (Zyklus)
+{section name=rows loop=$data}
+<tr bgcolor="{cycle values="#eeeeee,#d0d0d0"}">
+<td>{$data[rows]}</td>
+</tr>
+{/section}
+
+AUSGABE :
+<tr bgcolor="#eeeeee">
+<td>1</td>
+</tr>
+<tr bgcolor="#d0d0d0">
+<td>2</td>
+</tr>
+<tr bgcolor="#eeeeee">
+<td>3</td>
+</tr>
+
+-------------------------------------------------------------------------------------------------
+*}

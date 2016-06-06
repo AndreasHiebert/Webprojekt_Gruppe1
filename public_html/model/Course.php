@@ -89,11 +89,11 @@ class Course{
         $this->maxCp = $value;
     }
 
-    public function getNumberModule(){
+    public function getModuleNumber(){
         return $this->numberModule;
     }
 
-    public function setNumberModule($value){
+    public function setModuleNumber($value){
         $this->numberModule = $value;
     }
 }
