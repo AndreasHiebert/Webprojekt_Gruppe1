@@ -11,11 +11,11 @@ class User {
     public static function fromArray($row) {
       $obj = new User();
       $obj->setId($row["id"]);
-      $obj->setName($row["name"]);
-      $obj->setPassword($row["password"]);
-      $obj->setRegDate($row["regDate"]);
+      $obj->setName(empty($row["name"]) ? "" : $row['name']);
+      $obj->setPassword(empty($row["name"]) ? "" : $row['name']);
+      $obj->setRegDate(empty($row["regDate"]) ? "" : $row['regDate']);
       $obj->setEmail($row["email"]);
-      $obj->setActiveCourse($row["activeCourse"]);
+      $obj->setActiveCourse(empty($row["activeCourse"]) ? "" : $row['activeCourse']);
       return $obj;
     }
 
