@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-02 18:42:47
+/* Smarty version 3.1.29, created on 2016-06-10 08:32:10
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57506207e6f0e3_99706139',
+  'unifunc' => 'content_575a5eea114093_76850752',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1464885766,
+      1 => 1465538905,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57506207e6f0e3_99706139 ($_smarty_tpl) {
+function content_575a5eea114093_76850752 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,7 @@ function content_57506207e6f0e3_99706139 ($_smarty_tpl) {
           <ul class="nav navbar-nav">
             <li id="home" class="#Home"><a href="#">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="fitnesspoints" href="#Fitnesspoints">Fitnesspoints</a></li>
+            <li><a id="modulplan" href="#Modulplan">Modulplan</a></li>
             <li class="divider-vertical"></li>
             <li><a id="rangliste" href="#Rangliste">Rangliste</a></li>
             <li class="divider-vertical"></li>
@@ -66,7 +66,7 @@ function content_57506207e6f0e3_99706139 ($_smarty_tpl) {
           <ul class="nav navbar-nav navbar-right">
               <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
               <li class="divider-vertical"></li>
-              <li><a href="#Achievements">Logout</a></li>
+              <li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -75,7 +75,8 @@ function content_57506207e6f0e3_99706139 ($_smarty_tpl) {
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div>Main Body Container Placeholder</div>
+				<div><!--<?php echo $_smarty_tpl->tpl_vars['body_content']->value;?>
+ --> content</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
 

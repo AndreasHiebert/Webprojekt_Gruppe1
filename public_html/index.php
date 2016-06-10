@@ -17,6 +17,8 @@ require 'model/Grade.php';
 require 'model/GradeRepository.php';
 
 require 'controller/UserController.php';
+require 'controller/LoginController.php';
+//session_start();
 
 //------------------------------------------------------------------------------
 // setup smarty
@@ -47,65 +49,50 @@ $repo = new InstructorRepository();
 $instructorObjects = $repo->getAllInstructors();
 $smarty->assign("instructors", $instructorObjects);
 
-$repo=new ModuleRepository();
+$repo= new ModuleRepository();
 $moduleObjects=$repo->getAllModules();
 $smarty->assign("modules", $moduleObjects);
 
-$repo=new FitnesspointRepository();
+$repo= new FitnesspointRepository();
 $fitnesspointObjects=$repo->getAllFitnesspoints();
 $smarty->assign("fitnesspoints", $fitnesspointObjects);
 
-$repo=new CourseRepository();
+$repo= new CourseRepository();
 $courseObjects=$repo->getAllCourses();
 $smarty->assign("courses", $courseObjects);
 
-$repo=new AchievementRepository();
+$repo= new AchievementRepository();
 $achievementObjects=$repo->getAllAchievements();
 $smarty->assign("achievements", $achievementObjects);
 
-$repo=new GradeRepository();
+$repo= new GradeRepository();
 $gradeObjects=$repo->getAllGrades();
 $smarty->assign("grades", $gradeObjects);
 
 //------------------------------------------------------------------------------
 // controller
-/*
+
+$currentUser = new User();
+$currentInstructor = new Instructor();
+
+//$currentUserHashedPassword = password_hash($currentUser->getPassword, PASSWORD_DEFAULT);
+//password_verify($password, $currentUserHashedPassword);
+
+
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
 } else {
-    $controller_name = "UserController";
+    $controller_name = "LoginController"; // login instructor -> false? -> login user -> false? -> return to Login
 }
 
 if (isset($_REQUEST["action"])) {
     $action_name = $_REQUEST["action"];
 } else {
-    $smarty->display("Login.html");
+    $action_name = "showLogin";
 }
 
 $controller = new $controller_name;
-
-$userContent = $controller->$action_name();
-$smarty->assign("user_content", $userContent);
-
-$instructorContent = $controller->$action_name();
-$smarty->assign("instructor_content", $instructorContent); //
-
-
-*/
-$currentUser = new User();
-$currentInstructor = new Instructor();
-
-//------------------------------------------------------------------------------
-// check if logged in, show correct landingPage
-
-if($currentUser->getId() != 0){
-  $smarty->display("Homepage.html");
-} elseif($currentInstructor->getId() != 0){
-    $smarty->display("Instructor.html");
-  } else {
-    $smarty->display("Login.html");
-}
-
+$content = $controller->$action_name();
 
 //$smarty->display("Registration.html");
 //$smarty->display("Homepage.html");

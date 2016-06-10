@@ -6,6 +6,8 @@ class Achievement{
     private $code="";
     private $description="";
     private $type=0;
+    private $obtainedDate = "";
+
 
     public static function fromArray($row) {
       $obj = new Achievement();
@@ -55,6 +57,14 @@ class Achievement{
 
     public function setType($value){
         $this->type = $value;
+    }
+
+    public function getObtainedDate(){
+        return $this->obtainedDate;
+    }
+
+    public function setObtainedDate($value){
+        $this->obtainedDate = $value;
     }
 }
 ?>

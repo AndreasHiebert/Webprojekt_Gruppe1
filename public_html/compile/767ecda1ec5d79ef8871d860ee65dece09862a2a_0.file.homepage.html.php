@@ -1,3 +1,26 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-06-10 08:06:43
+  from "C:\xampp\htdocs\WebProjekt\public_html\view\homepage.html" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_575a58f337e463_87518564',
+  'file_dependency' => 
+  array (
+    '767ecda1ec5d79ef8871d860ee65dece09862a2a' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\homepage.html',
+      1 => 1465538749,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_575a58f337e463_87518564 ($_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +57,7 @@
           <ul class="nav navbar-nav">
             <li id="home" class="#Home"><a href="#">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="modulplan" href="#Modulplan">Modulplan</a></li>
+            <li><a id="fitnesspoints" href="#Fitnesspoints">Fitnesspoints</a></li>
             <li class="divider-vertical"></li>
             <li><a id="rangliste" href="#Rangliste">Rangliste</a></li>
             <li class="divider-vertical"></li>
@@ -52,7 +75,8 @@
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div><!--{$body_content} --> content</div>
+				<div><!--<?php echo $_smarty_tpl->tpl_vars['body_content']->value;?>
+ --> content</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
 
@@ -116,10 +140,18 @@
 	</footer>
 
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
+>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"></script>
+	<?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
 	<!-- Personal JS -->
-	<script src="../js/Homepage.js"></script>
+	<?php echo '<script'; ?>
+ src="../js/Homepage.js"><?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}

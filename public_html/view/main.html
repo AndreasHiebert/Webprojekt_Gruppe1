@@ -17,10 +17,25 @@
                 <a href="index.php?controller=User&action=apply&regDate={$user->getRegdate()}">{$user->getRegdate()}</a>
                 <a href="index.php?controller=User&action=apply&email={$user->getEmail()}">{$user->getEmail()}</a>
                 <a href="index.php?controller=User&action=apply&activeCourse={$user->getActiveCourse()}">{$user->getActiveCourse()}</a>
+                <a href="index.php?controller=User&action=apply&fitnesspoints={$user->getFitnesspoints()}">{$user->getFitnesspoints()}</a>
             </li>
             {/foreach}
         </ul>
         <div>Those are the users and their data saved in the database</div>
+        <h1>The instructors are:</h1>
+        <ul>
+            {* foreach loop to iterate over all user objects in the insturctors table and show all their personal information *}
+            {foreach from=$instructors item=$instructor}
+            <li>
+                <a href="index.php?controller=User&action=apply&id={$instructor->getId()}">{$instructor->getId()}</a>
+                <a href="index.php?controller=User&action=apply&name={$instructor->getName()}">{$instructor->getName()}</a>
+                <a href="index.php?controller=User&action=apply&password={$instructor->getPassword()}">{$instructor->getPassword()}</a>
+                <a href="index.php?controller=User&action=apply&email={$instructor->getEmail()}">{$instructor->getEmail()}</a>
+                <a href="index.php?controller=User&action=apply&activeCourse={$instructor->getApproved()}">{$instructor->getApproved()}</a>
+            {/foreach}
+        </ul>
+        <div>Those are the instructors and their data saved in the database</div>
+
     </body>
 </html>
 

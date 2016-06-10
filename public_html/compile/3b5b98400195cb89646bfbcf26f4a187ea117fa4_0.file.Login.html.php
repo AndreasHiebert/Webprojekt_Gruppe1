@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-02 19:25:51
+/* Smarty version 3.1.29, created on 2016-06-10 08:25:45
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57506c1f7f8d87_57894233',
+  'unifunc' => 'content_575a5d69284624_43386485',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1464887285,
+      1 => 1465539942,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57506c1f7f8d87_57894233 ($_smarty_tpl) {
+function content_575a5d69284624_43386485 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,19 +60,20 @@ function content_57506c1f7f8d87_57894233 ($_smarty_tpl) {
                     <input type="password" name="pass_txt" class="form-control" id="PasswordForm" placeholder="Enter Password">
                 </div>
                 <div class="col-sm-1">
-                    <button class="btn btn-default" href="index.php?controller=UserController&action=login">Login</button>
+                    <a href="index.php?controller=LoginController&action=loginUser" class="btn btn-primary">LoginUser</a>
+                    <a href="index.php?controller=LoginController&action=loginInstructor" class="btn btn-primary">LoginInstructor</a>
                 </div>
             </div>
             <div id="RegisterRow" class="row">
                 <div class="col-sm-5"></div>
                 <div class="col-sm-2">
-                    <a href="http://www.hshl.de">Register?</a>
+                    <a href="index.php?controller=LoginController&action=getRegistrationForm">Register?</a>
                 </div>
             </div>
             <div id="PwdForgetRow" class="row">
                 <div class="col-sm-5"></div>
                 <div class="col-sm-2">
-                    <a href="http://www.hshl.de">Forgot Password?</a>
+                  <!--  <a href="http://www.hshl.de">Forgot Password?</a> -->
                 </div>
             </div>
         </div>

@@ -1,0 +1,93 @@
+Controller-classes:
+--------------------
+LoginController
+---------------
++showLogin();
++loginUser();
++loginInstructor();
++getRegistrationForm();
+
+-------------------
+UserController
+----------
++saveUser(name,password,email,activeCourse) // Register.html (to db)
++login(email, password) // Login.html
++logout() // Homepage.html
++faceBookLogin() // Login.html (am ende implementieren)
++getModules(currentUser) // Homepage.html (get all modules from user´s course)
++getCourse(currentUser) // Homepage.html (get name from user´s course)
++enterFitnessCode() // Fitnesspoints.html (enter code / QR code, code gets unusable)
++enterGrade(userId, moduleId, grade) // Homepage.html (enter Grade? need html in Homepage.html) date? id?
++getCurrentCp(currentUser) // Homepgae.html (after Login, set Homepage.html currentCp) (add currentCp to user)
++getMaxCp(Course) // Homepage.html (after Login, set Homepage.html maxCp)
++getCurrentCPinPercent() // Homepage.html
++getRanking(currentUser) // Homepage.html (compares current Fitnesspoints to course´s other user, return ranking)
++testFitnessCode() bool // Homepage.html (checks if entered code is contained in the db (Fitnesspoint tabel))
++getFitnesspoints() void // sets the amount of fitnesspoints the currentUser has
++enterFitnessCode() void // after entering a correct Fitnesscode, check if an achievement has that code, and add the points to the user
++getRecentAchievements() achievements[5] // gets array of most recent achievementobjects
+------------------
+InstructorController
+---------- // nothing works unless approved = true
++saveInstructor(name,email,password) // Register.html (to db)
++login() // Login.html
++logout() // Instructor.html
++faceBookLogin() // Login.html (am ende implementieren)
+
++createAchievement(name,code,description,type) // Instructor.html
++approveInstructor(name,email) // Instructor.html ()
++showUserAchievements(currentUser) // Homepage.html (shows currentUser Achievements in body)
++showAchievements() // Instructor.html
+------------------
+ModuleController
+----------
++saveModule(name,abbrieviation, description, status,cp) // Instructor.html (to db)
++showModules(currentUser) void // shows the "Modulplan" in content
++onModuleClicked() void // triggers completedModule() in the contained Grade of the module
+------------------
+GradeController
+----------
++saveGrade(userId, moduleId, grade) // (to db) delete date,id?
+
+------------------
+FitnesspointController
+--------
++saveFitnsspoint(value) // (to db)
++getFitnesspoint(achievementId) // returns amount of Fitnesspoints, that an Achievement object contains
+------------------
+CourseController
+----------
++saveCourse(name,abbreviation,module,moduleList,countParticipants,maxCp,moduleNumber,description) // (to db)
+
+------------------
+AchievementController
+----------
++saveAchievement() // Instructor.html (to db)
++showAchievements()
+------------------
+
+Programming Task functionality-list:
+students/user:
+1) Create new account, later, it should be possible to log-in with Facebook credentials.
+2) Login, Logout.
+3)
+Enter grades for a specific module. The platform needs to know which modules are present for each degree program.
+4) Enter a fitness-code to receive fitness points. When a student enters the fitness-code, this codecannot be used by anybody else any more.
+Later, this might be done by scanning a QR-code in an app.
+5) Show a summary for fitness points and a comparison with the peer-group.
+
+instructor:
+1) Create new account
+2) An instructor-account needs to be approved by another instructor before being active.
+3) Login, Logout.
+4) Create a new achievement with certain type, and number of fitness points. An according unique fitness-code needs to be generated, that can be given to students
+in order to receive the fitness points.
+5) Show an overview about achievements.
+
+next deadline:
+Devide, waht controlers are needed and what functions they provide. Create a ist of programming
+tasks and assign teammembers to each of the tasks. Start coding.
+
+after that;
+provide the current results of the platform.
+.. July: Present the results in the final exams.
