@@ -3,36 +3,33 @@ Controller-classes:
 LoginController
 ---------------
 +showLogin();
-+loginUser();
-+loginInstructor();
++loginUser(); boolean
++loginInstructor();boolean
 +getRegistrationForm();
-
++registerUser(); boolean
++registerInstructor(); boolean
++saveUser(name,password,email,activeCourse) // Register.html (to db)
++saveInstructor(name,email,password) // Register.html (to db)
 -------------------
 UserController
 ----------
-+saveUser(name,password,email,activeCourse) // Register.html (to db)
-+login(email, password) // Login.html
 +logout() // Homepage.html
-+faceBookLogin() // Login.html (am ende implementieren)
 +getModules(currentUser) // Homepage.html (get all modules from user´s course)
 +getCourse(currentUser) // Homepage.html (get name from user´s course)
 +enterFitnessCode() // Fitnesspoints.html (enter code / QR code, code gets unusable)
 +enterGrade(userId, moduleId, grade) // Homepage.html (enter Grade? need html in Homepage.html) date? id?
-+getCurrentCp(currentUser) // Homepgae.html (after Login, set Homepage.html currentCp) (add currentCp to user)
++getCurrentCp(currentUser) // Homepage.html (after Login, set Homepage.html currentCp) (add currentCp to user)
 +getMaxCp(Course) // Homepage.html (after Login, set Homepage.html maxCp)
-+getCurrentCPinPercent() // Homepage.html
++getCurrentCpPercent() // Homepage.html
 +getRanking(currentUser) // Homepage.html (compares current Fitnesspoints to course´s other user, return ranking)
 +testFitnessCode() bool // Homepage.html (checks if entered code is contained in the db (Fitnesspoint tabel))
-+getFitnesspoints() void // sets the amount of fitnesspoints the currentUser has
-+enterFitnessCode() void // after entering a correct Fitnesscode, check if an achievement has that code, and add the points to the user
++getUserFitnesspoints() void // sets the amount of fitnesspoints the currentUser has
++getConnectedAchievement() int // RETURNS ID OF AV, IF NONE = 0 // after entering a correct Fitnesscode, check if an achievement has that code, and add the points to the user
 +getRecentAchievements() achievements[5] // gets array of most recent achievementobjects
 ------------------
 InstructorController
 ---------- // nothing works unless approved = true
-+saveInstructor(name,email,password) // Register.html (to db)
-+login() // Login.html
 +logout() // Instructor.html
-+faceBookLogin() // Login.html (am ende implementieren)
 
 +createAchievement(name,code,description,type) // Instructor.html
 +approveInstructor(name,email) // Instructor.html ()
@@ -63,7 +60,9 @@ CourseController
 AchievementController
 ----------
 +saveAchievement() // Instructor.html (to db)
++getObtainedAchievements() // returns id´s of user obtained achievements
 +showAchievements()
++generateQRCode(): boolean
 ------------------
 
 Programming Task functionality-list:

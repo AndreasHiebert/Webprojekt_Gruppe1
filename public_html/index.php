@@ -98,6 +98,6 @@ $content = $controller->$action_name();
 //$smarty->display("Homepage.html");
 //$smarty->display("Instructor.html");
 //$smarty->display("Fitnesspoints.html");
-$smarty->display("main.html");
+//$smarty->display("main.html");
 
 ?>

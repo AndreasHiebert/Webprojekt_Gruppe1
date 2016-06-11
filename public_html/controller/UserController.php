@@ -2,6 +2,23 @@
 
 
 class UserController {
+
+  public function getModulplan(){
+    global $smarty;
+    $smarty->display("../view/Modulplan.html");
+  }
+
+  public function getAchievements(){
+    global $smarty;
+    $smarty->display("../view/Achievements.html");
+  }
+
+  public function logout(){
+    global $smarty;
+    $smarty->display("../view/Login.html");
+  }
+
+  /*
   public function saveUser() {
       global $smarty;
       $user = User::fromArray($_REQUEST);
@@ -15,6 +32,7 @@ class UserController {
           UserRepository::saveUser($user);
       }
   }
+  */
 
   //public function showLogin() {
   //    global $smarty;
@@ -24,8 +42,8 @@ class UserController {
   //}
 
 
-  public function login(){
-    global $smarty;
+//  public function login(){
+//    global $smarty;
 //    $smarty->display("../view/homepage.html");
 /*    $user = User::fromArray($_REQUEST);
     // get the user with matching email and password into $currentUser, else error
@@ -72,7 +90,7 @@ class UserController {
           }
         }
       }*/
-  }
+//  }
 
 }
 

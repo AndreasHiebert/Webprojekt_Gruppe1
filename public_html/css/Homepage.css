@@ -5,7 +5,7 @@ body {
  }
 /* Grid Border */
 .col-ld-9{
-	border-width:1px;	
+	border-width:1px;
     border-style:outset;
 }
 .col-ld-6{
@@ -16,7 +16,7 @@ body {
 }
 
 .col-md-9{
-	border-width:1px;	
+	border-width:1px;
     border-style:solid;
 }
 .col-md-6{
@@ -46,4 +46,9 @@ body {
 
 #statusbar{
 	float: right;
+}
+
+#user_fitnesspoints{
+  color: white;
+  background-color: #0099ff;
 }

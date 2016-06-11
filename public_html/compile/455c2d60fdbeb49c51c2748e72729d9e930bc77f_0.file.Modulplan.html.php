@@ -1,3 +1,26 @@
+<?php
+/* Smarty version 3.1.29, created on 2016-06-11 01:14:13
+  from "C:\xampp\htdocs\WebProjekt\public_html\view\Modulplan.html" */
+
+if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
+  'has_nocache_code' => false,
+  'version' => '3.1.29',
+  'unifunc' => 'content_575b49c53f96a2_91933680',
+  'file_dependency' => 
+  array (
+    '455c2d60fdbeb49c51c2748e72729d9e930bc77f' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Modulplan.html',
+      1 => 1465600426,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_575b49c53f96a2_91933680 ($_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +30,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <!-- Custom theme -->
-        <link rel="stylesheet" type="text/css" href="../css/Fitnesspoints.css">
+        <link rel="stylesheet" type="text/css" href="../css/Modulplan.css">
     </head>
     <body>
         <form class="form-inline text-center formpadding">
@@ -107,8 +130,14 @@
         </div>
 
         <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
+>
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"></script>
+        <?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
     </body>
 </html>
+<?php }
+}

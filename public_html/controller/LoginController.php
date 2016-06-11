@@ -15,7 +15,7 @@ class LoginController {
 
   public function loginUser() {
       global $smarty;
-      $user = User::fromArray($_REQUEST);
+      //$user = User::fromArray($_REQUEST);
       $smarty->display("../view/Homepage.html");
       //$error = $user->validate();
       // check if credentials match, then set $currentUser = $user with entered email and password
@@ -39,7 +39,7 @@ class LoginController {
 
   public function loginInstructor() {
       global $smarty;
-      $user = User::fromArray($_REQUEST);
+      //$user = User::fromArray($_REQUEST);
       $smarty->display("../view/Instructor.html");
       //$error = $user->validate();
 
