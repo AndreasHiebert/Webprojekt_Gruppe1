@@ -55,7 +55,7 @@
 }
 
 @media (max-width: 767px) {
-  
+
   .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
     color: #e0f2f1;
   }

@@ -99,5 +99,4 @@ $content = $controller->$action_name();
 //$smarty->display("Instructor.html");
 //$smarty->display("Fitnesspoints.html");
 //$smarty->display("main.html");
-
 ?>
