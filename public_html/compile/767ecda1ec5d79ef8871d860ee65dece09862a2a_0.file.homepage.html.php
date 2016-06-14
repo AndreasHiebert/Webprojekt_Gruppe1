@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-10 08:06:43
+/* Smarty version 3.1.29, created on 2016-06-14 04:29:58
   from "C:\xampp\htdocs\WebProjekt\public_html\view\homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575a58f337e463_87518564',
+  'unifunc' => 'content_575f6c268b4c20_03619618',
   'file_dependency' => 
   array (
     '767ecda1ec5d79ef8871d860ee65dece09862a2a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\homepage.html',
-      1 => 1465538749,
+      1 => 1465871394,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575a58f337e463_87518564 ($_smarty_tpl) {
+function content_575f6c268b4c20_03619618 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@ function content_575a58f337e463_87518564 ($_smarty_tpl) {
         <div class="navbar-header">
 		<a class="navbar-brand" href="#">
 			<a class="navbar-brand" href="#">Study Buddy</a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -55,19 +55,17 @@ function content_575a58f337e463_87518564 ($_smarty_tpl) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li id="home" class="#Home"><a href="#">Home</a></li>
+            <li id="home"><a href="index.php?controller=LoginController&action=loginUser">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="fitnesspoints" href="#Fitnesspoints">Fitnesspoints</a></li>
+            <li><a id="modulplan" href="index.php?controller=UserController&action=showModulplan">Modulplan</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="rangliste" href="#Rangliste">Rangliste</a></li>
-            <li class="divider-vertical"></li>
-            <li><a id="achievements" href="#Achievements">Achievements</a></li>
+            <li><a id="achievements" href="index.php?controller=UserController&action=showAchievements">Achievements</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
               <li class="divider-vertical"></li>
-              <li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
-            </ul>
+							<li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
+						</ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -75,23 +73,20 @@ function content_575a58f337e463_87518564 ($_smarty_tpl) {
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div><!--<?php echo $_smarty_tpl->tpl_vars['body_content']->value;?>
- --> content</div>
+				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
+</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
-
-					<div class="col-xs-12">CP
+					<div class="col-xs-12">CP:
 						<div><div class="progress">
 				<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
 				0/220 (0%)
 				</div>
 				</div></div>
 					</div>
-					<div class="col-xs-12">Experience
-						<div>	<div class="progress">
-				<div id="progress_exp" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-				0/100 (0%)
-				</div>
+					<div class="col-xs-12">Fitnesspoints:
+						<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
+ -->Over 9000 Rank #1	ISD<div>
 				</div></div>
 					</div>
 					<div class="col-xs-12">

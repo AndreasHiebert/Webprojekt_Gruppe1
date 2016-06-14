@@ -90,10 +90,10 @@ class Course{
     }
 
     public function getModuleNumber(){
-        return $this->numberModule;
+        return $this->moduleNumber;
     }
 
     public function setModuleNumber($value){
-        $this->numberModule = $value;
+        $this->moduleNumber = $value;
     }
 }

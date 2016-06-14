@@ -84,9 +84,12 @@ in order to receive the fitness points.
 5) Show an overview about achievements.
 
 next deadline:
-Devide, waht controlers are needed and what functions they provide. Create a ist of programming
+Decide which controllers are needed and what functions they provide. Create a ist of programming
 tasks and assign teammembers to each of the tasks. Start coding.
 
 after that;
 provide the current results of the platform.
 .. July: Present the results in the final exams.
+
+
+#1 set currentUser and currentInstructor

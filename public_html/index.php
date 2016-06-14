@@ -18,7 +18,6 @@ require 'model/GradeRepository.php';
 
 require 'controller/UserController.php';
 require 'controller/LoginController.php';
-//session_start();
 
 //------------------------------------------------------------------------------
 // setup smarty
@@ -27,6 +26,10 @@ $smarty = new Smarty();
 $smarty->template_dir = "view";
 $smarty->compile_dir = "compile";
 $smarty->cache_dir = "cache";
+
+// disabled all unimportant notice errors
+error_reporting(0);
+error_reporting(E_ALL ^  E_NOTICE);
 //------------------------------------------------------------------------------
 // connect to db
 
@@ -75,14 +78,10 @@ $smarty->assign("grades", $gradeObjects);
 $currentUser = new User();
 $currentInstructor = new Instructor();
 
-//$currentUserHashedPassword = password_hash($currentUser->getPassword, PASSWORD_DEFAULT);
-//password_verify($password, $currentUserHashedPassword);
-
-
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
 } else {
-    $controller_name = "LoginController"; // login instructor -> false? -> login user -> false? -> return to Login
+    $controller_name = "LoginController";
 }
 
 if (isset($_REQUEST["action"])) {
@@ -93,10 +92,17 @@ if (isset($_REQUEST["action"])) {
 
 $controller = new $controller_name;
 $content = $controller->$action_name();
+$smarty->assign("homepage_content", $content);
 
-//$smarty->display("Registration.html");
-//$smarty->display("Homepage.html");
-//$smarty->display("Instructor.html");
-//$smarty->display("Fitnesspoints.html");
-//$smarty->display("main.html");
+// set test accounts
+$currentUser = $userObjects[1];
+$repo = new UserRepository();
+$currentUser = $repo->getTestUser()[0];
+var_dump($currentUser);
+
+$repo = new InstructorRepository();
+$currentInstructor = $repo->getTestInstructor()[0];
+//var_dump($currentInstructor);
+
+$smarty->assign("homepage_content");
 ?>

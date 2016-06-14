@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-11 05:51:59
+/* Smarty version 3.1.29, created on 2016-06-14 04:31:51
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575b8adf1c3695_74863028',
+  'unifunc' => 'content_575f6c978fcf50_18865711',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1465617117,
+      1 => 1465871509,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575b8adf1c3695_74863028 ($_smarty_tpl) {
+function content_575f6c978fcf50_18865711 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +67,8 @@ function content_575b8adf1c3695_74863028 ($_smarty_tpl) {
             <div id="RegisterRow" class="row">
                 <div class="col-sm-5"></div>
                 <div class="col-sm-2">
-                    <a href="index.php?controller=LoginController&action=getRegistrationForm">Register?</a>
+                    <a href="index.php?controller=LoginController&action=getUserRegistrationForm">Register as User?</a>
+                    <a href="index.php?controller=LoginController&action=getInstructorRegistrationForm">Register as Instructor?</a>
                 </div>
             </div>
             <div id="PwdForgetRow" class="row">

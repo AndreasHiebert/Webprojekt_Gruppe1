@@ -12,7 +12,7 @@ class Module {
         $obj = new Module();
         $obj->setName($row["name"]);
         $obj->setId($row["id"]);
-        $obj->setAbbrieviation($row["abbrieviation"]);
+        $obj->setAbbreviation($row["abbreviation"]);
         $obj->setDescription($row["description"]);
         $obj->setStatus($row["status"]);
         $obj->setCp($row["cp"]);
@@ -35,12 +35,12 @@ class Module {
       $this->id = $value;
     }
 
-    public function getAbreviation(){
+    public function getAbbreviation(){
       return $this->abbreviation;
     }
 
-    public function setAbreviation($value) {
-      $this->abreviation = $value;
+    public function setAbbreviation($value) {
+      $this->abbreviation = $value;
     }
 
     public function getDescription(){

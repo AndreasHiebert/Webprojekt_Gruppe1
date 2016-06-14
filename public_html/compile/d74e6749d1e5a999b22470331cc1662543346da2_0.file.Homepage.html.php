@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-13 20:26:40
+/* Smarty version 3.1.29, created on 2016-06-14 06:05:06
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575efae0008070_62964942',
+  'unifunc' => 'content_575f8272ac0fd5_63910023',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1465841929,
+      1 => 1465877103,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575efae0008070_62964942 ($_smarty_tpl) {
+function content_575f8272ac0fd5_63910023 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,15 +57,15 @@ function content_575efae0008070_62964942 ($_smarty_tpl) {
           <ul class="nav navbar-nav">
             <li id="home"><a href="index.php?controller=LoginController&action=loginUser">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="modulplan" href="index.php?controller=UserController&action=getModulplan">Modulplan</a></li>
+            <li><a id="modulplan" href="index.php?controller=UserController&action=showModulplan">Modulplan</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="achievements" href="index.php?controller=UserController&action=getAchievements">Achievements</a></li>
+            <li><a id="achievements" href="index.php?controller=UserController&action=showAchievements">Achievements</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
               <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
               <li class="divider-vertical"></li>
-              <li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
-            </ul>
+							<li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
+						</ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -73,11 +73,10 @@ function content_575efae0008070_62964942 ($_smarty_tpl) {
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div><!--<?php echo $_smarty_tpl->tpl_vars['body_content']->value;?>
- --> content</div>
+				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
+</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
-
 					<div class="col-xs-12">CP:
 						<div><div class="progress">
 				<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
@@ -89,6 +88,16 @@ function content_575efae0008070_62964942 ($_smarty_tpl) {
 						<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
  -->Over 9000 Rank #1	ISD<div>
 				</div></div>
+
+				<div class="col-xs-12">
+					<form class="form-inline text-center formpadding">
+			              <div class="form-group">
+			                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
+			              </div>
+			              <button type="submit" class="btn btn-primary">Einlösen</button>
+			          </form>
+				</div>
+
 					</div>
 					<div class="col-xs-12">
 						<div>Achievement 1</div>

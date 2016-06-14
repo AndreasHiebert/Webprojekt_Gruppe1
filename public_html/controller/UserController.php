@@ -3,14 +3,17 @@
 
 class UserController {
 
-  public function getModulplan(){
+  public function showModulplan(){
     global $smarty;
-    $smarty->display("../view/Modulplan.html");
+    $modulplan = "../view/show_Modulplan.html";
+
+    return $smarty->fetch($modulplan);
+    //$smarty->display("../view/show_Modulplan.html");
   }
 
-  public function getAchievements(){
+  public function showAchievements(){
     global $smarty;
-    $smarty->display("../view/Achievements.html");
+    $smarty->display("../view/show_Achievements.html");
   }
 
   public function logout(){

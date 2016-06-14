@@ -8,9 +8,14 @@ class LoginController {
     $smarty->display("../view/Login.html");
   }
 
-  public function getRegistrationForm(){
+  public function getUserRegistrationForm(){
     global $smarty;
-    $smarty->display("../view/Registration.html");
+    $smarty->display("../view/UserRegistration.html");
+  }
+
+  public function getInstructorRegistrationForm(){
+    global $smarty;
+    $smarty->display("../view/InstructorRegistration.html");
   }
 
   public function loginUser() {
