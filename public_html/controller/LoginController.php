@@ -40,6 +40,10 @@ class LoginController {
              
   }
   
+  public function LoginRegisteredUser($EMail, $UserPassword){
+      
+  }
+  
     public function loginUser() {
       global $smarty;
       //$user = User::fromArray($_REQUEST);
@@ -69,7 +73,8 @@ class LoginController {
     $smarty->display("../view/InstructorRegistration.html");
   }
   
-  public function RegisterInstructor($name, $Userpassword, $EMail){
+  public function RegisterInstructor($name, $UserPassword, $EMail){
+      
     $servername = "localhost";
     $username = "username";
     $password = "password";
@@ -94,6 +99,41 @@ class LoginController {
      
     $conn->close();
              
+  }
+  
+  public function LoginRegisteredInstructor($EMail, $UserPassword){
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "webprojekt6";
+    
+    SESSION_START();
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if($conn->connect_error){
+        die("COnnection failed: ".$conn->connect_error);
+    }
+    
+    if(!empty($_POST["submit"])){
+        
+        $User_Name = mysql_real_escape_string($_POST["$EMail"]);
+        $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
+        
+        $sql = "SELECT * FROM users WHERE
+                name='$User_Name' AND
+                password ='$User_Password'
+                LIMIT 1";
+        
+        $res = mysql_query($sql, $conn);
+        $anzahl = @mysql_num_rows($res);
+        
+        if($anzahl > 0){
+            echo "Successful Login.<br>";
+            
+            
+        }
+    }
   }
 
   public function loginInstructor() {
