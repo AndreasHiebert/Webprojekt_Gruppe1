@@ -41,6 +41,44 @@ class LoginController {
   }
   
   public function LoginRegisteredUser($EMail, $UserPassword){
+      $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "webprojekt6";
+    
+    SESSION_START();
+    
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if($conn->connect_error){
+        die("COnnection failed: ".$conn->connect_error);
+    }
+    
+    if(!empty($_POST["submit"])){
+        
+        $User_Name = mysql_real_escape_string($_POST["$EMail"]);
+        $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
+        
+        $sql = "SELECT * FROM users WHERE
+                name='$User_Name' AND
+                password ='$User_Password'
+                LIMIT 1";
+        
+        $res = mysql_query($sql, $conn);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $active = $row['active'];
+        
+        $count = mysqli_num_rows($result);
+        
+        if($count == 1){
+            session_register("$User_Name");
+            $_SESSION['login_user'] = $User_Name;
+            
+            header("location: Homepage.html");
+        }else{
+            $error = "Your Login Name or Password is invalid";
+        }
+    }
       
   }
   
@@ -120,7 +158,7 @@ class LoginController {
         $User_Name = mysql_real_escape_string($_POST["$EMail"]);
         $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
         
-        $sql = "SELECT * FROM users WHERE
+        $sql = "SELECT * FROM instructors WHERE
                 name='$User_Name' AND
                 password ='$User_Password'
                 LIMIT 1";
@@ -129,9 +167,12 @@ class LoginController {
         $anzahl = @mysql_num_rows($res);
         
         if($anzahl > 0){
-            echo "Successful Login.<br>";
+            session_register("$User_Name");
+            $_SESSION['login_user'] = $User_Name;
             
-            
+            header("location: Homepage.html");
+        }else{
+            $error = "Your Login Name or Password is invalid";
         }
     }
   }
