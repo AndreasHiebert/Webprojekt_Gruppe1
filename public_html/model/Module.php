@@ -7,6 +7,7 @@ class Module {
     private $description = "";
     private $status = 0;
     private $cp = 0;
+    private  $semester = 0;
 
     public static function fromArray($row) {
         $obj = new Module();
@@ -16,7 +17,16 @@ class Module {
         $obj->setDescription($row["description"]);
         $obj->setStatus($row["status"]);
         $obj->setCp($row["cp"]);
+        $obj->setSemester($row["semester"]);
         return $obj;
+    }
+    
+    public function getSemester(){
+        return $this->semester;
+    }
+    
+    public function setSemester($value){
+        $this->semester = $value;
     }
 
     public function getName(){
