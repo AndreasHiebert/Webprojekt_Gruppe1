@@ -6,6 +6,8 @@ class UserController {
   public function showModulplan(){
     global $smarty;
     $modulplan = "../view/show_Modulplan.html";
+    
+    $this->getModules();
 
     return $smarty->display($modulplan);
     //$smarty->display("../view/show_Modulplan.html");
@@ -19,6 +21,13 @@ class UserController {
   public function logout(){
     global $smarty;
     $smarty->display("../view/Login.html");
+  }
+  
+  
+  public function getModules(){
+      global $smarty;
+      $moduleObjects;
+      $smarty->assign("modules", $moduleObjects);
   }
 
   /*
