@@ -1,12 +1,12 @@
 <?php
 
 class Grade {
+
     private $id = 0;
     private $userId = 0;
     private $moduleId = 0;
     private $grade = 0;
     private $date = "";
-
 
     public static function fromArray($row) {
         $obj = new Grade();
@@ -58,5 +58,20 @@ class Grade {
         $this->date = $value;
     }
 
+    public function validate() {
+        $error = new ValidationError();
+
+        if (empty($this->getUserId())) {
+            $error->addError("no_user_id");
+        }
+        if (empty($this->getModuleId())) {
+            $error->addError("no_module_id");
+        }
+        if (empty($this->getGrade())) {
+            $error->addError("no_grade");
+        }
+    }
+
 }
+
 ?>
