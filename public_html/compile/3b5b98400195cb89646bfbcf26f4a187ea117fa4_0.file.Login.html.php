@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 04:31:51
+/* Smarty version 3.1.29, created on 2016-06-15 21:07:02
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f6c978fcf50_18865711',
+  'unifunc' => 'content_5761a756b0e361_69538170',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1465871509,
+      1 => 1466017584,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575f6c978fcf50_18865711 ($_smarty_tpl) {
+function content_5761a756b0e361_69538170 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,6 +50,11 @@ function content_575f6c978fcf50_18865711 ($_smarty_tpl) {
                 <div class="col-sm-2">
                     <input type="email" name="email_txt" class="form-control" id="EMailForm" placeholder="Enter E-Mail">
                 </div>
+                <div>
+                    <div class="col-sm-1">
+                        <a href="index.php?controller=LoginController&action=loginUser" class="btn btn-primary">LoginUser</a>
+                    </div>
+                </div>
             </div>
             <div id="PwdRow" class="row">
                 <div class="col-sm-4"></div>
@@ -60,7 +65,6 @@ function content_575f6c978fcf50_18865711 ($_smarty_tpl) {
                     <input type="password" name="pass_txt" class="form-control" id="PasswordForm" placeholder="Enter Password">
                 </div>
                 <div class="col-sm-1">
-                    <a href="index.php?controller=LoginController&action=loginUser" class="btn btn-primary">LoginUser</a>
                     <a href="index.php?controller=LoginController&action=loginInstructor" class="btn btn-primary">LoginInstructor</a>
                 </div>
             </div>

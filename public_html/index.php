@@ -73,10 +73,18 @@ $gradeObjects=$repo->getAllGrades();
 $smarty->assign("grades", $gradeObjects);
 
 //------------------------------------------------------------------------------
-// controller
+// set test accounts
 
 $currentUser = new User();
 $currentInstructor = new Instructor();
+
+$currentUser = $userObjects[0];
+$smarty->assign("currentUser", $currentUser);
+
+$currentInstructor = $instructorObjects[0];
+$smarty->assign("currentInstructor", $currentInstructor);
+//------------------------------------------------------------------------------
+// controller
 
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
@@ -94,15 +102,4 @@ $controller = new $controller_name;
 $content = $controller->$action_name();
 $smarty->assign("homepage_content", $content);
 
-// set test accounts
-$currentUser = $userObjects[1];
-$repo = new UserRepository();
-$currentUser = $repo->getTestUser()[0];
-var_dump($currentUser);
-
-$repo = new InstructorRepository();
-$currentInstructor = $repo->getTestInstructor()[0];
-//var_dump($currentInstructor);
-
-$smarty->assign("homepage_content");
 ?>

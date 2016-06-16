@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 04:25:12
+/* Smarty version 3.1.29, created on 2016-06-15 20:49:56
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f6b08a68250_95830198',
+  'unifunc' => 'content_5761a354447a43_97587966',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1465871108,
+      1 => 1465876311,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575f6b08a68250_95830198 ($_smarty_tpl) {
+function content_5761a354447a43_97587966 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +32,13 @@ function content_575f6b08a68250_95830198 ($_smarty_tpl) {
         <!-- Custom theme -->
         <link rel="stylesheet" type="text/css" href="../css/Modulplan.css">
     </head>
-    <body>
-        <form class="form-inline text-center formpadding">
-            <div class="form-group">
-                <input type="text" class="form-control" size="70" placeholder="Fitness- Code eingeben">
-            </div>
-            <button type="submit" class="btn btn-default">Einlösen</button>
-        </form>
 
+    <!-- 			<li><form class="form-inline text-center formpadding">
+              <div class="form-group">
+                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
+              </div>
+              <button type="submit" class="btn btn-primary">Einlösen</button>
+          </form></li> -->
 
         <div class="tabelle  text-center">
             <div class="text text-center">

@@ -25,18 +25,5 @@ class InstructorRepository {
 
         $stmt->execute();
     }
-
-    public function getTestInstructor(){
-        global $db;
-        $result = array();
-
-        // select user id = 1 from instructors
-        $stmt = $db->query("SELECT * from instructors order by id LIMIT 1");
-        foreach ($stmt as $row) {
-            $result[] = Instructor::fromArray($row);
-        }
-
-        return $result;
-    }
 }
 ?>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 06:05:06
+/* Smarty version 3.1.29, created on 2016-06-16 19:22:57
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f8272ac0fd5_63910023',
+  'unifunc' => 'content_5762e0714e00a1_42160203',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1465877103,
+      1 => 1466097770,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575f8272ac0fd5_63910023 ($_smarty_tpl) {
+function content_5762e0714e00a1_42160203 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +74,33 @@ function content_575f8272ac0fd5_63910023 ($_smarty_tpl) {
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
 				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
-</div>
+
+					<ul>
+    <?php
+$_from = $_smarty_tpl->tpl_vars['users']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_item_0_saved_item = isset($_smarty_tpl->tpl_vars['item']) ? $_smarty_tpl->tpl_vars['item'] : false;
+$_smarty_tpl->tpl_vars['item'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['item']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+$__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
+?>
+    <li><?php echo $_smarty_tpl->tpl_vars['item']->value->getName();?>
+</li>
+    <?php
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_local_item;
+}
+if ($__foreach_item_0_saved_item) {
+$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_item;
+}
+?>
+		<li><?php echo $_smarty_tpl->tpl_vars['User']->value->getName();?>
+</li>	
+</ul>
+				</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
 					<div class="col-xs-12">CP:

@@ -28,18 +28,6 @@ class UserRepository {
         $stmt->execute();
     }
 
-    public function getTestUser(){
-        global $db;
-        $result = array();
-
-        // select user id = 1 from users
-        $stmt = $db->query("SELECT * from users order by id LIMIT 1");
-        foreach ($stmt as $row) {
-            $result[] = User::fromArray($row);
-        }
-
-        return $result;
-    }
 /*
     public function login($email,$password){
       try

@@ -7,7 +7,7 @@ class UserController {
     global $smarty;
     $modulplan = "../view/show_Modulplan.html";
 
-    return $smarty->fetch($modulplan);
+    return $smarty->display($modulplan);
     //$smarty->display("../view/show_Modulplan.html");
   }
 
