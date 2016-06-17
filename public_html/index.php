@@ -102,4 +102,5 @@ $controller = new $controller_name;
 $content = $controller->$action_name();
 $smarty->assign("homepage_content", $content);
 
+$smarty->display("../view/Homepage.html");
 ?>

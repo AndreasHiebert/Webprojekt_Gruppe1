@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-16 20:12:52
+/* Smarty version 3.1.29, created on 2016-06-18 02:53:14
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5762ec24ce6e72_40016706',
+  'unifunc' => 'content_57649b7ac78128_52921536',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1466100771,
+      1 => 1466211176,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5762ec24ce6e72_40016706 ($_smarty_tpl) {
+function content_57649b7ac78128_52921536 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,29 +72,28 @@ function content_5762ec24ce6e72_40016706 ($_smarty_tpl) {
 
 	<div class="container">
 		<div class="row">
-			<div id="maincontent" class="col-ld-6 col-md-9">
-				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
- <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getName();?>
+			<div id="maincontent" class="col-xs-8">
+				<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
 
-				</div>
+
 			</div>
-			<div id="statusbar" class="col-md-3 col-ld-3">
-					<div class="col-xs-12">CP:
+			<div id="statusbar" class="col-xs-4">
+					<div class="col-xs-12">
 						<div><div class="progress">
 				<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
-				0/220 (0%)
+				CP: 0/220 (0%)
 				</div>
 				</div></div>
 					</div>
-					<div class="col-xs-12">Fitnesspoints:
+					<div class="col-xs-12">
 						<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
- -->Over 9000 Rank #1	ISD<div>
+ -->Fitnesspoints: 9000 Rank: #1 Course: ISD<div>
 				</div></div>
 
 				<div class="col-xs-12">
 					<form class="form-inline text-center formpadding">
 			              <div class="form-group">
-			                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
+			                  <input id="codeinput" type="text" class="form-control" size="15" placeholder="Fitness-Code einlösen..">
 			              </div>
 			              <button type="submit" class="btn btn-primary">Einlösen</button>
 			          </form>
@@ -133,18 +132,6 @@ function content_5762ec24ce6e72_40016706 ($_smarty_tpl) {
 	</div>
 
 
-	<footer>
-		<div class="container">
-			<hr>
-
-			<p>
-				<small>footer</small></p>
-				<button type="button" class="btn btn-lg btn-success" id="btn1">CP+</button>
-				<button type="button" class="btn btn-lg btn-primary" id="btn2">EXP+</button>
-				<button type="button" class="btn btn-lg btn-warning" id="btn3">Clear</button>
-
-		</div> <!-- end container -->
-	</footer>
 
 	<!-- jQuery library -->
 	<?php echo '<script'; ?>

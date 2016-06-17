@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 04:29:58
+/* Smarty version 3.1.29, created on 2016-06-17 20:13:32
   from "C:\xampp\htdocs\WebProjekt\public_html\view\homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f6c268b4c20_03619618',
+  'unifunc' => 'content_57643dcc4cee07_83208565',
   'file_dependency' => 
   array (
     '767ecda1ec5d79ef8871d860ee65dece09862a2a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\homepage.html',
-      1 => 1465871394,
+      1 => 1466124840,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575f6c268b4c20_03619618 ($_smarty_tpl) {
+function content_57643dcc4cee07_83208565 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +74,8 @@ function content_575f6c268b4c20_03619618 ($_smarty_tpl) {
 		<div class="row">
 			<div id="maincontent" class="col-ld-6 col-md-9">
 				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
-</div>
+
+				</div>
 			</div>
 			<div id="statusbar" class="col-md-3 col-ld-3">
 					<div class="col-xs-12">CP:
@@ -88,6 +89,16 @@ function content_575f6c268b4c20_03619618 ($_smarty_tpl) {
 						<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
  -->Over 9000 Rank #1	ISD<div>
 				</div></div>
+
+				<div class="col-xs-12">
+					<form class="form-inline text-center formpadding">
+			              <div class="form-group">
+			                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
+			              </div>
+			              <button type="submit" class="btn btn-primary">Einlösen</button>
+			          </form>
+				</div>
+
 					</div>
 					<div class="col-xs-12">
 						<div>Achievement 1</div>
