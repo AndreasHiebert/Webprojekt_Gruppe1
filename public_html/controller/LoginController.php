@@ -13,12 +13,12 @@ class LoginController {
     $smarty->display("../view/UserRegistration.html");
   }
   
-  public function RegisterUser($name, $UserPassword, $EMail, $ActiveCourse){
+  public function RegisterUser($UserName, $UserPassword, $EMail, $ActiveCourse){
     $servername = "localhost";
-    $username = "username";
+    $name = "username";
     $password = "password";
     $dbname = "webprojekt6";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $name, $password, $dbname);
      
     if($conn->connect_error){
         die("COnnection failed: ".$conn->connect_error);
@@ -28,10 +28,10 @@ class LoginController {
     $id = $result->num_rows;
      
     $sql = "INSERT INTO users(id, name, password, email, activeCourse, fitnesspoints)
-            VALUES($name, $UserPassword, $EMail, $ActiveCourse, 0)";
+            VALUES($id+1 $UserName, $UserPassword, $EMail, $ActiveCourse, 0)";
 
     if($conn->query($sql) === TRUE){
-        echo "New record created successfully";
+        echo "New user created successfully";
     }else{
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -41,7 +41,7 @@ class LoginController {
   }
   
   public function LoginRegisteredUser($EMail, $UserPassword){
-      $servername = "localhost";
+    $servername = "localhost";
     $username = "username";
     $password = "password";
     $dbname = "webprojekt6";
@@ -111,13 +111,13 @@ class LoginController {
     $smarty->display("../view/InstructorRegistration.html");
   }
   
-  public function RegisterInstructor($name, $UserPassword, $EMail){
+  public function RegisterInstructor($UserName, $UserPassword, $EMail){
       
     $servername = "localhost";
-    $username = "username";
+    $name = "username";
     $password = "password";
     $dbname = "webprojekt6";
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $name, $password, $dbname);
     
     if($conn->connect_error){
         die("COnnection failed: ".$conn->connect_error);
@@ -127,7 +127,7 @@ class LoginController {
     $id = $result->num_rows;
      
     $sql = "INSERT INTO instructors(id, name, password, email)
-            VALUES($id+1, $name, $UserPassword, $EMail)";
+            VALUES($id+1, $UserName, $UserPassword, $EMail)";
 
     if($conn->query($sql) === TRUE){
         echo "New record created successfully";
