@@ -3,11 +3,7 @@
 
 class ModuleController {
 
-<<<<<<< HEAD
-    public function showModules() {
-=======
     public function showModules(){
->>>>>>> 564423e70b28488141ec690e480c1dbfee1549e7
         global $smarty;
 
 
@@ -32,12 +28,8 @@ class ModuleController {
         $smarty->display("../view/show_Modulplan.html");
     }
 
-<<<<<<< HEAD
-    public function enterGrade($userId, $moduleId) {
-=======
     public function enterGrade($userId, $moduleId)
     {
->>>>>>> 564423e70b28488141ec690e480c1dbfee1549e7
         global $smarty;
         $grade = Grade::fromArray($_REQUEST);
         GradeRepository::saveGrade($grade);
