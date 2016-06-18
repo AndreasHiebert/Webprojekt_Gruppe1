@@ -6,7 +6,7 @@ body {
 /* Grid Border */
 .col-ld-9{
 	border-width:1px;
-    border-style:outset;
+  border-style:outset;
 }
 .col-ld-6{
 	border: 1px solid;
@@ -27,7 +27,7 @@ body {
 }
 
 .col-xs-12{
-	border: 1px solid white;
+	border: 1px solid;
 }
 
 .col-xs-9{
@@ -37,11 +37,18 @@ body {
 	border: 1px solid;
 }
 .col-xs-3{
-	border: 1px solid white;
+	border: 1px solid;
+}
+
+.col-xs-4{
+	border: 1px solid;
 }
 
 #maincontent{
 	width: 100%;
+  padding-top: 1em;
+  border-left: 1px solid;
+  border-right: 1px solid;
 }
 
 #statusbar{
@@ -51,4 +58,5 @@ body {
 #user_fitnesspoints{
   color: white;
   background-color: #0099ff;
+  text-align: center;
 }

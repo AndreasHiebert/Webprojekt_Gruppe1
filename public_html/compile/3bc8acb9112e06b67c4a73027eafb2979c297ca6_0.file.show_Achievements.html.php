@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-14 05:19:47
+/* Smarty version 3.1.29, created on 2016-06-18 02:58:03
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575f77d352a367_50127561',
+  'unifunc' => 'content_57649c9b0dcc87_14978913',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1464655174,
+      1 => 1466211481,
       2 => 'file',
     ),
   ),
@@ -19,92 +19,41 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575f77d352a367_50127561 ($_smarty_tpl) {
+function content_57649c9b0dcc87_14978913 ($_smarty_tpl) {
+$_from = $_smarty_tpl->tpl_vars['achievements']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_achievement_0_saved_item = isset($_smarty_tpl->tpl_vars['achievement']) ? $_smarty_tpl->tpl_vars['achievement'] : false;
+$_smarty_tpl->tpl_vars['achievement'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['achievement']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['achievement']->value) {
+$_smarty_tpl->tpl_vars['achievement']->_loop = true;
+$__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'];
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Gamification Platform</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- Custom theme -->
-        <link rel="stylesheet" type="text/css" href="../css/Achievements.css">
-
-    </head>
-    <body>
-        <h1>Achievements</h1>
-        <div class="media">
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object" src="img/albert-einstein.jpg" alt="Ein schlauer Mensch" width="100" height="70">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Verrückte Combo</h4>
-                <p>Besuche fünf Vorlesungen eines Faches am Stück</p>
-                <button>20 Punkte</button>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object" src="img/runner.jpg" alt="Ein Jogger" width="100" height="70">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Weg mit dem Speck</h4>
-                <p>Nimm an der Veranstaltung "Power Fitness" teil</p>
-                <button>10 Punkte</button>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object" src="img/handschuh.jpg" alt="Ein Boxhandschuh" width="100" height="70">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Hau den Lukas</h4>
-                <p>Finde Etienne und boxe ihn so fest es geht</p>
-                <button>220 Punkte</button>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object" src="img/touch-me.jpg" alt="Ein Informatiker" width="100" height="70">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Bitte ein Bit</h4>
-                <p>Programmiere den Taschenrechner aus der Übung</p>
-                <button>25 Punkte</button>
-            </div>
-        </div>
-        <div class="media">
-            <div class="media-left media-middle">
-                <a href="#">
-                    <img class="media-object" src="img/geometry.jpg" alt="Geometrie" width="100" height="70">
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">Life of Pi</h4>
-                <p>Besuche das Mathematik Tutorium</p>
-                <button>15 Punkte</button>
-            </div>
-        </div>
-
-    <!-- jQuery library -->
-    <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-    <!-- Latest compiled and minified JavaScript -->
-    <?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-    </body>
-</html>
-<?php }
+<div id="achievementsContent" class="col-xs-8">
+  <div class="media">
+     <div class="media-left media-middle">
+         <a href="#">
+             <img class="media-object" src="img/albert-einstein.jpg" alt="Ein schlauer Mensch" width="100" height="70">
+         </a>
+     </div>
+     <div class="media-body">
+         <h4 class="media-heading"><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
+</h4>
+         <p><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getDescription();?>
+</p>
+         <p><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getObtainedDate();?>
+</p>
+         <button><?php echo ($_smarty_tpl->tpl_vars['achievement']->value->getFitnesspointValueId()+1)*50;?>
+</button>
+     </div>
+  </div>
+<?php
+$_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_local_item;
+}
+if ($__foreach_achievement_0_saved_item) {
+$_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_item;
+}
+}
 }
