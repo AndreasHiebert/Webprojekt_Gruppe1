@@ -12,6 +12,16 @@ class UserRepository {
 
         return $result;
     }
+    
+    public function getUserPosition(){
+        global $db;
+        $result = array();
+        $stmt = $db->query("SELECT * FROM users WHERE activeCourse = "+$currentUser->getCurrentCourse+" ORDER BY fitnesspoints DESC");
+        foreach ($stmt as $row){
+            $result[] = User::fromArray($row);
+        }
+       return $result;
+    }
 
     public static function saveUser($user) {
         global $db;
