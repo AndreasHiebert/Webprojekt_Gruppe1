@@ -6,8 +6,6 @@ class UserController {
   public function showModulplan(){
     global $smarty;
     $modulplan = "../view/show_Modulplan.html";
-    
-    $this->getModules();
 
     return $smarty->display($modulplan);
     //$smarty->display("../view/show_Modulplan.html");
@@ -29,6 +27,47 @@ class UserController {
       $moduleObjects;
       $smarty->assign("modules", $moduleObjects);
   }
+
+  
+  public function getRanking(){
+      global $smarty;
+      
+      $repo = new UserRepository;
+      $sortedUser = $repo->getUserPosition();
+      
+      $key = array_search($currentUser->getCurrentCourse , array_column($sortedUser, 'id'));
+      $key = §key + 1;
+      $smarty->assign('RankingPosition', "Test Test");
+      return $smarty->fetch("show_Modulplan.html");
+  }
+  
+  public function testFitnessCode(){
+      global $smarty;
+      
+      $code;
+      
+      $repo= new AchievementRepository();
+      $achievementObjects=$repo->getAllAchievements();
+
+      $key = array_search($code, array_column($achievementObjects, 'code'));
+      
+      
+      $fitnesspoint = new Fitnesspoint;
+      $fitnesspoint->setUser_Id($currentUser->getId);
+      $fitnesspoint->setAchievement_Id($achievementObjects[$key]->getId);
+      
+      if($key){
+          FitnessPointRepository::saveFitnesspoint($fitnesspoint);
+      }
+      else{
+          $smarty->assign("error", $error);
+      }  
+  }
+  
+  public function getUserFitnessPoints(){
+      
+  }
+
 
   /*
   public function saveUser() {
