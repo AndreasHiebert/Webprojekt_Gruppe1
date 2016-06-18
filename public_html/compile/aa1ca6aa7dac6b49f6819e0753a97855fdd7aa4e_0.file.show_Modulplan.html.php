@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-15 20:49:56
+/* Smarty version 3.1.29, created on 2016-06-17 23:02:29
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5761a354447a43_97587966',
+  'unifunc' => 'content_57646565b71bc3_79320747',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1465876311,
+      1 => 1466197347,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5761a354447a43_97587966 ($_smarty_tpl) {
+function content_57646565b71bc3_79320747 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +43,8 @@ function content_5761a354447a43_97587966 ($_smarty_tpl) {
         <div class="tabelle  text-center">
             <div class="text text-center">
                 <h4>Modulplan</h4>
+                <h4><?php echo $_smarty_tpl->tpl_vars['RankingPosition']->value;?>
+</h4>
             </div>
             <table class="table table-striped table-hover">
 
