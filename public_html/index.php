@@ -17,6 +17,7 @@ require 'model/Grade.php';
 require 'model/GradeRepository.php';
 
 require 'controller/UserController.php';
+require 'controller/ModuleController.php';
 require 'controller/LoginController.php';
 
 //------------------------------------------------------------------------------
@@ -79,10 +80,10 @@ $currentUser = new User();
 $currentInstructor = new Instructor();
 
 $currentUser = $userObjects[0];
-$smarty->assign("currentUser", $currentUser);
+//$smarty->assign("currentUser", $currentUser);
 
 $currentInstructor = $instructorObjects[0];
-$smarty->assign("currentInstructor", $currentInstructor);
+//$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
 

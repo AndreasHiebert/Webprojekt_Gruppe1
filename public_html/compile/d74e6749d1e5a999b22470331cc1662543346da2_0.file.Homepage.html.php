@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-18 02:53:14
+/* Smarty version 3.1.29, created on 2016-06-21 07:33:24
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57649b7ac78128_52921536',
+  'unifunc' => 'content_5768d1a4a0e532_89576492',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1466211176,
+      1 => 1466487201,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57649b7ac78128_52921536 ($_smarty_tpl) {
+function content_5768d1a4a0e532_89576492 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +27,16 @@ function content_57649b7ac78128_52921536 ($_smarty_tpl) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>HomePage</title>
-	<meta name="description" content="Hello World">
+	<title>HomePage Study Buddy</title>
+	<meta name="description" content="GamificationPlatform">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<!-- Custom theme -->
+	<!-- Custom themes -->
 	<link rel="stylesheet" type="text/css" href="../css/Homepage.css">
 	<link rel="stylesheet" type="text/css" href="../css/NavBar.css">
+	<link rel="stylesheet" type="text/css" href="../css/Modulplan.css">
+	<link rel="stylesheet" type="text/css" href="../css/Achievements.css">
+	<link rel="stylesheet" type="text/css" href="../css/Instructor.css">
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -45,7 +48,12 @@ function content_57649b7ac78128_52921536 ($_smarty_tpl) {
       <div class="container">
         <div class="navbar-header">
 		<a class="navbar-brand" href="#">
-			<a class="navbar-brand" href="#">Study Buddy</a>
+			<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+				<a class="navbar-brand" href="#">Study Buddy Admin</a>
+			<?php }?>
+			<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+				<a class="navbar-brand" href="#">Study Buddy</a>
+			<?php }?>
           <button type="button" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -55,26 +63,88 @@ function content_57649b7ac78128_52921536 ($_smarty_tpl) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li id="home"><a href="index.php?controller=LoginController&action=loginUser">Home</a></li>
+
+						<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+						<li class="divider-vertical"></li>
+            <li id="home"><a href="index.php?controller=UserController&action=showHome">Home</a></li>
             <li class="divider-vertical"></li>
-            <li><a id="modulplan" href="index.php?controller=UserController&action=showModulplan">Modulplan</a></li>
+						<?php }?>
+
+						<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+						<li class="divider-vertical"></li>
+            <li id="home"><a href="index.php?controller=UserController&action=showAdminTools">Tools</a></li>
+            <li class="divider-vertical"></li>
+						<?php }?>
+
+						<?php if (!isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+						<!--<li><a id="modulplan" href="index.php?controller=UserController&action=showModulplan">Modulplan</a></li>
+						<li class="divider-vertical"></li>
+						<li><a id="achievements" href="index.php?controller=UserController&action=showAchievements">Achievements</a></li> -->
+						<?php }?>
+
+						<?php if (isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+						<li><a id="modulplan" href="index.php?controller=UserController&action=showModulplan">Modulplan</a></li>
             <li class="divider-vertical"></li>
             <li><a id="achievements" href="index.php?controller=UserController&action=showAchievements">Achievements</a></li>
-          </ul>
+						<?php }?>
+					</ul>
           <ul class="nav navbar-nav navbar-right">
-              <li class="inactive"><a href="./">Profile<span class="sr-only">(current)</span></a></li>
-              <li class="divider-vertical"></li>
-							<li><a href="index.php?controller=UserController&action=logout">Logout</a></li>
+
+						<?php if (!isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+							<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+								<li class="divider-vertical"></li>
+								<li><a href="index.php?controller=UserController&action=login">Login</a></li>
+							<?php }?>
+						<?php }?>
+
+						<?php if (isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+							<li class="divider-vertical"></li>
+							<li><a href="index.php?controller=UserController&action=logoutUser">Logout</a></li>
+						<?php }?>
+
+						<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+							<li class="divider-vertical"></li>
+							<li><a href="index.php?controller=UserController&action=logoutInstructor">Logout</a></li>
+						<?php }?>
+
+
 						</ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
+<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+			<div class="container">
+				<div class="row">
+					<div id="maincontent" class="col-xs-8">
+					<h1>Instructor Content</h1>
+						<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
+
+					</div>
+				</div>
+			</div>
+<?php }?>
+
+<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+	<?php if (!isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+			<div class="container">
+					<div class="row">
+						<div id="maincontent" class="col-xs-8">
+							<h1>Not Logged In Content LOGIN</h1>
+							<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
+
+						</div>
+					</div>
+			</div>
+	<?php }
+}?>
+
+<?php if (isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
 	<div class="container">
 		<div class="row">
 			<div id="maincontent" class="col-xs-8">
+				<h1>User Content</h1>
 				<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
-
 
 			</div>
 			<div id="statusbar" class="col-xs-4">
@@ -93,7 +163,7 @@ function content_57649b7ac78128_52921536 ($_smarty_tpl) {
 				<div class="col-xs-12">
 					<form class="form-inline text-center formpadding">
 			              <div class="form-group">
-			                  <input id="codeinput" type="text" class="form-control" size="15" placeholder="Fitness-Code einlösen..">
+			                  <input id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
 			              </div>
 			              <button type="submit" class="btn btn-primary">Einlösen</button>
 			          </form>
@@ -130,7 +200,7 @@ function content_57649b7ac78128_52921536 ($_smarty_tpl) {
 			</div>
 		</div>
 	</div>
-
+<?php }?>
 
 
 	<!-- jQuery library -->

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-02 18:43:33
+/* Smarty version 3.1.29, created on 2016-06-21 01:23:37
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_575062350370c0_82767609',
+  'unifunc' => 'content_57687af9f2d0c9_51520495',
   'file_dependency' => 
   array (
     '24d6ce42fced6453c6fc20550a908392533f7c8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Instructor.html',
-      1 => 1464655323,
+      1 => 1466464976,
       2 => 'file',
     ),
   ),
@@ -19,57 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_575062350370c0_82767609 ($_smarty_tpl) {
+function content_57687af9f2d0c9_51520495 ($_smarty_tpl) {
 ?>
-<!DOCTYPE HTML>
-<html lang="de">
-	<head>
-
-		<title>Study Buddy | Admin</title>
-
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=no">
-
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-		<link rel="stylesheet" href="../css/Instructor.css" type="text/css">
-
-	</head>
-
-
-	<body>
-
-
-	<header>
-		<p id="headerRegards">Study Buddy | Admin</p>
-
-
-	<!--	<a target="blank" href="http://www.hshl.de/"><img src="images/logo.png" width="60px" style="float: right;margin-right:2px;margin-left:5px"></img></a> !-->
-
-		<div id="headerContentRight">
-			<p id="headerUsername">Christian B. |</p>
-			<div class="dropdown dropdown-left" id="headerMenu">
-				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					<span class="glyphicon glyphicon-cog" style="color:black"></span>
-				</button>
-
-				<ul class="dropdown-menu dropdown-menu-right">
-					<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Account</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
-				</ul>
-			</div>
-		</div>
-	</header>
-
-
-
-
-
-
-
-
-
-	<div class="container text-center" id="bodyContainer">
+<div class="container text-center" id="bodyContainer">
 
 
 
@@ -278,23 +230,5 @@ function content_575062350370c0_82767609 ($_smarty_tpl) {
 		</ul>
 
 	</div>
-
-
-
-		<!-- jQuery library -->
-		<?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-		<!-- Latest compiled JavaScript -->
-		<?php echo '<script'; ?>
- src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-		<?php echo '<script'; ?>
- src="../js/Instructor.js"><?php echo '</script'; ?>
->
-
-	</body>
-
-</html>
 <?php }
 }

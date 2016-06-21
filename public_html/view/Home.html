@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<div id="homenews" class="col-xs-8">
+			{if isset($currentUser)}
+				<h1>Hallo {$currentUser->getName()}</h1>
+			{/if}
+			{if !isset($currentUser)}
+				<h1>Hallo Besucher</h1>
+			{/if}
+		</div>
+	</div>
+</div>
