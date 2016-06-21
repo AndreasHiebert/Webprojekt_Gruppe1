@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-21 07:23:43
+/* Smarty version 3.1.29, created on 2016-06-21 20:31:21
   from "C:\xampp\htdocs\WebProjekt\public_html\view\UserRegistration.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5768cf5f4124d5_68628498',
+  'unifunc' => 'content_576987f9094296_59000533',
   'file_dependency' => 
   array (
     'e48b1a5dbb22eaa5455211088e5366f88ed52274' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\UserRegistration.html',
-      1 => 1464655174,
+      1 => 1466533878,
       2 => 'file',
     ),
   ),
@@ -19,29 +19,10 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5768cf5f4124d5_68628498 ($_smarty_tpl) {
+function content_576987f9094296_59000533 ($_smarty_tpl) {
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Study Buddy - Registration</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- Custom theme -->
-        <link rel="stylesheet" type="text/css" href="../css/Registration.css">
-    </head>
-    <body>
-    <center>
+
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <header>
-                        <h1>Study Buddy</h1>
-                    </header>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-xs-6">
                     <div class="pull-right">
@@ -132,7 +113,11 @@ function content_5768cf5f4124d5_68628498 ($_smarty_tpl) {
             </div>
 
             <div class="row">
-                <div class="col-xs-12">
+               <div class="col-xs-6">
+                 <!-- spacer to put registration_btn below form -->
+               </div>
+
+                <div class="col-xs-6">
                     <h3>
                     <input type="submit"
                            id="registration_btn"
@@ -142,16 +127,5 @@ function content_5768cf5f4124d5_68628498 ($_smarty_tpl) {
                 </div>
             </div>
         </div>
-    </center>
-    <!-- jQuery library -->
-    <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-    <!-- Latest compiled and minified JavaScript -->
-    <?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-</body>
-</html>
 <?php }
 }

@@ -5,7 +5,7 @@ class CourseRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from Courses order by id");
+        $stmt = $db->query("SELECT * FROM Courses ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Course::fromArray($row);
         }
@@ -16,7 +16,7 @@ class CourseRepository{
     public static function saveCourses($course) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into courses (name, abbreviation, module, moduleList, countParicipants, maxCp, moduleNumber, description) "
+        $stmt = $db->prepare("INSERT INTO courses (name, abbreviation, module, moduleList, countParicipants, maxCp, moduleNumber, description) "
                 . "values (:name, :abbreviation, :module, :moduleList, :countParticipants, :maxCp, :moduleNumber, :description)");
         $stmt->bindValue(':name', $course->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':abbrieviation', $course->getAbbrieviation(), PDO::PARAM_STR);

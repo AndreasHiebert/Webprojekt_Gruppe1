@@ -5,12 +5,16 @@ class LoginController {
 
   public function showLogin(){
     global $smarty;
-    $smarty->fetch("../view/Login.html");
+    return $smarty->fetch("../view/Login.html");
   }
 
   public function getUserRegistrationForm(){
     global $smarty;
-    $smarty->fetch("../view/UserRegistration.html");
+    $currentUser = NULL;
+    $smarty->assign("currentUser", $currentUser);
+    $currentInstructor = NULL;
+    $smarty->assign("currentInstructor", $currentInstructor);
+    return $smarty->fetch("../view/UserRegistration.html");
   }
 
   public function RegisterUser($UserName, $UserPassword, $EMail, $ActiveCourse){
@@ -85,9 +89,9 @@ class LoginController {
     public function loginUser() {
       global $smarty;
       //$user = User::fromArray($_REQUEST);
-      $currentUser = $userObjects[0];
-      $smarty->assign("currentUser", $currentUser);
-      $smarty->fetch("../view/Homepage.html");
+      if($currentInstructor->getId > 0){
+        return $smarty->fetch("../view/Homepage.html");
+      }
       //$error = $user->validate();
       // check if credentials match, then set $currentUser = $user with entered email and password
   //    if ($error->hasErrors()) {
@@ -110,7 +114,11 @@ class LoginController {
 
   public function getInstructorRegistrationForm(){
     global $smarty;
-    $smarty->fetch("../view/InstructorRegistration.html");
+    $currentUser = NULL;
+    $smarty->assign("currentUser", $currentUser);
+    $currentInstructor = NULL;
+    $smarty->assign("currentInstructor", $currentInstructor);
+    return $smarty->fetch("../view/InstructorRegistration.html");
   }
 
   public function RegisterInstructor($UserName, $UserPassword, $EMail){
@@ -182,9 +190,9 @@ class LoginController {
   public function loginInstructor() {
       global $smarty;
       //$user = User::fromArray($_REQUEST);
-      $currentInstructor = $instructorObjects[0];
-      $smarty->assign("currentInstructor", $currentInstructor);
-      $smarty->fetch("../view/Instructor.html");
+      
+        return $smarty->fetch("../view/Instructor.html");
+
       //$error = $user->validate();
 
       //if ($error->hasErrors()) {

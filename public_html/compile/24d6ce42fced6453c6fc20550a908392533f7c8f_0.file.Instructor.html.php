@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-21 01:23:37
+/* Smarty version 3.1.29, created on 2016-06-22 00:36:53
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57687af9f2d0c9_51520495',
+  'unifunc' => 'content_5769c1850b4a72_18141256',
   'file_dependency' => 
   array (
     '24d6ce42fced6453c6fc20550a908392533f7c8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Instructor.html',
-      1 => 1466464976,
+      1 => 1466548609,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57687af9f2d0c9_51520495 ($_smarty_tpl) {
-?>
+function content_5769c1850b4a72_18141256 ($_smarty_tpl) {
+if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 <div class="container text-center" id="bodyContainer">
 
 
@@ -231,4 +231,5 @@ function content_57687af9f2d0c9_51520495 ($_smarty_tpl) {
 
 	</div>
 <?php }
+}
 }

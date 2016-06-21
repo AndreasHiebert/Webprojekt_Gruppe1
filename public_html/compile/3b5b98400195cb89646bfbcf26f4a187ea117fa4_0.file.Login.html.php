@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-20 20:54:34
+/* Smarty version 3.1.29, created on 2016-06-22 00:03:42
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57683beaea5861_83091790',
+  'unifunc' => 'content_5769b9beaf2dd0_11396475',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1466448872,
+      1 => 1466546581,
       2 => 'file',
     ),
   ),
@@ -19,22 +19,11 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57683beaea5861_83091790 ($_smarty_tpl) {
+function content_5769b9beaf2dd0_11396475 ($_smarty_tpl) {
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login</title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- Custom theme -->
-        <link rel="stylesheet" type="text/css" href="../css/Login.css">
-    </head>
-    <body>
+
         <div id ="Headline" class="row">
-            <div class="col-sm-10">
+            <div class="col-sm-9">
                 <h1 id="GamificationPlatformName">Study Buddy</h1>
             </div>
             <div id="HSHL-Logo" class="col-sm-2">
@@ -82,16 +71,5 @@ function content_57683beaea5861_83091790 ($_smarty_tpl) {
                 </div>
             </div>
         </div>
-        </form>
-    </body>
-    <!-- jQuery library -->
-    <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-    <!-- Latest compiled and minified JavaScript -->
-    <?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-</html>
 <?php }
 }

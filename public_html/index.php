@@ -87,6 +87,7 @@ $currentInstructor = $instructorObjects[0];
 //------------------------------------------------------------------------------
 // controller
 
+
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
 } else {
@@ -102,6 +103,5 @@ if (isset($_REQUEST["action"])) {
 $controller = new $controller_name;
 $content = $controller->$action_name();
 $smarty->assign("homepage_content", $content);
-
 $smarty->display("../view/Homepage.html");
 ?>

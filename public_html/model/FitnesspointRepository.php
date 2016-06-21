@@ -5,7 +5,7 @@ class FitnesspointRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from fitnesspoints order by id");
+        $stmt = $db->query("SELECT * FROM fitnesspoints ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Fitnesspoint::fromArray($row);
         }
@@ -16,7 +16,7 @@ class FitnesspointRepository{
     public static function saveFitnesspoint($fitnesspoint) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into fitnesspoints (value) "
+        $stmt = $db->prepare("INSERT INTO fitnesspoints (value) "
                 . "values (:value");
         $stmt->bindValue(':value', $user->getValue(), PDO::PARAM_INT);
 

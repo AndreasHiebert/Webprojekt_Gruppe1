@@ -5,7 +5,7 @@ class GradeRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from grades order by id");
+        $stmt = $db->query("SELECT * FROM grades ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Grade::fromArray($row);
         }
@@ -16,7 +16,7 @@ class GradeRepository {
     public static function saveGrades($grade) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into grades (userId, moduleId, grade ) "
+        $stmt = $db->prepare("INSERT INTO grades (userId, moduleId, grade ) "
                 . "values (:userId, :moduleId, :grade)");
         $stmt->bindValue(':userId', $grade->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':moduleId', $grade->getModuleId(), PDO::PARAM_INT);

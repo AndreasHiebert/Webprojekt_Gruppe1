@@ -5,7 +5,7 @@ class AchievementRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from achievements order by id");
+        $stmt = $db->query("SELECT * FROM achievements ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Achievement::fromArray($row);
         }
@@ -16,7 +16,7 @@ class AchievementRepository{
     public static function saveAchievements($achievement) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into achievements (name, code, description, type, obtainedDate, fitnesspointValueId) "
+        $stmt = $db->prepare("INSERT INTO achievements (name, code, description, type, obtainedDate, fitnesspointValueId) "
                 . "values (:name, :code, :description, :type, :obtainedDate)");
         $stmt->bindValue(':name', $achievement->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':code', $achievement->getCode(), PDO::PARAM_STR);

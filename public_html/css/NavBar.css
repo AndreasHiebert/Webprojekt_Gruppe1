@@ -3,7 +3,7 @@
   border-color: #00796b;
   font-family: font-family: 'Open Sans', sans-serif;
   font-size: 1.3em;
-  box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
 }
 .navbar-custom .navbar-brand {
   color: #e0f2f1;

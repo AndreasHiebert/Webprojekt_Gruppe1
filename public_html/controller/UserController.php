@@ -13,33 +13,27 @@ class UserController {
     return $smarty->fetch("../view/show_Achievements.html");
   }
 
-  public function showHome(){
-    global $smarty;
-    $smarty->fetch("../view/Home.html");
-  }
-
   public function logoutUser(){
     global $smarty;
     $currentUser = NULL;
     $smarty->assign("currentUser", $currentUser);
-    $smarty->fetch("../view/Home.html");
+    $this->showLogin();
   }
 
   public function logoutInstructor(){
     global $smarty;
     $currentInstructor = NULL;
     $smarty->assign("currentInstructor", $currentInstructor);
-    $smarty->fetch("../view/Home.html");
+    $this->showLogin();
   }
 
-  public function login(){
+  public function showLogin(){
     global $smarty;
-    $smarty->fetch("../view/Login.html");
-  }
-
-  public function showAdminTools(){
-    global $smarty;
-    $smarty->fetch("../view/Instructor.html");
+    $currentUser = NULL;
+    $smarty->assign("currentUser", $currentUser);
+    $currentInstructor = NULL;
+    $smarty->assign("currentInstructor", $currentInstructor);
+    return $smarty->fetch("../view/Login.html");
   }
 }
 ?>
