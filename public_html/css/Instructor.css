@@ -43,8 +43,9 @@ header * {
 
 
 
-#bodyContainer {
+#instructorContainer {
 	margin-top:5%;
+
 }
 
 
@@ -143,4 +144,8 @@ header * {
 
 .glyphicon {
 	font-size:0.8em;
+}
+
+#tabList{
+	padding-right: 30px
 }

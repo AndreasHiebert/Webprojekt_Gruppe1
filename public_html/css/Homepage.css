@@ -6,8 +6,8 @@ body {
  }
 
 #maincontent{
-	width: 100%;
-  min-height: 100vh;
+	min-width: 100%;
+  min-height: 80vh;
   padding-top: 1em;
   border-left: 1px solid;
   border-right: 1px solid;

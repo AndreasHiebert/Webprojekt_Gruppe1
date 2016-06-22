@@ -89,9 +89,7 @@ class LoginController {
     public function loginUser() {
       global $smarty;
       //$user = User::fromArray($_REQUEST);
-      if($currentInstructor->getId > 0){
-        return $smarty->fetch("../view/Homepage.html");
-      }
+    
       //$error = $user->validate();
       // check if credentials match, then set $currentUser = $user with entered email and password
   //    if ($error->hasErrors()) {
@@ -190,7 +188,7 @@ class LoginController {
   public function loginInstructor() {
       global $smarty;
       //$user = User::fromArray($_REQUEST);
-      
+
         return $smarty->fetch("../view/Instructor.html");
 
       //$error = $user->validate();
