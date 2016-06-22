@@ -80,7 +80,7 @@ $currentUser = new User();
 $currentInstructor = new Instructor();
 
 $currentUser = $userObjects[0];
-$smarty->assign("currentUser", $currentUser);
+//$smarty->assign("currentUser", $currentUser);
 
 $currentInstructor = $instructorObjects[0];
 //$smarty->assign("currentInstructor", $currentInstructor);
