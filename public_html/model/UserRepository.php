@@ -16,7 +16,20 @@ class UserRepository {
     public function getUserPosition(){
         global $db;
         $result = array();
-        $stmt = $db->query("SELECT * FROM users WHERE activeCourse = "+$currentUser->getCurrentCourse+" ORDER BY fitnesspoints DESC");
+        $course = intval($_GET['$currentUser->getActiveCourse']);
+        $stmt = $db->query("SELECT * FROM users WHERE activeCourse = $course  ORDER BY fitnesspoints DESC");
+        foreach ($stmt as $row){
+            $result[] = User::fromArray($row);
+        }
+       return $result;
+    }
+    
+    public function  getUserFitnessPoints(){
+        global $db;
+        $result = array();
+        $UserID = intval($_GET['$currentUser->getId']);
+        $stmt = $db->query("SELECT fitnesspoints FROM users WHERE id = $UserID");
+        
         foreach ($stmt as $row){
             $result[] = User::fromArray($row);
         }
