@@ -75,25 +75,25 @@ function content_576415785495d3_49401100 ($_smarty_tpl) {
 			<div id="maincontent" class="col-ld-6 col-md-9">
 				<div class="container"><?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
 
-				</div>
+
 			</div>
-			<div id="statusbar" class="col-md-3 col-ld-3">
-					<div class="col-xs-12">CP:
+			<div id="statusbar" class="col-xs-4">
+					<div class="col-xs-12">
 						<div><div class="progress">
 				<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
-				0/220 (0%)
+				CP: 0/220 (0%)
 				</div>
 				</div></div>
 					</div>
-					<div class="col-xs-12">Fitnesspoints:
+					<div class="col-xs-12">
 						<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
- -->Over 9000 Rank #1	ISD<div>
+ -->Fitnesspoints: 9000 Rank: #1 Course: ISD<div>
 				</div></div>
 
 				<div class="col-xs-12">
 					<form class="form-inline text-center formpadding">
 			              <div class="form-group">
-			                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
+			                  <input id="codeinput" type="text" class="form-control" size="15" placeholder="Fitness-Code einlösen..">
 			              </div>
 			              <button type="submit" class="btn btn-primary">Einlösen</button>
 			          </form>
@@ -132,18 +132,6 @@ function content_576415785495d3_49401100 ($_smarty_tpl) {
 	</div>
 
 
-	<footer>
-		<div class="container">
-			<hr>
-
-			<p>
-				<small>footer</small></p>
-				<button type="button" class="btn btn-lg btn-success" id="btn1">CP+</button>
-				<button type="button" class="btn btn-lg btn-primary" id="btn2">EXP+</button>
-				<button type="button" class="btn btn-lg btn-warning" id="btn3">Clear</button>
-
-		</div> <!-- end container -->
-	</footer>
 
 	<!-- jQuery library -->
 	<?php echo '<script'; ?>
