@@ -17,6 +17,7 @@ require 'model/Grade.php';
 require 'model/GradeRepository.php';
 
 require 'controller/UserController.php';
+require 'controller/ModuleController.php';
 require 'controller/LoginController.php';
 
 //------------------------------------------------------------------------------
@@ -82,9 +83,10 @@ $currentUser = $userObjects[0];
 $smarty->assign("currentUser", $currentUser);
 
 $currentInstructor = $instructorObjects[0];
-$smarty->assign("currentInstructor", $currentInstructor);
+//$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
+
 
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
@@ -101,6 +103,5 @@ if (isset($_REQUEST["action"])) {
 $controller = new $controller_name;
 $content = $controller->$action_name();
 $smarty->assign("homepage_content", $content);
-
 $smarty->display("../view/Homepage.html");
 ?>

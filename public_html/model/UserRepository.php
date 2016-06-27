@@ -5,7 +5,7 @@ class UserRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from users order by id");
+        $stmt = $db->query("SELECT * FROM users ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = User::fromArray($row);
         }

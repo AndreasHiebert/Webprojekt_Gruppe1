@@ -13,16 +13,11 @@ class UserController {
     return $smarty->fetch("../view/show_Achievements.html");
   }
 
-  public function logout(){
+  public function logoutUser(){
     global $smarty;
-    $smarty->display("../view/Login.html");
-  }
-  
-  
-  public function getModules(){
-      global $smarty;
-      $moduleObjects;
-      $smarty->assign("modules", $moduleObjects);
+    $currentUser = NULL;
+    $smarty->assign("currentUser", $currentUser);
+    $this->showLogin();
   }
 
   
@@ -39,24 +34,54 @@ class UserController {
   
   public function testFitnessCode(){
       global $smarty;
-
-      $code;
       
       $repo= new AchievementRepository();
       $achievementObjects=$repo->getAllAchievements();
+      
+     $repoFitness = new FitnesspointRepository();
+     $fitnesspointObjects=$repoFitness->getAllFitnesspoints();
+      
+      
+      $codeValid = FALSE;     
+      $code = $_POST['code_input'];
 
-      $key = array_search($code, array_column($achievementObjects, 'code'));
+      //$key = array_search($code, array_column($achievementObjects, 'code'));
+    
       
-      $fitnesspoint = new Fitnesspoint;
-      $fitnesspoint->setUser_Id($currentUser->getId);
-      $fitnesspoint->setAchievement_Id($achievementObjects[$key]->getId);
       
-      if($key){
+      foreach ($achievementObjects as $item) {
+        $CodeArray[] = $item->getCode();
+            }
+            
+      $key = array_search($code, $CodeArray);
+    
+      $id_user = /*$currentUser->getId()*/ 1;
+      $id_achievement =$achievementObjects[$key]->getId();
+      
+      
+                
+      foreach($achievementObjects as $value){
+          if(in_array($code, $CodeArray, true)){              
+            $codeValid = true;
+            }
+        }
+        
+        foreach ($fitnesspointObjects as $fitnesspoint){
+            if ($fitnesspoint->getUserId() == $id_user && $fitnesspoint->getAchievementId() == $id_achievement){
+                $codeValid = false;
+            }
+        }
+      
+        if($codeValid){
+            
+          $fitnesspoint = new Fitnesspoint();
+          $fitnesspoint->setUserId($id_user);
+          $fitnesspoint->setAchievementId($id_achievement);
+            
           FitnessPointRepository::saveFitnesspoint($fitnesspoint);
-      }
-      else{
-          $smarty->assign("error", $error);
-      }  
+          $smarty->assign("codeValid",$codeValid);
+          return $smarty->fetch("show_Achievements.html");
+        }
   }
   
   public function getUserFitnessPoints(){
@@ -72,79 +97,20 @@ class UserController {
   }
 
 
-  /*
-  public function saveUser() {
-      global $smarty;
-      $user = User::fromArray($_REQUEST);
-      $error = $user->validate();
-
-      if ($error->hasErrors()) {
-          $smarty->assign("user", $user);
-          $smarty->assign("error", $error);
-          return $smarty->display("../view/Registration.html");
-      } else {
-          UserRepository::saveUser($user);
-      }
+  public function logoutInstructor(){
+    global $smarty;
+    $currentInstructor = NULL;
+    $smarty->assign("currentInstructor", $currentInstructor);
+    $this->showLogin();
   }
-  */
 
-  //public function showLogin() {
-  //    global $smarty;
-  //    $objects = UserRepository::getAllUsers();
-  //    $smarty->assign("users", $objects);
-  //    return $smarty->display("../view/Login.html");
-  //}
-
-
-//  public function login(){
-//    global $smarty;
-//    $smarty->display("../view/homepage.html");
-/*    $user = User::fromArray($_REQUEST);
-    // get the user with matching email and password into $currentUser, else error
-    $currentUser = UserRepository::login($user->getEmail, $user->getPassword);
-
-    if($currentUser->getId = 0){
-      // login failed
-      $smarty->display("../view/Login.html");
-    } else {
-      // login sucessfull
-      $smarty->display("../view/Homepage.html");
-    }
-
-    $_success = $currentUser->login($email,$password);
-      if($_success === true){
-        $smarty->display("../view/Homepage.html");
-        } else {
-        // show login error here
-      }
-
-    //global $smarty;
-    //$objects = UserRepository::getAllUsers();
-    //$user = User::fromArray($_REQUEST);
-
-    //if($_user){
-
-    //}
-    //$smarty->display("../view/Registration.html");
-  //  if ($error->hasErrors()) {
-  //      $smarty->assign("user", $user);
-//        $smarty->assign("error", $error);
-//        return $smarty->display($registrationurl);
-  //  } else {
-  /*      foreach ($users as $user_item){ //?  Parse error: syntax error, unexpected 'from' (T_STRING), expecting '(' in C:\xampp\htdocs\WebProjekt\public_html\controller\UserController.php on line 32
-          if ($user->getEmail === $user_item->getEmail) {
-            if($user->getPassword === $user_item->getPassword){
-              $currentUser = $user_item;
-              //$smarty->display($userurl);
-            } else {
-              $smarty->assign("error_failPass", $error);
-            }
-          } else {
-            $smarty->assign("error_failEmail", $error);
-          }
-        }
-      }*/
-//  }
-
+  public function showLogin(){
+    global $smarty;
+    $currentUser = NULL;
+    $smarty->assign("currentUser", $currentUser);
+    $currentInstructor = NULL;
+    $smarty->assign("currentInstructor", $currentInstructor);
+    return $smarty->fetch("../view/Login.html");
+  }
 }
 ?>

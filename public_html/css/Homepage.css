@@ -2,53 +2,17 @@ body {
   /* put everthing under the nav bar */
   padding-top: 50px;
   padding-bottom: 20px;
+  height:70%;
  }
-/* Grid Border */
-.col-ld-9{
-	border-width:1px;
-  border-style:outset;
-}
-.col-ld-6{
-	border: 1px solid;
-}
-.col-ld-3{
-	border: 1px solid white;
-}
-
-.col-md-9{
-	border-width:1px;
-    border-style:solid;
-}
-.col-md-6{
-	border: 1px solid;
-}
-.col-md-3{
-	border: 1px solid;
-}
-
-.col-xs-12{
-	border: 1px solid;
-}
-
-.col-xs-9{
-	border: 1px solid;
-}
-.col-xs-6{
-	border: 1px solid;
-}
-.col-xs-3{
-	border: 1px solid;
-}
-
-.col-xs-4{
-	border: 1px solid;
-}
 
 #maincontent{
-	width: 100%;
+	min-width: 100%;
+  min-height: 80vh;
   padding-top: 1em;
   border-left: 1px solid;
   border-right: 1px solid;
+  border-bottom: 1px solid;
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
 }
 
 #statusbar{

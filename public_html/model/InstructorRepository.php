@@ -5,7 +5,7 @@ class InstructorRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * from instructors order by id");
+        $stmt = $db->query("SELECT * FROM instructors ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Instructor::fromArray($row);
         }
@@ -16,7 +16,7 @@ class InstructorRepository {
     public static function saveInstructor($instructor) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into instructors (name, email, password, approved) "
+        $stmt = $db->prepare("INSERT INTO instructors (name, email, password, approved) "
                 . "values (:name, :email, :password, :approved");
         $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);

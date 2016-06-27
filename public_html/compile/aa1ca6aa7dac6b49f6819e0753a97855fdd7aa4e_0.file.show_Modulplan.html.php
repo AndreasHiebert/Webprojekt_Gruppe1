@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-20 11:58:40
+/* Smarty version 3.1.29, created on 2016-06-21 00:34:58
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5767be508ebb28_08396868',
+  'unifunc' => 'content_57686f92a3e746_17543884',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1466416701,
+      1 => 1466462045,
       2 => 'file',
     ),
   ),
@@ -19,26 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5767be508ebb28_08396868 ($_smarty_tpl) {
+function content_57686f92a3e746_17543884 ($_smarty_tpl) {
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Fitnesspoints</title>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- Custom theme -->
-        <link rel="stylesheet" type="text/css" href="../css/Modulplan.css">
-    </head>
-
-    <!-- 			<li><form class="form-inline text-center formpadding">
-              <div class="form-group">
-                  <input id="codeinput" type="text" class="form-control" size="10" placeholder="Fitness-Code einlösen..">
-              </div>
-              <button type="submit" class="btn btn-primary">Einlösen</button>
-          </form></li> -->
 
         <div class="tabelle  text-center">
             <div class="text text-center">
@@ -129,16 +111,5 @@ function content_5767be508ebb28_08396868 ($_smarty_tpl) {
             <a href="#" class="btn btn-default btn-lg">
                 <span class="glyphicon glyphicon-check"></span> Bestätigen</a>
         </div>
-
-        <!-- jQuery library -->
-        <?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-        <!-- Latest compiled and minified JavaScript -->
-        <?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-    </body>
-</html>
 <?php }
 }

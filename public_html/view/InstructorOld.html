@@ -1,5 +1,52 @@
-{if isset($currentInstructor)}
-<div class="container text-center" id="instructorContainer">
+<!DOCTYPE HTML>
+<html lang="de">
+	<head>
+
+		<title>Study Buddy | Admin</title>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="../css/Instructor.css" type="text/css">
+
+	</head>
+
+
+	<body>
+
+
+	<header>
+		<p id="headerRegards">Study Buddy | Admin</p>
+
+
+	<!--	<a target="blank" href="http://www.hshl.de/"><img src="images/logo.png" width="60px" style="float: right;margin-right:2px;margin-left:5px"></img></a> !-->
+
+		<div id="headerContentRight">
+			<p id="headerUsername">Christian B. |</p>
+			<div class="dropdown dropdown-left" id="headerMenu">
+				<button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-cog" style="color:black"></span>
+				</button>
+
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Account</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+
+
+
+
+
+
+
+
+	<div class="container text-center" id="bodyContainer">
 
 
 
@@ -15,7 +62,7 @@
 
 		<br><br><br><br><br><br>
 
-		<ul class="list-group text-left" id ="tabList">
+		<ul class="list-group text-left">
 
 			<li class="list-group-item listItem" id="listItem0">User bearbeiten <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
 
@@ -208,4 +255,15 @@
 		</ul>
 
 	</div>
-{/if}
+
+
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="../js/Instructor.js"></script>
+
+	</body>
+
+</html>
