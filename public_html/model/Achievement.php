@@ -7,7 +7,7 @@ class Achievement{
     private $description="";
     private $type=0;
     private $obtainedDate = "";
-    private $fitnesspointValueId = 0;
+    private $value = 0;
 
 
     public static function fromArray($row) {
@@ -17,6 +17,7 @@ class Achievement{
       $obj->setCode($row["code"]);
       $obj->setDescription($row["description"]);
       $obj->setType($row["type"]);
+      $obj->setValue($row["value"]);
       return $obj;
     }
 
@@ -68,12 +69,12 @@ class Achievement{
         $this->obtainedDate = $value;
     }
 
-    public function getFitnesspointValueId(){
-        return $this->fitnesspointValueId;
+    public function getValue(){
+        return $this->value;
     }
 
-    public function setFitnesspointValueId($value){
-        $this->fitnesspointValueId = $value;
+    public function setValue($value){
+        $this->value = $value;
     }
 }
 ?>
