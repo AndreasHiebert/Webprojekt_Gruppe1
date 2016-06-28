@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-27 14:04:35
+/* Smarty version 3.1.29, created on 2016-06-28 13:46:45
   from "C:\xampp\htdocs\WebProjekt\public_html\view\homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57711653affff7_20768536',
+  'unifunc' => 'content_577263a53a6527_15329447',
   'file_dependency' => 
   array (
     '767ecda1ec5d79ef8871d860ee65dece09862a2a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\homepage.html',
-      1 => 1467028861,
+      1 => 1467114333,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57711653affff7_20768536 ($_smarty_tpl) {
+function content_577263a53a6527_15329447 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,8 +145,8 @@ function content_57711653affff7_20768536 ($_smarty_tpl) {
  Rank: #1 Course: ISD<div>
 						</div></div>
                                                             <?php if (isset($_smarty_tpl->tpl_vars['codeValid']->value)) {?>
-                                                            <div class="alert alert-warning">
-                                                            <strong>Warning!</strong> Indicates a warning that might need attention.
+                                                            <div class="alert alert-success">
+                                                            <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
                                                             </div>
                                                             <?php }?>
 
@@ -160,18 +160,34 @@ function content_57711653affff7_20768536 ($_smarty_tpl) {
 						</div>
 
 							</div>
+                                            
+                                            <?php
+$_from = $_smarty_tpl->tpl_vars['FitnessPointsCurrent']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_fitnesspoint_0_saved_item = isset($_smarty_tpl->tpl_vars['fitnesspoint']) ? $_smarty_tpl->tpl_vars['fitnesspoint'] : false;
+$_smarty_tpl->tpl_vars['fitnesspoint'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['fitnesspoint']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['fitnesspoint']->value) {
+$_smarty_tpl->tpl_vars['fitnesspoint']->_loop = true;
+$__foreach_fitnesspoint_0_saved_local_item = $_smarty_tpl->tpl_vars['fitnesspoint'];
+?>
 							<div class="col-xs-12">
-								<div>Achievement 1</div>
+                                                            <p><?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getName();?>
+</p>
+                                                            <p><?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getValue();?>
+</p>
+                                                           
 							</div>
-							<div class="col-xs-12">
-								<div>Achievement 2</div>
-							</div>
-							<div class="col-xs-12">
-								<div>Achievement 3</div>
-							</div>
-							<div class="col-xs-12">
-								<div>Achievement 4</div>
-							</div>
+		
+                                            <?php
+$_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_local_item;
+}
+if ($__foreach_fitnesspoint_0_saved_item) {
+$_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_item;
+}
+?>
 
 						<div class="row">
 							<div class="col-xs-3">

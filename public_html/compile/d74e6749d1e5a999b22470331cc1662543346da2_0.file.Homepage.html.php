@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-27 14:18:59
+/* Smarty version 3.1.29, created on 2016-06-28 14:04:54
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577119b38c7994_25517501',
+  'unifunc' => 'content_577267e6754203_15641948',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467029931,
+      1 => 1467115482,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577119b38c7994_25517501 ($_smarty_tpl) {
+function content_577267e6754203_15641948 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -160,18 +160,32 @@ function content_577119b38c7994_25517501 ($_smarty_tpl) {
 						</div>
 
 							</div>
+                                            
+                                            <?php
+$_from = $_smarty_tpl->tpl_vars['recentFitnesspoints']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_fitnesspoint_0_saved_item = isset($_smarty_tpl->tpl_vars['fitnesspoint']) ? $_smarty_tpl->tpl_vars['fitnesspoint'] : false;
+$_smarty_tpl->tpl_vars['fitnesspoint'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['fitnesspoint']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['fitnesspoint']->value) {
+$_smarty_tpl->tpl_vars['fitnesspoint']->_loop = true;
+$__foreach_fitnesspoint_0_saved_local_item = $_smarty_tpl->tpl_vars['fitnesspoint'];
+?>
 							<div class="col-xs-12">
-								<div>Achievement 1</div>
+                                                            <b><p><?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getName();?>
+</p></b>
+                                                            <p>Erhaltene Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getValue();?>
+</p>
 							</div>
-							<div class="col-xs-12">
-								<div>Achievement 2</div>
-							</div>
-							<div class="col-xs-12">
-								<div>Achievement 3</div>
-							</div>
-							<div class="col-xs-12">
-								<div>Achievement 4</div>
-							</div>
+                                            <?php
+$_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_local_item;
+}
+if ($__foreach_fitnesspoint_0_saved_item) {
+$_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_item;
+}
+?>
 
 						<div class="row">
 							<div class="col-xs-3">

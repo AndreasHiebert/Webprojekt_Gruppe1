@@ -76,6 +76,12 @@ $smarty->assign("grades", $gradeObjects);
 //------------------------------------------------------------------------------
 // set test accounts
 
+$repo = new UserRepository();
+$RecentAchievement = $repo->getRecentAchievement();
+$smarty->assign("recentFitnesspoints" , $RecentAchievement);
+
+
+
 $currentUser = new User();
 $currentInstructor = new Instructor();
 

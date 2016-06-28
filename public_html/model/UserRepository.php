@@ -15,25 +15,58 @@ class UserRepository {
     
     public function getUserPosition(){
         global $db;
+        
+        global $currentUser;
         $result = array();
-        $course = intval($_GET['$currentUser->getActiveCourse']);
-        $stmt = $db->query("SELECT * FROM users WHERE activeCourse = $course  ORDER BY fitnesspoints DESC");
+        $course = intval($_GET['$currentUser->getActiveCourse()']);
+        $stmt = $db->query("SELECT u.id, SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.activeCourse = $course GROUP BY u.id ORDER BY SUM(a.value) DESC");
         foreach ($stmt as $row){
-            $result[] = User::fromArray($row);
+            $result[] = $row["id"];;
         }
-       return $result;
+        
+        $userId = $currentUser->getId();
+        $key = array_search($userId, $result);
+        
+        return $key + 1;
     }
     
     public function  getUserFitnessPoints(){
         global $db;
-        $result = array();
+        
         $UserID = intval($_GET['$currentUser->getId']);
-        $stmt = $db->query("SELECT fitnesspoints FROM users WHERE id = $UserID");
+        print_r($UserID);
+        $stmt = $db->query("SELECT SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.id = $UserID GROUP BY u.id");
         
         foreach ($stmt as $row){
-            $result[] = User::fromArray($row);
+            $result[] = $row["SUM(a.value)"];
         }
-       return $result;
+       return $result[0];
+    }
+    
+    public function getRecentAchievement(){
+        global $db;
+        $result = array();
+        
+        $UserID = intval($_GET['$currentUser->getId']);
+        $stmt = $db->query("SELECT name, value FROM fitnesspoints f INNER JOIN achievements a ON a.id = f.achievement_id WHERE f.user_id = 1 ORDER BY f.id DESC");
+        
+        $zaehler = 0;
+        
+         foreach ($stmt as $row) {
+            
+             if($zaehler === 5){
+                 break;
+             }
+             
+             $obj = new Achievement();
+             $obj->setName($row["name"]);
+             $obj->setValue($row["value"]);
+             
+             $result[] = $obj;
+             
+             $zaehler++;
+        }
+        return $result;
     }
 
     public static function saveUser($user) {
