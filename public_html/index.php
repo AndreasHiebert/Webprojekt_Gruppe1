@@ -76,12 +76,6 @@ $smarty->assign("grades", $gradeObjects);
 //------------------------------------------------------------------------------
 // set test accounts
 
-$repo = new UserRepository();
-$RecentAchievement = $repo->getRecentAchievement();
-$smarty->assign("recentFitnesspoints" , $RecentAchievement);
-
-
-
 $currentUser = new User();
 $currentInstructor = new Instructor();
 
@@ -92,6 +86,17 @@ $currentInstructor = $instructorObjects[0];
 //$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
+$repo = new UserRepository();
+$RecentAchievement = $repo->getRecentAchievement();
+$smarty->assign("recentFitnesspoints" , $RecentAchievement);
+
+  $repo = new UserRepository;
+  $sortedUser = $repo->getUserPosition($currentUser);
+  $smarty->assign("UserPositon", $sortedUser);
+  
+  $repo= new UserRepository();
+  $FitnessPointsCurrent= $repo->getUserFitnessPoints($currentUser);
+  $smarty->assign("FitnessPointsCurrent",$FitnessPointsCurrent);
 
 
 if (isset($_REQUEST["controller"])) {

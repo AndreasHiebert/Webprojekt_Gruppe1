@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-28 14:04:54
+/* Smarty version 3.1.29, created on 2016-06-28 14:29:36
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577267e6754203_15641948',
+  'unifunc' => 'content_57726db0d9e6b4_93583600',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467115482,
+      1 => 1467116969,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577267e6754203_15641948 ($_smarty_tpl) {
+function content_57726db0d9e6b4_93583600 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -140,9 +140,9 @@ function content_577267e6754203_15641948 ($_smarty_tpl) {
 						</div></div>
 							</div>
 							<div class="col-xs-12">
-								<div id = "user_fitnesspoints"> <!--<?php echo $_smarty_tpl->tpl_vars['fitnesspoints_content']->value;?>
- -->Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getFitnesspoints;?>
- Rank: #1 Course: ISD<div>
+								<div id = "user_fitnesspoints"> Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['FitnessPointsCurrent']->value;?>
+ Rank: #<?php echo $_smarty_tpl->tpl_vars['UserPositon']->value;?>
+ Course: ISD<div>
 						</div></div>
                                                             <?php if (isset($_smarty_tpl->tpl_vars['codeValid']->value)) {?>
                                                             <div class="alert alert-success">

@@ -13,28 +13,28 @@ class UserRepository {
         return $result;
     }
     
-    public function getUserPosition(){
+    public function getUserPosition(User $user){
         global $db;
         
-        global $currentUser;
         $result = array();
-        $course = intval($_GET['$currentUser->getActiveCourse()']);
+        $course = $user->getActiveCourse();
+        
         $stmt = $db->query("SELECT u.id, SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.activeCourse = $course GROUP BY u.id ORDER BY SUM(a.value) DESC");
         foreach ($stmt as $row){
-            $result[] = $row["id"];;
+            $result[] = $row["id"];
         }
         
-        $userId = $currentUser->getId();
+        $userId = $user->getId();
         $key = array_search($userId, $result);
         
         return $key + 1;
     }
     
-    public function  getUserFitnessPoints(){
+    public function  getUserFitnessPoints(User $user){
         global $db;
         
-        $UserID = intval($_GET['$currentUser->getId']);
-        print_r($UserID);
+        $UserID = $user->getId();
+  
         $stmt = $db->query("SELECT SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.id = $UserID GROUP BY u.id");
         
         foreach ($stmt as $row){

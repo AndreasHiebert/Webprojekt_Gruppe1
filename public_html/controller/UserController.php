@@ -19,16 +19,6 @@ class UserController {
     $smarty->assign("currentUser", $currentUser);
     $this->showLogin();
   }
-
-  
-  public function getRanking(){
-      global $smarty;
-      
-      $repo = new UserRepository;
-      $sortedUser = $repo->getUserPosition();
-      
-      print_r($sortedUser);
-  }
   
   public function testFitnessCode(){
       global $smarty;
@@ -68,19 +58,6 @@ class UserController {
         }
   }
   
-  public function getUserFitnessPoints(){
-      global $smarty;
-      
-      $repo= new UserRepository();
-      $FitnessPointsCurrent= $repo->getUserFitnessPoints();
-      print_r($FitnessPointsCurrent);
-      
-      $smarty->assign("FitnessPointsCurrent",$FitnessPointsCurrent);
-      return $smarty->fetch("homepage.html");
-      
-  }
-  
-
     public function logoutInstructor(){
     global $smarty;
     $currentInstructor = NULL;
