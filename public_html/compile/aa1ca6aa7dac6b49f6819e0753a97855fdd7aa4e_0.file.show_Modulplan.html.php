@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 18:19:15
+/* Smarty version 3.1.29, created on 2016-07-06 18:23:24
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d2f8310aff1_08179678',
+  'unifunc' => 'content_577d307c594977_62879562',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467821953,
+      1 => 1467821965,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d2f8310aff1_08179678 ($_smarty_tpl) {
+function content_577d307c594977_62879562 ($_smarty_tpl) {
 ?>
 <h1>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCourseAbbreviation();?>
 </h1>

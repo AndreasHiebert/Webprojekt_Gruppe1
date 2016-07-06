@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 18:05:15
+/* Smarty version 3.1.29, created on 2016-07-06 18:25:51
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d2c3b2c76f2_07773040',
+  'unifunc' => 'content_577d310fa3cca8_46377518',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1467821113,
+      1 => 1467822350,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d2c3b2c76f2_07773040 ($_smarty_tpl) {
+function content_577d310fa3cca8_46377518 ($_smarty_tpl) {
 ?>
-<h1>Deine Achievements</h1>
+<h1>Errungene Achievements</h1>
 
 <?php
 $_from = $_smarty_tpl->tpl_vars['achievements']->value;
@@ -35,7 +35,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['achievement']->value) {
 $_smarty_tpl->tpl_vars['achievement']->_loop = true;
 $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'];
 ?>
-<div id="achievementsContent" class="col-xs-8">
   <div class="media">
      <div class="media-left media-middle">
          <a href="#">
@@ -52,7 +51,7 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
          <button><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
 </button>
      </div>
-  </div>
+   </div>
 <?php
 $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_local_item;
 }

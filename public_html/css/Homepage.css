@@ -1,8 +1,7 @@
 body {
   /* put everthing under the nav bar */
-  padding-top: 50px;
-  padding-bottom: 20px;
-  height:70%;
+  padding-top: 25px;
+  height: 100%;
   font-family: 'Open Sans', sans-serif;
  }
 
