@@ -129,6 +129,18 @@
                                                             <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
                                                             </div>
                                                             {/if}
+                                                            {if isset($codeFalse)}
+                                                                {if $error == 1}
+                                                                    <div class="alert alert-danger">
+                                                                        <strong>Achtung!</strong> Ihr Code wurde schon einmal eingelöst.
+                                                                    </div>
+                                                                {/if}
+                                                                {if $error == 2}
+                                                                    <div class="alert alert-danger">
+                                                                        <strong>Achtung!</strong> Ihr Code ist abgelaufen.
+                                                                    </div>
+                                                                {/if}
+                                                            {/if}
 
 						<div class="col-xs-12">
 							<form action="index.php?controller=UserController&action=testFitnessCode" class="form-inline text-center formpadding" method="post">

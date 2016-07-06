@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 19:25:41
+/* Smarty version 3.1.29, created on 2016-07-06 20:58:27
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d3f151e2704_84149018',
+  'unifunc' => 'content_577d54d34259b8_83140099',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467825925,
+      1 => 1467831500,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d3f151e2704_84149018 ($_smarty_tpl) {
+function content_577d54d34259b8_83140099 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -171,6 +171,18 @@ function content_577d3f151e2704_84149018 ($_smarty_tpl) {
                                                             <div class="alert alert-success">
                                                             <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
                                                             </div>
+                                                            <?php }?>
+                                                            <?php if (isset($_smarty_tpl->tpl_vars['codeFalse']->value)) {?>
+                                                                <?php if ($_smarty_tpl->tpl_vars['error']->value == 1) {?>
+                                                                    <div class="alert alert-danger">
+                                                                        <strong>Achtung!</strong> Ihr Code wurde schon einmal eingelöst.
+                                                                    </div>
+                                                                <?php }?>
+                                                                <?php if ($_smarty_tpl->tpl_vars['error']->value == 2) {?>
+                                                                    <div class="alert alert-danger">
+                                                                        <strong>Achtung!</strong> Ihr Code ist abgelaufen.
+                                                                    </div>
+                                                                <?php }?>
                                                             <?php }?>
 
 						<div class="col-xs-12">

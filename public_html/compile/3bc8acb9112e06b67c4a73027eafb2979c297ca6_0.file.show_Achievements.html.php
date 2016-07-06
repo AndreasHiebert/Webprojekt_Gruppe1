@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 18:25:51
+/* Smarty version 3.1.29, created on 2016-07-06 20:10:34
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d310fa3cca8_46377518',
+  'unifunc' => 'content_577d499a4554b5_12182912',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1467822350,
+      1 => 1467828601,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d310fa3cca8_46377518 ($_smarty_tpl) {
+function content_577d499a4554b5_12182912 ($_smarty_tpl) {
 ?>
 <h1>Errungene Achievements</h1>
 

@@ -59,8 +59,19 @@ class UserController {
         foreach ($fitnesspointObjects as $fitnesspoint){
             if ($fitnesspoint->getUserId() == $id_user && $fitnesspoint->getAchievementId() == $id_achievement){
                 $codeValid = false;
+                $smarty->assign("codeFalse",TRUE);
+                $smarty->assign("error",1);
             }
         }
+        
+        $achievementTime = strtotime($achievementObjects[$key]->getObtainedDate());
+        
+        if(($achievementTime+3600) <= time()){
+            $codeValid = false;
+            $smarty->assign("codeFalse",TRUE);
+            $smarty->assign("error",2);
+        }
+        
         if($codeValid){
           $fitnesspoint = new Fitnesspoint();
           $fitnesspoint->setUserId($id_user);
