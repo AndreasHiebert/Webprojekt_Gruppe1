@@ -75,6 +75,7 @@ class ModuleController {
     
     public function getCurrentCp() {
         $currentCp = 0;
+        
         $moduleObjects = $repoModules->getAllModules();
         
         foreach($moduleObjects as $module)

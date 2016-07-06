@@ -84,6 +84,38 @@ class UserRepository {
         }
         return $result;
     }
+    
+    public function getCpReached(User $user){
+        
+        global $db;
+        $result = 0;
+        
+        $UserID = $user->getId();
+        
+        $stmt = $db->query("SELECT SUM(modules.cp) FROM grades inner JOIN modules ON grades.module_id = modules.id WHERE grades.user_id = $UserID");
+    
+        foreach($stmt as $row){
+            $result = $row["SUM(modules.cp)"];
+        }
+     
+        return $result;
+    }
+    
+    public function getCpAll(User $user){
+        global $db;
+        $result = 0;
+        
+        $UserID = $user->getId();
+        
+        $stmt = $db->query("SELECT SUM(cp) FROM modules WHERE course_id = 1");
+    
+        foreach($stmt as $row){
+            $result = $row["SUM(cp)"];
+        }
+     
+        return $result;
+    
+    }
 
     public static function saveUser($user) {
         global $db;

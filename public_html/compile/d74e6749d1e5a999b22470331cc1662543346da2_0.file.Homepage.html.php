@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 16:39:51
+/* Smarty version 3.1.29, created on 2016-07-06 18:35:33
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d1837817c48_57123221',
+  'unifunc' => 'content_577d3355be3354_87900699',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467815985,
+      1 => 1467822930,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d1837817c48_57123221 ($_smarty_tpl) {
+function content_577d3355be3354_87900699 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +32,12 @@ function content_577d1837817c48_57123221 ($_smarty_tpl) {
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Custom themes -->
-	<link rel="stylesheet" type="text/css" href="../css/Homepage.css">
-	<link rel="stylesheet" type="text/css" href="../css/NavBar.css">
-	<link rel="stylesheet" type="text/css" href="../css/Modulplan.css">
-	<link rel="stylesheet" type="text/css" href="../css/Achievements.css">
-	<link rel="stylesheet" type="text/css" href="../css/Instructor.css">
-	<link rel="stylesheet" type="text/css" href="../css/Registration.css">
+	<link rel="stylesheet" type="text/css" href="/css/Homepage.css">
+	<link rel="stylesheet" type="text/css" href="/css/NavBar.css">
+	<link rel="stylesheet" type="text/css" href="/css/Modulplan.css">
+	<link rel="stylesheet" type="text/css" href="/css/Achievements.css">
+	<link rel="stylesheet" type="text/css" href="/css/Instructor.css">
+	<link rel="stylesheet" type="text/css" href="/css/Registration.css">
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -150,10 +150,16 @@ function content_577d1837817c48_57123221 ($_smarty_tpl) {
 					<div id="statusbar" class="col-xs-4">
 							<div class="col-xs-12">
 								<div><div class="progress">
-						<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
-						CP: 0/220 (0%)
+						<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: <?php echo ($_smarty_tpl->tpl_vars['CPReached']->value/$_smarty_tpl->tpl_vars['CPMax']->value)*100;?>
+%">
 						</div>
 						</div></div>
+                                                            <div>
+                                                                CP: <?php echo $_smarty_tpl->tpl_vars['CPReached']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['CPMax']->value;?>
+(<?php echo ($_smarty_tpl->tpl_vars['CPReached']->value/$_smarty_tpl->tpl_vars['CPMax']->value)*100;?>
+%)
+                                                            </div>
 							</div>
 							<div class="col-xs-12">
 								<div id = "user_fitnesspoints"> Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['FitnessPointsCurrent']->value;?>

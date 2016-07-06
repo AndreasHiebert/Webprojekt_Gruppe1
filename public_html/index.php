@@ -96,9 +96,14 @@ $smarty->assign("recentFitnesspoints" , $RecentAchievement);
   
   $repo= new UserRepository();
   $FitnessPointsCurrent= $repo->getUserFitnessPoints($currentUser);
+  $CPMax = $repo->getCpAll($currentUser);
+  $CPReached = $repo->getCpReached($currentUser);
   $smarty->assign("FitnessPointsCurrent",$FitnessPointsCurrent);
-
-
+  $smarty->assign("CPMax",$CPMax);
+  $smarty->assign("CPReached",$CPReached);
+  
+  
+  
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
 } else {
