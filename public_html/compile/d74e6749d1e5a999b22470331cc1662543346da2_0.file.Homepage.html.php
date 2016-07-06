@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 19:25:41
+/* Smarty version 3.1.29, created on 2016-07-06 20:56:32
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d3f151e2704_84149018',
+  'unifunc' => 'content_577d5460e0a433_62748489',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467825925,
+      1 => 1467831367,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d3f151e2704_84149018 ($_smarty_tpl) {
+function content_577d5460e0a433_62748489 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +115,7 @@ function content_577d3f151e2704_84149018 ($_smarty_tpl) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+<div id = "theBigBorder">
 		<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 			<?php if (!isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
 					<div class="container">
@@ -148,18 +148,15 @@ function content_577d3f151e2704_84149018 ($_smarty_tpl) {
 
 					</div>
 					<div id="statusbar" class="col-xs-3">
+
+						<h1>Statusbar</h1>
+
 							<div class="col-xs-12">
 								<div><div class="progress">
-						<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: <?php echo ($_smarty_tpl->tpl_vars['CPReached']->value/$_smarty_tpl->tpl_vars['CPMax']->value)*100;?>
-%">
+						<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="220" style="width: 0%">
+						CP: 0/220 (0%)
 						</div>
 						</div></div>
-                                                            <div>
-                                                                CP: <?php echo $_smarty_tpl->tpl_vars['CPReached']->value;?>
-/<?php echo $_smarty_tpl->tpl_vars['CPMax']->value;?>
-(<?php echo ($_smarty_tpl->tpl_vars['CPReached']->value/$_smarty_tpl->tpl_vars['CPMax']->value)*100;?>
-%)
-                                                            </div>
 							</div>
 							<div class="col-xs-12">
 								<div id = "user_fitnesspoints"> Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['FitnessPointsCurrent']->value;?>
@@ -214,8 +211,11 @@ $_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_item;
 				</div>
 			</div>
 		<?php }?>
-
+</div>
 </body>
+<footer>
+
+</footer>
 </html>
 <?php }
 }

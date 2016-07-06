@@ -5,21 +5,32 @@ body {
   font-family: 'Open Sans', sans-serif;
  }
 
-#maincontent{
+#theBigBorder{
   min-height: 80vh;
+  max-height: 80vh;
   padding-top: 1em;
+}
+
+#maincontent{
+  overflow-y: auto;
+  min-height: 80vh;
   border-left: 1px solid;
-  border-right: 1px solid;
   border-bottom: 1px solid;
-  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
 }
 
 #statusbar{
 	float: right;
+  min-height: 80vh;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
 }
 
 #user_fitnesspoints{
   color: white;
   background-color: #0099ff;
   text-align: center;
+}
+
+footer {
+  background-color: black;
 }

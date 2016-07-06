@@ -15,9 +15,9 @@ class UserRepository {
 
     public function getHighestSemester(){
         global $db;
+        global $currentUser;
 
-        //$course = $currentUser->getActiveCourse();
-        $course = 1;
+        $course = $currentUser->getActiveCourse();
 
         $result = array();
         $stmt = $db->query("SELECT semester FROM modules WHERE course_id = $course ORDER by semester ASC LIMIT 0,1");
@@ -31,9 +31,9 @@ class UserRepository {
 
     public function getCurrentUserCourseAbbreviation(){
         global $db;
+        global $currentUser;
 
-        //$course = $currentUser->getActiveCourse();
-        $course = 1;
+        $course = $currentUser->getActiveCourse();
 
         $result = array();
         $stmt = $db->query("SELECT abbreviation FROM courses WHERE id = $course");
@@ -100,37 +100,37 @@ class UserRepository {
         }
         return $result;
     }
-    
+
     public function getCpReached(User $user){
-        
+
         global $db;
         $result = 0;
-        
+
         $UserID = $user->getId();
-        
+
         $stmt = $db->query("SELECT SUM(modules.cp) FROM grades inner JOIN modules ON grades.module_id = modules.id WHERE grades.user_id = $UserID");
-    
+
         foreach($stmt as $row){
             $result = $row["SUM(modules.cp)"];
         }
-     
+
         return $result;
     }
-    
+
     public function getCpAll(User $user){
         global $db;
         $result = 0;
-        
+
         $UserID = $user->getId();
-        
+
         $stmt = $db->query("SELECT SUM(cp) FROM modules WHERE course_id = 1");
-    
+
         foreach($stmt as $row){
             $result = $row["SUM(cp)"];
         }
-     
+
         return $result;
-    
+
     }
 
     public static function saveUser($user) {

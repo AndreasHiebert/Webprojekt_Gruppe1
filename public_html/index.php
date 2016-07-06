@@ -77,6 +77,7 @@ $smarty->assign("grades", $gradeObjects);
 // set test accounts
 
 $currentUser = new User();
+$GLOBALS['currentUser'] = new User();
 $currentInstructor = new Instructor();
 
 $currentUser = $userObjects[0];
@@ -101,9 +102,9 @@ $smarty->assign("recentFitnesspoints" , $RecentAchievement);
   $smarty->assign("FitnessPointsCurrent",$FitnessPointsCurrent);
   $smarty->assign("CPMax",$CPMax);
   $smarty->assign("CPReached",$CPReached);
-  
-  
-  
+
+
+
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
 } else {
