@@ -45,14 +45,6 @@ class Achievement{
         $this->code = $value;
     }
 
-    public function getDescription(){
-        return $this->description;
-    }
-
-    public function setDescription($value){
-        $this->description = $value;
-    }
-
     public function getType(){
         return $this->type;
     }

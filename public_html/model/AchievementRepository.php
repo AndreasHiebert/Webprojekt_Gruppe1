@@ -20,7 +20,6 @@ class AchievementRepository{
                 . "values (:name, :code, :description, :type, :obtainedDate, :value)");
         $stmt->bindValue(':name', $achievement->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':code', $achievement->getCode(), PDO::PARAM_STR);
-        $stmt->bindValue(':description', $achievement->getDescription(), PDO::PARAM_STR);
         $stmt->bindValue(':type', $achievement->getType(), PDO::PARAM_INT);
         $stmt->bindValue(':obtainedDate', $achievement->getObtainedDate(), PDO::PARAM_STR);
         $stmt->bindValue(':value', $achievement->getValue(), PDO::PARAM_INT);
