@@ -13,6 +13,22 @@ class UserRepository {
         return $result;
     }
     
+    public function getHighestSemester(){
+        global $db;
+        
+        //$course = $user->getActiveCourse();
+        $course = 1;
+        
+        $result = array();
+        $stmt = $db->query("SELECT semester FROM modules WHERE course_id = $course ORDER by semester DESC LIMIT 0,1");
+
+        foreach ($stmt as $row){
+            $result[] = $row["semester"];
+        }
+        
+        return $result[0];  
+    }
+    
     public function getUserPosition(User $user){
         global $db;
         

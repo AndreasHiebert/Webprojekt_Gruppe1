@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-28 14:29:36
+/* Smarty version 3.1.29, created on 2016-07-01 13:20:11
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57726db0d9e6b4_93583600',
+  'unifunc' => 'content_577651eb018875_70482744',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467116969,
+      1 => 1467372005,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57726db0d9e6b4_93583600 ($_smarty_tpl) {
+function content_577651eb018875_70482744 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -173,7 +173,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['fitnesspoint']->value) {
 $_smarty_tpl->tpl_vars['fitnesspoint']->_loop = true;
 $__foreach_fitnesspoint_0_saved_local_item = $_smarty_tpl->tpl_vars['fitnesspoint'];
 ?>
-							<div class="col-xs-12">
+							<div  class="panel panel-default">
                                                             <b><p><?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getName();?>
 </p></b>
                                                             <p>Erhaltene Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['fitnesspoint']->value->getValue();?>

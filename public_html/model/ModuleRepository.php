@@ -5,7 +5,7 @@ class ModuleRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM modules ORDER BY  id");
+        $stmt = $db->query("SELECT * FROM modules ORDER BY semester ASC");
         foreach ($stmt as $row) {
             $result[] = Module::fromArray($row);
         }

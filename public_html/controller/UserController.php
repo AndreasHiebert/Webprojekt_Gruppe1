@@ -5,6 +5,19 @@ class UserController {
 
   public function showModulplan(){
     global $smarty;
+    
+    $repo = new UserRepository();
+    $semesterMax = $repo->getHighestSemester();
+    $smarty->assign("semesterMax",$semesterMax);
+    
+    $repo = new ModuleRepository();
+    $allModules = $repo->getAllModules();
+    $smarty->assign("allModules",$allModules);
+    
+    $semester = 1;
+    $smarty->assign("semester",$semester);
+    
+    
     return $smarty->fetch("../view/show_Modulplan.html");
   }
 
