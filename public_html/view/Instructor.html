@@ -13,128 +13,70 @@
 			</div>
 		</div>
 
-		<br><br><br><br><br><br>
 
 		<ul class="list-group text-left" id ="tabList">
 
-			<li class="list-group-item listItem" id="listItem0">User bearbeiten <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
+			<li class="list-group-item listItem" id="listItem0">Admins anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
 
+			<div id="listItemArea0" class="listItemArea text-center">
+			<br><br><br>
 
+				<div class="container-fluid" id="instructorTableArea">
 
-				<div id="listItemArea0" class="listItemArea text-center">
-				<br><br><br>
-
-				<div class="container-fluid" id="userTableArea">
-
-				<button class="btn btn-default userTableButton" id="userTableButton0">Administratoren <span class="glyphicon glyphicon-triangle-bottom" id="userTableGlyph0"></span></button>
-
-					<table class="table table-striped userTable" id="userTable0">
+				<table class="table table-striped userTable" id="userTable0">
 						<thead>
 							<tr>
 								<th>Username</th>
-								<th>Anmeldedatum</th>
-								<th></th>
+								<th>Email</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
+							{foreach from = $instructors item = $instructorElem}
 							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
+								<td>{$instructorElem->getName()}</td>
+								<td>{$instructorElem->getEmail()}</td>
+								<td>{if $instructorElem->getApproved() eq 0}
+										Inaktiv (<a href="index.php?controller=InstructorController&action=approveInstructor&id={$instructorElem->getId()}&update=1">Freischalten</a>)
+									{else}
+										Freigeschaltet
+									{/if}</td>
 							</tr>
-							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
+							{/foreach}
 						</tbody>
 					</table>
 
+				</div>
+			<br><br><br>
+			</div>
 
+			<li class="list-group-item listItem" id="listItem1">User anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
+
+
+
+				<div id="listItemArea1" class="listItemArea text-center">
 				<br><br><br>
 
-				<button class="btn btn-default userTableButton" id="userTableButton1">User <span class="glyphicon glyphicon-triangle-bottom" id="userTableGlyph1"></span></button>
-
-
+				<div class="container-fluid" id="userTableArea">
+				
 					<table class="table table-striped userTable" id="userTable1">
 						<thead>
 							<tr>
 								<th>Username</th>
 								<th>Anmeldedatum</th>
-								<th></th>
+								<th>Email</th>
+								<th>Fitnesspoints</th>
 							</tr>
 						</thead>
 						<tbody>
+							{foreach from = $users item = $userElem}
 							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
+								<td>{$userElem->getName()}</td>
+								<td>{$userElem->getRegDate()}</td>
+								<td>{$userElem->getEmail()}</td>
+								<td>{$userElem->getFitnessPoints()}</td>
 							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
+							{/foreach}
 						</tbody>
 					</table>
 				</div>
@@ -144,9 +86,9 @@
 				</div>
 
 
-			<li class="list-group-item listItem" id="listItem1">Achievements erstellen<span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph1" style="float:right"></li>
+			<li class="list-group-item listItem" id="listItem2">Achievements erstellen<span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph1" style="float:right"></li>
 
-				<div id="listItemArea1" class="listItemArea text-center">
+				<div id="listItemArea2" class="listItemArea text-center">
 				<br><br><br>
 
 						<form class="form-class form-inline" width="100%" id="createAchievementForm" role="form" method="" action="javascript:createAchievement()">
@@ -170,38 +112,33 @@
 				</div>
 
 
-			<li class="list-group-item listItem" id="listItem2">Achievements bearbeiten <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph2" style="float:right"></li>
+			<li class="list-group-item listItem" id="listItem3">Achievements anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph2" style="float:right"></li>
 
-				<div id="listItemArea2" class="container-fluid listItemArea text-center">
+				<div id="listItemArea3" class="container-fluid listItemArea text-center">
 					<br><br><br>
-
-
-					<button class="btn btn-default" id="achievementsListButton">Vorhandene Achievements <span class="glyphicon glyphicon-triangle-bottom" id="achievementsListGlyph"></span></button>
 
 					<table class="table table-striped" id="achievementsListTable">
 						<thead>
 							<tr>
-								<th>Achievement</th>
-								<th>Punktzahl</th>
+								<th>Name</th>
+								<th>Fitnesspoints</th>
 								<th>Code</th>
-								<th></tr>
+								<th>Ablaufdatum</th>
 							</tr>
 						</thead>
 						<tbody>
+							{foreach from = $achievements item = $achievement}
 							<tr>
-								<td>Placeholder</td>
-								<td>100000</td>
-								<td>ABCDE-FGHIJ-KLMNO</td>
-								<td>
-									<span class="glyphicon glyphicon-remove achievementRemove"></span>
-								</td>
+								<td>{$achievement->getName()}</td>
+								<td>{$achievement->getValue()}</td>
+								<td>{$achievement->getCode()}</td>
+								<td>{$achievement->getObtainedDate()}</td>
 							</tr>
+							{/foreach}
 						</tbody>
 					</table>
 
-
 					<br><br><br>
-
 				</div>
 
 
