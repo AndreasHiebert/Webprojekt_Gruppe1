@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 21:12:10
+/* Smarty version 3.1.29, created on 2016-07-06 22:27:50
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d580ab19801_33629930',
+  'unifunc' => 'content_577d69c65fcc64_49846279',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467832326,
+      1 => 1467836864,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d580ab19801_33629930 ($_smarty_tpl) {
+function content_577d69c65fcc64_49846279 ($_smarty_tpl) {
 ?>
 <h1>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCourseAbbreviation();?>
 </h1>
@@ -60,7 +60,7 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 ?>
 </div>
 
-<br>
+<!--<br>-->
 
 <div id="gradeModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -85,11 +85,11 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
     </div>
 </div>
 
-
 <?php echo '<script'; ?>
 >
  $('#gradeModal').on('show.bs.modal', function(e) {
     var name = e.relatedTarget.name;
+    window.alert(name);
  });
 <?php echo '</script'; ?>
 ><?php }
