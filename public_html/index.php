@@ -93,7 +93,7 @@ $smarty->assign("recentFitnesspoints" , $RecentAchievement);
   $repo = new UserRepository;
   $sortedUser = $repo->getUserPosition($currentUser);
   $smarty->assign("UserPositon", $sortedUser);
-  
+
   $repo= new UserRepository();
   $FitnessPointsCurrent= $repo->getUserFitnessPoints($currentUser);
   $CPMax = $repo->getCpAll($currentUser);

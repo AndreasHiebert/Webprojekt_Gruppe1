@@ -12,74 +12,90 @@ class UserRepository {
 
         return $result;
     }
-    
+
     public function getHighestSemester(){
         global $db;
-        
-        //$course = $user->getActiveCourse();
+
+        //$course = $currentUser->getActiveCourse();
         $course = 1;
-        
+
         $result = array();
-        $stmt = $db->query("SELECT semester FROM modules WHERE course_id = $course ORDER by semester DESC LIMIT 0,1");
+        $stmt = $db->query("SELECT semester FROM modules WHERE course_id = $course ORDER by semester ASC LIMIT 0,1");
 
         foreach ($stmt as $row){
             $result[] = $row["semester"];
         }
-        
-        return $result[0];  
+
+        return $result[0];
     }
-    
+
+    public function getCurrentUserCourseAbbreviation(){
+        global $db;
+
+        //$course = $currentUser->getActiveCourse();
+        $course = 1;
+
+        $result = array();
+        $stmt = $db->query("SELECT abbreviation FROM courses WHERE id = $course");
+
+        foreach ($stmt as $row){
+            $result[] = $row["abbreviation"];
+        }
+
+        return $result[0];
+    }
+
     public function getUserPosition(User $user){
         global $db;
-        
+
         $result = array();
         $course = $user->getActiveCourse();
-        
+
         $stmt = $db->query("SELECT u.id, SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.activeCourse = $course GROUP BY u.id ORDER BY SUM(a.value) DESC");
         foreach ($stmt as $row){
             $result[] = $row["id"];
         }
-        
+
         $userId = $user->getId();
         $key = array_search($userId, $result);
-        
+
         return $key + 1;
     }
-    
+
     public function  getUserFitnessPoints(User $user){
         global $db;
-        
+
         $UserID = $user->getId();
-  
+
         $stmt = $db->query("SELECT SUM(a.value) FROM users u INNER JOIN fitnesspoints f ON u.id = f.user_id INNER JOIN achievements a ON a.id = f.achievement_id WHERE u.id = $UserID GROUP BY u.id");
-        
+
         foreach ($stmt as $row){
             $result[] = $row["SUM(a.value)"];
         }
        return $result[0];
     }
-    
+
     public function getRecentAchievement(){
         global $db;
         $result = array();
-        
+
         $UserID = intval($_GET['$currentUser->getId']);
         $stmt = $db->query("SELECT name, value FROM fitnesspoints f INNER JOIN achievements a ON a.id = f.achievement_id WHERE f.user_id = 1 ORDER BY f.id DESC");
-        
+
         $zaehler = 0;
-        
+
          foreach ($stmt as $row) {
-            
+
              if($zaehler === 5){
                  break;
              }
-             
+
              $obj = new Achievement();
              $obj->setName($row["name"]);
              $obj->setValue($row["value"]);
-             
+
              $result[] = $obj;
-             
+
              $zaehler++;
         }
         return $result;

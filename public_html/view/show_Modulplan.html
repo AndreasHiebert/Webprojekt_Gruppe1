@@ -1,24 +1,22 @@
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
+<h1>Modulplan {$currentUser->getCourseAbbreviation()}</h1>
 
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     {foreach from = $allModules item = $module}
 
     {if $module->getSemester() != $semester}
-</div>
-<br>
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
+      </div>
+        <br>
+        <div id = "semesterRow" class="btn-group btn-group-justified" role="group" aria-label="...">
     {/if}
 
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default btn-lg"  data-toggle="modal" data-target="#gradeModal" style="margin-bottom:4px;white-space: normal;">{$module->getName()}</button>
-    </div>
+  <div class="btn-group" role="group">
+    <button id = "moduleButton" type="button" class="btn btn-default">{$module->getName()}</button>
+  </div>
     {$semester = $module->getSemester()}
     {/foreach}
 </div>
 
+<br>
 
 <div id="gradeModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -38,18 +36,3 @@
 
     </div>
 </div>
-
-
-<script>
-    $(document).ready(function () {
-
-        var highestBox = 0;
-        $('.btn-group-justified .btn').each(function () {
-            if ($(this).height() > highestBox) {
-                highestBox = $(this).height();
-            }
-        });
-        $('.btn-group-justified .btn').height(highestBox);
-
-    });
-</script>

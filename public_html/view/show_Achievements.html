@@ -1,5 +1,6 @@
+<h1>Errungene Achievements</h1>
+
 {foreach from = $achievements item = $achievement}
-<div id="achievementsContent" class="col-xs-8">
   <div class="media">
      <div class="media-left media-middle">
          <a href="#">
@@ -12,5 +13,5 @@
          <a>{$achievement->getObtainedDate()}</a>
          <button>{$achievement->getValue()}</button>
      </div>
-  </div>
+   </div>
 {/foreach}
