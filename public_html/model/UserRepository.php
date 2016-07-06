@@ -15,6 +15,7 @@ class UserRepository {
 
     public function getHighestSemester(){
         global $db;
+        global $smarty;
 
         //$course = $currentUser->getActiveCourse();
         $course = 1;
@@ -31,6 +32,7 @@ class UserRepository {
 
     public function getCurrentUserCourseAbbreviation(){
         global $db;
+        global $smarty;
 
         //$course = $currentUser->getActiveCourse();
         $course = 1;
@@ -77,6 +79,8 @@ class UserRepository {
 
     public function getRecentAchievement(){
         global $db;
+        global $smarty;
+        
         $result = array();
 
         $UserID = intval($_GET['$currentUser->getId']);

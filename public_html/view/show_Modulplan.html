@@ -11,14 +11,8 @@
 
     <div class="btn-group" role="group">
         <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal" class="btn btn-default">{$module->getName()}</button>
-    </div>
-    {$semester = $module->getSemester()}
-    {/foreach}
-</div>
-
-<!--<br>-->
-
-<div id="gradeModal" class="modal fade" role="dialog">
+    
+    <div id="gradeModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -39,6 +33,14 @@
 
     </div>
 </div>
+    </div>
+    {$semester = $module->getSemester()}
+    {/foreach}
+</div>
+
+<!--<br>-->
+
+
 
 <script>
  $('#gradeModal').on('show.bs.modal', function(e) {

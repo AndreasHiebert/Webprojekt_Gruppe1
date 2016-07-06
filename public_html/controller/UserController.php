@@ -35,6 +35,7 @@ class UserController {
   
   public function testFitnessCode(){
       global $smarty;
+      
       $repo= new AchievementRepository();
       $achievementObjects=$repo->getAllAchievements();
       $repoFitness = new FitnesspointRepository();
@@ -47,7 +48,10 @@ class UserController {
             }
             
       $key = array_search($code, $CodeArray);
-      $id_user = /*$currentUser->getId()*/ 1;
+      $id_user = $currentUser->getId();
+      
+      print_r("UserID $id_user");
+      
       $id_achievement =$achievementObjects[$key]->getId();
       
         foreach($achievementObjects as $value){

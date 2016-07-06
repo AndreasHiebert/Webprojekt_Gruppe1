@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 22:27:50
+/* Smarty version 3.1.29, created on 2016-07-06 23:04:06
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d69c65fcc64_49846279',
+  'unifunc' => 'content_577d7246d0b847_89909877',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467836864,
+      1 => 1467839040,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d69c65fcc64_49846279 ($_smarty_tpl) {
+function content_577d7246d0b847_89909877 ($_smarty_tpl) {
 ?>
 <h1>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCourseAbbreviation();?>
 </h1>
@@ -48,21 +48,8 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
         <button id = "moduleButton"  name="<?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 " type="button" data-toggle="modal" data-target="#gradeModal" class="btn btn-default"><?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 </button>
-    </div>
-    <?php $_smarty_tpl->tpl_vars['semester'] = new Smarty_Variable($_smarty_tpl->tpl_vars['module']->value->getSemester(), null);
-$_smarty_tpl->ext->_updateScope->updateScope($_smarty_tpl, 'semester', 0);?>
-    <?php
-$_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_local_item;
-}
-if ($__foreach_module_0_saved_item) {
-$_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
-}
-?>
-</div>
-
-<!--<br>-->
-
-<div id="gradeModal" class="modal fade" role="dialog">
+    
+    <div id="gradeModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <div class="modal-content">
@@ -84,6 +71,21 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 
     </div>
 </div>
+    </div>
+    <?php $_smarty_tpl->tpl_vars['semester'] = new Smarty_Variable($_smarty_tpl->tpl_vars['module']->value->getSemester(), null);
+$_smarty_tpl->ext->_updateScope->updateScope($_smarty_tpl, 'semester', 0);?>
+    <?php
+$_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_local_item;
+}
+if ($__foreach_module_0_saved_item) {
+$_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
+}
+?>
+</div>
+
+<!--<br>-->
+
+
 
 <?php echo '<script'; ?>
 >
