@@ -10,7 +10,7 @@
     {/if}
 
   <div class="btn-group" role="group">
-    <button id = "moduleButton" type="button" class="btn btn-default">{$module->getName()}</button>
+    <button id = "moduleButton" type="button" data-toggle="modal" data-target="#gradeModal" class="btn btn-default">{$module->getName()}</button>
   </div>
     {$semester = $module->getSemester()}
     {/foreach}
@@ -27,7 +27,10 @@
                 <h4 class="modal-title">Enter Grade</h4>
             </div>
             <div class="modal-body">
-                <p>Hier soll der Dialog zum Eintragen der Noten angezeigt werden</p>
+                <form>
+                    Grade<br>
+                    <input id="gradeInput" type="text" title="Enter yout grade"><br>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Accept</button>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 18:04:25
+/* Smarty version 3.1.29, created on 2016-07-06 19:25:41
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d2c09f3e676_63673161',
+  'unifunc' => 'content_577d3f151e2704_84149018',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467821064,
+      1 => 1467825925,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d2c09f3e676_63673161 ($_smarty_tpl) {
+function content_577d3f151e2704_84149018 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +47,7 @@ function content_577d2c09f3e676_63673161 ($_smarty_tpl) {
 >
 	<!-- Latest compiled and minified JavaScript -->
 	<?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 	<!-- Personal JS -->
 	<?php echo '<script'; ?>
