@@ -1,30 +1,55 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     {foreach from = $allModules item = $module}
 
     {if $module->getSemester() != $semester}
-      </div>
-        <br>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+</div>
+<br>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
     {/if}
 
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default btn-lg" style="margin-bottom:4px;white-space: normal;">{$module->getName()}</button>
-  </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default btn-lg"  data-toggle="modal" data-target="#gradeModal" style="margin-bottom:4px;white-space: normal;">{$module->getName()}</button>
+    </div>
     {$semester = $module->getSemester()}
     {/foreach}
 </div>
-        
+
+
+<div id="gradeModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">Close</button>
+                <h4 class="modal-title">Enter Grade</h4>
+            </div>
+            <div class="modal-body">
+                <p>Hier soll der Dialog zum Eintragen der Noten angezeigt werden</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Accept</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
-    var highestBox = 0;
-        $('.btn-group-justified .btn').each(function(){
-                if($(this).height() > highestBox){
+        var highestBox = 0;
+        $('.btn-group-justified .btn').each(function () {
+            if ($(this).height() > highestBox) {
                 highestBox = $(this).height();
-        }
-    });
-    $('.btn-group-justified .btn').height(highestBox);
+            }
+        });
+        $('.btn-group-justified .btn').height(highestBox);
 
-});
+    });
 </script>

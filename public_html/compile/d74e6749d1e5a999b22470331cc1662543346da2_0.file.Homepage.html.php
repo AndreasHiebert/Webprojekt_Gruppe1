@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-01 13:20:11
+/* Smarty version 3.1.29, created on 2016-07-06 16:39:51
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577651eb018875_70482744',
+  'unifunc' => 'content_577d1837817c48_57123221',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467372005,
+      1 => 1467815985,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577651eb018875_70482744 ($_smarty_tpl) {
+function content_577d1837817c48_57123221 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +40,22 @@ function content_577651eb018875_70482744 ($_smarty_tpl) {
 	<link rel="stylesheet" type="text/css" href="../css/Registration.css">
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+	<!-- jQuery library -->
+	<?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"><?php echo '</script'; ?>
+>
+	<!-- Latest compiled and minified JavaScript -->
+	<?php echo '<script'; ?>
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
+>
+	<!-- Personal JS -->
+	<?php echo '<script'; ?>
+ src="../js/Homepage.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ src="../js/Instructor.js"><?php echo '</script'; ?>
+>
 
 </head>
 
@@ -160,7 +176,7 @@ function content_577651eb018875_70482744 ($_smarty_tpl) {
 						</div>
 
 							</div>
-                                            
+
                                             <?php
 $_from = $_smarty_tpl->tpl_vars['recentFitnesspoints']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -206,22 +222,6 @@ $_smarty_tpl->tpl_vars['fitnesspoint'] = $__foreach_fitnesspoint_0_saved_item;
 			</div>
 		<?php }?>
 
-
-	<!-- jQuery library -->
-	<?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"><?php echo '</script'; ?>
->
-	<!-- Latest compiled and minified JavaScript -->
-	<?php echo '<script'; ?>
- src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.6/js/bootstrap.min.js"><?php echo '</script'; ?>
->
-	<!-- Personal JS -->
-	<?php echo '<script'; ?>
- src="../js/Homepage.js"><?php echo '</script'; ?>
->
-	<?php echo '<script'; ?>
- src="../js/Instructor.js"><?php echo '</script'; ?>
->
 </body>
 </html>
 <?php }
