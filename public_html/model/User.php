@@ -77,6 +77,11 @@ class User {
         $this->fitnesspoints = $value;
     }
 
+    public function getCourseAbbreviation(){
+        $repo = new UserRepository();
+        return $repo->getCurrentUserCourseAbbreviation();
+    }
+
     public function validate() {
         $error = new ValidationError(); // create ValidationError class
 

@@ -1,30 +1,17 @@
+<h1>Modulplan {$currentUser->getCourseAbbreviation()}</h1>
+
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     {foreach from = $allModules item = $module}
 
     {if $module->getSemester() != $semester}
       </div>
         <br>
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div id = "semesterRow" class="btn-group btn-group-justified" role="group" aria-label="...">
     {/if}
 
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default btn-lg" style="margin-bottom:4px;white-space: normal;">{$module->getName()}</button>
+    <button id = "moduleButton" type="button" class="btn btn-default">{$module->getName()}</button>
   </div>
     {$semester = $module->getSemester()}
     {/foreach}
 </div>
-        
-
-<script>
-    $(document).ready(function(){
-
-    var highestBox = 0;
-        $('.btn-group-justified .btn').each(function(){
-                if($(this).height() > highestBox){
-                highestBox = $(this).height();
-        }
-    });
-    $('.btn-group-justified .btn').height(highestBox);
-
-});
-</script>
