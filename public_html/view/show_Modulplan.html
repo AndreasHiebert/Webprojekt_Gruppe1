@@ -1,12 +1,12 @@
 <div class="btn-group btn-group-justified" role="group" aria-label="...">
     {foreach from = $allModules item = $module}
-    
+
     {if $module->getSemester() != $semester}
       </div>
-        <br>        
+        <br>
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
     {/if}
-    
+
   <div class="btn-group" role="group">
     <button type="button" class="btn btn-default btn-lg" style="margin-bottom:4px;white-space: normal;">{$module->getName()}</button>
   </div>
@@ -14,17 +14,16 @@
     {/foreach}
 </div>
         
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <script>
     $(document).ready(function(){
 
     var highestBox = 0;
-        $('.btn-group-justified .btn').each(function(){  
-                if($(this).height() > highestBox){  
-                highestBox = $(this).height();  
+        $('.btn-group-justified .btn').each(function(){
+                if($(this).height() > highestBox){
+                highestBox = $(this).height();
         }
-    });    
+    });
     $('.btn-group-justified .btn').height(highestBox);
 
 });
