@@ -1,5 +1,16 @@
 <?php
 
+if(isset($_POST['action'])){
+    switch($_POST['action']){
+        case 'LoginUser':
+            LoginResisteredUser($_POST['email_txt'], $_POST['pass_txt']);
+            break;
+        case 'LoginInstructor':
+            LoginRegisteredInstructor($_POST['email_txt'], $_POST['pass_txt']);
+            break;
+    }
+}
+
 
 class LoginController {
 
@@ -21,7 +32,7 @@ class LoginController {
     $servername = "localhost";
     $name = "username";
     $password = "password";
-    $dbname = "webprojekt6";
+    $dbname = "webprojekt9";
     $conn = new mysqli($servername, $name, $password, $dbname);
 
     if($conn->connect_error){
@@ -48,7 +59,7 @@ class LoginController {
     $servername = "localhost";
     $username = "username";
     $password = "password";
-    $dbname = "webprojekt6";
+    $dbname = "webprojekt9";
 
     SESSION_START();
 
@@ -64,7 +75,7 @@ class LoginController {
         $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
 
         $sql = "SELECT * FROM users WHERE
-                name='$User_Name' AND
+                email='$User_Name' AND
                 password ='$User_Password'
                 LIMIT 1";
 
@@ -124,7 +135,7 @@ class LoginController {
     $servername = "localhost";
     $name = "username";
     $password = "password";
-    $dbname = "webprojekt6";
+    $dbname = "webprojekt9";
     $conn = new mysqli($servername, $name, $password, $dbname);
 
     if($conn->connect_error){
@@ -151,7 +162,7 @@ class LoginController {
     $servername = "localhost";
     $username = "username";
     $password = "password";
-    $dbname = "webprojekt6";
+    $dbname = "webprojekt9";
 
     SESSION_START();
 
@@ -167,7 +178,7 @@ class LoginController {
         $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
 
         $sql = "SELECT * FROM instructors WHERE
-                name='$User_Name' AND
+                email='$User_Name' AND
                 password ='$User_Password'
                 LIMIT 1";
 
