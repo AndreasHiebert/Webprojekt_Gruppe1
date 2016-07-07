@@ -85,10 +85,10 @@ $currentInstructor = new Instructor();
 $GLOBALS['currentInstructor'] = new Instructor();
 
 $currentUser = $userObjects[0];
-//$smarty->assign("currentUser", $currentUser,"global");
+$smarty->assign("currentUser", $currentUser,"global");
 
 $currentInstructor = $instructorObjects[0];
-$smarty->assign("currentInstructor", $currentInstructor);
+//$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
 
