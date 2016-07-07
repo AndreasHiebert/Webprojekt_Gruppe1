@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-30 19:24:12
+/* Smarty version 3.1.29, created on 2016-07-07 02:08:41
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577555bc7e4a32_50459023',
+  'unifunc' => 'content_577d9d89ab5324_51707565',
   'file_dependency' => 
   array (
     '24d6ce42fced6453c6fc20550a908392533f7c8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Instructor.html',
-      1 => 1466628419,
+      1 => 1467849764,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577555bc7e4a32_50459023 ($_smarty_tpl) {
+function content_577d9d89ab5324_51707565 ($_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 <div class="container text-center" id="instructorContainer">
 
@@ -35,128 +35,111 @@ if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 			</div>
 		</div>
 
-		<br><br><br><br><br><br>
 
 		<ul class="list-group text-left" id ="tabList">
 
-			<li class="list-group-item listItem" id="listItem0">User bearbeiten <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
+			<li class="list-group-item listItem" id="listItem0">Admins anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
 
+			<div id="listItemArea0" class="listItemArea text-center">
+			<br><br><br>
 
+				<div class="container-fluid" id="instructorTableArea">
 
-				<div id="listItemArea0" class="listItemArea text-center">
-				<br><br><br>
-
-				<div class="container-fluid" id="userTableArea">
-
-				<button class="btn btn-default userTableButton" id="userTableButton0">Administratoren <span class="glyphicon glyphicon-triangle-bottom" id="userTableGlyph0"></span></button>
-
-					<table class="table table-striped userTable" id="userTable0">
+				<table class="table table-striped userTable" id="userTable0">
 						<thead>
 							<tr>
 								<th>Username</th>
-								<th>Anmeldedatum</th>
-								<th></th>
+								<th>Email</th>
+								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+$_from = $_smarty_tpl->tpl_vars['instructors']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_instructorElem_0_saved_item = isset($_smarty_tpl->tpl_vars['instructorElem']) ? $_smarty_tpl->tpl_vars['instructorElem'] : false;
+$_smarty_tpl->tpl_vars['instructorElem'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['instructorElem']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['instructorElem']->value) {
+$_smarty_tpl->tpl_vars['instructorElem']->_loop = true;
+$__foreach_instructorElem_0_saved_local_item = $_smarty_tpl->tpl_vars['instructorElem'];
+?>
 							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['instructorElem']->value->getName();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['instructorElem']->value->getEmail();?>
+</td>
+								<td><?php if ($_smarty_tpl->tpl_vars['instructorElem']->value->getApproved() == 0) {?>
+										Inaktiv (<a href="index.php?controller=InstructorController&action=approveInstructor&id=<?php echo $_smarty_tpl->tpl_vars['instructorElem']->value->getId();?>
+&update=1">Freischalten</a>)
+									<?php } else { ?>
+										Freigeschaltet
+									<?php }?></td>
 							</tr>
-							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placeholder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-minus userDowngrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
+							<?php
+$_smarty_tpl->tpl_vars['instructorElem'] = $__foreach_instructorElem_0_saved_local_item;
+}
+if ($__foreach_instructorElem_0_saved_item) {
+$_smarty_tpl->tpl_vars['instructorElem'] = $__foreach_instructorElem_0_saved_item;
+}
+?>
 						</tbody>
 					</table>
 
+				</div>
+			<br><br><br>
+			</div>
 
+			<li class="list-group-item listItem" id="listItem1">User anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph0" style="float:right"></span></li>
+
+
+
+				<div id="listItemArea1" class="listItemArea text-center">
 				<br><br><br>
 
-				<button class="btn btn-default userTableButton" id="userTableButton1">User <span class="glyphicon glyphicon-triangle-bottom" id="userTableGlyph1"></span></button>
-
-
+				<div class="container-fluid" id="userTableArea">
+				
 					<table class="table table-striped userTable" id="userTable1">
 						<thead>
 							<tr>
 								<th>Username</th>
 								<th>Anmeldedatum</th>
-								<th></th>
+								<th>Email</th>
+								<th>Fitnesspoints</th>
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+$_from = $_smarty_tpl->tpl_vars['users']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_userElem_1_saved_item = isset($_smarty_tpl->tpl_vars['userElem']) ? $_smarty_tpl->tpl_vars['userElem'] : false;
+$_smarty_tpl->tpl_vars['userElem'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['userElem']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['userElem']->value) {
+$_smarty_tpl->tpl_vars['userElem']->_loop = true;
+$__foreach_userElem_1_saved_local_item = $_smarty_tpl->tpl_vars['userElem'];
+?>
 							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getName();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getRegDate();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getEmail();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getFitnessPoints();?>
+</td>
 							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Placehoder</td>
-								<td>Irgendwann</td>
-								<td>
-									<span class="glyphicon glyphicon-plus userUpgrade"></span>
-									<span class="glyphicon glyphicon-remove userRemove"></span>
-								</td>
-							</tr>
+							<?php
+$_smarty_tpl->tpl_vars['userElem'] = $__foreach_userElem_1_saved_local_item;
+}
+if ($__foreach_userElem_1_saved_item) {
+$_smarty_tpl->tpl_vars['userElem'] = $__foreach_userElem_1_saved_item;
+}
+?>
 						</tbody>
 					</table>
 				</div>
@@ -166,9 +149,9 @@ if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 				</div>
 
 
-			<li class="list-group-item listItem" id="listItem1">Achievements erstellen<span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph1" style="float:right"></li>
+			<li class="list-group-item listItem" id="listItem2">Achievements erstellen<span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph1" style="float:right"></li>
 
-				<div id="listItemArea1" class="listItemArea text-center">
+				<div id="listItemArea2" class="listItemArea text-center">
 				<br><br><br>
 
 						<form class="form-class form-inline" width="100%" id="createAchievementForm" role="form" method="" action="javascript:createAchievement()">
@@ -192,38 +175,54 @@ if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 				</div>
 
 
-			<li class="list-group-item listItem" id="listItem2">Achievements bearbeiten <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph2" style="float:right"></li>
+			<li class="list-group-item listItem" id="listItem3">Achievements anzeigen <span class="glyphicon glyphicon-menu-down listItemGlyph" id="listItemGlyph2" style="float:right"></li>
 
-				<div id="listItemArea2" class="container-fluid listItemArea text-center">
+				<div id="listItemArea3" class="container-fluid listItemArea text-center">
 					<br><br><br>
-
-
-					<button class="btn btn-default" id="achievementsListButton">Vorhandene Achievements <span class="glyphicon glyphicon-triangle-bottom" id="achievementsListGlyph"></span></button>
 
 					<table class="table table-striped" id="achievementsListTable">
 						<thead>
 							<tr>
-								<th>Achievement</th>
-								<th>Punktzahl</th>
+								<th>Name</th>
+								<th>Fitnesspoints</th>
 								<th>Code</th>
-								<th></tr>
+								<th>Ablaufdatum</th>
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+$_from = $_smarty_tpl->tpl_vars['achievements']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$__foreach_achievement_2_saved_item = isset($_smarty_tpl->tpl_vars['achievement']) ? $_smarty_tpl->tpl_vars['achievement'] : false;
+$_smarty_tpl->tpl_vars['achievement'] = new Smarty_Variable();
+$_smarty_tpl->tpl_vars['achievement']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['achievement']->value) {
+$_smarty_tpl->tpl_vars['achievement']->_loop = true;
+$__foreach_achievement_2_saved_local_item = $_smarty_tpl->tpl_vars['achievement'];
+?>
 							<tr>
-								<td>Placeholder</td>
-								<td>100000</td>
-								<td>ABCDE-FGHIJ-KLMNO</td>
-								<td>
-									<span class="glyphicon glyphicon-remove achievementRemove"></span>
-								</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getCode();?>
+</td>
+								<td><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getObtainedDate();?>
+</td>
 							</tr>
+							<?php
+$_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_2_saved_local_item;
+}
+if ($__foreach_achievement_2_saved_item) {
+$_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_2_saved_item;
+}
+?>
 						</tbody>
 					</table>
 
-
 					<br><br><br>
-
 				</div>
 
 

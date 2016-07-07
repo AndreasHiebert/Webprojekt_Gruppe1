@@ -36,3 +36,9 @@ html{
 #LoginContainer{
     margin-top: 100px;
 }
+
+#logincontent{
+  min-height: 84vh;
+  border-left: 1px solid #00695c;
+  border-right: 1px solid #00695c;
+}

@@ -21,6 +21,7 @@ require 'controller/ModuleController.php';
 require 'controller/LoginController.php';
 require 'controller/AchievementController.php';
 require 'controller/FitnesspointController.php';
+require 'controller/InstructorController.php';
 
 //------------------------------------------------------------------------------
 // setup smarty
@@ -84,10 +85,10 @@ $currentInstructor = new Instructor();
 $GLOBALS['currentInstructor'] = new Instructor();
 
 $currentUser = $userObjects[0];
-$smarty->assign("currentUser", $currentUser,"global");
+//$smarty->assign("currentUser", $currentUser,"global");
 
 $currentInstructor = $instructorObjects[0];
-//$smarty->assign("currentInstructor", $currentInstructor);
+$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
 
