@@ -1,17 +1,5 @@
 <?php
 
-if(isset($_POST['action'])){
-    switch($_POST['action']){
-        case 'LoginUser':
-            LoginResisteredUser($_POST['email_txt'], $_POST['pass_txt']);
-            break;
-        case 'LoginInstructor':
-            LoginRegisteredInstructor($_POST['email_txt'], $_POST['pass_txt']);
-            break;
-    }
-}
-
-
 class LoginController {
 
   public function showLogin(){
@@ -32,7 +20,7 @@ class LoginController {
     $servername = "localhost";
     $name = "username";
     $password = "password";
-    $dbname = "webprojekt9";
+    $dbname = "webprojekt13";
     $conn = new mysqli($servername, $name, $password, $dbname);
 
     if($conn->connect_error){
@@ -55,11 +43,11 @@ class LoginController {
 
   }
 
-  public function LoginRegisteredUser($EMail, $UserPassword){
+  public function LoginRegisteredUser(){
     $servername = "localhost";
     $username = "username";
     $password = "password";
-    $dbname = "webprojekt9";
+    $dbname = "webprojekt13";
 
     SESSION_START();
 
@@ -68,11 +56,11 @@ class LoginController {
     if($conn->connect_error){
         die("COnnection failed: ".$conn->connect_error);
     }
-
+    
     if(!empty($_POST["submit"])){
 
-        $User_Name = mysql_real_escape_string($_POST["$EMail"]);
-        $User_Password = mysql_real_escape_string($_POST["$UserPassword"]);
+        $User_Name = mysql_real_escape_string($_POST["email_txt"]);
+        $User_Password = mysql_real_escape_string($_POST["pass_txt"]);
 
         $sql = "SELECT * FROM users WHERE
                 email='$User_Name' AND
@@ -111,7 +99,7 @@ class LoginController {
     $servername = "localhost";
     $name = "username";
     $password = "password";
-    $dbname = "webprojekt9";
+    $dbname = "webprojekt13";
     $conn = new mysqli($servername, $name, $password, $dbname);
 
     if($conn->connect_error){
@@ -138,7 +126,7 @@ class LoginController {
     $servername = "localhost";
     $username = "username";
     $password = "password";
-    $dbname = "webprojekt9";
+    $dbname = "webprojekt13";
 
     SESSION_START();
 
