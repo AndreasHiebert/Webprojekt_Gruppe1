@@ -38,6 +38,7 @@ class ModuleRepository {
         return $result[0];
     }
 
+    
     public function getActiveCourseMaxCp(){
         global $db;
         global $currentUser;
