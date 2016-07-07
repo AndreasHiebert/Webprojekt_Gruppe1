@@ -113,37 +113,50 @@
 					</div>
 					<div id="statusbar" class="col-xs-3">
 
-						<h1>Statusbar</h1>
+						<h1></h1>
+                                                
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                Sidebar
+                                                    </div>
+                                                <div class="panel-footer">
 
-						<div class="col-xs-12">
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-body">
+						<div>
 								<div>
+                                                                    Studienfortschritt:
 									<div class="progress">
 										<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active"
 											role="progressbar"
 											aria-valuenow="0"
 											aria-valuemin="0"
 											aria-valuemax="220"
-											style="width: 0%">
-						        	CP: 0/220 (0%)
+											style="width: {$currentUser->getCurrentCPPercent()}%">
 					        	</div>
 					      	</div>
+                                                                    <div>
+                                                                        CP Aktuell: {$currentUser->getCurrentCp()}/{$currentUser->getActiveCourseMaxCp()}<br>
+                                                                                CP in Prozent: {$currentUser->getCurrentCPPercent()}%
+                                                                    </div>
 					      </div>
 						</div>
 
-						<div class="col-xs-12">
-								<div id = "user_fitnesspoints">
-								  	Fitnesspoints: {$currentUser->getCurrentFitnesspoints()}
-							  	  Rank: #{$currentUser->getCurrentRanking()}
-										Course: {$currentUser->getCurrentCourseAbbreviation()}
+						<div>
+                                                    <br>
+								<div>
+                                                                    Fitnesspoints: {$currentUser->getCurrentFitnesspoints()}<br>
+                                                                    Ranking: #{$currentUser->getCurrentRanking()} in
+                                                                    {$currentUser->getCurrentCourseAbbreviation()}
 								</div>
-
-
+                                                </div>
+                                                    </div>
+                                                    </div>
 							{if isset($codeValid)}
                   <div class="alert alert-success">
                       <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
                   </div>
 							{/if}
-
 						  {if isset($codeFalse)}
                   {if $error == 1}
                       <div class="alert alert-danger">
@@ -156,27 +169,34 @@
                       </div>
                   {/if}
               {/if}
-
-						<div class="col-xs-12">
+						<div>
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center formpadding" method="post">
-                 <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
-                 <Button type="submit" class="btn btn-primary">
-									 Einlösen
-								 </Button>
-					    </form>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body">
+                                                                    <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
+                                                                    <Button type="submit" class="btn btn-primary">Einlösen</Button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
 							<br>
 						</div>
 
-						</div>
+						
                 {foreach from = $currentUser->getRecentAchievements() item = $achievement}
-						        <div  class="panel panel-default">
-                        <b><p>{$achievement->getName()}</p></b>
-                           <p>Erhaltene Fitnesspoints: {$achievement->getValue()}</p>
-						      	</div>
+                    <div  class="panel panel-default">
+                        <div class="panel-body">
+                            <b>{$achievement->getName()}</b>
+                            <p>Erhaltene Fitnesspoints: {$achievement->getValue()}</p>
+                        </div>
+                    </div>
                 {/foreach}
           </div>
+                                                    </div>
 				</div>
 			</div>
+                                    
+                                </div>
+                       
 		{/if}
 </div>
 </body>

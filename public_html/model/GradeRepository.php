@@ -20,12 +20,14 @@ class GradeRepository {
         global $db;
         global $currentUser;
         $result = 0;
+        
+        $UserID = $currentUser->getId();
 
         $stmt = $db->query("SELECT SUM(modules.cp)
                             FROM grades
                             inner JOIN modules
                             ON grades.module_id = modules.id
-                            WHERE grades.user_id = $currentUser->getId();");
+                            WHERE grades.user_id = $UserID;");
 
         foreach($stmt as $row){
             $result = $row["SUM(modules.cp)"];

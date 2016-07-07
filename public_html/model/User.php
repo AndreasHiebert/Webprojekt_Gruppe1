@@ -106,6 +106,18 @@ class User {
         $repo = new GradeRepository();
         return $repo->getCurrentCp();
     }
+    
+    public function getCurrentCPPercent(){
+        $grade = new GradeRepository();
+        $currentCP = $grade->getCurrentCp();
+                
+        $repo = new ModuleRepository();
+        $maxCP = $repo->getActiveCourseMaxCp();
+        
+        
+         $percent = ($currentCP/ $maxCP)* 100; 
+         return number_format($percent, 2);
+    }
 
     public function validate() {
         $error = new ValidationError(); // create ValidationError class
