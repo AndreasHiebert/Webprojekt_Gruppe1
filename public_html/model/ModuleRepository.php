@@ -43,11 +43,10 @@ class ModuleRepository {
         global $currentUser;
         $result = 0;
 
-        $UserID = $user->getId();
-
+        $id = $currentUser->getId();
         $stmt = $db->query("SELECT SUM(cp)
                             FROM modules
-                            WHERE course_id = $currentUser->getId()");
+                            WHERE course_id = $id");
 
         foreach($stmt as $row){
             $result = $row["SUM(cp)"];
