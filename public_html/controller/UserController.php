@@ -8,8 +8,9 @@ class UserController {
     $currentUser = NULL;
     $smarty->assign("currentUser", $currentUser);
     $this->showLogin();
-    }
 
+    }
+  
     public function logoutInstructor(){
     global $smarty;
     $currentInstructor = NULL;

@@ -84,7 +84,7 @@ $currentInstructor = new Instructor();
 $GLOBALS['currentInstructor'] = new Instructor();
 
 $currentUser = $userObjects[0];
-$smarty->assign("currentUser", $currentUser);
+$smarty->assign("currentUser", $currentUser,"global");
 
 $currentInstructor = $instructorObjects[0];
 //$smarty->assign("currentInstructor", $currentInstructor);

@@ -16,6 +16,7 @@ class Achievement{
       $obj->setCode($row["code"]);
       $obj->setDescription($row["description"]);
       $obj->setValue($row["value"]);
+      $obj->setObtainedDate($row["obtainedDate"]);
       return $obj;
     }
 

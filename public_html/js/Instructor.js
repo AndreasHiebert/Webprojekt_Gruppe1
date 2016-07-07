@@ -142,7 +142,7 @@ function createAchievement() {
 
 			var abc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'];
 			var code = new Array(15);
-			var num;
+			var num, str;
 
 			for(var i=0; i<code.length; i++) {
 				num = Math.floor( Math.random() * abc.length );
@@ -161,8 +161,9 @@ function createAchievement() {
 			$("#codeInput2").val(part);	
 
 
-		alertShow("success","Das Achievement wurde erstellt!");
-
+		//alertShow("success","Das Achievement wurde erstellt!");
+		str = code.join("");
+		location.href="index.php?controller=InstructorController&action=createAchievement&code="+str+"&name="+$("#achievementName").val()+"&points="+$("#achievementPoints").val();
 		}
 
 }
