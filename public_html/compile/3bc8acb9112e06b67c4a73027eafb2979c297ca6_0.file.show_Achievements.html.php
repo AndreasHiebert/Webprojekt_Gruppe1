@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 20:50:59
+/* Smarty version 3.1.29, created on 2016-07-07 23:08:18
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577ea49311d341_51097117',
+  'unifunc' => 'content_577ec4c2951dd3_31919465',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1467917456,
+      1 => 1467925694,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577ea49311d341_51097117 ($_smarty_tpl) {
+function content_577ec4c2951dd3_31919465 ($_smarty_tpl) {
 ?>
-<h4>test</h4>
 
 <ul class="list-group">
 <?php
@@ -46,6 +45,8 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
      <div class="media-body">
          <h4 class="media-heading"><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
 </h4>
+         Wert: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
+ Fitnesspoints<br>
          <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getDescription();?>
 
        
