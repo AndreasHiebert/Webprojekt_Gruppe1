@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 12:26:57
+/* Smarty version 3.1.29, created on 2016-07-07 13:03:41
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577e2e71a4c874_09170673',
+  'unifunc' => 'content_577e370d29b2e6_31135105',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467887211,
+      1 => 1467889416,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577e2e71a4c874_09170673 ($_smarty_tpl) {
+function content_577e370d29b2e6_31135105 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -213,11 +213,11 @@ function content_577e2e71a4c874_09170673 ($_smarty_tpl) {
                   <?php }?>
               <?php }?>
 						<div>
-							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center formpadding" method="post">
+							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
                                                             <div class="panel panel-default">
                                                                 <div class="panel-body">
-                                                                    <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
-                                                                    <Button type="submit" class="btn btn-primary">Einlösen</Button>
+                                                                    <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
+                                                                    <Button id="submitbtn" type="submit" class="btn btn-primary">Einlösen</Button>
                                                                 </div>
                                                             </div>
                                                         </form>
