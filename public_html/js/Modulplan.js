@@ -1,3 +1,4 @@
+// groupbox autosize buttons modulplan
 $(document).ready(function(){
 
 var highestBox = 0;

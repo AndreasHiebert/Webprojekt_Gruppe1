@@ -77,9 +77,34 @@ class User {
         $this->fitnesspoints = $value;
     }
 
-    public function getCourseAbbreviation(){
+    public function getCurrentCourseAbbreviation(){
+        $repo = new CourseRepository();
+        return $repo->getCurrentCourseAbbreviation();
+    }
+
+    public function getCurrentFitnesspoints(){
+        $repo = new FitnesspointRepository();
+        return $repo->getCurrentFitnesspoints();
+    }
+
+    public function getCurrentRanking(){
         $repo = new UserRepository();
-        return $repo->getCurrentUserCourseAbbreviation();
+        return $repo->getCurrentRanking();
+    }
+
+    public function getRecentAchievements(){
+        $repo = new AchievementRepository();
+        return $repo->getRecentAchievements();
+    }
+
+    public function getActiveCourseMaxCp(){
+        $repo = new ModuleRepository();
+        return $repo->getActiveCourseMaxCp();
+    }
+
+    public function getCurrentCp(){
+        $repo = new GradeRepository();
+        return $repo->getCurrentCp();
     }
 
     public function validate() {

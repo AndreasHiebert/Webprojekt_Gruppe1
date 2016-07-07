@@ -5,9 +5,52 @@ class ModuleRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM modules ORDER BY semester ASC");
+        $stmt = $db->query("SELECT *
+                            FROM modules
+                            ORDER BY semester
+                            ASC");
+
         foreach ($stmt as $row) {
             $result[] = Module::fromArray($row);
+        }
+
+        return $result;
+    }
+
+    public function getHighestSemester(){
+        global $db;
+        global $currentUser;
+
+        $course = $currentUser->getActiveCourse();
+
+        $result = array();
+        $stmt = $db->query("SELECT semester
+                            FROM modules
+                            WHERE course_id = $course
+                            ORDER by semester
+                            ASC
+                            LIMIT 0,1");
+
+        foreach ($stmt as $row){
+            $result[] = $row["semester"];
+        }
+
+        return $result[0];
+    }
+
+    public function getActiveCourseMaxCp(){
+        global $db;
+        global $currentUser;
+        $result = 0;
+
+        $UserID = $user->getId();
+
+        $stmt = $db->query("SELECT SUM(cp)
+                            FROM modules
+                            WHERE course_id = $currentUser->getId()");
+
+        foreach($stmt as $row){
+            $result = $row["SUM(cp)"];
         }
 
         return $result;

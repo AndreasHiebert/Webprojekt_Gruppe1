@@ -6,23 +6,23 @@ body {
  }
 
 #theBigBorder{
-  min-height: 80vh;
-  max-height: 80vh;
+  min-height: 82vh;
+  max-height: 82vh;
   padding-top: 1em;
 }
 
 #maincontent{
   overflow-y: auto;
-  min-height: 80vh;
-  border-left: 1px solid;
-  border-bottom: 1px solid;
+  min-height: 84vh;
+  border-left: 1px solid #00695c;
+  border-bottom: 1px solid #00695c;
 }
 
 #statusbar{
 	float: right;
-  min-height: 80vh;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  min-height: 84vh;
+  border-right: 1px solid #00695c;
+  border-bottom: 1px solid #00695c;
 }
 
 #user_fitnesspoints{
@@ -31,6 +31,13 @@ body {
   text-align: center;
 }
 
-footer {
-  background-color: black;
+#footerRow{
+  margin-top: 24px;
+  min-height: 16vh;
+  background-color: #00695c;
+}
+
+#footerText{
+  color: white;
+  margin-left: 10px;
 }

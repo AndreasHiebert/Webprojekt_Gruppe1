@@ -5,7 +5,10 @@ class InstructorRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM instructors ORDER BY id");
+        $stmt = $db->query("SELECT *
+                            FROM instructors
+                            ORDER BY id");
+                            
         foreach ($stmt as $row) {
             $result[] = Instructor::fromArray($row);
         }

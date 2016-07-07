@@ -5,12 +5,34 @@ class FitnesspointRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM fitnesspoints ORDER BY id");
+        $stmt = $db->query("SELECT *
+                            FROM fitnesspoints
+                            ORDER BY id");
         foreach ($stmt as $row) {
             $result[] = Fitnesspoint::fromArray($row);
         }
 
         return $result;
+    }
+
+    public function getCurrentFitnesspoints(){
+        global $db;
+        global $currentUser;
+
+        $id = $currentUser->getId();
+        $stmt = $db->query("SELECT SUM(a.value)
+                            FROM users u
+                            INNER JOIN fitnesspoints f
+                            ON u.id = f.user_id
+                            INNER JOIN achievements a
+                            ON a.id = f.achievement_id
+                            WHERE u.id = $id
+                            GROUP BY u.id");
+
+        foreach ($stmt as $row){
+            $result[] = $row["SUM(a.value)"];
+        }
+       return $result[0];
     }
 
     public static function saveFitnesspoint($fitnesspoint) {

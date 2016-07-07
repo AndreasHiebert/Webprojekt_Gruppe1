@@ -5,12 +5,33 @@ class CourseRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM Courses ORDER BY id");
+        $stmt = $db->query("SELECT *
+                            FROM Courses
+                            ORDER BY id");
+
         foreach ($stmt as $row) {
             $result[] = Course::fromArray($row);
         }
 
         return $result;
+    }
+
+    public function getCurrentCourseAbbreviation(){
+        global $db;
+        global $currentUser;
+
+        $course = $currentUser->getActiveCourse();
+
+        $result = array();
+        $stmt = $db->query("SELECT abbreviation
+                            FROM courses
+                            WHERE id = $course");
+
+        foreach ($stmt as $row){
+            $result[] = $row["abbreviation"];
+        }
+
+        return $result[0];
     }
 
     public static function saveCourses($course) {

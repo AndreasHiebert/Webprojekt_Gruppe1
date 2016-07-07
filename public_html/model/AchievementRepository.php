@@ -5,11 +5,47 @@ class AchievementRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM achievements ORDER BY id");
+        $stmt = $db->query("SELECT *
+                            FROM achievements
+                            ORDER BY id");
+                            
         foreach ($stmt as $row) {
             $result[] = Achievement::fromArray($row);
         }
 
+        return $result;
+    }
+
+    public function getRecentAchievements(){
+        global $db;
+        global $currentUser;
+        $result = array();
+
+        $id = $currentUser->getId();
+        $stmt = $db->query("SELECT name, value
+                            FROM fitnesspoints f
+                            INNER JOIN achievements a
+                            ON a.id = f.achievement_id
+                            WHERE f.user_id = $id
+                            ORDER BY f.id
+                            DESC");
+
+        $zaehler = 0;
+
+         foreach ($stmt as $row) {
+
+             if($zaehler === 5){
+                 break;
+             }
+
+             $obj = new Achievement();
+             $obj->setName($row["name"]);
+             $obj->setValue($row["value"]);
+
+             $result[] = $obj;
+
+             $zaehler++;
+        }
         return $result;
     }
 
@@ -20,8 +56,7 @@ class AchievementRepository{
                 . "values (:name, :code, :description, :type, :obtainedDate, :value)");
         $stmt->bindValue(':name', $achievement->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':code', $achievement->getCode(), PDO::PARAM_STR);
-        $stmt->bindValue(':description', $achievement->getDescription(), PDO::PARAM_STR);
-        $stmt->bindValue(':type', $achievement->getType(), PDO::PARAM_INT);
+        $stmt->bindValue(':description', $achievemen->getDescription(), PDO::PARAM_STR);
         $stmt->bindValue(':obtainedDate', $achievement->getObtainedDate(), PDO::PARAM_STR);
         $stmt->bindValue(':value', $achievement->getValue(), PDO::PARAM_INT);
         $stmt->execute();

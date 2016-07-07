@@ -19,6 +19,8 @@ require 'model/GradeRepository.php';
 require 'controller/UserController.php';
 require 'controller/ModuleController.php';
 require 'controller/LoginController.php';
+require 'controller/AchievementController.php';
+require 'controller/FitnesspointController.php';
 
 //------------------------------------------------------------------------------
 // setup smarty
@@ -79,6 +81,7 @@ $smarty->assign("grades", $gradeObjects);
 $currentUser = new User();
 $GLOBALS['currentUser'] = new User();
 $currentInstructor = new Instructor();
+$GLOBALS['currentInstructor'] = new Instructor();
 
 $currentUser = $userObjects[0];
 $smarty->assign("currentUser", $currentUser);
@@ -87,23 +90,6 @@ $currentInstructor = $instructorObjects[0];
 //$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
-$repo = new UserRepository();
-$RecentAchievement = $repo->getRecentAchievement();
-$smarty->assign("recentFitnesspoints" , $RecentAchievement);
-
-  $repo = new UserRepository;
-  $sortedUser = $repo->getUserPosition($currentUser);
-  $smarty->assign("UserPositon", $sortedUser);
-
-  $repo= new UserRepository();
-  $FitnessPointsCurrent= $repo->getUserFitnessPoints($currentUser);
-  $CPMax = $repo->getCpAll($currentUser);
-  $CPReached = $repo->getCpReached($currentUser);
-  $smarty->assign("FitnessPointsCurrent",$FitnessPointsCurrent);
-  $smarty->assign("CPMax",$CPMax);
-  $smarty->assign("CPReached",$CPReached);
-
-
 
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
