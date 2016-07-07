@@ -3,11 +3,12 @@
 class AchievementRepository{
     public function getAllAchievements() {
         global $db;
+        global $currentUser;
         $result = array();
 
-        $stmt = $db->query("SELECT *
-                            FROM achievements
-                            ORDER BY id");
+        $id = $currentUser->getId();
+        
+        $stmt = $db->query("SELECT * FROM achievements INNER JOIN fitnesspoints ON achievements.id = fitnesspoints.achievement_id WHERE fitnesspoints.user_id = $id ORDER BY fitnesspoints.id DESC");
                             
         foreach ($stmt as $row) {
             $result[] = Achievement::fromArray($row);

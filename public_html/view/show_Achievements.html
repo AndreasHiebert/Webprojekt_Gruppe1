@@ -1,17 +1,23 @@
-<h1>Errungene Achievements</h1>
+<h4>test</h4>
 
+<ul class="list-group">
 {foreach from = $achievements item = $achievement}
+<li class="list-group-item">
   <div class="media">
      <div class="media-left media-middle">
          <a href="#">
-             <img class="media-object" src="img/albert-einstein.jpg" alt="Ein schlauer Mensch" width="100" height="70">
+             <img class="media-object" src="img/albert-einstein.jpg" alt="Ein schlauer Mensch" width="100" height="97">
          </a>
      </div>
      <div class="media-body">
          <h4 class="media-heading">{$achievement->getName()}</h4>
-         <a>{$achievement->getDescription()}</a>
-         <a>{$achievement->getObtainedDate()}</a>
-         <button>{$achievement->getValue()}</button>
+         {$achievement->getDescription()}
+       
      </div>
+      <div class="media-right">
+          {$achievement->getObtainedDate()}
+      </div>
    </div>
+</li>
 {/foreach}
+</ul>
