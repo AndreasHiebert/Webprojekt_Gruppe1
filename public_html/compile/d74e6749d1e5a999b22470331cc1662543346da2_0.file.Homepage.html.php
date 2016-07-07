@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 15:45:53
+/* Smarty version 3.1.29, created on 2016-07-07 18:58:37
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577e5d1197fe21_41573146',
+  'unifunc' => 'content_577e8a3da8ffa4_32695884',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467898973,
+      1 => 1467910713,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577e5d1197fe21_41573146 ($_smarty_tpl) {
+function content_577e8a3da8ffa4_32695884 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -216,15 +216,21 @@ function content_577e5d1197fe21_41573146 ($_smarty_tpl) {
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
                                                             <div class="panel panel-default">
                                                                 <div class="panel-body">
+                                                                    <div class="row form-row">
                                                                     <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
-                                                                    <Button id="submitbtn" type="submit" class="btn btn-primary">Einlösen</Button>
+                                                                    </div>
+                                                                    <div class="panel-body">
+                                                                    <Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </form>
-							<br>
 						</div>
 
-
+              <div class="panel panel-default">
+                  <div class="panel-body">
+                      letzte Achievements: 
+                      <ul class="list-group">
                 <?php
 $_from = $_smarty_tpl->tpl_vars['currentUser']->value->getRecentAchievements();
 if (!is_array($_from) && !is_object($_from)) {
@@ -237,14 +243,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['achievement']->value) {
 $_smarty_tpl->tpl_vars['achievement']->_loop = true;
 $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'];
 ?>
-                    <div  class="panel panel-default">
-                        <div class="panel-body">
+                <li class="list-group-item">
                             <b><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
 </b>
-                            <p>Erhaltene Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
+                            <p>Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
 </p>
-                        </div>
-                    </div>
+                </li>
                 <?php
 $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_local_item;
 }
@@ -252,6 +256,9 @@ if ($__foreach_achievement_0_saved_item) {
 $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_item;
 }
 ?>
+                      </ul>
+                  </div>
+              </div>
           </div>
                                                     </div>
 				</div>

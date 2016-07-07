@@ -173,23 +173,30 @@
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
                                                             <div class="panel panel-default">
                                                                 <div class="panel-body">
+                                                                    <div class="row form-row">
                                                                     <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
-                                                                    <Button id="submitbtn" type="submit" class="btn btn-primary">Einlösen</Button>
+                                                                    </div>
+                                                                    <div class="panel-body">
+                                                                    <Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </form>
-							<br>
 						</div>
 
-
+              <div class="panel panel-default">
+                  <div class="panel-body">
+                      letzte Achievements: 
+                      <ul class="list-group">
                 {foreach from = $currentUser->getRecentAchievements() item = $achievement}
-                    <div  class="panel panel-default">
-                        <div class="panel-body">
+                <li class="list-group-item">
                             <b>{$achievement->getName()}</b>
-                            <p>Erhaltene Fitnesspoints: {$achievement->getValue()}</p>
-                        </div>
-                    </div>
+                            <p>Fitnesspoints: {$achievement->getValue()}</p>
+                </li>
                 {/foreach}
+                      </ul>
+                  </div>
+              </div>
           </div>
                                                     </div>
 				</div>
