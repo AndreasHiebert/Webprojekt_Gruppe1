@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 02:18:19
+/* Smarty version 3.1.29, created on 2016-07-07 12:26:57
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d9fcb180800_58356994',
+  'unifunc' => 'content_577e2e71a4c874_09170673',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467850697,
+      1 => 1467887211,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d9fcb180800_58356994 ($_smarty_tpl) {
+function content_577e2e71a4c874_09170673 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,40 +149,57 @@ function content_577d9fcb180800_58356994 ($_smarty_tpl) {
 					</div>
 					<div id="statusbar" class="col-xs-3">
 
-						<h1>Statusbar</h1>
+						<h1></h1>
+                                                
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                Sidebar
+                                                    </div>
+                                                <div class="panel-footer">
 
-						<div class="col-xs-12">
+                                                    <div class="panel panel-default">
+                                                    <div class="panel-body">
+						<div>
 								<div>
+                                                                    Studienfortschritt:
 									<div class="progress">
 										<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active"
 											role="progressbar"
 											aria-valuenow="0"
 											aria-valuemin="0"
 											aria-valuemax="220"
-											style="width: 0%">
-						        	CP: 0/220 (0%)
+											style="width: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCPPercent();?>
+%">
 					        	</div>
 					      	</div>
+                                                                    <div>
+                                                                        CP Aktuell: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCp();?>
+/<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getActiveCourseMaxCp();?>
+<br>
+                                                                                CP in Prozent: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCPPercent();?>
+%
+                                                                    </div>
 					      </div>
 						</div>
 
-						<div class="col-xs-12">
-								<div id = "user_fitnesspoints">
-								  	Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentFitnesspoints();?>
-
-							  	  Rank: #<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentRanking();?>
-
-										Course: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
+						<div>
+                                                    <br>
+								<div>
+                                                                    Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentFitnesspoints();?>
+<br>
+                                                                    Ranking: #<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentRanking();?>
+ in
+                                                                    <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
 
 								</div>
-
-
+                                                </div>
+                                                    </div>
+                                                    </div>
 							<?php if (isset($_smarty_tpl->tpl_vars['codeValid']->value)) {?>
                   <div class="alert alert-success">
                       <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
                   </div>
 							<?php }?>
-
 						  <?php if (isset($_smarty_tpl->tpl_vars['codeFalse']->value)) {?>
                   <?php if ($_smarty_tpl->tpl_vars['error']->value == 1) {?>
                       <div class="alert alert-danger">
@@ -195,18 +212,19 @@ function content_577d9fcb180800_58356994 ($_smarty_tpl) {
                       </div>
                   <?php }?>
               <?php }?>
-
-						<div class="col-xs-12">
+						<div>
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center formpadding" method="post">
-                 <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
-                 <Button type="submit" class="btn btn-primary">
-									 Einlösen
-								 </Button>
-					    </form>
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-body">
+                                                                    <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code einlösen..">
+                                                                    <Button type="submit" class="btn btn-primary">Einlösen</Button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
 							<br>
 						</div>
 
-						</div>
+						
                 <?php
 $_from = $_smarty_tpl->tpl_vars['currentUser']->value->getRecentAchievements();
 if (!is_array($_from) && !is_object($_from)) {
@@ -219,12 +237,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['achievement']->value) {
 $_smarty_tpl->tpl_vars['achievement']->_loop = true;
 $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'];
 ?>
-						        <div  class="panel panel-default">
-                        <b><p><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
-</p></b>
-                           <p>Erhaltene Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
+                    <div  class="panel panel-default">
+                        <div class="panel-body">
+                            <b><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
+</b>
+                            <p>Erhaltene Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
 </p>
-						      	</div>
+                        </div>
+                    </div>
                 <?php
 $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_local_item;
 }
@@ -233,8 +253,12 @@ $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_item;
 }
 ?>
           </div>
+                                                    </div>
 				</div>
 			</div>
+                                    
+                                </div>
+                       
 		<?php }?>
 </div>
 </body>

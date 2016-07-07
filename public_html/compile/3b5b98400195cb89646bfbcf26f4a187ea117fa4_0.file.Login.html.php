@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-06 18:05:39
+/* Smarty version 3.1.29, created on 2016-07-07 10:56:00
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d2c53323324_45921734',
+  'unifunc' => 'content_577e19209c61f0_47549392',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1467821137,
+      1 => 1467881668,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d2c53323324_45921734 ($_smarty_tpl) {
+function content_577e19209c61f0_47549392 ($_smarty_tpl) {
 ?>
-<h1>Login</h1>
 
         <div id ="Headline" class="row">
           <div class="col-sm-5">
