@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 02:08:41
+/* Smarty version 3.1.29, created on 2016-07-07 15:46:38
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577d9d89ab5324_51707565',
+  'unifunc' => 'content_577e5d3e08f652_21838985',
   'file_dependency' => 
   array (
     '24d6ce42fced6453c6fc20550a908392533f7c8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Instructor.html',
-      1 => 1467849764,
+      1 => 1467899195,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577d9d89ab5324_51707565 ($_smarty_tpl) {
+function content_577e5d3e08f652_21838985 ($_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 <div class="container text-center" id="instructorContainer">
 
@@ -100,7 +100,7 @@ $_smarty_tpl->tpl_vars['instructorElem'] = $__foreach_instructorElem_0_saved_ite
 				<br><br><br>
 
 				<div class="container-fluid" id="userTableArea">
-				
+
 					<table class="table table-striped userTable" id="userTable1">
 						<thead>
 							<tr>
@@ -130,7 +130,7 @@ $__foreach_userElem_1_saved_local_item = $_smarty_tpl->tpl_vars['userElem'];
 </td>
 								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getEmail();?>
 </td>
-								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getFitnessPoints();?>
+								<td><?php echo $_smarty_tpl->tpl_vars['userElem']->value->getFitnesspoints($_smarty_tpl->tpl_vars['userElem']->value);?>
 </td>
 							</tr>
 							<?php

@@ -15,11 +15,10 @@ class FitnesspointRepository{
         return $result;
     }
 
-    public function getCurrentFitnesspoints(){
+    public function getFitnesspoints($user){
         global $db;
-        global $currentUser;
 
-        $id = $currentUser->getId();
+        $id = $user->getId();
         $stmt = $db->query("SELECT SUM(a.value)
                             FROM users u
                             INNER JOIN fitnesspoints f

@@ -7,7 +7,6 @@ class User {
     private $regDate = "";
     private $email = "";
     private $activeCourse = 0;
-    private $fitnesspoints = 0;
 
     public static function fromArray($row) {
       $obj = new User();
@@ -17,7 +16,6 @@ class User {
       $obj->setRegDate($row["regDate"]);
       $obj->setEmail($row["email"]);
       $obj->setActiveCourse($row["activeCourse"]);
-      $obj->setFitnesspoints($row["fitnesspoints"]);
       return $obj;
     }
 
@@ -69,22 +67,14 @@ class User {
         $this->activeCourse = $value;
     }
 
-    public function getFitnesspoints() {
-        return $this->fitnesspoints;
-    }
-
-    public function setFitnesspoints($value) {
-        $this->fitnesspoints = $value;
+    public function getFitnesspoints($user){
+        $repo = new FitnesspointRepository();
+        return $repo->getFitnesspoints($user);
     }
 
     public function getCurrentCourseAbbreviation(){
         $repo = new CourseRepository();
         return $repo->getCurrentCourseAbbreviation();
-    }
-
-    public function getCurrentFitnesspoints(){
-        $repo = new FitnesspointRepository();
-        return $repo->getCurrentFitnesspoints();
     }
 
     public function getCurrentRanking(){
@@ -106,16 +96,16 @@ class User {
         $repo = new GradeRepository();
         return $repo->getCurrentCp();
     }
-    
+
     public function getCurrentCPPercent(){
         $grade = new GradeRepository();
         $currentCP = $grade->getCurrentCp();
-                
+
         $repo = new ModuleRepository();
         $maxCP = $repo->getActiveCourseMaxCp();
-        
-        
-         $percent = ($currentCP/ $maxCP)* 100; 
+
+
+         $percent = ($currentCP/ $maxCP)* 100;
          return number_format($percent, 2);
     }
 

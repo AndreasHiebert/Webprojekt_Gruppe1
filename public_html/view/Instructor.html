@@ -58,7 +58,7 @@
 				<br><br><br>
 
 				<div class="container-fluid" id="userTableArea">
-				
+
 					<table class="table table-striped userTable" id="userTable1">
 						<thead>
 							<tr>
@@ -74,7 +74,7 @@
 								<td>{$userElem->getName()}</td>
 								<td>{$userElem->getRegDate()}</td>
 								<td>{$userElem->getEmail()}</td>
-								<td>{$userElem->getFitnessPoints()}</td>
+								<td>{$userElem->getFitnesspoints($userElem)}</td>
 							</tr>
 							{/foreach}
 						</tbody>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 13:03:41
+/* Smarty version 3.1.29, created on 2016-07-07 15:45:53
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577e370d29b2e6_31135105',
+  'unifunc' => 'content_577e5d1197fe21_41573146',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467889416,
+      1 => 1467898973,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577e370d29b2e6_31135105 ($_smarty_tpl) {
+function content_577e5d1197fe21_41573146 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,7 +150,7 @@ function content_577e370d29b2e6_31135105 ($_smarty_tpl) {
 					<div id="statusbar" class="col-xs-3">
 
 						<h1></h1>
-                                                
+
                                                 <div class="panel panel-default">
                                                     <div class="panel-body">
                                                 Sidebar
@@ -185,7 +185,7 @@ function content_577e370d29b2e6_31135105 ($_smarty_tpl) {
 						<div>
                                                     <br>
 								<div>
-                                                                    Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentFitnesspoints();?>
+                                                                    Fitnesspoints: <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getFitnesspoints($_smarty_tpl->tpl_vars['currentUser']->value);?>
 <br>
                                                                     Ranking: #<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentRanking();?>
  in
@@ -224,7 +224,7 @@ function content_577e370d29b2e6_31135105 ($_smarty_tpl) {
 							<br>
 						</div>
 
-						
+
                 <?php
 $_from = $_smarty_tpl->tpl_vars['currentUser']->value->getRecentAchievements();
 if (!is_array($_from) && !is_object($_from)) {
@@ -256,9 +256,9 @@ $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_0_saved_item;
                                                     </div>
 				</div>
 			</div>
-                                    
+
                                 </div>
-                       
+
 		<?php }?>
 </div>
 </body>
