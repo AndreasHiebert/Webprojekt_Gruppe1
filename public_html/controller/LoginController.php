@@ -81,8 +81,8 @@ class LoginController {
         $count = mysqli_num_rows($result);
 
         if($count == 1){
-            session_register("$User_Name");
-            $_SESSION['login_user'] = $User_Name;
+            $_SESSION['login'] = 1;
+            $_SESSION['user'] = $User_Name;
 
             header("location: Homepage.html");
         }else{
