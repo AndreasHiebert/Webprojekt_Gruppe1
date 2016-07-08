@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 10:11:18
+/* Smarty version 3.1.29, created on 2016-07-08 10:39:43
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577f60261985c2_20992819',
+  'unifunc' => 'content_577f66cfb422f8_36794134',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467965430,
+      1 => 1467967156,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577f60261985c2_20992819 ($_smarty_tpl) {
+function content_577f66cfb422f8_36794134 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,21 +65,23 @@ function content_577f60261985c2_20992819 ($_smarty_tpl) {
 <body>
 	<!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
-		<a class="navbar-brand" href="#">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		<!--<a class="navbar-brand" href="#">-->
 			<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 				<a class="navbar-brand" href="#">Study Buddy Admin</a>
 			<?php }?>
 			<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 				<a class="navbar-brand" href="#">Study Buddy</a>
 			<?php }?>
-          <button type="button" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+               
+          
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -112,7 +114,7 @@ function content_577f60261985c2_20992819 ($_smarty_tpl) {
 						<?php }?>
 
 						</ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 <div id = "theBigBorder">
