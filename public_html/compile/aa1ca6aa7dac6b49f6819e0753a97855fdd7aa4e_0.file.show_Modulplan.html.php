@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 18:39:55
+/* Smarty version 3.1.29, created on 2016-07-08 20:08:37
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577fd75b3cc3f8_72666476',
+  'unifunc' => 'content_577fec25139b92_99373918',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467995823,
+      1 => 1468001267,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577fd75b3cc3f8_72666476 ($_smarty_tpl) {
+function content_577fec25139b92_99373918 ($_smarty_tpl) {
 ?>
 <!--<h5>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
 </h5>-->
@@ -53,7 +53,8 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
         <button id = "moduleButton"  name="<?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 " type="button" data-toggle="modal" data-target="#gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 " class="btn btn-success"><?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
-</button>
+<br><b>Note: <?php echo $_smarty_tpl->tpl_vars['module']->value->completedModuleGrade($_smarty_tpl->tpl_vars['module']->value->getId());?>
+</b></button>
         <?php } else { ?>
         <button id = "moduleButton"  name="<?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 " type="button" data-toggle="modal" data-target="#gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>

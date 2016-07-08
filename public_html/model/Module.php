@@ -95,5 +95,19 @@ class Module {
     }
     return $result;
     }
+    
+    public function completedModuleGrade($moduleId) {
+        
+      $repo= new GradeRepository();
+        $gradeObjects=$repo->getUserGrades();
+        
+      foreach($gradeObjects as $grade){
+        if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
+        {
+            $result = $grade->getGrade();
+        }
+    }
+    return $result;
+    }
 }
 ?>

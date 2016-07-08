@@ -25,7 +25,7 @@ class GradeRepository {
                             FROM grades
                             inner JOIN modules
                             ON grades.module_id = modules.id
-                            WHERE grades.user_id = $UserID;");
+                            WHERE grades.user_id = $UserID and grades.grade <= 4");
 
         foreach($stmt as $row){
             $result = $row["SUM(modules.cp)"];
@@ -42,7 +42,7 @@ class GradeRepository {
         
         $UserID = $currentUser->getId();
         
-        $stmt = $db->query("SELECT * FROM grades WHERE user_id = 1");
+        $stmt = $db->query("SELECT * FROM grades WHERE user_id = $UserID and grade <= 4");
 
         foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);

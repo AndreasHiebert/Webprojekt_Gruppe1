@@ -13,7 +13,7 @@
     <div class="btn-group" role="group">
         
         {if $module->completedModule($module->getId()) == true}
-        <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}</button>
+        <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}<br><b>Note: {$module->completedModuleGrade($module->getId())}</b></button>
         {else}
         <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}</button>
         {/if}
