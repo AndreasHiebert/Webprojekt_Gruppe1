@@ -38,7 +38,7 @@ class ModuleRepository {
         return $result[0];
     }
 
-    
+
     public function getActiveCourseMaxCp(){
         global $db;
         global $currentUser;
@@ -60,12 +60,11 @@ class ModuleRepository {
     public static function saveModule($modul) {
         global $db;
 
-        $stmt = $db->prepare("INSERT INTO modules (name, abbrieviation, description, status, cp, semester) "
+        $stmt = $db->prepare("INSERT INTO modules (name, abbrieviation, description, cp, semester) "
                 . "values (:name, :abbrieviation, :description, :status, :cp, :semester)");
         $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':abbrieviation', $user->getAbbrieviation(), PDO::PARAM_STR);
         $stmt->bindValue(':description', $user->getDescription(), PDO::PARAM_STR);
-        $stmt->bindValue(':status', $user->getStatus(), PDO::PARAM_INT);
         $stmt->bindValue(':cp', $user->getCp(), PDO::PARAM_INT);
         $stmt->bindValue(':semester', $user->getSemester(), PDO::PARAM_INT);
 
