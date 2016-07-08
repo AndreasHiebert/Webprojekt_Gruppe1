@@ -28,9 +28,10 @@
 
 #moduleButton{
     min-height: 60px;
-    font-size: 13px;
+    font-size: 12px;
     white-space: pre-wrap;
     border-radius: 0px;
+    border: 2px solid #26a69a;
 }
 
 #semesterRow{
@@ -39,4 +40,5 @@
 
 #modulebox{
     padding: 10px;
+    background-color: #4db6ac;
 }

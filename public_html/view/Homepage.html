@@ -111,80 +111,81 @@
 			<div class="container">
 				<div class="row">
 					<div id="maincontent" class="col-md-9">
-                                            <h1></h1>
-                                            <div class="panel panel-default">
-
-						{$homepage_content}
-
-                                            </div>
+              <h1></h1>
+              <div id="mainpanel" class="panel panel-default">
+									{$homepage_content}
+  						</div>
 					</div>
 					<div id="statusbar" class="col-md-3">
 
 						<h1></h1>
 
-            <div class="panel panel-default">
+            <div id = "sidebarOutsidePanel" class="panel panel-default">
                 <div class="panel-body">
 									<div class="panel panel-default">
 											<div class="panel-body">
 													<div>
 															<div>
-																 Studienfortschritt:
+																 Studienfortschritt: {$currentUser->getCurrentCPPercent()}%
+
 																		<div class="progress">
-																				<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active"
+																				<div id="progress_cp" class="progress-bar progress-bar-success"
 																															role="progressbar"
 																															aria-valuenow="0"
 																															aria-valuemin="0"
 																															aria-valuemax="220"
 																															style="width: {$currentUser->getCurrentCPPercent()}%">
+																														  <span>
+																																	{$currentUser->getCurrentCp()}/{$currentUser->getActiveCourseMaxCp()} CP
+																															</span>
 																				</div>
-																		</div>
-																		<div>
-																				CP Aktuell: {$currentUser->getCurrentCp()}/{$currentUser->getActiveCourseMaxCp()}<br>
-																				CP in Prozent: {$currentUser->getCurrentCPPercent()}%
 																		</div>
 																</div>
 													</div>
 													<div>
-															<br>
 															<div>
+																<hr>
 																	Deine Fitnesspoints: {$currentUser->getFitnesspoints($currentUser)}<br>
-																	Durchschnitt: {$currentUser->getAVGFitnesspoints()}<br><br>
+																	Durchschnitt in {$currentUser->getCurrentCourseAbbreviation()}: {$currentUser->getAVGFitnesspoints()}<br>
 																	Ranking: #{$currentUser->getCurrentRanking()} in
 																	{$currentUser->getCurrentCourseAbbreviation()}
 															</div>
 													</div>
-												</div>
-										</div>
+
 							{if isset($codeValid)}
+							<hr>
 								<div class="alert alert-success">
 										<strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
 								</div>
 							{/if}
 							{if isset($codeFalse)}
 									{if $error == 1}
+									<hr>
 										<div class="alert alert-danger">
 											<strong>Achtung!</strong> Ihr Code wurde schon einmal eingelöst.
 										</div>
 									 {/if}
 							{if $error == 2}
+							<hr>
 									<div class="alert alert-danger">
 											 <strong>Achtung!</strong> Ihr Code ist ungültig oder abgelaufen.
 									</div>
 							{/if}
 					{/if}
 					<div>
+						<hr>
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
-									<div class="panel panel-default">
-											<div class="panel-body">
+
 													<div class="row form-row">
-															<input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
+															<input name="code_input" id="codeinput" type="text" class="form-control" size="18" placeholder="Fitness-Code eingeben...">
 													</div>
 													<div class="panel-body">
 															<Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
 													</div>
 											</div>
-									</div>
+
 								</form>
+							</div>
 					</div>
 
 					<div class="panel panel-default">
