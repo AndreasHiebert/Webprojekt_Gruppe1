@@ -1,43 +1,28 @@
 body {
   /* put everthing under the nav bar */
-  padding-top: 65px;
+  padding-top: 25px;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+  background-color:#80cbc4;
  }
 
 #theBigBorder{
-  min-height: 82vh;
-  max-height: 82vh;
+  min-height: 80vh;
+  max-height: 80vh;
   padding-top: 1em;
 }
 
 #maincontent{
   overflow-y: auto;
-  min-height: 84vh;
-  border-left: 1px solid #00695c;
-  border-bottom: 1px solid #00695c;
 }
 
 #statusbar{
 	float: right;
-  min-height: 84vh;
-  border-right: 1px solid #00695c;
-  border-bottom: 1px solid #00695c;
+  padding-right: 40px;
 }
 
 #user_fitnesspoints{
   color: white;
   background-color: #0099ff;
   text-align: center;
-}
-
-#footerRow{
-  margin-top: 24px;
-  min-height: 16vh;
-  background-color: #00695c;
-}
-
-#footerText{
-  color: white;
-  margin-left: 10px;
 }

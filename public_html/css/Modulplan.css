@@ -30,6 +30,7 @@
     min-height: 60px;
     font-size: 13px;
     white-space: pre-wrap;
+    border-radius: 0px;
 }
 
 #semesterRow{
