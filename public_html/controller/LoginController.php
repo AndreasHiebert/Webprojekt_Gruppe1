@@ -16,7 +16,7 @@ class LoginController {
     return $smarty->fetch("../view/UserRegistration.html");
   }
 
-  public function RegisterUser($UserName, $UserPassword, $EMail, $ActiveCourse){
+  public function RegisterUser(){
     $servername = "localhost";
     $name = "username";
     $password = "password";
@@ -29,9 +29,14 @@ class LoginController {
 
     $result = $mysqli->query("SELECT id FROM users ORDER BY name");
     $id = $result->num_rows;
+    
+    $UserName = mysql_real_escape_string($_POST["name_txt"]);
+    $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
+    $EMail = mysql_real_escape_string($_POST["email_txt"]);
+    $ActiveCourse = mysql_real_escape_string($_POST["course_txt"]);
 
     $sql = "INSERT INTO users(id, name, password, email, activeCourse, fitnesspoints)
-            VALUES($id+1 $UserName, $UserPassword, $EMail, $ActiveCourse, 0)";
+            VALUES($id+1,$UserName, $UserPassword, $EMail, $ActiveCourse, 0)";
 
     if($conn->query($sql) === TRUE){
         echo "New user created successfully";
@@ -94,7 +99,7 @@ class LoginController {
     return $smarty->fetch("../view/InstructorRegistration.html");
   }
 
-  public function RegisterInstructor($UserName, $UserPassword, $EMail){
+  public function RegisterInstructor(){
 
     $servername = "localhost";
     $name = "username";
@@ -108,6 +113,10 @@ class LoginController {
 
     $result = $mysqli->query("SELECT id FROM instructors ORDER BY name");
     $id = $result->num_rows;
+    
+    $UserName = mysql_real_escape_string($_POST["name_txt"]);
+    $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
+    $EMail = mysql_real_escape_string($_POST["email_txt"]);
 
     $sql = "INSERT INTO instructors(id, name, password, email)
             VALUES($id+1, $UserName, $UserPassword, $EMail)";
