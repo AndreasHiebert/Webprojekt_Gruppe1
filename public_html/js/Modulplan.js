@@ -10,3 +10,14 @@ var highestBox = 0;
 $('.btn-group-justified .btn').height(highestBox);
 
 });
+
+$(window).resize(function() {
+  if ($(window).width() < 770) {
+    $('#modulplan_row').removeClass('btn-group btn-group-justified');
+    $('#modulplan_row').addClass('btn-group-vertical');
+  } else {
+    $('#modulplan_row').addClass('btn-group btn-group-justified');
+    $('#modulplan_row').removeClass('btn-group-vertical');
+  }
+});
+
