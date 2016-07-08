@@ -49,6 +49,7 @@ class Achievement{
     }
 
     public function setObtainedDate($value){
+        $value = date("d.m.y"); 
         $this->obtainedDate = $value;
     }
 
@@ -67,6 +68,6 @@ class Achievement{
     public function setValue($value){
         $this->value = $value;
     }
-    
+
 }
 ?>
