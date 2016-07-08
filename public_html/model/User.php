@@ -66,6 +66,20 @@ class User {
     public function setActiveCourse($value) {
         $this->activeCourse = $value;
     }
+    
+    public function getAVGFitnesspoints(){
+        $repo = new FitnesspointRepository();
+        $fitnesspoints = $repo->getEveryUserFitnesspoint();
+        $amount = 0;
+        $allfitnesspoints= 0;
+        
+        foreach ($fitnesspoints as $fitnesspoint){
+            $amount++;
+            $allfitnesspoints = $allfitnesspoints + $fitnesspoint;
+        }
+        
+        return $allfitnesspoints/$amount;
+    }
 
     public function getFitnesspoints($user){
         $repo = new FitnesspointRepository();

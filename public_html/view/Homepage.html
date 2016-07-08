@@ -32,21 +32,23 @@
 <body>
 	<!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
-		<a class="navbar-brand" href="#">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		<!--<a class="navbar-brand" href="#">-->
 			{if isset($currentInstructor)}
 				<a class="navbar-brand" href="#">Study Buddy Admin</a>
 			{/if}
 			{if !isset($currentInstructor)}
 				<a class="navbar-brand" href="#">Study Buddy</a>
 			{/if}
-          <button type="button" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+               
+          
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -79,7 +81,7 @@
 						{/if}
 
 						</ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
     </nav>
 <div id = "theBigBorder">
@@ -108,103 +110,100 @@
 		{if isset($currentUser)}
 			<div class="container">
 				<div class="row">
-					<div id="maincontent" class="col-xs-9">
+					<div id="maincontent" class="col-md-9">
 						{$homepage_content}
 					</div>
-					<div id="statusbar" class="col-xs-3">
+					<div id="statusbar" class="col-md-3">
 
 						<h1></h1>
 
-                                                <div class="panel panel-default">
-                                                    <div class="panel-body">
-                                                Sidebar
-                                                    </div>
-                                                <div class="panel-footer">
-
-                                                    <div class="panel panel-default">
-                                                    <div class="panel-body">
-						<div>
-								<div>
-                                                                    Studienfortschritt:
-									<div class="progress">
-										<div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active"
-											role="progressbar"
-											aria-valuenow="0"
-											aria-valuemin="0"
-											aria-valuemax="220"
-											style="width: {$currentUser->getCurrentCPPercent()}%">
-					        	</div>
-					      	</div>
-                                                                    <div>
-                                                                        CP Aktuell: {$currentUser->getCurrentCp()}/{$currentUser->getActiveCourseMaxCp()}<br>
-                                                                                CP in Prozent: {$currentUser->getCurrentCPPercent()}%
-                                                                    </div>
-					      </div>
-						</div>
-
-						<div>
-                                                    <br>
-								<div>
-                                                                    Fitnesspoints: {$currentUser->getFitnesspoints($currentUser)}<br>
-                                                                    Ranking: #{$currentUser->getCurrentRanking()} in
-                                                                    {$currentUser->getCurrentCourseAbbreviation()}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    Sidebar
 								</div>
-                                                </div>
-                                                    </div>
-                                                    </div>
-							{if isset($codeValid)}
-                  <div class="alert alert-success">
-                      <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
-                  </div>
-							{/if}
-						  {if isset($codeFalse)}
-                  {if $error == 1}
-                      <div class="alert alert-danger">
+                <div class="panel-footer">  
+								    	<div class="panel panel-default">
+                          <div class="panel-body">
+														  <div>
+				                          <div>
+                                     Studienfortschritt:
+								                      	<div class="progress">
+										                        <div id="progress_cp" class="progress-bar progress-bar-success progress-bar-striped active"
+										                                            	role="progressbar"
+										                                            	aria-valuenow="0"
+										                                             	aria-valuemin="0"
+										                                            	aria-valuemax="220"
+										                                             	style="width: {$currentUser->getCurrentCPPercent()}%">
+					        	                        </div>
+					      	                      </div>
+                                        <div>
+                                            CP Aktuell: {$currentUser->getCurrentCp()}/{$currentUser->getActiveCourseMaxCp()}<br>
+                                            CP in Prozent: {$currentUser->getCurrentCPPercent()}%
+                                        </div>
+					                          </div>
+						                  </div>
+                              <div>
+                                  <br>
+								                  <div>
+                                      Deine Fitnesspoints: {$currentUser->getFitnesspoints($currentUser)}<br>
+                                      Durchschnitt: {$currentUser->getAVGFitnesspoints()}<br><br>
+                                      Ranking: #{$currentUser->getCurrentRanking()} in
+                                      {$currentUser->getCurrentCourseAbbreviation()}
+							                  	</div>
+                              </div>
+                            </div>
+                        </div>
+						    	{if isset($codeValid)}
+                    <div class="alert alert-success">
+                        <strong>Glückwunsch!</strong> Ihr Code wurde erfolgreich eingelöst.
+                    </div>
+							    {/if}
+						      {if isset($codeFalse)}
+                      {if $error == 1}
+                        <div class="alert alert-danger">
                           <strong>Achtung!</strong> Ihr Code wurde schon einmal eingelöst.
-                      </div>
-                  {/if}
+                        </div>
+                       {/if}
                   {if $error == 2}
                       <div class="alert alert-danger">
                            <strong>Achtung!</strong> Ihr Code ist ungültig oder abgelaufen.
                       </div>
                   {/if}
               {/if}
-						<div>
-							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
-                                                            <div class="panel panel-default">
-                                                                <div class="panel-body">
-                                                                    <div class="row form-row">
-                                                                    <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
-                                                                    </div>
-                                                                    <div class="panel-body">
-                                                                    <Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-						</div>
+						  <div>
+							    <form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
+                      <div class="panel panel-default">
+                          <div class="panel-body">
+                              <div class="row form-row">
+                                  <input name="code_input" id="codeinput" type="text" class="form-control" size="20" placeholder="Fitness-Code eingeben...">
+                              </div>
+                              <div class="panel-body">
+                              		<Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
+                              </div>
+                          </div>
+                      </div>
+              		  </form>
+							</div>
 
               <div class="panel panel-default">
                   <div class="panel-body">
-                      letzte Achievements: 
+                      letzte Achievements:
                       <ul class="list-group">
-                {foreach from = $currentUser->getRecentAchievements() item = $achievement}
-                <li class="list-group-item">
-                            <b>{$achievement->getName()}</b>
-                            <p>Fitnesspoints: {$achievement->getValue()}</p>
-                </li>
-                {/foreach}
+                					{foreach from = $currentUser->getRecentAchievements() item = $achievement}
+                						<li class="list-group-item">
+                            		<b>{$achievement->getName()}</b>
+                            		<p>Fitnesspoints: {$achievement->getValue()}</p>
+                						</li>
+                					{/foreach}
                       </ul>
                   </div>
-              </div>
-          </div>
-                                                    </div>
+              	</div>
+          	</div>
+        	</div>
 				</div>
 			</div>
-
-                                </div>
-
-		{/if}
+    </div>
+{/if}
 </div>
 </body>
 <footer>
