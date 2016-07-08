@@ -50,9 +50,11 @@ class FitnesspointController {
           $fitnesspoint->setAchievementId($id_achievement);
           FitnessPointRepository::saveFitnesspoint($fitnesspoint);
           $smarty->assign("codeValid",$codeValid);
-          return $smarty->fetch("show_Achievements.html");
         }
-  }
+  
+        
+        return $smarty->fetch("../view/show_Achievements.html");
+        }
 
 }
 ?>

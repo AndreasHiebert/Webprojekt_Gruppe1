@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 23:47:03
+/* Smarty version 3.1.29, created on 2016-07-08 10:11:18
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577ecdd7331c66_26968216',
+  'unifunc' => 'content_577f60261985c2_20992819',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467928019,
+      1 => 1467965430,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577ecdd7331c66_26968216 ($_smarty_tpl) {
+function content_577f60261985c2_20992819 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -143,11 +143,11 @@ function content_577ecdd7331c66_26968216 ($_smarty_tpl) {
 		<?php if (isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
 			<div class="container">
 				<div class="row">
-					<div id="maincontent" class="col-xs-9">
+					<div id="maincontent" class="col-md-9">
 						<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
 
 					</div>
-					<div id="statusbar" class="col-xs-3">
+					<div id="statusbar" class="col-md-3">
 
 						<h1></h1>
 
