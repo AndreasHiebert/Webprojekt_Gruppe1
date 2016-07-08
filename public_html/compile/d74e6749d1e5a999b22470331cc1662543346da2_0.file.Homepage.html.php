@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 10:39:43
+/* Smarty version 3.1.29, created on 2016-07-08 11:53:59
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577f66cfb422f8_36794134',
+  'unifunc' => 'content_577f78378ac239_32824087',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1467967156,
+      1 => 1467971635,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577f66cfb422f8_36794134 ($_smarty_tpl) {
+function content_577f78378ac239_32824087 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,8 +32,8 @@ function content_577f66cfb422f8_36794134 ($_smarty_tpl) {
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Custom themes -->
-	<link rel="stylesheet" type="text/css" href="/css/Homepage.css">
 	<link rel="stylesheet" type="text/css" href="/css/NavBar.css">
+        <link rel="stylesheet" type="text/css" href="/css/Homepage.css">
 	<link rel="stylesheet" type="text/css" href="/css/Modulplan.css">
 	<link rel="stylesheet" type="text/css" href="/css/Achievements.css">
 	<link rel="stylesheet" type="text/css" href="/css/Instructor.css">
@@ -64,7 +64,7 @@ function content_577f66cfb422f8_36794134 ($_smarty_tpl) {
 
 <body>
 	<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top navbar-default navbar-custom ">
       <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -146,8 +146,13 @@ function content_577f66cfb422f8_36794134 ($_smarty_tpl) {
 			<div class="container">
 				<div class="row">
 					<div id="maincontent" class="col-md-9">
+                                            <h1></h1>
+                                            <div class="panel panel-default">
+                                               
 						<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
 
+                                              
+                                            </div>
 					</div>
 					<div id="statusbar" class="col-md-3">
 

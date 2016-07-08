@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 10:56:12
+/* Smarty version 3.1.29, created on 2016-07-08 12:06:08
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577e192c676db5_70718331',
+  'unifunc' => 'content_577f7b102446c8_97810063',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467881737,
+      1 => 1467972356,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,13 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577e192c676db5_70718331 ($_smarty_tpl) {
+function content_577f7b102446c8_97810063 ($_smarty_tpl) {
 ?>
-<h1>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
-</h1>
+<!--<h5>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
+</h5>-->
 
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
+<div id="modulebox">
+<div class="btn-group btn-group-justified " role="group" aria-label="...">
     <?php
 $_from = $_smarty_tpl->tpl_vars['allModules']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -83,6 +84,7 @@ if ($__foreach_module_0_saved_item) {
 $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 }
 ?>
+</div>
 </div>
 
 <!--<br>-->
