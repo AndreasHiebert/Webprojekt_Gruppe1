@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 12:22:16
+/* Smarty version 3.1.29, created on 2016-07-08 16:13:32
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577f7ed80047e3_38542640',
+  'unifunc' => 'content_577fb50c56cae3_44133472',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1467973286,
+      1 => 1467987207,
       2 => 'file',
     ),
   ),
@@ -19,13 +19,16 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577f7ed80047e3_38542640 ($_smarty_tpl) {
+function content_577fb50c56cae3_44133472 ($_smarty_tpl) {
 ?>
 <!--<h5>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
 </h5>-->
+<?php echo '<script'; ?>
+ src="js/Modulplan.js"><?php echo '</script'; ?>
+>
 
 <div id="modulebox">
-<div class="btn-group btn-group-justified " role="group" aria-label="...">
+<div id="modulplan_row" class="btn-group btn-group-justified" role="group" aria-label="...">
     <?php
 $_from = $_smarty_tpl->tpl_vars['allModules']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -38,11 +41,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['module']->value) {
 $_smarty_tpl->tpl_vars['module']->_loop = true;
 $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 ?>
-
     <?php if ($_smarty_tpl->tpl_vars['module']->value->getSemester() != $_smarty_tpl->tpl_vars['semester']->value) {?>
 </div>
-<br>
-<div id = "semesterRow" class="btn-group btn-group-justified" role="group" aria-label="...">
+ <br>
+<div id = "semesterRow" class="btn-group btn-group-justified modulplan_group" role="group" aria-label="...">
     <?php }?>
 
     <div class="btn-group" role="group">
