@@ -7,9 +7,9 @@ class AchievementRepository{
         $result = array();
 
         $id = $currentUser->getId();
-        
+
         $stmt = $db->query("SELECT * FROM achievements INNER JOIN fitnesspoints ON achievements.id = fitnesspoints.achievement_id WHERE fitnesspoints.user_id = $id ORDER BY fitnesspoints.id DESC");
-                            
+
         foreach ($stmt as $row) {
             $result[] = Achievement::fromArray($row);
         }
@@ -38,6 +38,35 @@ class AchievementRepository{
              if($zaehler === 5){
                  break;
              }
+
+             $obj = new Achievement();
+             $obj->setName($row["name"]);
+             $obj->setValue($row["value"]);
+
+             $result[] = $obj;
+
+             $zaehler++;
+        }
+        return $result;
+    }
+
+    public function getCurrentUserAchievements(){
+        global $db;
+        global $currentUser;
+        $result = array();
+
+        $id = $currentUser->getId();
+        $stmt = $db->query("SELECT name, value
+                            FROM fitnesspoints f
+                            INNER JOIN achievements a
+                            ON a.id = f.achievement_id
+                            WHERE f.user_id = $id
+                            ORDER BY f.id
+                            DESC");
+
+        $zaehler = 0;
+
+         foreach ($stmt as $row) {
 
              $obj = new Achievement();
              $obj->setName($row["name"]);

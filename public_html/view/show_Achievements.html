@@ -1,6 +1,6 @@
 
 <ul class="list-group">
-{foreach from = $achievements item = $achievement}
+{foreach from = $userAchievements item = $achievement}
 <li class="list-group-item">
   <div class="media">
      <div class="media-left media-middle">
@@ -12,7 +12,7 @@
          <h4 class="media-heading">{$achievement->getName()}</h4>
          Wert: {$achievement->getValue()} Fitnesspoints<br>
          {$achievement->getDescription()}
-       
+
      </div>
       <div class="media-right">
           {$achievement->getObtainedDate()}
