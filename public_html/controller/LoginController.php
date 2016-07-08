@@ -50,19 +50,21 @@ class LoginController {
 
   public function LoginRegisteredUser(){
     $servername = "localhost";
-    $username = "username";
+    $username = "root";
     $password = "password";
     $dbname = "webprojekt13";
 
     SESSION_START();
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if($conn->connect_error){
-        die("COnnection failed: ".$conn->connect_error);
+    try {
+        $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        die;
     }
     
-    if(!empty($_POST["submit"])){
+    if(!empty($_POST["Login"])){
 
         $User_Name = mysql_real_escape_string($_POST["email_txt"]);
         $User_Password = mysql_real_escape_string($_POST["pass_txt"]);
@@ -79,8 +81,8 @@ class LoginController {
         $count = mysqli_num_rows($result);
 
         if($count == 1){
-            session_register("$User_Name");
-            $_SESSION['login_user'] = $User_Name;
+            $_SESSION['login'] = 1;
+            $_SESSION['user'] = $User_Name;
 
             header("location: Homepage.html");
         }else{
