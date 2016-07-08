@@ -140,6 +140,5 @@ class User {
 
         return $error;
     }
-
 }
 ?>

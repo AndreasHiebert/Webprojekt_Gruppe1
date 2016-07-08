@@ -9,8 +9,8 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Custom themes -->
-	<link rel="stylesheet" type="text/css" href="/css/Homepage.css">
 	<link rel="stylesheet" type="text/css" href="/css/NavBar.css">
+        <link rel="stylesheet" type="text/css" href="/css/Homepage.css">
 	<link rel="stylesheet" type="text/css" href="/css/Modulplan.css">
 	<link rel="stylesheet" type="text/css" href="/css/Achievements.css">
 	<link rel="stylesheet" type="text/css" href="/css/Instructor.css">
@@ -31,7 +31,7 @@
 
 <body>
 	<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-fixed-top navbar-default navbar-custom ">
       <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -111,7 +111,12 @@
 			<div class="container">
 				<div class="row">
 					<div id="maincontent" class="col-md-9">
+                                            <h1></h1>
+                                            <div class="panel panel-default">
+                                               
 						{$homepage_content}
+                                              
+                                            </div>
 					</div>
 					<div id="statusbar" class="col-md-3">
 

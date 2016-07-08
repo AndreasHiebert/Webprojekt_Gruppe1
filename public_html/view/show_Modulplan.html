@@ -1,6 +1,7 @@
-<h1>Modulplan {$currentUser->getCurrentCourseAbbreviation()}</h1>
+<!--<h5>Modulplan {$currentUser->getCurrentCourseAbbreviation()}</h5>-->
 
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
+<div id="modulebox">
+<div class="btn-group btn-group-justified " role="group" aria-label="...">
     {foreach from = $allModules item = $module}
 
     {if $module->getSemester() != $semester}
@@ -36,6 +37,7 @@
     </div>
     {$semester = $module->getSemester()}
     {/foreach}
+</div>
 </div>
 
 <!--<br>-->

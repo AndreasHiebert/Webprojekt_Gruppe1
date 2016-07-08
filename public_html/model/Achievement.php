@@ -67,5 +67,6 @@ class Achievement{
     public function setValue($value){
         $this->value = $value;
     }
+    
 }
 ?>
