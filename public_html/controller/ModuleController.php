@@ -28,27 +28,6 @@ class ModuleController {
         GradeRepository::saveGrade($grade);
     }
 
-    public function completedModule($moduleId) {
-        $userId = $currentUser->getId();
-        $gradeObjects = $repoGrades->getAllGrades();
-
-
-        foreach($gradeObjects as $grade)
-        {
-            if($moduleId == $grade->getModuleId() && $userId == $grade->getUserId())
-            {
-                if ($grade->getGrade() <= 4)
-                {
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
-        }
-        return false;
-    }
-
     public function getMaxCp(){
         $maxCp = 0;
         $userCourseId = $currentUser->getCourse();

@@ -11,7 +11,13 @@
     {/if}
 
     <div class="btn-group" role="group">
+        
+        {if $module->completedModule($module->getId()) == true}
+        <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}</button>
+        {else}
         <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}</button>
+        {/if}
+
 
     <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
     <div class="modal-dialog">

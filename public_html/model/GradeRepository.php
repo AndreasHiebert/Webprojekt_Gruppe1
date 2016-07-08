@@ -5,11 +5,9 @@ class GradeRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT *
-                            FROM grades
-                            ORDER BY id");
+        $stmt = $db->query("SELECT * FROM grades ORDER BY id");
 
-        foreach ($stmt as $row) {
+        foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);
         }
 
@@ -35,11 +33,28 @@ class GradeRepository {
 
         return $result;
     }
+    
+    public function getUserGrades(){
+        global $db;
+        global $currentUser;
+        
+        $result = array();
+        
+        $UserID = $currentUser->getId();
+        
+        $stmt = $db->query("SELECT * FROM grades WHERE user_id = 1");
+
+        foreach($stmt as $row) {
+            $result[] = Grade::fromArray($row);
+        }
+
+        return $result;
+    }
 
     public static function saveGrades($grade) {
         global $db;
 
-        $stmt = $db->prepare("INSERT INTO grades (userId, moduleId, grade ) "
+        $stmt = $db->prepare("INSERT INTO grades (user_id, module_id, grade)"
                 . "values (:userId, :moduleId, :grade)");
         $stmt->bindValue(':userId', $grade->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':moduleId', $grade->getModuleId(), PDO::PARAM_INT);

@@ -76,6 +76,24 @@ class Module {
     public function setCp($value) {
       $this->cp = $value;
     }
-
+    
+    public function completedModule($moduleId) {
+        
+      global $currentUser;
+      $userId = $currentUser->getId();
+      
+      $result = false;
+      
+      $repo= new GradeRepository();
+        $gradeObjects=$repo->getUserGrades();
+        
+      foreach($gradeObjects as $grade){
+        if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
+        {
+            $result = true;
+        }
+    }
+    return $result;
+    }
 }
 ?>

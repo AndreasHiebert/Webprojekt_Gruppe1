@@ -3,16 +3,16 @@
 class Grade {
 
     private $id = 0;
-    private $userId = 0;
-    private $moduleId = 0;
+    private $user_id = 0;
+    private $module_id = 0;
     private $grade = 0;
     private $date = "";
 
     public static function fromArray($row) {
         $obj = new Grade();
         $obj->setId($row["id"]);
-        $obj->setUserId($row["userId"]);
-        $obj->setModuleId($row["moduleId"]);
+        $obj->setUserId($row["user_id"]);
+        $obj->setModuleId($row["module_id"]);
         $obj->setGrade($row["grade"]);
         $obj->setDate($row["date"]);
         return $obj;
@@ -27,19 +27,19 @@ class Grade {
     }
 
     public function getUserId() {
-        return $this->userId;
+        return $this->user_id;
     }
 
     public function setUserId($value) {
-        $this->userId = $value;
+        $this->user_id = $value;
     }
 
     public function getModuleId() {
-        return $this->moduleId;
+        return $this->module_id;
     }
 
     public function setModuleId($value) {
-        $this->moduleId = $value;
+        $this->module_id = $value;
     }
 
     public function getGrade() {
