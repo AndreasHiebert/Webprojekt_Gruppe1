@@ -72,6 +72,10 @@ $repo= new GradeRepository();
 $gradeObjects=$repo->getAllGrades();
 $smarty->assign("grades", $gradeObjects);
 
+$repo= new AchievementRepository();
+$achievementObjects=$repo->getAllAchievements();
+$smarty->assign("achievements", $achievementObjects);
+
 //------------------------------------------------------------------------------
 // set test accounts
 
@@ -87,11 +91,6 @@ $currentInstructor = $instructorObjects[0];
 //$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
-
-
-$repo= new AchievementRepository();
-$achievementObjects=$repo->getAllAchievements();
-$smarty->assign("achievements", $achievementObjects);
 
 if (isset($_REQUEST["controller"])) {
     $controller_name = $_REQUEST["controller"];
