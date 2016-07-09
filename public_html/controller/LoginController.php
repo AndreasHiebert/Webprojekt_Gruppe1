@@ -17,35 +17,19 @@ class LoginController {
   }
 
   public function RegisterUser(){
-    $servername = "localhost";
-    $name = "username";
-    $password = "password";
-    $dbname = "webprojekt13";
-    $conn = new mysqli($servername, $name, $password, $dbname);
+      global $smarty;
+      
+      $_Name = $_POST["username_txt"];
+      $_EMail = $_POST["email_txt"];
+      $_Password = $_POST["pass_txt"];
+      $_confirm = $_POST["confirm_txt"];
+      $_course = $_POST["course_txt"];
+      
+      $_User = new User();
+      
 
-    if($conn->connect_error){
-        die("COnnection failed: ".$conn->connect_error);
-    }
-
-    $result = $mysqli->query("SELECT id FROM users ORDER BY name");
-    $id = $result->num_rows;
-
-    $UserName = mysql_real_escape_string($_POST["name_txt"]);
-    $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
-    $EMail = mysql_real_escape_string($_POST["email_txt"]);
-    $ActiveCourse = mysql_real_escape_string($_POST["course_txt"]);
-
-    $sql = "INSERT INTO users(id, name, password, email, activeCourse, fitnesspoints)
-            VALUES($id+1,$UserName, $UserPassword, $EMail, $ActiveCourse, 0)";
-
-    if($conn->query($sql) === TRUE){
-        echo "New user created successfully";
-    }else{
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-
+      $_UserRepo = new UserRepository();
+      $_UserRepo->saveUser($_User);
   }
 
   public function LoginRegisteredUser(){
