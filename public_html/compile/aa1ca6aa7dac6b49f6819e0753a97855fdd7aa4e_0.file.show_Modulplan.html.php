@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 21:20:31
+/* Smarty version 3.1.29, created on 2016-07-10 01:15:27
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57814e7fea7d14_38363046',
+  'unifunc' => 'content_5781858fde8219_27342259',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468092028,
+      1 => 1468106122,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57814e7fea7d14_38363046 ($_smarty_tpl) {
+function content_5781858fde8219_27342259 ($_smarty_tpl) {
 ?>
 <div id="modulebox" class="hidden-xs">
     <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
@@ -63,21 +63,18 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 " class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-
-                    <!--                        <input type="hidden" name="controller" value="ModuleController">
-                                            <input type="hidden" name="action" value="enterGrade">-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">Close</button>
-                            <h4 class="modal-title">Enter Grade for: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+                            <button type="button" class="close" data-dismiss="modal">Schließen</button>
+                            <h4 class="modal-title">Note Eingeben für: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 </h4>
                         </div>
 
                         <div class="modal-body">
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
-                                    <label for="grade">Grade:</label>
-                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
+                                    <label for="grade">Note:</label>
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Trage deine Note ein">
                                 </div>
 
                                 <div class="form-group">
@@ -89,7 +86,7 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                                     <input id="moduleId" name="module_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 ">
                                 </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Bestätigen</button>
                             </form>
                         </div>
                     </div>
@@ -152,21 +149,18 @@ $__foreach_module_1_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 " class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-
-                    <!--                        <input type="hidden" name="controller" value="ModuleController">
-                                            <input type="hidden" name="action" value="enterGrade">-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">Close</button>
-                            <h4 class="modal-title">Enter Grade for: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+                            <button type="button" class="close" data-dismiss="modal">Schließen</button>
+                            <h4 class="modal-title">Note eingeben für: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 </h4>
                         </div>
 
                         <div class="modal-body">
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
-                                    <label for="grade">Grade:</label>
-                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
+                                    <label for="grade">Note:</label>
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Trage deine Note ein">
                                 </div>
 
                                 <div class="form-group">
@@ -178,7 +172,7 @@ $__foreach_module_1_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                                     <input id="moduleId" name="module_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 ">
                                 </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Bestätigen</button>
                             </form>
                         </div>
                     </div>
