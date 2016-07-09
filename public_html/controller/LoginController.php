@@ -52,7 +52,6 @@ class LoginController {
     
     global $currentUser;
     global $smarty;
-    include '../controller/ModuleController.php';
 
     SESSION_START();
 
@@ -82,8 +81,8 @@ class LoginController {
             
             echo "Login erfolgreich.<br>";
             $_SESSION['login'] = 1;
-            $_SESSION['user'] = mysql_fetch_array($res, MYSQL_ASSOC);
-            $moduleController = new ModuleController;
+            $_SESSION['user'] = mysql_fetch_array($_res, MYSQL_ASSOC);
+            $moduleController = new ModuleController();
             return $moduleController->showModulplan();
         }else{
             $error = "Your Login Name or Password is invalid";
