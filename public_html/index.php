@@ -83,7 +83,7 @@ $currentUser = new User();
 $GLOBALS['currentUser'] = new User();
 $currentInstructor = new Instructor();
 $GLOBALS['currentInstructor'] = new Instructor();
-
+//
 //$currentUser = $loginUser;
 //$smarty->assign("currentUser", $currentUser,"global");
 
