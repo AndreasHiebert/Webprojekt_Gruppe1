@@ -1,31 +1,27 @@
 <?php
 
-
 class ModuleController {
 
-  public function showModulplan(){
-    global $smarty;
-
-    $repo = new ModuleRepository();
-
-    $semesterMax = $repo->getHighestSemester();
-    $smarty->assign("semesterMax",$semesterMax);
-
-    $allModules = $repo->getAllModules();
-    $smarty->assign("allModules",$allModules);
-
-    $semester = 1;
-    $smarty->assign("semester",$semester);
-
-    $smarty->assign("currentUser", $_SESSION["currentUser"]);
-    return $smarty->fetch("../view/show_Modulplan.html");
-  }
-
-    public function enterGrade()
-    {
+    public function showModulplan() {
         global $smarty;
 
-//        $grade = Grade::fromArray($_REQUEST);
+        $repo = new ModuleRepository();
+
+        $semesterMax = $repo->getHighestSemester();
+        $smarty->assign("semesterMax", $semesterMax);
+
+        $allModules = $repo->getAllModules();
+        $smarty->assign("allModules", $allModules);
+
+        $semester = 1;
+        $smarty->assign("semester", $semester);
+
+        $smarty->assign("currentUser", $_SESSION["currentUser"]);
+        return $smarty->fetch("../view/show_Modulplan.html");
+    }
+
+    public function enterGrade() {
+        global $smarty;
 
         $userId = $_POST['user_id'];
         $moduleId = $_POST['module_id'];
@@ -36,31 +32,26 @@ class ModuleController {
         $grade->setModuleId($moduleId);
         $grade->setGrade($gradeIn);
 
-
         $repo = new GradeRepository();
         $passed = $repo->gradeAlreadyPassed($moduleId);
- 
-        if($passed == false and $gradeIn <= 4 and $gradeIn >= 1){
-        GradeRepository::saveGrades($grade);
 
+        if (!$passed and $gradeIn <= 4 and $gradeIn >= 1) {
+            GradeRepository::saveGrades($grade);
+        } else if ($passed and $gradeIn <= 4 and $gradeIn >= 1) {
+            GradeRepository::updateGrades($grade);
         }
-        else{
-        GradeRepository::updateGrades($grade);
-        }
-        
+
         $moduleView = new ModuleController();
         return $moduleView->showModulplan();
     }
 
-    public function getMaxCp(){
+    public function getMaxCp() {
         $maxCp = 0;
         $userCourseId = $_SESSION["currentUser"]->getCourse();
         $courseObjects = $repoCourses->getAllCourses;
 
-        foreach ($courseObjects as $course)
-        {
-            if($userCourseId == $course->getId())
-            {
+        foreach ($courseObjects as $course) {
+            if ($userCourseId == $course->getId()) {
                 $maxCp = $course->getMaxCp();
                 return $maxCp;
             }
@@ -74,10 +65,8 @@ class ModuleController {
 
         $moduleObjects = $repoModules->getAllModules();
 
-        foreach($moduleObjects as $module)
-        {
-            if(completedModule($module->getId()))
-            {
+        foreach ($moduleObjects as $module) {
+            if (completedModule($module->getId())) {
                 $currentCp += $module->getCp();
             }
         }
@@ -85,14 +74,14 @@ class ModuleController {
         return $currentCp;
     }
 
-    public function getCurrentCpPercent()
-    {
+    public function getCurrentCpPercent() {
         $currentCp = getCurrentCp();
         $maxCp = getMaxCp();
-        $currentCpPercent = ($currentCp/$maxCp) * 100;
+        $currentCpPercent = ($currentCp / $maxCp) * 100;
 
         return $currentCpPercent;
     }
 
 }
+
 ?>
