@@ -15,6 +15,43 @@ class UserRepository {
 
         return $result;
     }
+    
+    public function testUserLogin($username , $password){
+        global $db;
+        $bool = false;
+        
+        $stmt =$db->query("SELECT * FROM users WHERE
+                email='$username' AND
+                password ='$password'
+                LIMIT 1");
+        
+         foreach ($stmt as $row) {
+            $result[] = User::fromArray($row);
+            $bool = true;
+            
+        }
+        return $bool;
+    }
+    
+      public function CorrectUser($username , $password){
+        global $db;
+        $result = array();
+        
+        $stmt =$db->query("SELECT * FROM users WHERE
+                email='$username' AND
+                password ='$password'
+                LIMIT 1");
+        
+         foreach ($stmt as $row) {
+            $result[] = User::fromArray($row);
+            
+        }
+        return $result[0];
+    }
+    
+    
+
+
 
     public function getCurrentRanking(){
         global $db;

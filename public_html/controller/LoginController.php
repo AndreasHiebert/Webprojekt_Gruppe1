@@ -52,43 +52,41 @@ class LoginController {
     
     global $currentUser;
     global $smarty;
-    include '../controller/ModuleController.php';
+    //include '../controller/ModuleController.php';
 
     SESSION_START();
 
     try {
-        $db = new PDO("mysql:host=localhost;dbname=webprojekt14", "root");
+        $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         die;
     }
     
-    if(!empty($_POST["Submit"])){
+    print_r("blablablu");
 
-        $_Name = mysql_real_escape_string($_POST["email_txt"]);
-        $_Password = mysql_real_escape_string($_POST["pass_txt"]);
+        $_Name = $_POST["email_txt"];
+        $_Password = $_POST["pass_txt"];
+        
+        global $currentUser;
 
-        $_sql = "SELECT * FROM users WHERE
-                email='$_Name' AND
-                password ='$_Password'
-                LIMIT 1";
+        $repo = new UserRepository();
+        $excistingUser = $repo->testUserLogin($_Name , $_Password);
+        
+        print_r("$_sql blabla");
 
-        $currentUser = $_sql;
-        $_res = mysql_query($_sql, $db);
-        $_anzahl = @mysql_num_rows($_res);
-
-        if($_anzahl > 0){
+        if($excistingUser == TRUE){
+            $currentUser = $repo->CorrectUser($_Name , $_Password);
+            $smarty->assign("currentUser", $currentUser,"global");
+            $smarty->assign("loginUser", $currentUser,"global");
             
             echo "Login erfolgreich.<br>";
-            $_SESSION['login'] = 1;
-            $_SESSION['user'] = mysql_fetch_array($res, MYSQL_ASSOC);
-            $moduleController = new ModuleController;
-            return $moduleController->showModulplan;
+            $moduleController = new ModuleController();
+            return $moduleController->showModulplan();
         }else{
             $error = "Your Login Name or Password is invalid";
         }
-    }
 
   }
 
