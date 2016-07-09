@@ -26,10 +26,18 @@ class LoginController {
       $_course = $_POST["course_txt"];
 
       $_User = new User();
-
+      $_User->setName($_Name);
+      $_User->setEmail($_Email);
+      $_User->setActiveCourse($_course);
+      $_User->setPassword($_confirm);
+      $_User->setRegDate($smarty->now|date_format);
 
       $_UserRepo = new UserRepository();
       $_UserRepo->saveUser($_User);
+
+      $moduleController = new ModuleController();
+      return $moduleController->showModulplan();
+
   }
 
   public function LoginRegisteredUser(){
