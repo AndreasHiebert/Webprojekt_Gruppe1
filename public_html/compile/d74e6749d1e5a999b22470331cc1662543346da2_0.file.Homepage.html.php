@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 12:48:02
+/* Smarty version 3.1.29, created on 2016-07-09 18:39:42
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5780d662405775_47476550',
+  'unifunc' => 'content_578128cec7d453_46689981',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468061278,
+      1 => 1468082379,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5780d662405775_47476550 ($_smarty_tpl) {
+function content_578128cec7d453_46689981 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,10 +75,10 @@ function content_5780d662405775_47476550 ($_smarty_tpl) {
           </button>
 		<!--<a class="navbar-brand" href="#">-->
 			<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
-				<a class="navbar-brand" href="#">Study Buddy Admin</a>
+				<a class="navbar-brand">Study Buddy Admin</a>
 			<?php }?>
 			<?php if (!isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
-				<a class="navbar-brand" href="#">Study Buddy</a>
+				<a class="navbar-brand">Study Buddy</a>
 			<?php }?>
 
 
@@ -104,11 +104,15 @@ function content_5780d662405775_47476550 ($_smarty_tpl) {
 						<?php }?>
 
 						<?php if (isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
+							<li><a><?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getName();?>
+</a></li>
 							<li class="divider-vertical"></li>
 							<li><a href="index.php?controller=UserController&action=logoutUser">Logout</a></li>
 						<?php }?>
 
 						<?php if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+							<li><a><?php echo $_smarty_tpl->tpl_vars['currentInstructor']->value->getName();?>
+</a></li>
 							<li class="divider-vertical"></li>
 							<li><a href="index.php?controller=UserController&action=logoutInstructor">Logout</a></li>
 						<?php }?>

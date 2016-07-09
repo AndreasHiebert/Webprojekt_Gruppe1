@@ -51,14 +51,12 @@ class LoginController {
         $_Password = $_POST["pass_txt"];
 
         $repo = new UserRepository();
-        $existingUser = $repo->testUserLogin($_Name , $_Password);
+        $userExists = $repo->testUserLogin($_Name , $_Password);
 
-        if($existingUser == TRUE){
-            $currentUser = $repo->CorrectUser($_Name , $_Password);
-            $smarty->assign("currentUser", $currentUser,"global");
-            $smarty->assign("loginUser", $currentUser,"global");
+        if($userExists == TRUE){
+            $currentUser = $repo->setCorrectUser($_Name , $_Password);
+            $smarty->assign("currentUser", $currentUser);
 
-            echo "Login erfolgreich.<br>";
             $moduleController = new ModuleController();
             return $moduleController->showModulplan();
         }else{

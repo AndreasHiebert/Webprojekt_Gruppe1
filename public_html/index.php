@@ -77,18 +77,17 @@ $achievementObjects=$repo->getAllAchievements();
 $smarty->assign("achievements", $achievementObjects);
 
 //------------------------------------------------------------------------------
-// set test accounts
+// create currentUser and currentInstructor
 
 $currentUser = new User();
 $GLOBALS['currentUser'] = new User();
 $currentInstructor = new Instructor();
 $GLOBALS['currentInstructor'] = new Instructor();
-//
-//$currentUser = $loginUser;
+
 $smarty->assign("currentUser", $currentUser);
 
-$currentInstructor = $instructorObjects[0];
-//$smarty->assign("currentInstructor", $currentInstructor);
+//$currentInstructor = $instructorObjects[0];
+$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
 

@@ -42,10 +42,10 @@
           </button>
 		<!--<a class="navbar-brand" href="#">-->
 			{if isset($currentInstructor)}
-				<a class="navbar-brand" href="#">Study Buddy Admin</a>
+				<a class="navbar-brand">Study Buddy Admin</a>
 			{/if}
 			{if !isset($currentInstructor)}
-				<a class="navbar-brand" href="#">Study Buddy</a>
+				<a class="navbar-brand">Study Buddy</a>
 			{/if}
 
 
@@ -71,11 +71,13 @@
 						{/if}
 
 						{if isset($currentUser)}
+							<li><a>{$currentUser->getName()}</a></li>
 							<li class="divider-vertical"></li>
 							<li><a href="index.php?controller=UserController&action=logoutUser">Logout</a></li>
 						{/if}
 
 						{if isset($currentInstructor)}
+							<li><a>{$currentInstructor->getName()}</a></li>
 							<li class="divider-vertical"></li>
 							<li><a href="index.php?controller=UserController&action=logoutInstructor">Logout</a></li>
 						{/if}

@@ -29,12 +29,15 @@ class UserRepository {
 
          foreach ($stmt as $row) {
             $result[] = User::fromArray($row);
-            $foundUser = TRUE;
+            if($result != NULL){
+              $foundUser = TRUE;
+              break;
+            }
         }
         return $foundUser;
     }
 
-      public function CorrectUser($username , $password){
+      public function setCorrectUser($username , $password){
         global $db;
         $result = array();
 
