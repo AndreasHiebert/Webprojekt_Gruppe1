@@ -1,7 +1,5 @@
 <?php
 
-global $currentUser;
-
 class LoginController {
 
   public function showLogin(){
@@ -51,42 +49,42 @@ class LoginController {
   }
 
   public function LoginRegisteredUser(){
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
-    $dbname = "webprojekt13";
+    
+    global $currentUser;
+    global $smarty;
+    include '../controller/ModuleController.php';
 
     SESSION_START();
 
     try {
-        $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
+        $db = new PDO("mysql:host=localhost;dbname=webprojekt14", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         die;
     }
     
-    if(!empty($_POST["Login"])){
+    if(!empty($_POST["Submit"])){
 
-        $User_Name = mysql_real_escape_string($_POST["email_txt"]);
-        $User_Password = mysql_real_escape_string($_POST["pass_txt"]);
+        $_Name = mysql_real_escape_string($_POST["email_txt"]);
+        $_Password = mysql_real_escape_string($_POST["pass_txt"]);
 
-        $sql = "SELECT * FROM users WHERE
-                email='$User_Name' AND
-                password ='$User_Password'
+        $_sql = "SELECT * FROM users WHERE
+                email='$_Name' AND
+                password ='$_Password'
                 LIMIT 1";
 
-        $res = mysql_query($sql, $conn);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
+        $currentUser = $_sql;
+        $_res = mysql_query($_sql, $db);
+        $_anzahl = @mysql_num_rows($_res);
 
-        $count = mysqli_num_rows($result);
-
-        if($count == 1){
+        if($_anzahl > 0){
+            
+            echo "Login erfolgreich.<br>";
             $_SESSION['login'] = 1;
-            $_SESSION['user'] = $User_Name;
-
-            header("location: Homepage.html");
+            $_SESSION['user'] = mysql_fetch_array($res, MYSQL_ASSOC);
+            $moduleController = new ModuleController;
+            return $moduleController->showModulplan;
         }else{
             $error = "Your Login Name or Password is invalid";
         }
@@ -136,6 +134,9 @@ class LoginController {
   }
 
   public function LoginRegisteredInstructor($EMail, $UserPassword){
+      
+    global $currentUser;
+      
     $servername = "localhost";
     $username = "username";
     $password = "password";
