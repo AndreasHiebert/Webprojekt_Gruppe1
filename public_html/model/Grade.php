@@ -72,7 +72,6 @@ class Grade {
             $error->addError("no_grade");
         }
     }
-
 }
 
 ?>

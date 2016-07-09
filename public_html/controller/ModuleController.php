@@ -37,8 +37,14 @@ class ModuleController {
         $grade->setGrade($gradeIn);
 
 
+        $repo = new GradeRepository();
+        $passed = $repo->gradeAlreadyPassed($moduleId);
+ 
+        if($passed == false and $gradeIn <= 4 and $gradeIn >= 1){
         GradeRepository::saveGrades($grade);
 
+        }
+        
         $moduleView = new ModuleController();
         return $moduleView->showModulplan();
     }

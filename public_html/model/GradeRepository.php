@@ -52,6 +52,27 @@ class GradeRepository {
 
         return $result;
     }
+    
+    public function gradeAlreadyPassed($moduleID){
+        global $db;
+        
+        $result = array();
+        $bool = false;
+        
+        $UserID = $_SESSION["currentUser"]->getId();
+        
+        $stmt = $db->query("SELECT *
+                            FROM grades
+                            WHERE user_id = $UserID
+                            AND grade <= 4
+                            AND module_id = $moduleID");
+        
+        foreach($stmt as $row) {
+            $result[] = Grade::fromArray($row);
+            $bool = true;
+        }
+        return $bool;
+    }
 
     public static function saveGrades($grade) {
         global $db;
