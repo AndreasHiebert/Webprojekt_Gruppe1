@@ -2,6 +2,13 @@
 
 class LoginController {
 
+  public function showLogin(){
+    global $smarty;
+    // remove all session variables
+    SESSION_UNSET();
+    return $smarty->fetch("../view/Login.html");
+  }
+
   public function getUserRegistrationForm(){
     global $smarty;
     return $smarty->fetch("../view/UserRegistration.html");
