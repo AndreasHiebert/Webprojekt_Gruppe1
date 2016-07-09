@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 12:28:47
+/* Smarty version 3.1.29, created on 2016-07-09 13:17:44
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5780d1df421aa8_44270917',
+  'unifunc' => 'content_5780dd5896f695_06014489',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468060120,
+      1 => 1468062980,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5780d1df421aa8_44270917 ($_smarty_tpl) {
+function content_5780dd5896f695_06014489 ($_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>
@@ -68,26 +68,36 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 " class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-                   
-                        <input type="hidden" name="controller" value="ModuleController">
-                        <input type="hidden" name="action" value="enterGrade">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">Close</button>
-                                <h4 class="modal-title">Enter Grade for: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
-</h4>
-                            </div>
 
-                            <div class="modal-body">
-                                 <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
+                    <!--                        <input type="hidden" name="controller" value="ModuleController">
+                                            <input type="hidden" name="action" value="enterGrade">-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">Close</button>
+                            <h4 class="modal-title">Enter Grade for: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Grade:</label>
                                     <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
                                 </div>
-                                     <button type="submit" class="btn btn-success">Submit</button>
-                                 </form>
-                            </div>
+                                
+                                <div class="form-group">
+                                    <input id="userId" name="user_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getId();?>
+">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input id="moduleId" name="module_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
+">
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>

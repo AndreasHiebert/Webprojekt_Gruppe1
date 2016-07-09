@@ -39,7 +39,8 @@ class ModuleController {
         
         GradeRepository::saveGrades($grade);
         
-        $smarty->fetch("show_Modulplan.html");
+        $moduleView = new ModuleController();
+        return $moduleView->showModulplan();
     }
 
     public function getMaxCp(){
