@@ -2,48 +2,53 @@
 <script src="js/Modulplan.js"></script>
 
 <div id="modulebox">
-<div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
-    {foreach from = $allModules item = $module}
-    {if $module->getSemester() != $semester}
-</div>
- <br>
-<div id = "semesterRow" class="btn-group btn-group-justified modulplan_group" role="group" aria-label="...">
-    {/if}
-
-    <div class="btn-group" role="group">
-        
-        {if $module->completedModule($module->getId()) == true}
-        <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}<br><b>Note: {$module->completedModuleGrade($module->getId())}</b></button>
-        {else}
-        <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}</button>
+    <div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
+        {foreach from = $allModules item = $module}
+        {if $module->getSemester() != $semester}
+    </div>
+    <br>
+    <div id = "semesterRow" class="btn-group btn-group-justified modulplan_group" role="group" aria-label="...">
         {/if}
 
+        <div class="btn-group" role="group">
 
-    <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+            {if $module->completedModule($module->getId()) == true}
+            <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}<br><b>Note: {$module->completedModuleGrade($module->getId())}</b></button>
+            {else}
+            <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}</button>
+            {/if}
 
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">Close</button>
-                <h4 class="modal-title">Enter Grade for: {$module->getName()}</h4>
-            </div>
-            <div class="modal-body">
-                <form>
-                     Grade<br>
-                    <input id="gradeInput" type="text" title="grade" placeholder="Enter your grade"><br>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Accept</button>
+
+            <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <form method="post" action="index.php">
+                        <input type="hidden" name="controller" value="ModuleController">
+                        <input type="hidden" name="action" value="enterGrade">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">Close</button>
+                                <h4 class="modal-title">Enter Grade for: {$module->getName()}</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="grade">Grade:</label>
+                                    <input id="gradeInput" type="text" title="grade" placeholder="Enter your grade">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" data-dismiss="modal">Accept</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
+        {$semester = $module->getSemester()}
+        {/foreach}
     </div>
-</div>
-    </div>
-    {$semester = $module->getSemester()}
-    {/foreach}
-</div>
 </div>
 
 <!--<br>-->
@@ -51,8 +56,8 @@
 
 
 <script>
- $('#gradeModal').on('show.bs.modal', function(e) {
-    var name = e.relatedTarget.name;
-    window.alert(name);
- });
+    $('#gradeModal').on('show.bs.modal', function (e) {
+        var name = e.relatedTarget.name;
+        window.alert(name);
+    });
 </script>

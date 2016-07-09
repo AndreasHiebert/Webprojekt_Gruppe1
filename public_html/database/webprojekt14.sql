@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 27. Jun 2016 um 14:41
+-- Erstellungszeit: 09. Jul 2016 um 00:44
 -- Server-Version: 10.1.13-MariaDB
--- PHP-Version: 5.6.21
+-- PHP-Version: 7.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,8 +30,6 @@ CREATE TABLE `achievements` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `code` varchar(99) NOT NULL,
-  `description` text NOT NULL,
-  `type` int(11) NOT NULL,
   `obtainedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `value` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,9 +38,9 @@ CREATE TABLE `achievements` (
 -- Daten für Tabelle `achievements`
 --
 
-INSERT INTO `achievements` (`id`, `name`, `code`, `description`, `type`, `obtainedDate`, `value`) VALUES
-(1, 'Gebe einen Fitnesscode ein!', '0000-0000-0000', 'testcode', 0, '2016-06-26 13:07:18', 50),
-(2, 'CodeTest', '1000-1000-1000', 'blabla', 1, '2016-06-27 11:10:47', 32);
+INSERT INTO `achievements` (`id`, `name`, `code`, `obtainedDate`, `value`) VALUES
+(1, 'Gebe einen Fitnesscode ein!', '0000-0000-0000', '2016-06-26 13:07:18', 50),
+(2, 'CodeTest', '1000-1000-1000', '2016-06-27 11:10:47', 32);
 
 -- --------------------------------------------------------
 
@@ -87,7 +85,8 @@ CREATE TABLE `fitnesspoints` (
 
 INSERT INTO `fitnesspoints` (`id`, `user_id`, `achievement_id`) VALUES
 (54, 1, 2),
-(55, 1, 1);
+(55, 1, 1),
+(56, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -136,7 +135,12 @@ CREATE TABLE `instructors` (
 INSERT INTO `instructors` (`id`, `name`, `email`, `password`, `approved`) VALUES
 (1, 'boeseradmin', 'boeseradmin@boese.admin', 'toboese', b'01'),
 (2, 'guntherApproved', 'guntherApproved@hshl.de', 'guntherApproved', b'01'),
-(3, 'guntherNotApproved', 'guntherNotApproved@hshl.de', 'guntherNotApproved@hshl.de', b'00');
+(3, 'guntherNotApproved', 'guntherNotApproved@hshl.de', 'guntherNotApproved@hshl.de', b'01'),
+(4, 'test', 'testi', 'test123', b'01'),
+(5, 'test', 'testi', 'test123', b'00'),
+(6, 'test', 'testi', 'test123', b'00'),
+(7, 'test', 'testi', 'test123', b'01'),
+(8, 'test', 'testi', 'test123', b'00');
 
 -- --------------------------------------------------------
 
@@ -150,7 +154,6 @@ CREATE TABLE `modules` (
   `abbreviation` varchar(20) NOT NULL,
   `description` text NOT NULL,
   `cp` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
   `semester` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -159,33 +162,33 @@ CREATE TABLE `modules` (
 -- Daten für Tabelle `modules`
 --
 
-INSERT INTO `modules` (`id`, `name`, `abbreviation`, `description`, `cp`, `status`, `semester`, `course_id`) VALUES
-(1, 'Grundlagen Informatik I', 'GI I', '', 8, 0, 1, 1),
-(2, 'Mathematisch-technische Grundlagen I', 'MtG I', '', 10, 0, 1, 1),
-(3, 'Naturwissenschaftliche Grundlagen I', 'NG I', '', 5, 0, 1, 1),
-(4, 'Corporate Management', 'CM I', '', 4, 0, 1, 1),
-(5, 'Steuerungskompetenzen I', '', '', 7, 0, 1, 1),
-(6, 'Grundlagen Informatik II', 'GI II', '', 8, 0, 2, 1),
-(7, 'Mathematisch-technische Grundlagen II', 'MtG II', '', 10, 0, 2, 1),
-(8, 'Naturwissenschaftliche Grundlagen II', 'NG II', '', 5, 0, 2, 1),
-(9, 'Corporate Management II', 'CM II', '', 4, 0, 2, 1),
-(10, 'Steuerungskompetenzen II', '', '', 7, 0, 2, 1),
-(11, 'Moderne Computersysteme I', 'MC I', '', 10, 0, 3, 1),
-(12, 'Mathematik und System Analysis', '', 'das Grauen', 5, 0, 3, 1),
-(13, 'Embedded Systems', 'ES', '', 8, 0, 3, 1),
-(14, 'Corporate Management III', 'CM III', '', 4, 0, 3, 1),
-(15, 'Steuerungskompetenzen III', '', '', 7, 0, 3, 1),
-(16, 'Moderne Computersysteme II', 'MC II', '', 10, 0, 4, 1),
-(17, 'Studienschwerpunkte I', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 10, 0, 4, 1),
-(18, 'Corporate Magagement IV', 'CM IV', '', 4, 0, 4, 1),
-(19, 'Steuerungskompetenzen IV', '', '', 4, 0, 4, 1),
-(20, 'Praxis-/Auslandssemester', '', 'Bericht schreiben 15 Seiten Englisch', 30, 0, 5, 1),
-(21, 'Projektarbeit', '', '', 13, 0, 6, 1),
-(22, 'Studienschwerpunkte II', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 12, 0, 7, 1),
-(23, 'Corporate Management V', 'CM V', '', 4, 0, 6, 1),
-(24, 'Steuerungskompetenzen V', '', '', 3, 0, 6, 1),
-(25, 'Bachelorarbeit', '', '', 14, 0, 7, 1),
-(26, 'Studienschwerpunkte III', '', '', 16, 0, 0, 0);
+INSERT INTO `modules` (`id`, `name`, `abbreviation`, `description`, `cp`, `semester`, `course_id`) VALUES
+(1, 'Grundlagen Informatik I', 'GI I', '', 8, 1, 1),
+(2, 'Mathematisch-technische Grundlagen I', 'MtG I', '', 10, 1, 1),
+(3, 'Naturwissenschaftliche Grundlagen I', 'NG I', '', 5, 1, 1),
+(4, 'Corporate Management', 'CM I', '', 4, 1, 1),
+(5, 'Steuerungskompetenzen I', '', '', 7, 1, 1),
+(6, 'Grundlagen Informatik II', 'GI II', '', 8, 2, 1),
+(7, 'Mathematisch-technische Grundlagen II', 'MtG II', '', 10, 2, 1),
+(8, 'Naturwissenschaftliche Grundlagen II', 'NG II', '', 5, 2, 1),
+(9, 'Corporate Management II', 'CM II', '', 4, 2, 1),
+(10, 'Steuerungskompetenzen II', '', '', 7, 2, 1),
+(11, 'Moderne Computersysteme I', 'MC I', '', 10, 3, 1),
+(12, 'Mathematik und System Analysis', '', 'das Grauen', 5, 3, 1),
+(13, 'Embedded Systems', 'ES', '', 8, 3, 1),
+(14, 'Corporate Management III', 'CM III', '', 4, 3, 1),
+(15, 'Steuerungskompetenzen III', '', '', 7, 3, 1),
+(16, 'Moderne Computersysteme II', 'MC II', '', 10, 4, 1),
+(17, 'Studienschwerpunkte I', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 10, 4, 1),
+(18, 'Corporate Magagement IV', 'CM IV', '', 4, 4, 1),
+(19, 'Steuerungskompetenzen IV', '', '', 4, 4, 1),
+(20, 'Praxis-/Auslandssemester', '', 'Bericht schreiben 15 Seiten Englisch', 30, 5, 1),
+(21, 'Projektarbeit', '', '', 13, 6, 1),
+(22, 'Studienschwerpunkte II', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 12, 6, 1),
+(23, 'Corporate Management V', 'CM V', '', 4, 6, 1),
+(24, 'Steuerungskompetenzen V', '', '', 3, 6, 1),
+(25, 'Bachelorarbeit', '', '', 14, 7, 1),
+(26, 'Studienschwerpunkte III', '', '', 16, 7, 0);
 
 -- --------------------------------------------------------
 
@@ -199,17 +202,16 @@ CREATE TABLE `users` (
   `password` varchar(30) NOT NULL,
   `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `email` varchar(50) NOT NULL,
-  `activeCourse` int(50) NOT NULL,
-  `fitnesspoints` int(50) NOT NULL
+  `activeCourse` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `regDate`, `email`, `activeCourse`, `fitnesspoints`) VALUES
-(1, 'Tim', '1234', '2016-05-30 23:11:43', 'example1@stud.hshl.de', 0, 112),
-(2, 'Timey', '12345', '2016-05-30 23:33:44', 'example2@stud.hshl.de', 0, 19);
+INSERT INTO `users` (`id`, `name`, `password`, `regDate`, `email`, `activeCourse`) VALUES
+(1, 'Tim', '1234', '2016-05-30 23:11:43', 'example1@stud.hshl.de', 1),
+(2, 'Timey', '12345', '2016-05-30 23:33:44', 'example2@stud.hshl.de', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -277,7 +279,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT für Tabelle `fitnesspoints`
 --
 ALTER TABLE `fitnesspoints`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT für Tabelle `grades`
 --
@@ -287,7 +289,7 @@ ALTER TABLE `grades`
 -- AUTO_INCREMENT für Tabelle `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT für Tabelle `modules`
 --

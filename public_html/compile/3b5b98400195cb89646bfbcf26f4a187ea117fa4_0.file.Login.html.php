@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-07 23:05:11
+/* Smarty version 3.1.29, created on 2016-07-08 18:32:37
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577ec407b35136_70463457',
+  'unifunc' => 'content_577fd5a504e604_67201106',
   'file_dependency' => 
   array (
     '3b5b98400195cb89646bfbcf26f4a187ea117fa4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Login.html',
-      1 => 1467910837,
+      1 => 1467995554,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577ec407b35136_70463457 ($_smarty_tpl) {
+function content_577fd5a504e604_67201106 ($_smarty_tpl) {
 ?>
 
         <div id ="Headline" class="row">
@@ -33,7 +33,7 @@ function content_577ec407b35136_70463457 ($_smarty_tpl) {
                 <img src="img/Logo.png" width="200" height="150"/>
             </div>
         </div>
-        <form action="index.php?controller=LoginController&action=LoginRegisteredUser">
+        <form action="index.php?controller=LoginController&action=LoginRegisteredUser" method="get">
         <div id="LoginContainer" class="container">
             <div id="EMailRow" class="row">
                 <div class="col-sm-4"></div>
@@ -42,11 +42,6 @@ function content_577ec407b35136_70463457 ($_smarty_tpl) {
                 </div>
                 <div class="col-sm-2">
                     <input type="email" name="email_txt" class="form-control" id="EMailForm" placeholder="Enter E-Mail">
-                </div>
-                <div>
-                    <div class="col-sm-1">
-                        <input type="submit" name="Login" value="Login">
-                    </div>
                 </div>
             </div>
             <div id="PwdRow" class="row">
@@ -58,7 +53,7 @@ function content_577ec407b35136_70463457 ($_smarty_tpl) {
                     <input type="password" name="pass_txt" class="form-control" id="PasswordForm" placeholder="Enter Password">
                 </div>
                 <div class="col-sm-1">
-                    
+                    <input type="submit" name="Login" value="Login">
                 </div>
             </div>
             <div id="RegisterRow" class="row">

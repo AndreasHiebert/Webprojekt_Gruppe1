@@ -5,9 +5,8 @@ class Module {
     private $id = 0;
     private $abbrieviation = "";
     private $description = "";
-    private $status = 0;
     private $cp = 0;
-    private  $semester = 0;
+    private $semester = 0;
 
     public static function fromArray($row) {
         $obj = new Module();
@@ -15,16 +14,15 @@ class Module {
         $obj->setId($row["id"]);
         $obj->setAbbreviation($row["abbreviation"]);
         $obj->setDescription($row["description"]);
-        $obj->setStatus($row["status"]);
         $obj->setCp($row["cp"]);
         $obj->setSemester($row["semester"]);
         return $obj;
     }
-    
+
     public function getSemester(){
         return $this->semester;
     }
-    
+
     public function setSemester($value){
         $this->semester = $value;
     }
@@ -61,14 +59,6 @@ class Module {
       $this->description = $value;
     }
 
-    public function getStatus(){
-      return $this->status;
-    }
-
-    public function setStatus($value) {
-      $this->status = $value;
-    }
-
     public function getCp(){
       return $this->cp;
     }
@@ -76,17 +66,17 @@ class Module {
     public function setCp($value) {
       $this->cp = $value;
     }
-    
+
     public function completedModule($moduleId) {
-        
+
       global $currentUser;
       $userId = $currentUser->getId();
-      
+
       $result = false;
-      
+
       $repo= new GradeRepository();
         $gradeObjects=$repo->getUserGrades();
-        
+
       foreach($gradeObjects as $grade){
         if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
         {
@@ -95,12 +85,12 @@ class Module {
     }
     return $result;
     }
-    
+
     public function completedModuleGrade($moduleId) {
-        
+
       $repo= new GradeRepository();
         $gradeObjects=$repo->getUserGrades();
-        
+
       foreach($gradeObjects as $grade){
         if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
         {

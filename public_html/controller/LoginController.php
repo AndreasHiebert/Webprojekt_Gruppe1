@@ -1,5 +1,7 @@
 <?php
 
+global $currentUser;
+
 class LoginController {
 
   public function showLogin(){
