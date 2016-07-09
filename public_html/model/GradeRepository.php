@@ -87,5 +87,19 @@ class GradeRepository {
 
         $stmt->execute();
     }
+
+    public static function updateGrades($grade) {
+        global $db;
+
+        $stmt = $db->prepare("update grades 
+                                set grade = :gradeIn
+                                where user_id = :userId
+                                and module_id = :moduleId");
+        $stmt->bindValue(':userId', $grade->getUserId(), PDO::PARAM_INT);
+        $stmt->bindValue(':moduleId', $grade->getModuleId(), PDO::PARAM_INT);
+        $stmt->bindValue(':gradeIn', $grade->getGrade(), PDO::PARAM_STR);
+
+        $stmt->execute();
+    }
 }
 ?>

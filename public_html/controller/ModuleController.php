@@ -44,6 +44,9 @@ class ModuleController {
         GradeRepository::saveGrades($grade);
 
         }
+        else{
+        GradeRepository::updateGrades($grade);
+        }
         
         $moduleView = new ModuleController();
         return $moduleView->showModulplan();
