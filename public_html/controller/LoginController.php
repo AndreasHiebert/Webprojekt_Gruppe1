@@ -18,15 +18,15 @@ class LoginController {
 
   public function RegisterUser(){
       global $smarty;
-      
+
       $_Name = $_POST["username_txt"];
       $_EMail = $_POST["email_txt"];
       $_Password = $_POST["pass_txt"];
       $_confirm = $_POST["confirm_txt"];
       $_course = $_POST["course_txt"];
-      
+
       $_User = new User();
-      
+
 
       $_UserRepo = new UserRepository();
       $_UserRepo->saveUser($_User);
@@ -36,17 +36,8 @@ class LoginController {
 
     global $smarty;
     global $currentUser;
-    //include '../controller/ModuleController.php';
 
     SESSION_START();
-
-    try {
-        $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch(PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-        die;
-    }
 
         $_Name = $_POST["email_txt"];
         $_Password = $_POST["pass_txt"];
@@ -66,7 +57,7 @@ class LoginController {
             $error = "Your Login Name or Password is invalid";
         }
   }
-   
+
   public function getInstructorRegistrationForm(){
     global $smarty;
     $currentUser = NULL;
