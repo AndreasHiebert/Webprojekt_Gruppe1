@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 12:16:29
+/* Smarty version 3.1.29, created on 2016-07-09 12:28:47
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5780cefd8903e8_29406467',
+  'unifunc' => 'content_5780d1df421aa8_44270917',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468059378,
+      1 => 1468060120,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5780cefd8903e8_29406467 ($_smarty_tpl) {
+function content_5780d1df421aa8_44270917 ($_smarty_tpl) {
 ?>
 
 <?php echo '<script'; ?>
@@ -87,11 +87,6 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                                      <button type="submit" class="btn btn-success">Submit</button>
                                  </form>
                             </div>
-
-                         <!--   <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" data-dismiss="modal">Accept</button>
-                            </div>-->
-                        
                         </div>
                 </div>
             </div>
