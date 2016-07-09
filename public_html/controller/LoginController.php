@@ -3,8 +3,8 @@
 class LoginController {
 
   public function showLogin(){
-    global $smarty;
-    return $smarty->fetch("../view/Login.html");
+    $userController = new UserController;
+    return $userController->showLogin();
   }
 
   public function getUserRegistrationForm(){
@@ -29,7 +29,7 @@ class LoginController {
 
     $result = $mysqli->query("SELECT id FROM users ORDER BY name");
     $id = $result->num_rows;
-    
+
     $UserName = mysql_real_escape_string($_POST["name_txt"]);
     $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
     $EMail = mysql_real_escape_string($_POST["email_txt"]);
@@ -63,7 +63,7 @@ class LoginController {
         echo "Connection failed: " . $e->getMessage();
         die;
     }
-    
+
     if(!empty($_POST["Login"])){
 
         $User_Name = mysql_real_escape_string($_POST["email_txt"]);
@@ -115,7 +115,7 @@ class LoginController {
 
     $result = $mysqli->query("SELECT id FROM instructors ORDER BY name");
     $id = $result->num_rows;
-    
+
     $UserName = mysql_real_escape_string($_POST["name_txt"]);
     $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
     $EMail = mysql_real_escape_string($_POST["email_txt"]);

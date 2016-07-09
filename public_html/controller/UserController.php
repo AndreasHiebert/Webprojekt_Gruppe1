@@ -7,15 +7,14 @@ class UserController {
     global $smarty;
     $currentUser = NULL;
     $smarty->assign("currentUser", $currentUser);
-    $this->showLogin();
-
+    return $this->showLogin();
     }
-  
+
     public function logoutInstructor(){
     global $smarty;
     $currentInstructor = NULL;
     $smarty->assign("currentInstructor", $currentInstructor);
-    $this->showLogin();
+    return $this->showLogin();
   }
 
   public function showLogin(){
