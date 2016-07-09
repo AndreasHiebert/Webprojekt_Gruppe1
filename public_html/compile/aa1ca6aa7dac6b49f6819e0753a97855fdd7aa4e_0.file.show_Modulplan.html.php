@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 21:00:08
+/* Smarty version 3.1.29, created on 2016-07-09 12:16:29
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577ff838157b86_82321060',
+  'unifunc' => 'content_5780cefd8903e8_29406467',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468004389,
+      1 => 1468059378,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577ff838157b86_82321060 ($_smarty_tpl) {
+function content_5780cefd8903e8_29406467 ($_smarty_tpl) {
 ?>
-<!--<h5>Modulplan <?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getCurrentCourseAbbreviation();?>
-</h5>-->
+
 <?php echo '<script'; ?>
  src="js/Modulplan.js"><?php echo '</script'; ?>
 >
@@ -53,12 +52,14 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
             <button id = "moduleButton"  name="<?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 " type="button" data-toggle="modal" data-target="#gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 " class="btn btn-success"><?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+<br>CP: <?php echo $_smarty_tpl->tpl_vars['module']->value->getCp();?>
 <br><b>Note: <?php echo $_smarty_tpl->tpl_vars['module']->value->completedModuleGrade($_smarty_tpl->tpl_vars['module']->value->getId());?>
 </b></button>
             <?php } else { ?>
             <button id = "moduleButton"  name="<?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 " type="button" data-toggle="modal" data-target="#gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 " class="btn btn-default"><?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+<br>CP: <?php echo $_smarty_tpl->tpl_vars['module']->value->getCp();?>
 </button>
             <?php }?>
 
@@ -67,7 +68,7 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 " class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-                    <form method="post" action="index.php">
+                   
                         <input type="hidden" name="controller" value="ModuleController">
                         <input type="hidden" name="action" value="enterGrade">
                         <div class="modal-content">
@@ -78,17 +79,20 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                             </div>
 
                             <div class="modal-body">
+                                 <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Grade:</label>
-                                    <input id="gradeInput" type="text" title="grade" placeholder="Enter your grade">
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
                                 </div>
+                                     <button type="submit" class="btn btn-success">Submit</button>
+                                 </form>
                             </div>
 
-                            <div class="modal-footer">
+                         <!--   <div class="modal-footer">
                                 <button type="submit" class="btn btn-success" data-dismiss="modal">Accept</button>
-                            </div>
+                            </div>-->
+                        
                         </div>
-                    </form>
                 </div>
             </div>
         </div>

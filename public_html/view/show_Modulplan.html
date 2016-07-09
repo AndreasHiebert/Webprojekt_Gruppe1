@@ -22,7 +22,7 @@
             <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
                 <div class="modal-dialog">
 
-                    <form method="post" action="index.php">
+                   
                         <input type="hidden" name="controller" value="ModuleController">
                         <input type="hidden" name="action" value="enterGrade">
                         <div class="modal-content">
@@ -32,17 +32,15 @@
                             </div>
 
                             <div class="modal-body">
+                                 <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Grade:</label>
-                                    <input id="gradeInput" type="text" title="grade" placeholder="Enter your grade">
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
                                 </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" data-dismiss="modal">Accept</button>
+                                     <button type="submit" class="btn btn-success">Submit</button>
+                                 </form>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
