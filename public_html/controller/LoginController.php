@@ -84,7 +84,7 @@ class LoginController {
             $_SESSION['login'] = 1;
             $_SESSION['user'] = mysql_fetch_array($res, MYSQL_ASSOC);
             $moduleController = new ModuleController;
-            return $moduleController->showModulplan;
+            return $moduleController->showModulplan();
         }else{
             $error = "Your Login Name or Password is invalid";
         }
