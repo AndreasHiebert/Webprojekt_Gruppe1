@@ -8,7 +8,7 @@ class ModuleRepository {
         $stmt = $db->query("SELECT *
                             FROM modules
                             ORDER BY semester
-                            ASC");
+                            DESC");
 
         foreach ($stmt as $row) {
             $result[] = Module::fromArray($row);

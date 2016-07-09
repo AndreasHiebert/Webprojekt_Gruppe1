@@ -5,7 +5,9 @@ class GradeRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM grades ORDER BY id");
+        $stmt = $db->query("SELECT *
+                            FROM grades
+                            ORDER BY id");
 
         foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);
@@ -52,21 +54,21 @@ class GradeRepository {
 
         return $result;
     }
-    
+
     public function gradeAlreadyPassed($moduleID){
         global $db;
-        
+
         $result = array();
         $bool = false;
-        
+
         $UserID = $_SESSION["currentUser"]->getId();
-        
+
         $stmt = $db->query("SELECT *
                             FROM grades
                             WHERE user_id = $UserID
                             AND grade <= 4
                             AND module_id = $moduleID");
-        
+
         foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);
             $bool = true;

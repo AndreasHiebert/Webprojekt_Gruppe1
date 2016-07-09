@@ -5,7 +5,10 @@ class AchievementRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT * FROM achievements ORDER BY id DESC");
+        $stmt = $db->query("SELECT *
+                            FROM achievements
+                            ORDER BY id
+                            DESC");
 
         foreach ($stmt as $row) {
             $result[] = Achievement::fromArray($row);
