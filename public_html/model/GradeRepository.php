@@ -16,16 +16,16 @@ class GradeRepository {
 
     public function getCurrentCp(){
         global $db;
-        global $currentUser;
         $result = 0;
-        
-        $UserID = $currentUser->getId();
+
+        $UserID = $_SESSION["currentUser"]->getId();
 
         $stmt = $db->query("SELECT SUM(modules.cp)
                             FROM grades
                             inner JOIN modules
                             ON grades.module_id = modules.id
-                            WHERE grades.user_id = $UserID and grades.grade <= 4");
+                            WHERE grades.user_id = $UserID
+                            AND grades.grade <= 4");
 
         foreach($stmt as $row){
             $result = $row["SUM(modules.cp)"];
@@ -33,16 +33,18 @@ class GradeRepository {
 
         return $result;
     }
-    
+
     public function getUserGrades(){
         global $db;
-        global $currentUser;
-        
+
         $result = array();
-        
-        $UserID = $currentUser->getId();
-        
-        $stmt = $db->query("SELECT * FROM grades WHERE user_id = $UserID and grade <= 4");
+
+        $UserID = $_SESSION["currentUser"]->getId();
+
+        $stmt = $db->query("SELECT *
+                            FROM grades
+                            WHERE user_id = $UserID
+                            AND grade <= 4");
 
         foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);

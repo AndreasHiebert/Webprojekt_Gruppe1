@@ -16,10 +16,9 @@ class AchievementRepository{
 
     public function getRecentAchievements(){
         global $db;
-        global $currentUser;
         $result = array();
 
-        $id = $currentUser->getId();
+        $id = $_SESSION["currentUser"]->getId();
         $stmt = $db->query("SELECT name, value
                             FROM fitnesspoints f
                             INNER JOIN achievements a
@@ -49,10 +48,9 @@ class AchievementRepository{
 
     public function getCurrentUserAchievements(){
         global $db;
-        global $currentUser;
         $result = array();
 
-        $id = $currentUser->getId();
+        $id = $_SESSION["currentUser"]->getId();
         $stmt = $db->query("SELECT *
                             FROM achievements
                             INNER JOIN fitnesspoints

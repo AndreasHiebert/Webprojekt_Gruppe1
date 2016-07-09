@@ -4,7 +4,7 @@ class InstructorController {
 
 	public function showInstructorPage() {
 		global $smarty;
-
+		$smarty->assign("currentInstructor", $_SESSION["currentInstructor"]);
 		return $smarty->fetch('../view/Instructor.html');
 	}
 
@@ -18,13 +18,13 @@ class InstructorController {
 		$tempInstructor->setApproved(1);
 		$tempRepo->saveInstructor($tempInstructor);
 
-		
+
 		echo "<script type='text/javascript'>
 		location.href=\"index.php\";
 		</script>";
 	}
 
-	
+
 
 	public function createAchievement() {
 		global $smarty;

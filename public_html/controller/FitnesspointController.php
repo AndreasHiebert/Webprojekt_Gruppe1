@@ -5,7 +5,6 @@ class FitnesspointController {
 
   public function testFitnessCode(){
       global $smarty;
-      global $currentUser;
 
       $repo= new AchievementRepository();
       $achievementObjects=$repo->getAllAchievements();
@@ -19,7 +18,7 @@ class FitnesspointController {
             }
 
       $key = array_search($code, $CodeArray);
-      $id_user = $currentUser->getId();
+      $id_user = $_SESSION["currentUser"]->getId();
       $id_achievement =$achievementObjects[$key]->getId();
 
         foreach($achievementObjects as $value){
@@ -51,9 +50,9 @@ class FitnesspointController {
           FitnessPointRepository::saveFitnesspoint($fitnesspoint);
           $smarty->assign("codeValid",$codeValid);
         }
-  
-        
-        return $smarty->fetch("../view/show_Achievements.html");
+
+        $achievementController = new AchievementController();
+        return $achievementController->showAchievements();
         }
 
 }

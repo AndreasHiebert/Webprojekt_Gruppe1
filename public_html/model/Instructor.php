@@ -7,6 +7,7 @@ class Instructor {
     private $password = "";
     private $approved = 0;
 
+
     public static function fromArray($row) {
       $obj = new Instructor();
       $obj->setId($row["id"]);

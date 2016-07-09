@@ -19,9 +19,8 @@ class ModuleRepository {
 
     public function getHighestSemester(){
         global $db;
-        global $currentUser;
 
-        $course = $currentUser->getActiveCourse();
+        $course = $_SESSION["currentUser"]->getActiveCourse();
 
         $result = array();
         $stmt = $db->query("SELECT semester
@@ -38,13 +37,12 @@ class ModuleRepository {
         return $result[0];
     }
 
-    
+
     public function getActiveCourseMaxCp(){
         global $db;
-        global $currentUser;
         $result = 0;
 
-        $course = $currentUser->getActiveCourse();
+        $course = $_SESSION["currentUser"]->getActiveCourse();
 
         $stmt = $db->query("SELECT SUM(cp)
                             FROM modules

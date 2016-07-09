@@ -8,7 +8,7 @@ class InstructorRepository {
         $stmt = $db->query("SELECT *
                             FROM instructors
                             ORDER BY id");
-                            
+
         foreach ($stmt as $row) {
             $result[] = Instructor::fromArray($row);
         }
@@ -25,7 +25,7 @@ class InstructorRepository {
             $stmt->bindValue(':approved',1,PDO::PARAM_INT);
             $stmt->bindValue(':id',$id,PDO::PARAM_INT);
             $stmt->execute();
-            
+
         } else {
             $stmt = $db->prepare('INSERT INTO instructors (name, email, password, approved) values (:name, :email, :password, :approved)' );
 

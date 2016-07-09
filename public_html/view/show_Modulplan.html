@@ -1,6 +1,3 @@
-
-<script src="js/Modulplan.js"></script>
-
 <div id="modulebox">
     <div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
         {foreach from = $allModules item = $module}
@@ -37,11 +34,11 @@
                                     <label for="grade">Grade:</label>
                                     <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input id="userId" name="user_id" class="form-control" type="hidden" value="{$currentUser->getId()}">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input id="moduleId" name="module_id" class="form-control" type="hidden" value="{$module->getId()}">
                                 </div>
@@ -56,14 +53,3 @@
         {/foreach}
     </div>
 </div>
-
-<!--<br>-->
-
-
-
-<script>
-    $('#gradeModal').on('show.bs.modal', function (e) {
-        var name = e.relatedTarget.name;
-        window.alert(name);
-    });
-</script>

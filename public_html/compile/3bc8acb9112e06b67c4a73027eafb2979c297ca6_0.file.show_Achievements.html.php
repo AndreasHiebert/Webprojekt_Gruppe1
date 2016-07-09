@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-08 13:41:55
+/* Smarty version 3.1.29, created on 2016-07-09 20:45:37
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_577f91835c5228_61176897',
+  'unifunc' => 'content_57814651706997_22889267',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1467977735,
+      1 => 1468089819,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_577f91835c5228_61176897 ($_smarty_tpl) {
+function content_57814651706997_22889267 ($_smarty_tpl) {
 ?>
 
 <ul class="list-group">
@@ -42,10 +42,10 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
              <img class="media-object" src="img/albert-einstein.jpg" alt="Ein schlauer Mensch" width="100" height="97">
          </a>
      </div>
-     <div class="media-body">
+     <div id= "achievementItem" class="media-body">
          <h4 class="media-heading"><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
 </h4>
-         Wert: <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
+         <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
  Fitnesspoints<br>
          <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getDescription();?>
 

@@ -8,6 +8,7 @@ class Module {
     private $cp = 0;
     private $semester = 0;
 
+
     public static function fromArray($row) {
         $obj = new Module();
         $obj->setName($row["name"]);
@@ -68,9 +69,7 @@ class Module {
     }
 
     public function completedModule($moduleId) {
-
-      global $currentUser;
-      $userId = $currentUser->getId();
+      $userId = $_SESSION["currentUser"]->getId();
 
       $result = false;
 

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 13:17:44
+/* Smarty version 3.1.29, created on 2016-07-09 20:45:46
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5780dd5896f695_06014489',
+  'unifunc' => 'content_5781465af309c5_16330404',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468062980,
+      1 => 1468089871,
       2 => 'file',
     ),
   ),
@@ -19,13 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5780dd5896f695_06014489 ($_smarty_tpl) {
+function content_5781465af309c5_16330404 ($_smarty_tpl) {
 ?>
-
-<?php echo '<script'; ?>
- src="js/Modulplan.js"><?php echo '</script'; ?>
->
-
 <div id="modulebox">
     <div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
         <?php
@@ -84,12 +79,12 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                                     <label for="grade">Grade:</label>
                                     <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input id="userId" name="user_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['currentUser']->value->getId();?>
 ">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input id="moduleId" name="module_id" class="form-control" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 ">
@@ -112,18 +107,5 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 ?>
     </div>
 </div>
-
-<!--<br>-->
-
-
-
-<?php echo '<script'; ?>
->
-    $('#gradeModal').on('show.bs.modal', function (e) {
-        var name = e.relatedTarget.name;
-        window.alert(name);
-    });
-<?php echo '</script'; ?>
->
 <?php }
 }

@@ -18,9 +18,8 @@ class CourseRepository{
 
     public function getCurrentCourseAbbreviation(){
         global $db;
-        global $currentUser;
 
-        $course = $currentUser->getActiveCourse();
+        $course = $_SESSION["currentUser"]->getActiveCourse();
 
         $result = array();
         $stmt = $db->query("SELECT abbreviation

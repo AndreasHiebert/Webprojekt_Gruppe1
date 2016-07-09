@@ -24,7 +24,9 @@ require 'controller/FitnesspointController.php';
 require 'controller/InstructorController.php';
 
 //------------------------------------------------------------------------------
-// setup smarty
+// start session and setup smarty
+
+SESSION_START();
 
 $smarty = new Smarty();
 $smarty->template_dir = "view";
@@ -76,18 +78,6 @@ $repo= new AchievementRepository();
 $achievementObjects=$repo->getAllAchievements();
 $smarty->assign("achievements", $achievementObjects);
 
-//------------------------------------------------------------------------------
-// create currentUser and currentInstructor
-
-$currentUser = new User();
-$GLOBALS['currentUser'] = new User();
-$currentInstructor = new Instructor();
-$GLOBALS['currentInstructor'] = new Instructor();
-
-$smarty->assign("currentUser", $currentUser);
-
-//$currentInstructor = $instructorObjects[0];
-$smarty->assign("currentInstructor", $currentInstructor);
 //------------------------------------------------------------------------------
 // controller
 

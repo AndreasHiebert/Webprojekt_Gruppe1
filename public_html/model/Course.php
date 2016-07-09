@@ -11,6 +11,7 @@ class Course{
     private $moduleNumber = 0;
     private $description="";
 
+
     public static function fromArray($row) {
       $obj = new Course();
       $obj->setId($row["id"]);

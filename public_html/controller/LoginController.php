@@ -2,34 +2,19 @@
 
 class LoginController {
 
-  public function showLogin(){
-    $userController = new UserController;
-    return $userController->showLogin();
-  }
-
   public function getUserRegistrationForm(){
     global $smarty;
-    $currentUser = NULL;
-    $smarty->assign("currentUser", $currentUser);
-    $currentInstructor = NULL;
-    $smarty->assign("currentInstructor", $currentInstructor);
     return $smarty->fetch("../view/UserRegistration.html");
   }
 
   public function RegisterUser(){
       global $smarty;
 
-      $_Name = $_POST["username_txt"];
-      $_EMail = $_POST["email_txt"];
-      $_Password = $_POST["pass_txt"];
-      $_confirm = $_POST["confirm_txt"];
-      $_course = $_POST["course_txt"];
-
       $_User = new User();
-      $_User->setName($_Name);
-      $_User->setEmail($_Email);
-      $_User->setActiveCourse($_course);
-      $_User->setPassword($_confirm);
+      $_User->setName($_POST["username_txt"]);
+      $_User->setEmail($_POST["email_txt"]);
+      $_User->setActiveCourse($_POST["course_txt"]);
+      $_User->setPassword($_POST["pass_txt"]);
       $_User->setRegDate($smarty->now|date_format);
 
       $_UserRepo = new UserRepository();
@@ -37,15 +22,10 @@ class LoginController {
 
       $moduleController = new ModuleController();
       return $moduleController->showModulplan();
-
   }
 
   public function LoginRegisteredUser(){
-
     global $smarty;
-    global $currentUser;
-
-    SESSION_START();
 
         $_Name = $_POST["email_txt"];
         $_Password = $_POST["pass_txt"];
@@ -54,8 +34,9 @@ class LoginController {
         $userExists = $repo->testUserLogin($_Name , $_Password);
 
         if($userExists == TRUE){
-            $currentUser = $repo->setCorrectUser($_Name , $_Password);
-            $smarty->assign("currentUser", $currentUser);
+
+            $_SESSION["currentUser"] = $repo->setCorrectUser($_Name , $_Password);
+            $smarty->assign("currentUser", $_SESSION["currentUser"]);
 
             $moduleController = new ModuleController();
             return $moduleController->showModulplan();
@@ -66,13 +47,9 @@ class LoginController {
 
   public function getInstructorRegistrationForm(){
     global $smarty;
-    $currentUser = NULL;
-    $smarty->assign("currentUser", $currentUser);
-    $currentInstructor = NULL;
-    $smarty->assign("currentInstructor", $currentInstructor);
     return $smarty->fetch("../view/InstructorRegistration.html");
   }
-
+/*
   public function RegisterInstructor(){
 
     $servername = "localhost";
@@ -144,7 +121,7 @@ class LoginController {
             $error = "Your Login Name or Password is invalid";
         }
     }
-  }
+  }*/
 
 }
 

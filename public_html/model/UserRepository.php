@@ -53,16 +53,11 @@ class UserRepository {
         return $result[0];
     }
 
-
-
-
-
     public function getCurrentRanking(){
         global $db;
-        global $currentUser;
 
         $result = array();
-        $course = $currentUser->getActiveCourse();
+        $course = $_SESSION["currentUser"]->getActiveCourse();
 
         $stmt = $db->query("SELECT u.id, SUM(a.value)
                             FROM users u
@@ -79,7 +74,7 @@ class UserRepository {
             $result[] = $row["id"];
         }
 
-        $key = array_search($currentUser->getId(), $result);
+        $key = array_search($_SESSION["currentUser"]->getId(), $result);
 
         return $key + 1;
     }

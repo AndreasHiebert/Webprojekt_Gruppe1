@@ -33,22 +33,21 @@ class FitnesspointRepository{
         }
        return $result[0];
     }
-    
+
     public function getEveryUserFitnesspoint(){
         global $db;
-        global $currentUser;
-        
+
         $result = array();
-        
-        $course = $currentUser->getActiveCourse();
-        
+
+        $course = $_SESSION["currentUser"]->getActiveCourse();
+
         $stmt = $db->query("SELECT SUM(achievements.value) FROM fitnesspoints INNER JOIN achievements ON fitnesspoints.achievement_id = achievements.id inner JOIN users ON users.id = fitnesspoints.user_id WHERE users.activeCourse = $course GROUP BY fitnesspoints.user_id");
-        
+
         foreach ($stmt as $row){
             $result[] = $row["SUM(achievements.value)"];
         }
-    
-        return $result;    
+
+        return $result;
     }
 
     public static function saveFitnesspoint($fitnesspoint) {

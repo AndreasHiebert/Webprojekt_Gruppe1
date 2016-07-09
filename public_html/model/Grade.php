@@ -8,6 +8,7 @@ class Grade {
     private $grade = 0;
     private $date = "";
 
+
     public static function fromArray($row) {
         $obj = new Grade();
 //        $obj->setId($row["id"]);

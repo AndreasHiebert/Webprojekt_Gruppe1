@@ -21,3 +21,7 @@ $(window).resize(function() {
   }
 });
 
+$('#gradeModal').on('show.bs.modal', function (e) {
+		var name = e.relatedTarget.name;
+		window.alert(name);
+});
