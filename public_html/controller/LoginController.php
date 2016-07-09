@@ -68,11 +68,9 @@ class LoginController {
         $_Password = $_POST["pass_txt"];
 
         $repo = new UserRepository();
-        $excistingUser = $repo->testUserLogin($_Name , $_Password);
+        $existingUser = $repo->testUserLogin($_Name , $_Password);
 
-        if($excistingUser == TRUE){
-            
-            
+        if($existingUser == TRUE){
             $currentUser = $repo->CorrectUser($_Name , $_Password);
             $smarty->assign("currentUser", $currentUser,"global");
             $smarty->assign("loginUser", $currentUser,"global");
