@@ -50,8 +50,8 @@ class LoginController {
 
   public function LoginRegisteredUser(){
 
-    global $currentUser;
     global $smarty;
+    global $currentUser;
     //include '../controller/ModuleController.php';
 
     SESSION_START();
@@ -64,41 +64,15 @@ class LoginController {
         die;
     }
 
-    if(!empty($_POST["Login"])){
-
-        $User_Name = mysql_real_escape_string($_POST["email_txt"]);
-        $User_Password = mysql_real_escape_string($_POST["pass_txt"]);
-
-        $sql = "SELECT * FROM users WHERE
-                email='$User_Name' AND
-                password ='$User_Password'
-                LIMIT 1";
-
-        $res = mysql_query($sql, $conn);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        $active = $row['active'];
-
-        $count = mysqli_num_rows($result);
-
-        if($count == 1){
-            $_SESSION['login'] = 1;
-            $_SESSION['user'] = $User_Name;
-
-            header("location: Homepage.html");
-
-    print_r("blablablu");
-
         $_Name = $_POST["email_txt"];
         $_Password = $_POST["pass_txt"];
-
-        global $currentUser;
 
         $repo = new UserRepository();
         $excistingUser = $repo->testUserLogin($_Name , $_Password);
 
-        print_r("$_sql blabla");
-
         if($excistingUser == TRUE){
+            
+            
             $currentUser = $repo->CorrectUser($_Name , $_Password);
             $smarty->assign("currentUser", $currentUser,"global");
             $smarty->assign("loginUser", $currentUser,"global");
@@ -109,10 +83,8 @@ class LoginController {
         }else{
             $error = "Your Login Name or Password is invalid";
         }
-      }
-    }
   }
-
+   
   public function getInstructorRegistrationForm(){
     global $smarty;
     $currentUser = NULL;
