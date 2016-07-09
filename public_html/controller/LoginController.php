@@ -63,7 +63,7 @@ class LoginController {
         die;
     }
     
-    if(!empty($_POST["Submit"])){
+    //if(!empty($_POST["email_txt"]) && !empty($_POST["pass_txt"])){
 
         $_Name = mysql_real_escape_string($_POST["email_txt"]);
         $_Password = mysql_real_escape_string($_POST["pass_txt"]);
@@ -87,7 +87,7 @@ class LoginController {
         }else{
             $error = "Your Login Name or Password is invalid";
         }
-    }
+    //}
 
   }
 
