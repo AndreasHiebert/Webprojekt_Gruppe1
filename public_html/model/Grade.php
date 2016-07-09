@@ -10,11 +10,11 @@ class Grade {
 
     public static function fromArray($row) {
         $obj = new Grade();
-        $obj->setId($row["id"]);
+//        $obj->setId($row["id"]);
         $obj->setUserId($row["user_id"]);
         $obj->setModuleId($row["module_id"]);
         $obj->setGrade($row["grade"]);
-        $obj->setDate($row["date"]);
+//        $obj->setDate($row["date"]);
         return $obj;
     }
 

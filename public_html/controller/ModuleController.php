@@ -21,11 +21,26 @@ class ModuleController {
     return $smarty->fetch("../view/show_Modulplan.html");
   }
 
-    public function enterGrade($userId, $moduleId)
+    public function enterGrade()
     {
         global $smarty;
-        $grade = Grade::fromArray($_REQUEST);
-        GradeRepository::saveGrade($grade);
+        
+//        $grade = Grade::fromArray($_REQUEST);
+        
+        $userId = $_POST['user_id'];
+        $moduleId = $_POST['module_id'];
+        $gradeIn = $_POST['grade_input'];
+        
+        $grade = new Grade();
+        $grade->setUserId($userId);
+        $grade->setModuleId($moduleId);
+        $grade->setGrade($gradeIn);
+        
+        
+        GradeRepository::saveGrades($grade);
+        
+        $moduleView = new ModuleController();
+        return $moduleView->showModulplan();
     }
 
     public function getMaxCp(){

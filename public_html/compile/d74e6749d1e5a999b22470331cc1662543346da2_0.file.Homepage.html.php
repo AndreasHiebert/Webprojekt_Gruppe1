@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 00:25:59
+/* Smarty version 3.1.29, created on 2016-07-09 12:48:02
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578028775a9be8_04033423',
+  'unifunc' => 'content_5780d662405775_47476550',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468016740,
+      1 => 1468061278,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578028775a9be8_04033423 ($_smarty_tpl) {
+function content_5780d662405775_47476550 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -219,10 +219,11 @@ function content_578028775a9be8_04033423 ($_smarty_tpl) {
 					<?php }?>
 					<div>
 						<hr>
-							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="form-inline text-center" method="post">
+                                                <div class="panel-body">
+							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="text-center" method="post">
 
 													<div class="row form-row">
-															<input name="code_input" id="codeinput" type="text" class="form-control" size="18" placeholder="Fitness-Code eingeben...">
+															<input name="code_input" id="codeinput" type="text" class="form-control" placeholder="Fitness-Code eingeben...">
 													</div>
 													<div class="panel-body">
 															<Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
@@ -230,6 +231,7 @@ function content_578028775a9be8_04033423 ($_smarty_tpl) {
 											</div>
 
 								</form>
+                                                </div>
 							</div>
 					</div>
 

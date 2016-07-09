@@ -49,10 +49,10 @@ class LoginController {
   }
 
   public function LoginRegisteredUser(){
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
-    $dbname = "webprojekt13";
+
+    global $currentUser;
+    global $smarty;
+    //include '../controller/ModuleController.php';
 
     SESSION_START();
 
@@ -85,11 +85,32 @@ class LoginController {
             $_SESSION['user'] = $User_Name;
 
             header("location: Homepage.html");
+
+    print_r("blablablu");
+
+        $_Name = $_POST["email_txt"];
+        $_Password = $_POST["pass_txt"];
+
+        global $currentUser;
+
+        $repo = new UserRepository();
+        $excistingUser = $repo->testUserLogin($_Name , $_Password);
+
+        print_r("$_sql blabla");
+
+        if($excistingUser == TRUE){
+            $currentUser = $repo->CorrectUser($_Name , $_Password);
+            $smarty->assign("currentUser", $currentUser,"global");
+            $smarty->assign("loginUser", $currentUser,"global");
+
+            echo "Login erfolgreich.<br>";
+            $moduleController = new ModuleController();
+            return $moduleController->showModulplan();
         }else{
             $error = "Your Login Name or Password is invalid";
         }
+      }
     }
-
   }
 
   public function getInstructorRegistrationForm(){
@@ -134,6 +155,9 @@ class LoginController {
   }
 
   public function LoginRegisteredInstructor($EMail, $UserPassword){
+
+    global $currentUser;
+
     $servername = "localhost";
     $username = "username";
     $password = "password";
