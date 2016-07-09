@@ -1,10 +1,68 @@
-<div id="modulebox">
-    <div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
+<div id="modulebox" class="hidden-xs">
+    <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
         {foreach from = $allModules item = $module}
         {if $module->getSemester() != $semester}
     </div>
     <br>
-    <div id = "semesterRow" class="btn-group btn-group-justified modulplan_group" role="group" aria-label="...">
+    <div id = "semesterRow" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
+        {/if}
+
+        <div class="btn-group" role="group">
+
+            {if $module->completedModule($module->getId()) == true}
+            <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-success">{$module->getName()}<br>CP: {$module->getCp()}<br><b>Note: {$module->completedModuleGrade($module->getId())}</b></button>
+            {else}
+            <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}<br>CP: {$module->getCp()}</button>
+            {/if}
+
+
+            <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+
+                    <!--                        <input type="hidden" name="controller" value="ModuleController">
+                                            <input type="hidden" name="action" value="enterGrade">-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">Close</button>
+                            <h4 class="modal-title">Enter Grade for: {$module->getName()}</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
+                                <div class="form-group">
+                                    <label for="grade">Grade:</label>
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="userId" name="user_id" class="form-control" type="hidden" value="{$currentUser->getId()}">
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="moduleId" name="module_id" class="form-control" type="hidden" value="{$module->getId()}">
+                                </div>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {$semester = $module->getSemester()}
+        {/foreach}
+    </div>
+</div>
+    
+    <!--Mobile Version-->
+  
+ <div id="modulebox" class="visible-xs">
+    <div id="modulplan_row" class="btn-group-vertical visible-xs" role="group" aria-label="...">
+        {foreach from = $allModules item = $module}
+        {if $module->getSemester() != $semester}
+    </div>
+    <br>
+    <div id = "semesterRow" class="btn-group-vertical visible-xs" role="group" aria-label="...">
         {/if}
 
         <div class="btn-group" role="group">
