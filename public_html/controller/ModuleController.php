@@ -22,7 +22,7 @@ class ModuleController {
 
     public function enterGrade() {
         global $smarty;
-
+     
         $userId = $_POST['user_id'];
         $moduleId = $_POST['module_id'];
         $gradeIn = $_POST['grade_input'];

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 11:59:55
+/* Smarty version 3.1.29, created on 2016-07-10 12:51:16
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57821c9bd28464_26663905',
+  'unifunc' => 'content_578228a4148ce4_30622846',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468144790,
+      1 => 1468147858,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,14 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57821c9bd28464_26663905 ($_smarty_tpl) {
+function content_578228a4148ce4_30622846 ($_smarty_tpl) {
 ?>
 <div id="modulebox" class="hidden-xs">
+    <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
+    <div class="alert alert-danger">
+        <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 liegen.
+    </div>
+    <?php }?>
     <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
         <?php
 $_from = $_smarty_tpl->tpl_vars['allModules']->value;
@@ -71,12 +76,6 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                         </div>
 
                         <div class="modal-body">
-                            <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
-                            <div class="alert alert-danger">
-                                <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 sein.
-                            </div>
-                            <?php }?>
-
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Note:</label>

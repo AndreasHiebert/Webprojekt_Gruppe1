@@ -1,4 +1,9 @@
 <div id="modulebox" class="hidden-xs">
+    {if isset($gradeError)}
+    <div class="alert alert-danger">
+        <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 liegen.
+    </div>
+    {/if}
     <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
         {foreach from = $allModules item = $module}
         {if $module->getSemester() != $semester}
@@ -15,10 +20,10 @@
             <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}<br>CP: {$module->getCp()}</button>
             {/if}
 
+            <!--Modal-->
 
             <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">Schließen</button>
@@ -26,12 +31,6 @@
                         </div>
 
                         <div class="modal-body">
-                            {if isset($gradeError)}
-                            <div class="alert alert-danger">
-                                <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 sein.
-                            </div>
-                            {/if}
-
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Note:</label>
@@ -60,6 +59,11 @@
 <!--Mobile Version-->
 
 <div id="modulebox" class="visible-xs">
+    {if isset($gradeError)}
+    <div class="alert alert-danger">
+        <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 liegen.
+    </div>
+    {/if}
     <div id="modulplan_row" class="btn-group-vertical visible-xs" role="group" aria-label="...">
         {foreach from = $allModules item = $module}
         {if $module->getSemester() != $semester}
@@ -76,6 +80,7 @@
             <button id = "moduleButton"  name="{$module->getName()}" type="button" data-toggle="modal" data-target="#gradeModal{$module->getId()}" class="btn btn-default">{$module->getName()}<br>CP: {$module->getCp()}</button>
             {/if}
 
+            <!--Modal-->
 
             <div id="gradeModal{$module->getId()}" class="modal fade" role="dialog">
                 <div class="modal-dialog">
