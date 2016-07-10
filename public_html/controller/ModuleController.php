@@ -39,6 +39,8 @@ class ModuleController {
             GradeRepository::saveGrades($grade);
         } else if ($passed and $gradeIn <= 4 and $gradeIn >= 1) {
             GradeRepository::updateGrades($grade);
+        } else {
+            $smarty->assign("gradeError", true);
         }
 
         $moduleView = new ModuleController();

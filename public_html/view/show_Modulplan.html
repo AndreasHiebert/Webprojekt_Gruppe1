@@ -26,6 +26,12 @@
                         </div>
 
                         <div class="modal-body">
+                            {if isset($gradeError)}
+                            <div class="alert alert-danger">
+                                <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 sein.
+                            </div>
+                            {/if}
+
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Note:</label>
@@ -50,10 +56,10 @@
         {/foreach}
     </div>
 </div>
-    
-    <!--Mobile Version-->
-  
- <div id="modulebox" class="visible-xs">
+
+<!--Mobile Version-->
+
+<div id="modulebox" class="visible-xs">
     <div id="modulplan_row" class="btn-group-vertical visible-xs" role="group" aria-label="...">
         {foreach from = $allModules item = $module}
         {if $module->getSemester() != $semester}

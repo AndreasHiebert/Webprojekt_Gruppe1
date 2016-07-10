@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 01:15:27
+/* Smarty version 3.1.29, created on 2016-07-10 11:59:55
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5781858fde8219_27342259',
+  'unifunc' => 'content_57821c9bd28464_26663905',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468106122,
+      1 => 1468144790,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5781858fde8219_27342259 ($_smarty_tpl) {
+function content_57821c9bd28464_26663905 ($_smarty_tpl) {
 ?>
 <div id="modulebox" class="hidden-xs">
     <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
@@ -71,6 +71,12 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                         </div>
 
                         <div class="modal-body">
+                            <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
+                            <div class="alert alert-danger">
+                                <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 sein.
+                            </div>
+                            <?php }?>
+
                             <form action="index.php?controller=ModuleController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Note:</label>
@@ -104,10 +110,10 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 ?>
     </div>
 </div>
-    
-    <!--Mobile Version-->
-  
- <div id="modulebox" class="visible-xs">
+
+<!--Mobile Version-->
+
+<div id="modulebox" class="visible-xs">
     <div id="modulplan_row" class="btn-group-vertical visible-xs" role="group" aria-label="...">
         <?php
 $_from = $_smarty_tpl->tpl_vars['allModules']->value;
