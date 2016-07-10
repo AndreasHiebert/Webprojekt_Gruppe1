@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-10 12:51:16
+/* Smarty version 3.1.29, created on 2016-07-10 13:35:58
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578228a4148ce4_30622846',
+  'unifunc' => 'content_5782331ea68695_03651034',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468147858,
+      1 => 1468150542,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,12 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578228a4148ce4_30622846 ($_smarty_tpl) {
+function content_5782331ea68695_03651034 ($_smarty_tpl) {
 ?>
 <div id="modulebox" class="hidden-xs">
     <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
-    <div class="alert alert-danger">
-        <strong>Fehler:</strong> Die eingetragene Note muss zwischen 1 und 4 liegen.
+    <div class="alert alert-info">
+        <strong>Info:</strong> Es werden nur die Noten von 1 bis 4 unterstützt.
     </div>
     <?php }?>
     <div id="modulplan_row" class="btn-group btn-group-justified hidden-xs" role="group" aria-label="...">
@@ -63,15 +63,15 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 </button>
             <?php }?>
 
+            <!--Modal-->
 
             <div id="gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 " class="modal fade" role="dialog">
                 <div class="modal-dialog">
-
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">Schließen</button>
-                            <h4 class="modal-title">Note Eingeben für: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+                            <h4 class="modal-title">Modul: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 </h4>
                         </div>
 
@@ -113,6 +113,11 @@ $_smarty_tpl->tpl_vars['module'] = $__foreach_module_0_saved_item;
 <!--Mobile Version-->
 
 <div id="modulebox" class="visible-xs">
+    <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
+    <div class="alert alert-info">
+        <strong>Info:</strong> Es werden nur die Noten von 1 bis 4 unterstützt.
+    </div>
+    <?php }?>
     <div id="modulplan_row" class="btn-group-vertical visible-xs" role="group" aria-label="...">
         <?php
 $_from = $_smarty_tpl->tpl_vars['allModules']->value;
@@ -149,6 +154,7 @@ $__foreach_module_1_saved_local_item = $_smarty_tpl->tpl_vars['module'];
 </button>
             <?php }?>
 
+            <!--Modal-->
 
             <div id="gradeModal<?php echo $_smarty_tpl->tpl_vars['module']->value->getId();?>
 " class="modal fade" role="dialog">
@@ -157,7 +163,7 @@ $__foreach_module_1_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">Schließen</button>
-                            <h4 class="modal-title">Note eingeben für: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
+                            <h4 class="modal-title">Modul: <?php echo $_smarty_tpl->tpl_vars['module']->value->getName();?>
 </h4>
                         </div>
 
