@@ -33,6 +33,14 @@ class CourseRepository{
         return $result[0];
     }
 
+    public function getCourseIdFromAbbreviation($abbreviation){
+        global $db;
+        $stmt = $db->query("SELECT id
+                            FROM courses
+                            WHERE abbreviation = $abbreviation");
+        return $stmt;
+    }
+
     public static function saveCourses($course) {
         global $db;
 
@@ -41,11 +49,5 @@ class CourseRepository{
         $stmt->bindValue(':name', $course->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':abbrieviation', $course->getAbbrieviation(), PDO::PARAM_STR);
         $stmt->execute();
-    }
-    
-    public function getCourseIdFromAbbreviation($abbreviation){
-        global $db;
-        $stmt = $db->query("SELECT id FROM courses WHERE abbreviation = $abbreviation");
-        return $stmt;
     }
 }

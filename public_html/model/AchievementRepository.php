@@ -50,18 +50,20 @@ class AchievementRepository{
     }
 
     public function getAchievementbyCode($code){
-        
+
         global $db;
         $result = array();
-        
-        $stmt = $db->query("SELECT * FROM achievements WHERE code = '$code'");
-        
+
+        $stmt = $db->query("SELECT *
+                            FROM achievements
+                            WHERE code = '$code'");
+
         foreach ($stmt as $row) {
              $result[] = Achievement::fromArray($row);
         }
-        
+
         print_r($result);
-        
+
         return $result[0];
     }
 
