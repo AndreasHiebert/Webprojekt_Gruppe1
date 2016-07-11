@@ -82,7 +82,7 @@ class LoginController {
       $UserRepo = new InstructorRepository();
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
-      $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      $UserExists = $UserRepo->checkAvailability($UserMail);
       
       if($UserExists == FALSE){
       $_User = new Instructor();
