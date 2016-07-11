@@ -10,6 +10,9 @@ class GradeController {
       $moduleId = $_POST['module_id'];
       $gradeIn = $_POST['grade_input'];
 
+      $search = ",";
+      $replace = ".";
+      $gradeIn = str_replace ($search, $replace, $gradeIn);
 
       $grade = new Grade();
       $grade->setUserId($userId);

@@ -83,7 +83,7 @@ class UserRepository {
         global $db;
 
         $stmt = $db->prepare('INSERT INTO users (name, password, regdate, email, activeCourse) '
-                . 'values (:name, :password, :email, :activeCourse, :fitnesspoints)');
+                . 'values (:name, :password, :email, :activeCourse)');
         $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':regDate', $user->getRegDate(), PDO::PARAM_STR);
