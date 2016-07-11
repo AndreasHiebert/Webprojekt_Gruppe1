@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 09:59:53
+/* Smarty version 3.1.29, created on 2016-07-11 11:18:48
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578351f96aed10_52500949',
+  'unifunc' => 'content_578364786820d3_11259322',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468223975,
+      1 => 1468228726,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578351f96aed10_52500949 ($_smarty_tpl) {
+function content_578364786820d3_11259322 ($_smarty_tpl) {
 ?>
 <div id="modulebox">
     <div id="modulplan_row" class="btn-group btn-group-justified " role="group" aria-label="...">
@@ -74,7 +74,7 @@ $__foreach_module_0_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                             <form action="index.php?controller=GradeController&action=enterGrade" method="post">
                                 <div class="form-group">
                                     <label for="grade">Grade:</label>
-                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade">
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade" required>
                                 </div>
 
                                 <div class="form-group">
