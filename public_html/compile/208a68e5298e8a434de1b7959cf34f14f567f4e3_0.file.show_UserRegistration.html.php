@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 12:51:27
+/* Smarty version 3.1.29, created on 2016-07-11 13:22:02
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_UserRegistration.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57837a2f9d19f8_16891861',
+  'unifunc' => 'content_5783815a4f85d4_84708617',
   'file_dependency' => 
   array (
     '208a68e5298e8a434de1b7959cf34f14f567f4e3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_UserRegistration.html',
-      1 => 1468234285,
+      1 => 1468236120,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57837a2f9d19f8_16891861 ($_smarty_tpl) {
+function content_5783815a4f85d4_84708617 ($_smarty_tpl) {
 ?>
 
-  <div class="col-xs-6">
-  <!-- spacer to put registration_btn below form -->
-  </div>
 
   <form role="form" action="index.php?controller=LoginController&action=RegisterUser" method="post">
     <div class="form-group">
