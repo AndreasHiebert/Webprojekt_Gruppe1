@@ -33,10 +33,15 @@ class LoginController {
 
       $_UserRepo = new UserRepository();
       $_UserRepo->saveUser($_User);
+      $RegisterSuccess = TRUE;
       }
 
       $LoginController = new LoginController();
+      if($RegisterSuccess == TRUE){
       return $LoginController->showLogin();
+      }else{
+          $error = "User already exists";
+      }
   }
 
   public function LoginRegisteredUser(){
