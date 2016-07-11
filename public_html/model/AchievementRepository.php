@@ -62,7 +62,6 @@ class AchievementRepository{
              $result[] = Achievement::fromArray($row);
         }
 
-        print_r($result);
 
         return $result[0];
     }
