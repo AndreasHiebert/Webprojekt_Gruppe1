@@ -6,12 +6,12 @@ class LoginController {
     global $smarty;
     // remove all session variables
     SESSION_UNSET();
-    return $smarty->fetch("../view/Login.html");
+    return $smarty->fetch("../view/show_Login.html");
   }
 
   public function getUserRegistrationForm(){
     global $smarty;
-    return $smarty->fetch("../view/UserRegistration.html");
+    return $smarty->fetch("../view/show_UserRegistration.html");
   }
 
   public function RegisterUser(){
@@ -62,7 +62,7 @@ class LoginController {
 
   public function getInstructorRegistrationForm(){
     global $smarty;
-    return $smarty->fetch("../view/InstructorRegistration.html");
+    return $smarty->fetch("../view/show_InstructorRegistration.html");
   }
 /*
   public function RegisterInstructor(){

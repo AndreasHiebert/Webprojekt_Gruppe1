@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-09 20:45:37
+/* Smarty version 3.1.29, created on 2016-07-11 00:57:52
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57814651706997_22889267',
+  'unifunc' => 'content_5782d2f0d5de59_40032005',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1468089819,
+      1 => 1468191425,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57814651706997_22889267 ($_smarty_tpl) {
+function content_5782d2f0d5de59_40032005 ($_smarty_tpl) {
 ?>
 
 <ul class="list-group">
@@ -52,7 +52,7 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
 
      </div>
       <div class="media-right">
-          <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getObtainedDate();?>
+          <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getCreatedDate();?>
 
       </div>
    </div>

@@ -5,10 +5,9 @@ class ModuleRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT *
+        $stmt = $db->query('SELECT *
                             FROM modules
-                            ORDER BY semester
-                            ASC");
+                            ORDER BY id');
 
         foreach ($stmt as $row) {
             $result[] = Module::fromArray($row);
@@ -58,11 +57,9 @@ class ModuleRepository {
     public static function saveModule($modul) {
         global $db;
 
-        $stmt = $db->prepare("INSERT INTO modules (name, abbrieviation, description, status, cp, semester) "
-                . "values (:name, :abbrieviation, :description, :status, :cp, :semester)");
+        $stmt = $db->prepare('INSERT INTO modules (name, status, cp, semester) '
+                . 'values (:name, :abbrieviation, :status, :cp, :semester)');
         $stmt->bindValue(':name', $modul->getName(), PDO::PARAM_STR);
-        $stmt->bindValue(':abbrieviation', $modul->getAbbrieviation(), PDO::PARAM_STR);
-        $stmt->bindValue(':description', $modul->getDescription(), PDO::PARAM_STR);
         $stmt->bindValue(':status', $modul->getStatus(), PDO::PARAM_INT);
         $stmt->bindValue(':cp', $modul->getCp(), PDO::PARAM_INT);
         $stmt->bindValue(':semester', $modul->getSemester(), PDO::PARAM_INT);

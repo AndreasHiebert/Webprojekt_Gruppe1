@@ -3,18 +3,13 @@
 class Module {
     private $name = "";
     private $id = 0;
-    private $abbrieviation = "";
-    private $description = "";
     private $cp = 0;
     private $semester = 0;
-
 
     public static function fromArray($row) {
         $obj = new Module();
         $obj->setName($row["name"]);
         $obj->setId($row["id"]);
-        $obj->setAbbreviation($row["abbreviation"]);
-        $obj->setDescription($row["description"]);
         $obj->setCp($row["cp"]);
         $obj->setSemester($row["semester"]);
         return $obj;
@@ -42,22 +37,6 @@ class Module {
 
     public function setId($value) {
       $this->id = $value;
-    }
-
-    public function getAbbreviation(){
-      return $this->abbreviation;
-    }
-
-    public function setAbbreviation($value) {
-      $this->abbreviation = $value;
-    }
-
-    public function getDescription(){
-      return $this->description;
-    }
-
-    public function setDescription($value) {
-      $this->description = $value;
     }
 
     public function getCp(){

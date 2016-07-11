@@ -5,9 +5,9 @@ class InstructorRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT *
+        $stmt = $db->query('SELECT *
                             FROM instructors
-                            ORDER BY id");
+                            ORDER BY id');
 
         foreach ($stmt as $row) {
             $result[] = Instructor::fromArray($row);
@@ -21,7 +21,9 @@ class InstructorRepository {
 
         if(isset($_REQUEST[update])) {
             $id = $_REQUEST['id'];
-            $stmt = $db->prepare('UPDATE instructors SET approved=:approved WHERE id=:id');
+            $stmt = $db->prepare('UPDATE instructors
+                                  SET approved=:approved
+                                  WHERE id=:id');
             $stmt->bindValue(':approved',1,PDO::PARAM_INT);
             $stmt->bindValue(':id',$id,PDO::PARAM_INT);
             $stmt->execute();

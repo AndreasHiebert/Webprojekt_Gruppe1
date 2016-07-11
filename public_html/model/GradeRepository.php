@@ -5,9 +5,9 @@ class GradeRepository {
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT *
+        $stmt = $db->query('SELECT *
                             FROM grades
-                            ORDER BY id");
+                            ORDER BY id');
 
         foreach($stmt as $row) {
             $result[] = Grade::fromArray($row);
@@ -33,7 +33,11 @@ class GradeRepository {
             $result = $row["SUM(modules.cp)"];
         }
 
-        return $result;
+        if($result == NULL){
+          return 0;
+        } else {
+          return $result;
+        }
     }
 
     public function getUserGrades(){
@@ -79,11 +83,11 @@ class GradeRepository {
     public static function saveGrades($grade) {
         global $db;
 
-        $stmt = $db->prepare("INSERT INTO grades (user_id, module_id, grade)"
-                . "values (:userId, :moduleId, :grade)");
+        $stmt = $db->prepare('INSERT INTO grades (user_id, module_id, grade)'
+                . 'values (:userId, :moduleId, :grade)');
         $stmt->bindValue(':userId', $grade->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':moduleId', $grade->getModuleId(), PDO::PARAM_INT);
-        $stmt->bindValue(':grade', $grade->getGrade(), PDO::PARAM_STR);
+        $stmt->bindValue(':grade', $grade->getGrade(), PDO::PARAM_INT);
 
         $stmt->execute();
     }
@@ -91,13 +95,13 @@ class GradeRepository {
     public static function updateGrades($grade) {
         global $db;
 
-        $stmt = $db->prepare("update grades 
-                                set grade = :gradeIn
-                                where user_id = :userId
-                                and module_id = :moduleId");
+        $stmt = $db->prepare('UPDATE grades
+                              SET grade = :gradeIn
+                              WHERE user_id = :userId
+                              AND module_id = :moduleId');
         $stmt->bindValue(':userId', $grade->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':moduleId', $grade->getModuleId(), PDO::PARAM_INT);
-        $stmt->bindValue(':gradeIn', $grade->getGrade(), PDO::PARAM_STR);
+        $stmt->bindValue(':gradeIn', $grade->getGrade(), PDO::PARAM_INT);
 
         $stmt->execute();
     }
