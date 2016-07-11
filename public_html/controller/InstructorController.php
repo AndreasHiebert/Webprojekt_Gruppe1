@@ -5,7 +5,7 @@ class InstructorController {
 	public function showInstructorPage() {
 		global $smarty;
 		$smarty->assign("currentInstructor", $_SESSION["currentInstructor"]);
-		return $smarty->fetch('../view/show_Instructor.html');
+		return $smarty->fetch('../view/Instructor.html');
 	}
 
 	public function approveInstructor() {
@@ -18,13 +18,13 @@ class InstructorController {
 		$tempInstructor->setApproved(1);
 		$tempRepo->saveInstructor($tempInstructor);
 
-
+		
 		echo "<script type='text/javascript'>
 		location.href=\"index.php\";
 		</script>";
 	}
 
-
+	
 
 	public function createAchievement() {
 		global $smarty;
@@ -43,7 +43,6 @@ class InstructorController {
 		$code = $code0.'-'.$code1.'-'.$code2;
 
 
-		echo "<script type='text/javascript'>alert('$code');</script>";
 
 
 		$stmt = $db->prepare('INSERT INTO achievements (name, code, obtainedDate, value) values (:name, :code, :obtainedDate, :value)');
