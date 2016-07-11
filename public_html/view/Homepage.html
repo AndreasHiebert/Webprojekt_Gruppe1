@@ -169,7 +169,13 @@
 							{if $error == 2}
 							<hr>
 									<div class="alert alert-danger">
-											 <strong>Achtung!</strong> Ihr Code ist ungültig oder abgelaufen.
+											 <strong>Achtung!</strong> Ihr Code ist abgelaufen.
+									</div>
+							{/if}
+                                                        {if $error == 3}
+							<hr>
+									<div class="alert alert-danger">
+											 <strong>Achtung!</strong> Ihr Code ist ungültig.
 									</div>
 							{/if}
 					{/if}

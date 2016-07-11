@@ -28,23 +28,30 @@ class FitnesspointController {
         }
       $achievement = $repo->getAchievementbyCode($code);
       
+      
       if($achievement != NULL){
       $id_achievement = $achievement->getId();
       $achievementTime = strtotime($achievement->getCreatedDate()); 
       }
-
-        if(($achievementTime+3600) <= time()){
-            $codeValid = false;
-            $smarty->assign("codeFalse",TRUE);
-            $smarty->assign("error",2);
-        }
-        
+      
          foreach ($fitnesspointObjects as $fitnesspoint){
             if ($fitnesspoint->getUserId() == $id_user && $fitnesspoint->getAchievementId() == $id_achievement){
                 $codeValid = false;
                 $smarty->assign("codeFalse",TRUE);
                 $smarty->assign("error",1);
             }
+        }
+      
+        if(($achievementTime+3600) <= time() and $achievementTime > 0){
+            $codeValid = false;
+            $smarty->assign("codeFalse",TRUE);
+            $smarty->assign("error",2);
+        }
+        
+        if($achievementTime == 0){
+            $codeValid = false;
+            $smarty->assign("codeFalse",TRUE);
+            $smarty->assign("error",3);
         }
 
         if($codeValid){
