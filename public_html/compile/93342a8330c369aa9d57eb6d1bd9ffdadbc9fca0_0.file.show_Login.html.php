@@ -1,29 +1,17 @@
 <?php
-<<<<<<< HEAD
-/* Smarty version 3.1.29, created on 2016-07-11 10:49:49
-=======
-/* Smarty version 3.1.29, created on 2016-07-11 11:15:08
->>>>>>> e29ede574a2f727c365ee4caab980e44f7c1a4de
+/* Smarty version 3.1.29, created on 2016-07-11 12:19:48
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-<<<<<<< HEAD
-  'unifunc' => 'content_57835daddcec51_10620052',
-=======
-  'unifunc' => 'content_5783639c7512e0_42187877',
->>>>>>> e29ede574a2f727c365ee4caab980e44f7c1a4de
+  'unifunc' => 'content_578372c457aac5_45877102',
   'file_dependency' => 
   array (
     '93342a8330c369aa9d57eb6d1bd9ffdadbc9fca0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Login.html',
-<<<<<<< HEAD
       1 => 1468226292,
-=======
-      1 => 1468227496,
->>>>>>> e29ede574a2f727c365ee4caab980e44f7c1a4de
       2 => 'file',
     ),
   ),
@@ -31,11 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-<<<<<<< HEAD
-function content_57835daddcec51_10620052 ($_smarty_tpl) {
-=======
-function content_5783639c7512e0_42187877 ($_smarty_tpl) {
->>>>>>> e29ede574a2f727c365ee4caab980e44f7c1a4de
+function content_578372c457aac5_45877102 ($_smarty_tpl) {
 ?>
  <form role="form" action="index.php?controller=LoginController&action=LoginRegisteredUser" method="post">
   <div class="form-group">

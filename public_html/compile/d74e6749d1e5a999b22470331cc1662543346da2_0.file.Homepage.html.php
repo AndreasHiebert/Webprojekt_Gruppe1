@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 00:59:16
+/* Smarty version 3.1.29, created on 2016-07-11 12:19:48
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5782d344abc458_02791830',
+  'unifunc' => 'content_578372c45c4930_16380170',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468191548,
+      1 => 1468230825,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5782d344abc458_02791830 ($_smarty_tpl) {
+function content_578372c45c4930_16380170 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -225,7 +225,7 @@ function content_5782d344abc458_02791830 ($_smarty_tpl) {
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="text-center" method="post">
 
 													<div class="row form-row">
-															<input name="code_input" id="codeinput" type="text" class="form-control" placeholder="Fitness-Code eingeben...">
+															<input name="code_input" id="codeinput" type="text" class="form-control" placeholder="Fitness-Code eingeben..." maxlength="14" required>
 													</div>
 													<div class="panel-body">
 															<Button id="submitbtn" type="submit" class="btn btn-default">Einlösen</Button>
