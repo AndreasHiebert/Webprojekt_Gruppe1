@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 00:57:54
+/* Smarty version 3.1.29, created on 2016-07-11 11:15:08
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5782d2f2d85580_05351202',
+  'unifunc' => 'content_5783639c7512e0_42187877',
   'file_dependency' => 
   array (
     '93342a8330c369aa9d57eb6d1bd9ffdadbc9fca0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Login.html',
-      1 => 1468191284,
+      1 => 1468227496,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5782d2f2d85580_05351202 ($_smarty_tpl) {
+function content_5783639c7512e0_42187877 ($_smarty_tpl) {
 ?>
  <form role="form" action="index.php?controller=LoginController&action=LoginRegisteredUser" method="post">
   <div class="form-group">
@@ -30,8 +30,10 @@ function content_5782d2f2d85580_05351202 ($_smarty_tpl) {
     <label for="pwd">Password:</label>
     <input type="password" class="form-control" id="pwd" name="pass_txt" placeholder="Enter Password">
   </div>
-  <button type="submit" value="submit" class="btn btn-default">Submit</button>
+  <button type="submit" value="submit" class="btn btn-default">LoginUser</button>
 </form>
+<a href="index.php?controller=LoginController&action=getUserRegistrationForm">Register as User?</a>
+<a href="index.php?controller=LoginController&action=getInstructorRegistrationForm">Register as Instructor?</a>
 
 <!--
         <div id ="Headline" class="row">

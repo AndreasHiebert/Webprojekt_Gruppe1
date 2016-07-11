@@ -20,6 +20,7 @@ class LoginController {
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
       $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      print_r("$UserExists benutzer existiert");
       
       if($UserExists == FALSE){
       $_User = new User();
@@ -27,9 +28,9 @@ class LoginController {
       $_User->setEmail($UserMail);
       $_User->setActiveCourse($_POST["course_txt"]);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
+            print_r("passwort gültig");
         $_User->setPassword($UserPassword);
       }
-      $_User->setRegDate($smarty->now|date_format);
       $UserRepo->saveUser($_User);
       $RegisterSuccess = TRUE;
       }
