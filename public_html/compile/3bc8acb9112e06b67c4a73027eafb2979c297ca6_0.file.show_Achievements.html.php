@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 18:39:36
+/* Smarty version 3.1.29, created on 2016-07-11 18:52:01
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Achievements.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5783cbc8036434_14958665',
+  'unifunc' => 'content_5783ceb14f6507_33120094',
   'file_dependency' => 
   array (
     '3bc8acb9112e06b67c4a73027eafb2979c297ca6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Achievements.html',
-      1 => 1468255173,
+      1 => 1468255919,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5783cbc8036434_14958665 ($_smarty_tpl) {
+function content_5783ceb14f6507_33120094 ($_smarty_tpl) {
 ?>
 
 <ul class="list-group">
@@ -37,7 +37,7 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
 ?>
 <li class="list-group-item">
   <div class="media">
-     <div class="media-left media-middle">
+     <div id = "av_mediaLeft" class="media-left media-middle">
          <a href="#">
              <img class="media-object" src="img/trophy.png" alt="" width="64" height="64">
          </a>
@@ -45,13 +45,13 @@ $__foreach_achievement_0_saved_local_item = $_smarty_tpl->tpl_vars['achievement'
      <div id= "achievementItem" class="media-body">
          <h4 class="media-heading"><?php echo $_smarty_tpl->tpl_vars['achievement']->value->getName();?>
 </h4>
-         <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getValue();?>
- Fitnesspoints<br>
-         <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getDescription();?>
+         <hr>
+         <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getCreatedDateDDMMYY();?>
 
 
      </div>
-      <div id = "mediaRight" class="media-right">
+      <div id = "av_mediaRight" class="media-right">
+
           <?php echo $_smarty_tpl->tpl_vars['achievement']->value->getCreatedDateDDMMYY();?>
 
       </div>

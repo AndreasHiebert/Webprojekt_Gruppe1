@@ -4,7 +4,6 @@ class Achievement{
     private $id=0;
     private $name="";
     private $code="";
-    private $description = "";
     private $createdDate = "";
     private $value = 0;
 
@@ -14,7 +13,6 @@ class Achievement{
       $obj->setId($row["id"]);
       $obj->setName($row["name"]);
       $obj->setCode($row["code"]);
-      $obj->setDescription($row["description"]);
       $obj->setValue($row["value"]);
       $obj->setCreatedDate($row["createdDate"]);
       return $obj;
@@ -56,14 +54,6 @@ class Achievement{
 
     public function setCreatedDate($value){
         $this->createdDate = $value;
-    }
-
-    public function setDescription($value){
-        $this->description = $value;
-    }
-
-    public function getDescription(){
-        return $this->description;
     }
 
     public function getValue(){

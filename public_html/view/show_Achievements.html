@@ -3,18 +3,19 @@
 {foreach from = $userAchievements item = $achievement}
 <li class="list-group-item">
   <div class="media">
-     <div class="media-left media-middle">
+     <div id = "av_mediaLeft" class="media-left media-middle">
          <a href="#">
              <img class="media-object" src="img/trophy.png" alt="" width="64" height="64">
          </a>
      </div>
      <div id= "achievementItem" class="media-body">
-         <h4 class="media-heading">{$achievement->getName()}</h4>
-         {$achievement->getValue()} Fitnesspoints<br>
-         {$achievement->getDescription()}
+         <h4 class="media-heading"><span id="av_name">{$achievement->getName()</span>}</h4>
+         <hr>
+         {$achievement->getCreatedDateDDMMYY()}
 
      </div>
-      <div id = "mediaRight" class="media-right">
+      <div id = "av_mediaRight" class="media-right">
+
           {$achievement->getCreatedDateDDMMYY()}
       </div>
    </div>

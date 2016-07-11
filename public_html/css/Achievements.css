@@ -3,9 +3,19 @@
 }
 
 #achievementItem{
-
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-#mediaRight{
+#av_mediaLeft{
+    border-right: 1px solid #dddddd;
+}
+
+
+#av_mediaRight{
     border-left: 1px solid #dddddd;
+}
+
+#av_name{
+
 }
