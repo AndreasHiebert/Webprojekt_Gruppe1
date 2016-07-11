@@ -5,17 +5,21 @@
 #achievementItem{
     padding-left: 15px;
     padding-right: 15px;
-}
-
-#av_mediaLeft{
+    border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
 }
 
-
 #av_mediaRight{
-    border-left: 1px solid #dddddd;
+    font-size: 300%;
+    min-width: 60px;
+    color: #26a69a;
 }
 
 #av_name{
-    font-size: 200%;
+    font-size: 140%;
+}
+
+#av_title{
+    font-size: 240%;
+    text-align: center;
 }

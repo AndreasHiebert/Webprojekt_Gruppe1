@@ -1,22 +1,20 @@
-
+<h1 id = "av_title">Achievements</h1>
 <ul class="list-group">
 {foreach from = $userAchievements item = $achievement}
 <li class="list-group-item">
   <div class="media">
-     <div id = "av_mediaLeft" class="media-left media-middle">
+     <div class="media-left media-middle">
          <a href="#">
              <img class="media-object" src="img/trophy.png" alt="" width="64" height="64">
          </a>
      </div>
      <div id= "achievementItem" class="media-body">
          <h4 class="media-heading"><span id="av_name">{$achievement->getName()}</span></h4>
-         <hr>
-         {$achievement->getCreatedDateDDMMYY()}
+         <span id = "av_date">  {$achievement->getCreatedDateDDMMYY()}</span>
 
      </div>
       <div id = "av_mediaRight" class="media-right">
-
-          {$achievement->getCreatedDateDDMMYY()}
+          {$achievement->getValue()}
       </div>
    </div>
 </li>

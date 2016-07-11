@@ -35,31 +35,6 @@ class FitnesspointRepository{
        return $result[0];
     }
 
-    public function testFitnessCode(){
-      global $smarty;
-
-      $repo= new AchievementRepository();
-      $achievementObjects=$repo->getAllAchievements();
-      $repoFitness = new FitnesspointRepository();
-      $fitnesspointObjects=$repoFitness->getAllFitnesspoints();
-      $codeValid = FALSE;
-      $code = $_POST['code_input'];
-
-      foreach ($achievementObjects as $item) {
-        $CodeArray[] = $item->getCode();
-      }
-
-      $key = array_search($code, $CodeArray);
-      $id_user = $_SESSION["currentUser"]->getId();
-      $id_achievement =$achievementObjects[$key]->getId();
-
-      foreach($achievementObjects as $value){
-        if(in_array($code, $CodeArray, true)){
-            $codeValid = true;
-        }
-      }
-    }
-
     public function getEveryUserFitnesspoint(){
         global $db;
 
