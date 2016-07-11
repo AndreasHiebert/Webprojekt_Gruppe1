@@ -5,7 +5,7 @@ class InstructorController {
 	public function showInstructorPage() {
 		global $smarty;
 		$smarty->assign("currentInstructor", $_SESSION["currentInstructor"]);
-		return $smarty->fetch('../view/Instructor.html');
+		return $smarty->fetch('../view/show_instructor.html');
 	}
 
 	public function approveInstructor() {
