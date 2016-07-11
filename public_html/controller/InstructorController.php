@@ -33,8 +33,6 @@ class InstructorController {
 		$code = $_REQUEST['code'];
 		$name = $_REQUEST['name'];
 		$points = $_REQUEST['points'];
-		$obtained = time()+3600;
-		$obtained = date('Y-m-d H:i:s', $obtained);
 
 		$code0 = substr($code,0,5);
 		$code1 = substr($code,5,5);
@@ -45,11 +43,10 @@ class InstructorController {
 
 
 
-		$stmt = $db->prepare('INSERT INTO achievements (name, code, createdDate, value) values (:name, :code, :createdDate, :value)');
+		$stmt = $db->prepare('INSERT INTO achievements (name, code, value) values (:name, :code, :value)');
 
 		$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 		$stmt->bindValue(':code', $code, PDO::PARAM_STR);
-		$stmt->bindValue(':createdDate', $obtained, PDO::PARAM_STR);
 		$stmt->bindValue(':value', $points, PDO::PARAM_INT);
 
 		$stmt->execute();

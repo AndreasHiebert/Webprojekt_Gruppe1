@@ -73,7 +73,7 @@ class AchievementRepository{
         global $db;
 
         $stmt = $db->prepare('INSERT INTO achievements (name, code, description, type, createdDate, value) '
-                . 'values (:name, :code, :description, :type, :createdDate, :value)');
+                . 'values (:name, :code, :description, :type, :value)');
         $stmt->bindValue(':name', $achievement->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':code', $achievement->getCode(), PDO::PARAM_STR);
         $stmt->bindValue(':description', $achievemen->getDescription(), PDO::PARAM_STR);

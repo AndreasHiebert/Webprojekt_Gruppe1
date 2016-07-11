@@ -16,7 +16,7 @@ class Achievement{
       $obj->setCode($row["code"]);
       $obj->setDescription($row["description"]);
       $obj->setValue($row["value"]);
-      $obj->setCreatedDate($row["com_create_guidDate"]);
+      $obj->setCreatedDate($row["createdDate"]);
       return $obj;
     }
 
@@ -49,7 +49,7 @@ class Achievement{
     }
 
     public function setCreatedDate($value){
-        $value = date("d.m.y");
+        //$value = date("d.m.y");
         $this->createdDate = $value;
     }
 
