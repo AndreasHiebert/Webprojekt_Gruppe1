@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 09. Jul 2016 um 00:44
+-- Erstellungszeit: 11. Jul 2016 um 10:22
 -- Server-Version: 10.1.13-MariaDB
 -- PHP-Version: 7.0.6
 
@@ -30,7 +30,7 @@ CREATE TABLE `achievements` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `code` varchar(99) NOT NULL,
-  `obtainedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `currentDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `value` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,7 +38,7 @@ CREATE TABLE `achievements` (
 -- Daten für Tabelle `achievements`
 --
 
-INSERT INTO `achievements` (`id`, `name`, `code`, `obtainedDate`, `value`) VALUES
+INSERT INTO `achievements` (`id`, `name`, `code`, `currentDate`, `value`) VALUES
 (1, 'Gebe einen Fitnesscode ein!', '0000-0000-0000', '2016-06-26 13:07:18', 50),
 (2, 'CodeTest', '1000-1000-1000', '2016-06-27 11:10:47', 32);
 
@@ -51,21 +51,15 @@ INSERT INTO `achievements` (`id`, `name`, `code`, `obtainedDate`, `value`) VALUE
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `abbreviation` varchar(20) NOT NULL,
-  `module` int(11) NOT NULL,
-  `moduleList` int(11) NOT NULL,
-  `countParticipants` int(11) NOT NULL,
-  `maxCp` int(11) NOT NULL,
-  `numberModule` int(11) NOT NULL,
-  `description` text NOT NULL
+  `abbreviation` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `courses`
 --
 
-INSERT INTO `courses` (`id`, `name`, `abbreviation`, `module`, `moduleList`, `countParticipants`, `maxCp`, `numberModule`, `description`) VALUES
-(1, 'Intelligent Systems Design', 'ISD', 0, 0, 0, 210, 26, 'Informationen sind durch die Verbreitung über Internet, Funk und Satellit heute überall verfügbar. Wir greifen mit Hilfe on Applikationen, kurz Apps, über mobile Endgeräte darauf zu und navigieren uns so ganz einfach durchs Leben. Dabei gilt es, die immer komplexer werdenen Bedingungen von unterschiedlichen mobilen Geräten, von Hard- und Software sowie verschiedener Betriebssysteme zu integrieren. Die Konfiguration und das Management von Schnittstellen ist eine der zentralen Aufgaben bei der Softwareentwicklung und Programmierung von Apps Auch Computer- und Internet-Sicherheit sind wichtige Faktoren.');
+INSERT INTO `courses` (`id`, `name`, `abbreviation`) VALUES
+(1, 'Intelligent Systems Design', 'ISD');
 
 -- --------------------------------------------------------
 
@@ -96,7 +90,7 @@ INSERT INTO `fitnesspoints` (`id`, `user_id`, `achievement_id`) VALUES
 
 CREATE TABLE `grades` (
   `id` int(11) NOT NULL,
-  `grade` double NOT NULL,
+  `grade` decimal(10,2) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL
@@ -107,12 +101,7 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`id`, `grade`, `date`, `user_id`, `module_id`) VALUES
-(1, 1.5, '2016-06-17 15:23:28', 1, 2),
-(2, 2, '2016-06-17 15:23:28', 1, 4),
-(3, 4.8, '2016-06-17 15:23:28', 1, 9),
-(4, 2.8, '2016-06-17 15:23:28', 2, 4),
-(5, 1.3, '2016-06-17 15:23:29', 2, 7),
-(6, 5, '2016-06-17 15:23:29', 1, 4);
+(43, '1.56', '2016-07-11 08:21:44', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -151,8 +140,6 @@ INSERT INTO `instructors` (`id`, `name`, `email`, `password`, `approved`) VALUES
 CREATE TABLE `modules` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `abbreviation` varchar(20) NOT NULL,
-  `description` text NOT NULL,
   `cp` int(11) NOT NULL,
   `semester` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
@@ -162,33 +149,33 @@ CREATE TABLE `modules` (
 -- Daten für Tabelle `modules`
 --
 
-INSERT INTO `modules` (`id`, `name`, `abbreviation`, `description`, `cp`, `semester`, `course_id`) VALUES
-(1, 'Grundlagen Informatik I', 'GI I', '', 8, 1, 1),
-(2, 'Mathematisch-technische Grundlagen I', 'MtG I', '', 10, 1, 1),
-(3, 'Naturwissenschaftliche Grundlagen I', 'NG I', '', 5, 1, 1),
-(4, 'Corporate Management', 'CM I', '', 4, 1, 1),
-(5, 'Steuerungskompetenzen I', '', '', 7, 1, 1),
-(6, 'Grundlagen Informatik II', 'GI II', '', 8, 2, 1),
-(7, 'Mathematisch-technische Grundlagen II', 'MtG II', '', 10, 2, 1),
-(8, 'Naturwissenschaftliche Grundlagen II', 'NG II', '', 5, 2, 1),
-(9, 'Corporate Management II', 'CM II', '', 4, 2, 1),
-(10, 'Steuerungskompetenzen II', '', '', 7, 2, 1),
-(11, 'Moderne Computersysteme I', 'MC I', '', 10, 3, 1),
-(12, 'Mathematik und System Analysis', '', 'das Grauen', 5, 3, 1),
-(13, 'Embedded Systems', 'ES', '', 8, 3, 1),
-(14, 'Corporate Management III', 'CM III', '', 4, 3, 1),
-(15, 'Steuerungskompetenzen III', '', '', 7, 3, 1),
-(16, 'Moderne Computersysteme II', 'MC II', '', 10, 4, 1),
-(17, 'Studienschwerpunkte I', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 10, 4, 1),
-(18, 'Corporate Magagement IV', 'CM IV', '', 4, 4, 1),
-(19, 'Steuerungskompetenzen IV', '', '', 4, 4, 1),
-(20, 'Praxis-/Auslandssemester', '', 'Bericht schreiben 15 Seiten Englisch', 30, 5, 1),
-(21, 'Projektarbeit', '', '', 13, 6, 1),
-(22, 'Studienschwerpunkte II', '', '- System Simulation\r\n- Embedded Systems\r\n- Mobile Computing', 12, 6, 1),
-(23, 'Corporate Management V', 'CM V', '', 4, 6, 1),
-(24, 'Steuerungskompetenzen V', '', '', 3, 6, 1),
-(25, 'Bachelorarbeit', '', '', 14, 7, 1),
-(26, 'Studienschwerpunkte III', '', '', 16, 7, 0);
+INSERT INTO `modules` (`id`, `name`, `cp`, `semester`, `course_id`) VALUES
+(1, 'Grundlagen Informatik I', 6, 1, 1),
+(2, 'Mathematisch-technische Grundlagen I', 10, 1, 1),
+(3, 'Naturwissenschaftliche Grundlagen I', 5, 1, 1),
+(4, 'Corporate Management I', 4, 1, 1),
+(5, 'Steuerungskompetenzen I', 7, 1, 1),
+(6, 'Grundlagen Informatik II', 8, 2, 1),
+(7, 'Mathematisch-technische Grundlagen II', 10, 2, 1),
+(8, 'Naturwissenschaftliche Grundlagen II', 5, 2, 1),
+(9, 'Corporate Management II', 4, 2, 1),
+(10, 'Steuerungskompetenzen II', 7, 2, 1),
+(11, 'Moderne Computersysteme I', 10, 3, 1),
+(12, 'Mathematik und System Analysis', 5, 3, 1),
+(13, 'Embedded Systems', 6, 3, 1),
+(14, 'Corporate Management III', 4, 3, 1),
+(15, 'Steuerungskompetenzen III', 7, 3, 1),
+(16, 'Moderne Computersysteme II', 10, 4, 1),
+(17, 'Studienschwerpunkte I', 8, 4, 1),
+(18, 'Corporate Magagement IV', 4, 4, 1),
+(19, 'Steuerungskompetenzen IV', 4, 4, 1),
+(20, 'Praxis-/Auslandssemester', 30, 5, 1),
+(21, 'Projektarbeit', 13, 6, 1),
+(22, 'Studienschwerpunkte II', 10, 6, 1),
+(23, 'Corporate Management V', 4, 6, 1),
+(24, 'Steuerungskompetenzen V', 3, 6, 1),
+(25, 'Bachelorarbeit', 14, 7, 1),
+(26, 'Studienschwerpunkte III', 12, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +271,7 @@ ALTER TABLE `fitnesspoints`
 -- AUTO_INCREMENT für Tabelle `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT für Tabelle `instructors`
 --

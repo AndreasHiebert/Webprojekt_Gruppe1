@@ -35,7 +35,7 @@ class FitnesspointController {
             }
         }
 
-        $achievementTime = strtotime($achievementObjects[$key]->getObtainedDate());
+        $achievementTime = strtotime($achievementObjects[$key]->getCreatedDate());
 
         if(($achievementTime+3600) <= time()){
             $codeValid = false;

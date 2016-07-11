@@ -5,9 +5,10 @@ class FitnesspointRepository{
         global $db;
         $result = array();
 
-        $stmt = $db->query("SELECT *
+        $stmt = $db->query('SELECT *
                             FROM fitnesspoints
-                            ORDER BY id");
+                            ORDER BY id');
+
         foreach ($stmt as $row) {
             $result[] = Fitnesspoint::fromArray($row);
         }
@@ -41,7 +42,14 @@ class FitnesspointRepository{
 
         $course = $_SESSION["currentUser"]->getActiveCourse();
 
-        $stmt = $db->query("SELECT SUM(achievements.value) FROM fitnesspoints INNER JOIN achievements ON fitnesspoints.achievement_id = achievements.id inner JOIN users ON users.id = fitnesspoints.user_id WHERE users.activeCourse = $course GROUP BY fitnesspoints.user_id");
+        $stmt = $db->query("SELECT SUM(achievements.value)
+                            FROM fitnesspoints
+                            INNER JOIN achievements
+                            ON fitnesspoints.achievement_id = achievements.id
+                            inner JOIN users
+                            ON users.id = fitnesspoints.user_id
+                            WHERE users.activeCourse = $course
+                            GROUP BY fitnesspoints.user_id");
 
         foreach ($stmt as $row){
             $result[] = $row["SUM(achievements.value)"];
@@ -53,7 +61,7 @@ class FitnesspointRepository{
     public static function saveFitnesspoint($fitnesspoint) {
         global $db;
 
-        $stmt = $db->prepare("INSERT INTO fitnesspoints (user_id, achievement_id)"
+        $stmt = $db->prepare('INSERT INTO fitnesspoints (user_id, achievement_id)'
                 . "values (:user_id, :achievement_id)");
         $stmt->bindValue(':user_id', $fitnesspoint->getUserId(), PDO::PARAM_INT);
         $stmt->bindValue(':achievement_id', $fitnesspoint->getAchievementId(), PDO::PARAM_INT);

@@ -21,7 +21,7 @@ class UserController {
     global $smarty;
     // remove all session variables
     SESSION_UNSET();
-    return $smarty->fetch("../view/Login.html");
+    return $smarty->fetch("../view/show_Login.html");
   }
 }
 ?>

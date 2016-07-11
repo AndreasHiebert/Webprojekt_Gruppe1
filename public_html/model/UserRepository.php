@@ -82,8 +82,8 @@ class UserRepository {
     public static function saveUser($user) {
         global $db;
 
-        $stmt = $db->prepare("INSERT into users (name, password, regdate, email, activeCourse) "
-                . "values (:name, :password, :email, :activeCourse, :fitnesspoints)");
+        $stmt = $db->prepare('INSERT INTO users (name, password, regdate, email, activeCourse) '
+                . 'values (:name, :password, :email, :activeCourse, :fitnesspoints)');
         $stmt->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $stmt->bindValue(':regDate', $user->getRegDate(), PDO::PARAM_STR);

@@ -22,6 +22,7 @@ require 'controller/LoginController.php';
 require 'controller/AchievementController.php';
 require 'controller/FitnesspointController.php';
 require 'controller/InstructorController.php';
+require 'controller/GradeController.php';
 
 //------------------------------------------------------------------------------
 // start session and setup smarty
