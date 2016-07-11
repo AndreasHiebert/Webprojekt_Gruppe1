@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 12:19:48
+/* Smarty version 3.1.29, created on 2016-07-11 12:36:31
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578372c45c4930_16380170',
+  'unifunc' => 'content_578376afcada80_06376180',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468230825,
+      1 => 1468233211,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578372c45c4930_16380170 ($_smarty_tpl) {
+function content_578376afcada80_06376180 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +50,6 @@ function content_578372c45c4930_16380170 ($_smarty_tpl) {
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 	<!-- Personal JS -->
-	<?php echo '<script'; ?>
- src="../js/Navbar.js"><?php echo '</script'; ?>
->
 	<?php echo '<script'; ?>
  src="../js/Instructor.js"><?php echo '</script'; ?>
 >
@@ -221,7 +218,7 @@ function content_578372c45c4930_16380170 ($_smarty_tpl) {
 					<?php }?>
 					<div>
 						<hr>
-                                                <div class="panel-body">
+              <div class="panel-body">
 							<form action="index.php?controller=FitnesspointController&action=testFitnessCode" class="text-center" method="post">
 
 													<div class="row form-row">
@@ -233,7 +230,7 @@ function content_578372c45c4930_16380170 ($_smarty_tpl) {
 											</div>
 
 								</form>
-                                                </div>
+                </div>
 							</div>
 					</div>
 

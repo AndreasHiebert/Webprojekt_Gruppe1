@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 11:16:08
+/* Smarty version 3.1.29, created on 2016-07-11 12:29:29
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_InstructorRegistration.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578363d88eae34_19921144',
+  'unifunc' => 'content_5783750951d213_47415378',
   'file_dependency' => 
   array (
     '4892f2f5ce6dacc8efdf4768dfd1f106abdcbf4f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_InstructorRegistration.html',
-      1 => 1468228528,
+      1 => 1468228630,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578363d88eae34_19921144 ($_smarty_tpl) {
+function content_5783750951d213_47415378 ($_smarty_tpl) {
 ?>
 <form action="index.php?controller=LoginController&action=RegisterInstructor">
         <div class="container">
@@ -36,7 +36,8 @@ function content_578363d88eae34_19921144 ($_smarty_tpl) {
                                    id="username"
                                    name="name_txt"
                                    title="Wählen Sie einen Accountnamen"
-                                   maxlength="30">
+                                   maxlength="30"
+                                   required>
                         </h3>
                     </div>
                 </div>
@@ -55,7 +56,8 @@ function content_578363d88eae34_19921144 ($_smarty_tpl) {
                                    id="email"
                                    name="email_txt"
                                    title="Geben Sie einen gültige Adresse ein"
-                                   maxlength="50">
+                                   maxlength="50"
+                                   required>
                         </h3>
                     </div>
                 </div>
@@ -72,9 +74,10 @@ function content_578363d88eae34_19921144 ($_smarty_tpl) {
                         <h3>
                             <input type="email"
                                    id="email"
-                                   name="email" required
+                                   name="email"
                                    title="Wählen Sie ein Passwort"
-                                   maxlength="30">
+                                   maxlength="30"
+                                   required>
                         </h3>
                     </div>
                 </div>
@@ -93,7 +96,8 @@ function content_578363d88eae34_19921144 ($_smarty_tpl) {
                                    id="confirm"
                                    name="confirm_txt"
                                    title="Bestätigen Sie ihr Passwort"
-                                   maxlength="30">
+                                   maxlength="30"
+                                   required>
                         </h3>
                     </div>
                 </div>

@@ -28,10 +28,10 @@ body {
 }
 
 .progress span {
-    position: absolute;
-    display: block;
-    width: 50%;
-    color: black;
+  position: absolute;
+  display: block;
+  width: 50%;
+  color: black;
 }
 
 #sidebarOutsidePanel{
@@ -41,4 +41,9 @@ body {
 
 #mainpanel{
   border: 3px solid #26a69a;
+}
+
+#logincontent{
+  padding-top: 25px;
+  max-width: 50vh;
 }
