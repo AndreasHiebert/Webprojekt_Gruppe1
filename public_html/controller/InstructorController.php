@@ -18,13 +18,13 @@ class InstructorController {
 		$tempInstructor->setApproved(1);
 		$tempRepo->saveInstructor($tempInstructor);
 
-		
+
 		echo "<script type='text/javascript'>
 		location.href=\"index.php\";
 		</script>";
 	}
 
-	
+
 
 	public function createAchievement() {
 		global $smarty;
@@ -45,11 +45,11 @@ class InstructorController {
 
 
 
-		$stmt = $db->prepare('INSERT INTO achievements (name, code, obtainedDate, value) values (:name, :code, :obtainedDate, :value)');
+		$stmt = $db->prepare('INSERT INTO achievements (name, code, createdDate, value) values (:name, :code, :createdDate, :value)');
 
 		$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 		$stmt->bindValue(':code', $code, PDO::PARAM_STR);
-		$stmt->bindValue(':obtainedDate', $obtained, PDO::PARAM_STR);
+		$stmt->bindValue(':createdDate', $obtained, PDO::PARAM_STR);
 		$stmt->bindValue(':value', $points, PDO::PARAM_INT);
 
 		$stmt->execute();

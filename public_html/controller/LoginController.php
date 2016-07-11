@@ -57,17 +57,22 @@ class LoginController {
         $_Name = $_POST["email_txt"];
         $_Password = $_POST["pass_txt"];
 
-        $repo = new UserRepository();
-        $userExists = $repo->testUserLogin($_Name , $_Password);
+        $userRepository = new UserRepository();
+        $instructorRepository = new InstructorRepository();
 
-        if($userExists == TRUE){
-
-            $_SESSION["currentUser"] = $repo->setCorrectUser($_Name , $_Password);
+        if($userRepository->testUserLogin($_Name , $_Password) == TRUE){
+            $_SESSION["currentUser"] = $userRepository->setCorrectUser($_Name , $_Password);
             $smarty->assign("currentUser", $_SESSION["currentUser"]);
 
             $moduleController = new ModuleController();
             return $moduleController->showModulplan();
-        }else{
+        } else if($instructorRepository->testInstructorLogin($_Name , $_Password) == TRUE){
+            $_SESSION["currentInstructor"] = $instructorRepository->setCorrectInstructor($_Name , $_Password);
+            $smarty->assign("currentInstructor", $_SESSION["currentInstructor"]);
+
+            $instructorController = new InstructorController();
+            return $instructorController->showInstructorPage();
+        } else {
             $error = "Your Login Name or Password is invalid";
         }
   }

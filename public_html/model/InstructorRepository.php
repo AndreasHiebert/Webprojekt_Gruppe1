@@ -16,6 +16,44 @@ class InstructorRepository {
         return $result;
     }
 
+    public function setCorrectInstructor($username , $password){
+      global $db;
+      $result = array();
+
+      $stmt =$db->query("SELECT *
+                         FROM instructors
+                         WHERE email='$username'
+                         AND password ='$password'
+                         LIMIT 1");
+
+       foreach ($stmt as $row) {
+          $result[] = Instructor::fromArray($row);
+      }
+      return $result[0];
+  }
+
+
+    public function testInstructorLogin($username , $password){
+        global $db;
+        $foundInstructor = FALSE;
+        $result = array();
+
+        $stmt =$db->query("SELECT *
+                           FROM instructors
+                           WHERE email='$username'
+                           AND password ='$password'
+                           LIMIT 1");
+
+         foreach ($stmt as $row) {
+            $result[] = User::fromArray($row);
+            if($result != NULL){
+              $foundInstructor = TRUE;
+              break;
+            }
+        }
+        return $foundInstructor;
+    }
+
     public static function saveInstructor($instructor) {
         global $db;
 
