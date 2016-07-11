@@ -27,8 +27,8 @@ class LoginController {
       $_UserRepo = new UserRepository();
       $_UserRepo->saveUser($_User);
 
-      $moduleController = new ModuleController();
-      return $moduleController->showModulplan();
+      $LoginController = new LoginController();
+      return $LoginController->showLogin();
   }
 
   public function LoginRegisteredUser(){
