@@ -16,16 +16,24 @@ class LoginController {
 
   public function RegisterUser(){
       global $smarty;
-
+      $UserRepo = new UserRepository();
+      $UserMail = $_POST["username_txt"];
+      $UserPassword = $_POST["pass_txt"];
+      $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      
+      if($UserExists == TRUE){
       $_User = new User();
       $_User->setName($_POST["username_txt"]);
-      $_User->setEmail($_POST["email_txt"]);
+      $_User->setEmail($UserMail);
       $_User->setActiveCourse($_POST["course_txt"]);
-      $_User->setPassword($_POST["pass_txt"]);
+        if($_POST["pass_txt"] == $_POST["confirm_txt"]){
+        $_User->setPassword($UserPassword);
+      }
       $_User->setRegDate($smarty->now|date_format);
 
       $_UserRepo = new UserRepository();
       $_UserRepo->saveUser($_User);
+      }
 
       $LoginController = new LoginController();
       return $LoginController->showLogin();
