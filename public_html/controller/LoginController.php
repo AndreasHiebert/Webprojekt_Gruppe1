@@ -19,15 +19,20 @@ class LoginController {
       $UserRepo = new UserRepository();
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
+      
       $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
-      print_r("$UserExists benutzer existiert");#
+      print_r("$UserExists benutzer existiert");
+      
       
       
       if($UserExists == FALSE){
       $_User = new User();
       $_User->setName($_POST["username_txt"]);
       $_User->setEmail($UserMail);
-      $_User->setActiveCourse($_POST["course_txt"]);
+      
+      $courseRepo = new CourseRepository();
+      $courseAbbreviation = $_POST["course_txt"];
+      $_User->setActiveCourse($courseRepo->getCourseIdFromAbbreviation($courseAbbreviation));
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
             print_r("passwort gültig");
         $_User->setPassword($UserPassword);

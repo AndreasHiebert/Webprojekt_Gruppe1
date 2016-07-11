@@ -42,4 +42,10 @@ class CourseRepository{
         $stmt->bindValue(':abbrieviation', $course->getAbbrieviation(), PDO::PARAM_STR);
         $stmt->execute();
     }
+    
+    public function getCourseIdFromAbbreviation($abbreviation){
+        global $db;
+        $stmt = $db->query("SELECT id FROM courses WHERE abbreviation = $abbreviation");
+        return $stmt;
+    }
 }
