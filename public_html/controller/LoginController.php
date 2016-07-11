@@ -20,6 +20,7 @@ class LoginController {
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
       $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      print_r("$UserExists benutzer existiert");
       
       if($UserExists == FALSE){
       $_User = new User();
@@ -27,12 +28,12 @@ class LoginController {
       $_User->setEmail($UserMail);
       $_User->setActiveCourse($_POST["course_txt"]);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
+            print_r("passwort gültig");
         $_User->setPassword($UserPassword);
+      }else{
+          $error = "Password and confirmation dont match.";
       }
-      $_User->setRegDate($smarty->now|date_format);
-
-      $_UserRepo = new UserRepository();
-      $_UserRepo->saveUser($_User);
+      $UserRepo->saveUser($_User);
       $RegisterSuccess = TRUE;
       }
 
@@ -69,39 +70,35 @@ class LoginController {
     global $smarty;
     return $smarty->fetch("../view/show_InstructorRegistration.html");
   }
-/*
+
   public function RegisterInstructor(){
+    global $smarty;
+      $UserRepo = new InstructorRepository();
+      $UserMail = $_POST["username_txt"];
+      $UserPassword = $_POST["pass_txt"];
+      $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      
+      if($UserExists == FALSE){
+      $_User = new Instructor();
+      $_User->setName($_POST["username_txt"]);
+      $_User->setEmail($UserMail);
+        if($_POST["pass_txt"] == $_POST["confirm_txt"]){
+        $_User->setPassword($UserPassword);
+      }else{
+          $error = "Pass and confirmation dont match!";
+      }
+      $UserRepo->saveInstructor($_User);
+      $RegisterSuccess = TRUE;
+      }
 
-    $servername = "localhost";
-    $name = "username";
-    $password = "password";
-    $dbname = "webprojekt13";
-    $conn = new mysqli($servername, $name, $password, $dbname);
-
-    if($conn->connect_error){
-        die("COnnection failed: ".$conn->connect_error);
-    }
-
-    $result = $mysqli->query("SELECT id FROM instructors ORDER BY name");
-    $id = $result->num_rows;
-
-    $UserName = mysql_real_escape_string($_POST["name_txt"]);
-    $UserPassword = mysql_real_escape_string($_POST["pass_txt"]);
-    $EMail = mysql_real_escape_string($_POST["email_txt"]);
-
-    $sql = "INSERT INTO instructors(id, name, password, email)
-            VALUES($id+1, $UserName, $UserPassword, $EMail)";
-
-    if($conn->query($sql) === TRUE){
-        echo "New record created successfully";
-    }else{
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-
+      $LoginController = new LoginController();
+      if($RegisterSuccess == TRUE){
+        return $LoginController->showLogin();
+      }else{
+          $error = "User already exists";
+      }
   }
-
+/*
   public function LoginRegisteredInstructor($EMail, $UserPassword){
 
     global $currentUser;
