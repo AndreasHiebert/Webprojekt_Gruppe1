@@ -49,6 +49,23 @@ class AchievementRepository{
         return $result;
     }
 
+    public function getAchievementbyCode($code){
+        
+        global $db;
+        $result = array();
+        
+        $stmt = $db->query("SELECT * FROM achievements WHERE code = '$code'");
+        
+        foreach ($stmt as $row) {
+             $result[] = Achievement::fromArray($row);
+        }
+        
+        print_r($result);
+        
+        return $result[0];
+    }
+
+
     public function getCurrentUserAchievements(){
         global $db;
         $result = array();
@@ -72,12 +89,11 @@ class AchievementRepository{
     public static function saveAchievements($achievement) {
         global $db;
 
-        $stmt = $db->prepare('INSERT INTO achievements (name, code, description, type, createdDate, value) '
+        $stmt = $db->prepare('INSERT INTO achievements (name, code, description, type, value) '
                 . 'values (:name, :code, :description, :type, :value)');
         $stmt->bindValue(':name', $achievement->getName(), PDO::PARAM_STR);
         $stmt->bindValue(':code', $achievement->getCode(), PDO::PARAM_STR);
         $stmt->bindValue(':description', $achievemen->getDescription(), PDO::PARAM_STR);
-        $stmt->bindValue(':createdDate', $achievement->getObtainedDate(), PDO::PARAM_STR);
         $stmt->bindValue(':value', $achievement->getValue(), PDO::PARAM_INT);
         $stmt->execute();
     }

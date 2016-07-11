@@ -11,36 +11,40 @@ class FitnesspointController {
       $repoFitness = new FitnesspointRepository();
       $fitnesspointObjects=$repoFitness->getAllFitnesspoints();
       $codeValid = FALSE;
+      
       $code = $_POST['code_input'];
+      $achievementTime = 0;
 
       foreach ($achievementObjects as $item) {
         $CodeArray[] = $item->getCode();
             }
 
-      $key = array_search($code, $CodeArray);
-      $id_user = $_SESSION["currentUser"]->getId();
-      $id_achievement =$achievementObjects[$key]->getId();
+    $id_user = $_SESSION["currentUser"]->getId();
 
         foreach($achievementObjects as $value){
           if(in_array($code, $CodeArray, true)){
             $codeValid = true;
             }
         }
-
-        foreach ($fitnesspointObjects as $fitnesspoint){
-            if ($fitnesspoint->getUserId() == $id_user && $fitnesspoint->getAchievementId() == $id_achievement){
-                $codeValid = false;
-                $smarty->assign("codeFalse",TRUE);
-                $smarty->assign("error",1);
-            }
-        }
-
-        $achievementTime = strtotime($achievementObjects[$key]->getCreatedDate());
+      $achievement = $repo->getAchievementbyCode($code);
+      
+      if($achievement != NULL){
+      $id_achievement = $achievement->getId();
+      $achievementTime = strtotime($achievement->getCreatedDate()); 
+      }
 
         if(($achievementTime+3600) <= time()){
             $codeValid = false;
             $smarty->assign("codeFalse",TRUE);
             $smarty->assign("error",2);
+        }
+        
+         foreach ($fitnesspointObjects as $fitnesspoint){
+            if ($fitnesspoint->getUserId() == $id_user && $fitnesspoint->getAchievementId() == $id_achievement){
+                $codeValid = false;
+                $smarty->assign("codeFalse",TRUE);
+                $smarty->assign("error",1);
+            }
         }
 
         if($codeValid){
