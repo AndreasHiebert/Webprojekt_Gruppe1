@@ -21,7 +21,7 @@ class LoginController {
       $UserPassword = $_POST["pass_txt"];
       $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
       
-      if($UserExists == TRUE){
+      if($UserExists == FALSE){
       $_User = new User();
       $_User->setName($_POST["username_txt"]);
       $_User->setEmail($UserMail);
