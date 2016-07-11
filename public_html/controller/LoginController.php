@@ -19,17 +19,17 @@ class LoginController {
       $UserRepo = new UserRepository();
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
-      
+
       $UserExists = $UserRepo->checkUserAvailability($UserMail);
       print_r("$UserExists benutzer existiert");
-      
-      
-      
+
+
+
       if($UserExists == FALSE){
       $_User = new User();
       $_User->setName($_POST["username_txt"]);
       $_User->setEmail($UserMail);
-      
+
       $courseRepo = new CourseRepository();
       $courseAbbreviation = $_POST["course_txt"];
       $_User->setActiveCourse($courseRepo->getCourseIdFromAbbreviation($courseAbbreviation));
@@ -51,7 +51,7 @@ class LoginController {
       }
   }
 
-  public function LoginRegisteredUser(){
+  public function Login(){
     global $smarty;
 
         $_Name = $_POST["email_txt"];
@@ -83,7 +83,7 @@ class LoginController {
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
       $UserExists = $UserRepo->checkAvailability($UserMail);
-      
+
       if($UserExists == FALSE){
       $_User = new Instructor();
       $_User->setName($_POST["username_txt"]);

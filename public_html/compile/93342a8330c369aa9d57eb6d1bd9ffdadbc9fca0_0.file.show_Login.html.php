@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 15:03:13
+/* Smarty version 3.1.29, created on 2016-07-11 15:36:07
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Login.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5783991120a3f3_92891428',
+  'unifunc' => 'content_5783a0c75a10f5_23453610',
   'file_dependency' => 
   array (
     '93342a8330c369aa9d57eb6d1bd9ffdadbc9fca0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Login.html',
-      1 => 1468237200,
+      1 => 1468243843,
       2 => 'file',
     ),
   ),
@@ -19,9 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5783991120a3f3_92891428 ($_smarty_tpl) {
+function content_5783a0c75a10f5_23453610 ($_smarty_tpl) {
 ?>
- <form role="form" action="index.php?controller=LoginController&action=LoginRegisteredUser" method="post">
+ <form role="form" action="index.php?controller=LoginController&action=Login" method="post">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" id="email" name="email_txt" placeholder="Enter E-Mail" maxlength="50" required>
