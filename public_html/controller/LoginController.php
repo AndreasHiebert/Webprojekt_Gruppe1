@@ -30,9 +30,7 @@ class LoginController {
         $_User->setPassword($UserPassword);
       }
       $_User->setRegDate($smarty->now|date_format);
-
-      $_UserRepo = new UserRepository();
-      $_UserRepo->saveUser($_User);
+      $UserRepo->saveUser($_User);
       $RegisterSuccess = TRUE;
       }
 
