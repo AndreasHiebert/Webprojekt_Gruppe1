@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 12:25:27
+/* Smarty version 3.1.29, created on 2016-07-11 12:26:39
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_Modulplan.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5783741796fb18_82920115',
+  'unifunc' => 'content_5783745f7b52f4_51471404',
   'file_dependency' => 
   array (
     'aa1ca6aa7dac6b49f6819e0753a97855fdd7aa4e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_Modulplan.html',
-      1 => 1468232716,
+      1 => 1468232770,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5783741796fb18_82920115 ($_smarty_tpl) {
+function content_5783745f7b52f4_51471404 ($_smarty_tpl) {
 ?>
 <div id="modulebox" class="hidden-xs">
     <?php if (isset($_smarty_tpl->tpl_vars['gradeError']->value)) {?>
@@ -159,12 +159,8 @@ $__foreach_module_2_saved_local_item = $_smarty_tpl->tpl_vars['module'];
                         <div class="modal-body">
                             <form action="index.php?controller=GradeController&action=enterGrade" method="post">
                                 <div class="form-group">
-
                                     <label for="grade">Grade:</label>
-                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Enter your grade" maxlength="5" required>
-
-                                    <label for="grade">Note:</label>
-                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Trage deine Note ein">
+                                    <input id="gradeInput" name="grade_input" class="form-control" type="text" title="grade" placeholder="Trage deine Note ein" maxlength="5" required>
                                 </div>
 
                                 <div class="form-group">
