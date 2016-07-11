@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 12:36:31
+/* Smarty version 3.1.29, created on 2016-07-11 15:18:38
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578376afcada80_06376180',
+  'unifunc' => 'content_57839caebe9700_58602939',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468233211,
+      1 => 1468243117,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578376afcada80_06376180 ($_smarty_tpl) {
+function content_57839caebe9700_58602939 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +121,7 @@ function content_578376afcada80_06376180 ($_smarty_tpl) {
 			<?php if (!isset($_smarty_tpl->tpl_vars['currentUser']->value)) {?>
 					<div class="container">
 							<div class="row">
-								<div id="logincontent" class="col-xs-12">
+								<div id="logincontent" class="col-md-6 col-md-offset-3">
 									<?php echo $_smarty_tpl->tpl_vars['homepage_content']->value;?>
 
 								</div>
