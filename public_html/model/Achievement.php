@@ -49,7 +49,6 @@ class Achievement{
     }
 
     public function setCreatedDate($value){
-        //$value = date("d.m.y");
         $this->createdDate = $value;
     }
 
