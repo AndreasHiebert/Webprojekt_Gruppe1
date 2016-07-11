@@ -48,6 +48,12 @@ class Achievement{
         return $this->createdDate;
     }
 
+    public function getCreatedDateDDMMYY(){
+      $source = $this->createdDate;
+      $date = new DateTime($source);
+      return $date->format('d.m.Y');;
+    }
+
     public function setCreatedDate($value){
         $this->createdDate = $value;
     }
