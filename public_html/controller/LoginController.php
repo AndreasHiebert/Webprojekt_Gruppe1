@@ -20,7 +20,7 @@ class LoginController {
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
       
-      $UserExists = $UserRepo->testUserLogin($UserMail, $UserPassword);
+      $UserExists = $UserRepo->checkUserAvailability($UserMail);
       print_r("$UserExists benutzer existiert");
       
       

@@ -36,6 +36,23 @@ class UserRepository {
         }
         return $foundUser;
     }
+    
+    public function checkUserAvailability($username){
+        global $db;
+        $foundUser = FALSE;
+        $result = array();
+        
+        $stmt = $db->query("SELECT * FROM users WHERE email='$username'");
+        
+        foreach($stmt as $row){
+            $result[] = User::fromArray($row);
+            if($result != NULL){
+                $founduser = true;
+                break;
+            }
+        }
+        return $foundUser;
+    }
 
       public function setCorrectUser($username , $password){
         global $db;
