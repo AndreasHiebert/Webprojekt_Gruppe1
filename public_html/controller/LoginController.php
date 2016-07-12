@@ -84,10 +84,10 @@ class LoginController {
 
   public function RegisterInstructor(){
     global $smarty;
-      $UserRepo = new InstructorRepository();
+      $InstructorRepo = new InstructorRepository();
       $UserMail = $_POST["username_txt"];
       $UserPassword = $_POST["pass_txt"];
-      $UserExists = $UserRepo->checkAvailability($UserMail);
+      $UserExists = $InstructorRepo->checkInstructorAvailability($UserMail);
 
       if($UserExists == FALSE){
       $_User = new Instructor();
@@ -98,7 +98,7 @@ class LoginController {
       }else{
           $error = "Pass and confirmation dont match!";
       }
-      $UserRepo->saveInstructor($_User);
+      $InstructorRepo->saveInstructor($_User);
       $RegisterSuccess = TRUE;
       }
 
