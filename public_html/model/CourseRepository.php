@@ -35,10 +35,17 @@ class CourseRepository{
 
     public function getCourseIdFromAbbreviation($abbreviation){
         global $db;
+        
+        $result = array();
         $stmt = $db->query("SELECT id
                             FROM courses
                             WHERE abbreviation = $abbreviation");
-        return $stmt;
+        
+        foreach($stmt as $row){
+            $result[] = $row["id"];
+        }
+        
+        return $result[0];
     }
 
     public static function saveCourses($course) {
