@@ -23,9 +23,9 @@ class GradeController {
       $passed = $repo->gradeAlreadyPassed($moduleId);
 
       if (!$passed and $gradeIn <= 4 and $gradeIn >= 1) {
-          GradeRepository::saveGrades($grade);
+          GradeRepository::saveGrade($grade);
       } else if ($passed and $gradeIn <= 4 and $gradeIn >= 1) {
-          GradeRepository::updateGrades($grade);
+          GradeRepository::updateGrade($grade);
       } else {
           $smarty->assign("gradeError", true);
       }

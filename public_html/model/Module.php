@@ -1,6 +1,7 @@
 <?php
 
 class Module {
+
     private $name = "";
     private $id = 0;
     private $cp = 0;
@@ -15,67 +16,68 @@ class Module {
         return $obj;
     }
 
-    public function getSemester(){
+    public function getSemester() {
         return $this->semester;
     }
 
-    public function setSemester($value){
+    public function setSemester($value) {
         $this->semester = $value;
     }
 
-    public function getName(){
-      return $this->name;
+    public function getName() {
+        return $this->name;
     }
 
     public function setName($value) {
-      $this->name = $value;
+        $this->name = $value;
     }
 
-    public function getId(){
-      return $this->id;
+    public function getId() {
+        return $this->id;
     }
 
     public function setId($value) {
-      $this->id = $value;
+        $this->id = $value;
     }
 
-    public function getCp(){
-      return $this->cp;
+    public function getCp() {
+        return $this->cp;
     }
 
     public function setCp($value) {
-      $this->cp = $value;
+        $this->cp = $value;
     }
 
     public function completedModule($moduleId) {
-      $userId = $_SESSION["currentUser"]->getId();
+        $userId = $_SESSION["currentUser"]->getId();
 
-      $result = false;
+        $result = false;
 
-      $repo= new GradeRepository();
-        $gradeObjects=$repo->getUserGrades();
+        $repo = new GradeRepository();
+        $gradeObjects = $repo->getUserGrades();
 
-      foreach($gradeObjects as $grade){
-        if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
-        {
-            $result = true;
+        foreach ($gradeObjects as $grade) {
+            if ($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId) {
+                $result = true;
+            }
         }
-    }
-    return $result;
+        return $result;
     }
 
     public function completedModuleGrade($moduleId) {
+        $result = 0;
 
-      $repo= new GradeRepository();
-        $gradeObjects=$repo->getUserGrades();
+        $repo = new GradeRepository();
+        $gradeObjects = $repo->getUserGrades();
 
-      foreach($gradeObjects as $grade){
-        if($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId)
-        {
-            $result = $grade->getGrade();
+        foreach ($gradeObjects as $grade) {
+            if ($grade->getGrade() <= 4 && $grade->getModuleId() == $moduleId) {
+                $result = $grade->getGrade();
+            }
         }
+        return $result;
     }
-    return $result;
-    }
+
 }
+
 ?>
