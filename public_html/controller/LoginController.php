@@ -29,7 +29,8 @@ class LoginController {
 
       $courseRepo = new CourseRepository();
       $courseAbbreviation = $_POST["course_txt"];
-      $_User->setActiveCourse($courseRepo->getCourseIdFromAbbreviation($courseAbbreviation));
+      $courseID = $courseRepo->getCourseIdFromAbbreviation($courseAbbreviation);
+      $_User->setActiveCourse($courseID);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
             print_r("passwort gültig");
         $_User->setPassword($UserPassword);
