@@ -38,8 +38,7 @@ class CourseRepository{
         
         $result = array();
         $stmt = $db->query("SELECT id
-                            FROM courses
-                            WHERE abbreviation = $abbr");
+                            FROM courses");
         
         foreach ($stmt as $row){
             $result[] = $row["id"];
