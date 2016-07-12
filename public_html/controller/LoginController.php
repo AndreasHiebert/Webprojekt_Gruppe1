@@ -82,20 +82,20 @@ class LoginController {
   public function RegisterInstructor(){
     global $smarty;
       $InstructorRepo = new InstructorRepository();
-      $UserMail = $_POST["username_txt"];
-      $UserPassword = $_POST["pass_txt"];
-      $UserExists = $InstructorRepo->checkInstructorAvailability($UserMail);
+      $InstructorMail = $_POST["username_txt"];
+      $InstructorPassword = $_POST["pass_txt"];
+      $InstructorExists = $InstructorRepo->checkInstructorAvailability($InstructorMail);
 
-      if($UserExists == FALSE){
-      $_User = new Instructor();
-      $_User->setName($_POST["username_txt"]);
-      $_User->setEmail($UserMail);
+      if($InstructorExists == FALSE){
+      $_Instructor = new Instructor();
+      $_Instructor->setName($_POST["username_txt"]);
+      $_Instructor->setEmail($InstructorMail);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
-        $_User->setPassword($UserPassword);
+        $_User->setPassword($InstructorPassword);
       }else{
-          $error = "Pass and confirmation dont match!";
+          $error = "Password and confirmation dont match!";
       }
-      $InstructorRepo->saveInstructor($_User);
+      $InstructorRepo->saveInstructor($_Instructor);
       $RegisterSuccess = TRUE;
       }
 
@@ -106,7 +106,7 @@ class LoginController {
           $error = "User already exists";
       }
   }
-  
+
   public function FacebookLogin(){
     $fb = new Facebook\Facebook([
     'app_id' => 'GamificationPlatform', // Replace {app-id} with your app id
