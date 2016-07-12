@@ -92,7 +92,7 @@ class LoginController {
       $_Instructor->setName($_POST["username_txt"]);
       $_Instructor->setEmail($InstructorMail);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
-        $_User->setPassword($InstructorPassword);
+        $_Instructor->setPassword($InstructorPassword);
       }else{
           $error = "Password and confirmation dont match!";
       }
