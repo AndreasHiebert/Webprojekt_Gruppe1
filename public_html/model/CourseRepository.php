@@ -33,10 +33,8 @@ class CourseRepository{
         return $result[0];
     }
 
-    public function getCourseIdFromAbbreviation($abbreviation){
+    public function getCourseIdFromAbbreviation($abbr){
         global $db;
-        
-        $abbr = $abbreviation;
         
         $result = $db->query("SELECT id
                             FROM courses
