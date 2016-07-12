@@ -80,7 +80,7 @@ class GradeRepository {
         return $bool;
     }
 
-    public static function saveGrades($grade) {
+    public static function saveGrade($grade) {
         global $db;
 
         $stmt = $db->prepare('INSERT INTO grades (user_id, module_id, grade)'
@@ -92,7 +92,7 @@ class GradeRepository {
         $stmt->execute();
     }
 
-    public static function updateGrades($grade) {
+    public static function updateGrade($grade) {
         global $db;
 
         $stmt = $db->prepare('UPDATE grades
