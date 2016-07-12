@@ -124,7 +124,7 @@ class LoginController {
 
     echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
   }
-  
+  /*
   public function FacebookLoginCallback(){
     $fb = new Facebook\Facebook([
     'app_id' => '{app-id}', // Replace {app-id} with your app id
@@ -196,7 +196,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
 //header('Location: https://example.com/members.php');
-  }
+  } */
 }
 
 ?>
