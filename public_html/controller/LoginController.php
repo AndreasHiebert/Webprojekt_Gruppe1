@@ -21,9 +21,6 @@ class LoginController {
       $UserPassword = $_POST["pass_txt"];
 
       $UserExists = $UserRepo->checkUserAvailability($UserMail);
-      print_r("$UserExists benutzer existiert");
-
-
 
       if($UserExists == FALSE){
       $_User = new User();
