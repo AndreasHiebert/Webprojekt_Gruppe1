@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 19:54:24
+/* Smarty version 3.1.29, created on 2016-07-11 23:24:24
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5783dd5011ed26_92679496',
+  'unifunc' => 'content_57840e88341970_58101851',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468259640,
+      1 => 1468263150,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5783dd5011ed26_92679496 ($_smarty_tpl) {
+function content_57840e88341970_58101851 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,7 +214,13 @@ function content_5783dd5011ed26_92679496 ($_smarty_tpl) {
 							<?php if ($_smarty_tpl->tpl_vars['error']->value == 2) {?>
 							<hr>
 									<div class="alert alert-danger">
-											 <strong>Achtung!</strong> Ihr Code ist ungültig oder abgelaufen.
+											 <strong>Achtung!</strong> Ihr Code ist abgelaufen.
+									</div>
+							<?php }?>
+                                                        <?php if ($_smarty_tpl->tpl_vars['error']->value == 3) {?>
+							<hr>
+									<div class="alert alert-danger">
+											 <strong>Achtung!</strong> Ihr Code ist ungültig.
 									</div>
 							<?php }?>
 					<?php }?>

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 17:16:56
+/* Smarty version 3.1.29, created on 2016-07-12 12:52:07
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5783b86822c157_33890643',
+  'unifunc' => 'content_5784cbd7a27fe2_48326261',
   'file_dependency' => 
   array (
     'b6a8e7564de1db4b1f97ae3fce9454e55b90a317' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_instructor.html',
-      1 => 1468250014,
+      1 => 1468320715,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5783b86822c157_33890643 ($_smarty_tpl) {
+function content_5784cbd7a27fe2_48326261 ($_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
 <div class="container text-center" id="instructorContainer">
 
@@ -157,7 +157,7 @@ $_smarty_tpl->tpl_vars['userElem'] = $__foreach_userElem_1_saved_item;
 						<form class="form-class form-inline" width="100%" id="createAchievementForm" role="form" method="" action="javascript:createAchievement()">
 								<H4> Ein Achievement erstellen:</H4>
 								<input class="form-control" size="80%" placeholder="Name des Achievements" type="text" id="achievementName" maxlength="30" required></input>
-								<input class="form-control" size="10%" id="achievementPoints" type="number" placeholder="0" min="0" step="01" required></input>
+								<input class="form-control" size="10%" id="achievementPoints" type="number" placeholder="0" min="10" max="9999" step="10" required></input>
 								<input class="form-control" size="10%" type="submit" value="Achievement erstellen"></input>
 						</form>
 
