@@ -54,7 +54,7 @@ class CourseRepository{
         $stmt = $db->prepare('INSERT INTO courses (name, abbreviation) '
                 . 'values (:name, :abbreviation)');
         $stmt->bindValue(':name', $course->getName(), PDO::PARAM_STR);
-        $stmt->bindValue(':abbrieviation', $course->getAbbrieviation(), PDO::PARAM_STR);
+        $stmt->bindValue(':abbreviation', $course->getAbbreviation(), PDO::PARAM_STR);
         $stmt->execute();
     }
 }
