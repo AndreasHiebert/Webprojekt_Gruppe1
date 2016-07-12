@@ -103,7 +103,7 @@ class LoginController {
       if($RegisterSuccess == TRUE){
         return $LoginController->showLogin();
       }else{
-          $error = "Instructor already exists";
+          $error = "User already exists";
       }
   }
 
