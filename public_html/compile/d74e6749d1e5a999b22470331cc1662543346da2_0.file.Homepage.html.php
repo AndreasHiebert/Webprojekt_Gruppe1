@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 23:24:24
+/* Smarty version 3.1.29, created on 2016-07-13 04:32:24
   from "C:\xampp\htdocs\WebProjekt\public_html\view\Homepage.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_57840e88341970_58101851',
+  'unifunc' => 'content_5785a8387625f7_86412291',
   'file_dependency' => 
   array (
     'd74e6749d1e5a999b22470331cc1662543346da2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\Homepage.html',
-      1 => 1468263150,
+      1 => 1468377132,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_57840e88341970_58101851 ($_smarty_tpl) {
+function content_5785a8387625f7_86412291 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,15 +32,17 @@ function content_57840e88341970_58101851 ($_smarty_tpl) {
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<!-- Custom themes -->
-	<link rel="stylesheet" type="text/css" href="/css/NavBar.css">
-        <link rel="stylesheet" type="text/css" href="/css/Homepage.css">
-	<link rel="stylesheet" type="text/css" href="/css/Modulplan.css">
-	<link rel="stylesheet" type="text/css" href="/css/Achievements.css">
-	<link rel="stylesheet" type="text/css" href="/css/Instructor.css">
-	<link rel="stylesheet" type="text/css" href="/css/Registration.css">
+	<link rel="stylesheet" type="text/css" href="css/NavBar.css">
+        <link rel="stylesheet" type="text/css" href="css/Homepage.css">
+	<link rel="stylesheet" type="text/css" href="css/Modulplan.css">
+	<link rel="stylesheet" type="text/css" href="css/Achievements.css">
+	<link rel="stylesheet" type="text/css" href="css/Instructor.css">
+	<link rel="stylesheet" type="text/css" href="css/Registration.css">
 	<!-- Font -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
+	<!-- Icon -->
+	<link rel="icon" href="img/science.png">
 	<!-- jQuery library -->
 	<?php echo '<script'; ?>
  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"><?php echo '</script'; ?>
@@ -51,10 +53,10 @@ function content_57840e88341970_58101851 ($_smarty_tpl) {
 >
 	<!-- Personal JS -->
 	<?php echo '<script'; ?>
- src="../js/Instructor.js"><?php echo '</script'; ?>
+ src="js/Instructor.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="../js/Modulplan.js"><?php echo '</script'; ?>
+ src="js/Modulplan.js"><?php echo '</script'; ?>
 >
 
 </head>

@@ -41,7 +41,7 @@ error_reporting(E_ALL ^  E_NOTICE);
 // connect to db
 
 try {
-    $db = new PDO("mysql:host=localhost;dbname=webprojekt", "root");
+    $db = new PDO("mysql:host=localhost; dbname=webprojekt", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

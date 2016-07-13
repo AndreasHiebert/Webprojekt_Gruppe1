@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-12 12:52:07
+/* Smarty version 3.1.29, created on 2016-07-13 04:32:27
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_instructor.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5784cbd7a27fe2_48326261',
+  'unifunc' => 'content_5785a83b1e0828_61828734',
   'file_dependency' => 
   array (
     'b6a8e7564de1db4b1f97ae3fce9454e55b90a317' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_instructor.html',
-      1 => 1468320715,
+      1 => 1468377132,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,9 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5784cbd7a27fe2_48326261 ($_smarty_tpl) {
+function content_5785a83b1e0828_61828734 ($_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['currentInstructor']->value)) {?>
+	<?php if ($_smarty_tpl->tpl_vars['currentInstructor']->value->getApproved() == 1) {?>
 <div class="container text-center" id="instructorContainer">
 
 
@@ -155,20 +156,12 @@ $_smarty_tpl->tpl_vars['userElem'] = $__foreach_userElem_1_saved_item;
 				<br><br><br>
 
 						<form class="form-class form-inline" width="100%" id="createAchievementForm" role="form" method="" action="javascript:createAchievement()">
-								<H4> Ein Achievement erstellen:</H4>
-								<input class="form-control" size="80%" placeholder="Name des Achievements" type="text" id="achievementName" maxlength="30" required></input>
+								<input class="form-control" size="80%" placeholder="Name des Achievements" type="text" id="achievementName" maxlength="50" required></input>
 								<input class="form-control" size="10%" id="achievementPoints" type="number" placeholder="0" min="10" max="9999" step="10" required></input>
-								<input class="form-control" size="10%" type="submit" value="Achievement erstellen"></input>
+								<br><br><br>
+
+								<input class="form-control" size="10%" type="submit" id="achievementSubmit" value="Achievement erstellen"></input>
 						</form>
-
-						<br><br><br>
-
-						<form class="form-class form-inline" method="" width="100%" action="#">
-							<h4>Generierter Code:</h4>
-							<input class="form-control text-center codeInput" size="33%" id="codeInput0" type="text" readonly></input>
-							<input class="form-control text-center codeInput" id="codeInput1" size="33%" type="text" readonly></input>
-							<input class="form-control text-center codeInput" id="codeInput2" size="33%" type="text" readonly></input>
-					</form>
 
 
 				<br><br><br>
@@ -229,6 +222,11 @@ $_smarty_tpl->tpl_vars['achievement'] = $__foreach_achievement_2_saved_item;
 		</ul>
 
 	</div>
-<?php }
+	<?php } else { ?>
+	<div class="jumbotron" style="text-align:center">
+			Dieser Account wurde noch nicht freigeschaltet.
+	</div>
+	<?php }
+}
 }
 }
