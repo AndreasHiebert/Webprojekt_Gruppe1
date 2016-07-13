@@ -26,7 +26,6 @@ require 'controller/GradeController.php';
 
 //------------------------------------------------------------------------------
 // start session and setup smarty
-
 SESSION_START();
 
 $smarty = new Smarty();
@@ -34,12 +33,13 @@ $smarty->template_dir = "view";
 $smarty->compile_dir = "compile";
 $smarty->cache_dir = "cache";
 
+
+
 // disabled all unimportant notice errors
 error_reporting(0);
 error_reporting(E_ALL ^  E_NOTICE);
 //------------------------------------------------------------------------------
 // connect to db
-
 try {
     $db = new PDO("mysql:host=localhost; dbname=webprojekt", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -50,7 +50,6 @@ try {
 
 //------------------------------------------------------------------------------
 // assign repositorys to smarty from data classes
-
 $repo = new UserRepository();
 $userObjects = $repo->getAllUsers();
 $smarty->assign("users", $userObjects);
