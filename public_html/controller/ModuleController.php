@@ -7,11 +7,7 @@ class ModuleController {
     global $smarty;
 
     $repo = new ModuleRepository();
-
-    $semesterMax = $repo->getHighestSemester();
-    $smarty->assign("semesterMax",$semesterMax);
-
-    $allModules = $repo->getAllModules();
+    $allModules = $repo->getUserModules();
     $smarty->assign("allModules",$allModules);
 
     $semester = 1;

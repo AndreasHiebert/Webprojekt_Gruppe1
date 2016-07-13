@@ -15,6 +15,24 @@ class ModuleRepository {
 
         return $result;
     }
+    
+    public function getUserModules(){
+        
+        global $db;
+        $result = array();
+        $course = $_SESSION["currentUser"]->getActiveCourse();
+        
+            $stmt = $db->query("SELECT * 
+                                FROM modules 
+                                WHERE course_id = $course
+                                ORDER BY semester ASC,id ");
+
+        foreach ($stmt as $row) {
+            $result[] = Module::fromArray($row);
+        }
+
+        return $result;
+    }
 
     public function getHighestSemester(){
         global $db;
