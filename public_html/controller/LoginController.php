@@ -21,9 +21,6 @@ class LoginController {
       $UserPassword = $_POST["pass_txt"];
 
       $UserExists = $UserRepo->checkUserAvailability($UserMail);
-      print_r("$UserExists benutzer existiert");
-
-
 
       if($UserExists == FALSE){
       $_User = new User();
@@ -32,7 +29,8 @@ class LoginController {
 
       $courseRepo = new CourseRepository();
       $courseAbbreviation = $_POST["course_txt"];
-      $_User->setActiveCourse($courseRepo->getCourseIdFromAbbreviation($courseAbbreviation));
+      $courseID = $courseRepo->getCourseIdFromAbbreviation($courseAbbreviation);
+      $_User->setActiveCourse($courseID);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
             print_r("passwort gültig");
         $_User->setPassword($UserPassword);
@@ -84,21 +82,21 @@ class LoginController {
 
   public function RegisterInstructor(){
     global $smarty;
-      $UserRepo = new InstructorRepository();
-      $UserMail = $_POST["username_txt"];
-      $UserPassword = $_POST["pass_txt"];
-      $UserExists = $UserRepo->checkAvailability($UserMail);
+      $InstructorRepo = new InstructorRepository();
+      $InstructorMail = $_POST["username_txt"];
+      $InstructorPassword = $_POST["pass_txt"];
+      $InstructorExists = $InstructorRepo->checkInstructorAvailability($InstructorMail);
 
-      if($UserExists == FALSE){
-      $_User = new Instructor();
-      $_User->setName($_POST["username_txt"]);
-      $_User->setEmail($UserMail);
+      if($InstructorExists == FALSE){
+      $_Instructor = new Instructor();
+      $_Instructor->setName($_POST["username_txt"]);
+      $_Instructor->setEmail($InstructorMail);
         if($_POST["pass_txt"] == $_POST["confirm_txt"]){
-        $_User->setPassword($UserPassword);
+        $_Instructor->setPassword($InstructorPassword);
       }else{
-          $error = "Pass and confirmation dont match!";
+          $error = "Password and confirmation dont match!";
       }
-      $UserRepo->saveInstructor($_User);
+      $InstructorRepo->saveInstructor($_Instructor);
       $RegisterSuccess = TRUE;
       }
 
@@ -106,10 +104,10 @@ class LoginController {
       if($RegisterSuccess == TRUE){
         return $LoginController->showLogin();
       }else{
-          $error = "User already exists";
+          $error = "Instructor already exists";
       }
   }
-  
+
   public function FacebookLogin(){
     $fb = new Facebook\Facebook([
     'app_id' => 'GamificationPlatform', // Replace {app-id} with your app id
@@ -127,7 +125,7 @@ class LoginController {
   /*
   public function FacebookLoginCallback(){
     $fb = new Facebook\Facebook([
-    'app_id' => '{app-id}', // Replace {app-id} with your app id
+    'app_id' => '{GamificationPlatform}', // Replace {app-id} with your app id
     'app_secret' => '{app-secret}',
     'default_graph_version' => 'v2.2',
     ]);
@@ -173,7 +171,7 @@ class LoginController {
     var_dump($tokenMetadata);
 
     // Validation (these will throw FacebookSDKException's when they fail)
-    $tokenMetadata->validateAppId({app-id}); // Replace {app-id} with your app id
+    $tokenMetadata->validateAppId({GamificationPlatform}); // Replace {app-id} with your app id
     // If you know the user ID this access token belongs to, you can validate it here
     //$tokenMetadata->validateUserId('123');
     $tokenMetadata->validateExpiration();

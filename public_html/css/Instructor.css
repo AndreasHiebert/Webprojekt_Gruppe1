@@ -126,6 +126,26 @@ td, th {
 }
 
 
+#achievementName {
+	max-width: 400px;
+}
+
+#achievementName:hover {
+	border-color: #009688;
+}
+
+#achievementPoints {
+	max-width: 80px;
+}
+
+#achievementPoints:hover {
+	border-color: #009688;
+}
+
+#achievementSubmit:hover {
+	border-color: #009688;
+}
+
 .form-control[readonly] {
 	background-color: white;
 }
@@ -146,8 +166,6 @@ td, th {
 	padding-right: 30px
 }
 
-#admincontent{
-	min-height: 84vh;
-	border-left: 1px solid #00695c;
-	border-right: 1px solid #00695c;
+#notApprovedMessage {
+	text-align: center;
 }

@@ -53,6 +53,25 @@ class InstructorRepository {
         }
         return $foundInstructor;
     }
+    
+    public function checkInstructorAvailability($username){
+    global $db;
+    $foundInstructor = FALSE;
+    $result = array();
+
+    $stmt = $db->query("SELECT *
+                        FROM instructors
+                        WHERE email='$username'");
+
+    foreach($stmt as $row){
+        $result[] = Instructor::fromArray($row);
+        if($result != NULL){
+            $foundInstructor = TRUE;
+            break;
+        }
+    }
+    return $foundInstructor;
+}
 
     public static function saveInstructor($instructor) {
         global $db;
