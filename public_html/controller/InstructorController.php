@@ -18,9 +18,8 @@ class InstructorController {
 		$tempInstructor->setApproved(1);
 		$tempRepo->saveInstructor($tempInstructor);
 
-
 		echo "<script type='text/javascript'>
-		location.href=\"index.php\";
+		location.href=\"index.php?controller=InstructorController&action=showInstructorPage\";
 		</script>";
 	}
 
@@ -34,9 +33,9 @@ class InstructorController {
 		$name = $_REQUEST['name'];
 		$points = $_REQUEST['points'];
 
-		$code0 = substr($code,0,5);
-		$code1 = substr($code,5,5);
-		$code2 = substr($code,10,5);
+		$code0 = substr($code,0,4);
+		$code1 = substr($code,4,4);
+		$code2 = substr($code,8,4);
 
 		$code = $code0.'-'.$code1.'-'.$code2;
 
@@ -52,7 +51,7 @@ class InstructorController {
 		$stmt->execute();
 
 		echo "<script type='text/javascript'>
-		location.href=\"index.php\";
+		location.href=\"index.php?controller=InstructorController&action=showInstructorPage\";
 		</script>";
 	}
 
