@@ -1,4 +1,5 @@
 {if isset($currentInstructor)}
+	{if $currentInstructor->getApproved() eq 1}
 <div class="container text-center" id="instructorContainer">
 
 
@@ -92,20 +93,12 @@
 				<br><br><br>
 
 						<form class="form-class form-inline" width="100%" id="createAchievementForm" role="form" method="" action="javascript:createAchievement()">
-								<H4> Ein Achievement erstellen:</H4>
-								<input class="form-control" size="80%" placeholder="Name des Achievements" type="text" id="achievementName" maxlength="30" required></input>
+								<input class="form-control" size="80%" placeholder="Name des Achievements" type="text" id="achievementName" maxlength="50" required></input>
 								<input class="form-control" size="10%" id="achievementPoints" type="number" placeholder="0" min="10" max="9999" step="10" required></input>
-								<input class="form-control" size="10%" type="submit" value="Achievement erstellen"></input>
+								<br><br><br>
+
+								<input class="form-control" size="10%" type="submit" id="achievementSubmit" value="Achievement erstellen"></input>
 						</form>
-
-						<br><br><br>
-
-						<form class="form-class form-inline" method="" width="100%" action="#">
-							<h4>Generierter Code:</h4>
-							<input class="form-control text-center codeInput" size="33%" id="codeInput0" type="text" readonly></input>
-							<input class="form-control text-center codeInput" id="codeInput1" size="33%" type="text" readonly></input>
-							<input class="form-control text-center codeInput" id="codeInput2" size="33%" type="text" readonly></input>
-					</form>
 
 
 				<br><br><br>
@@ -145,4 +138,11 @@
 		</ul>
 
 	</div>
+	{else}
+	<div class="jumbotron">
+		<div id="notApprovedMessage">
+			Dieser Account wurde noch nicht freigeschaltet.
+		</div>
+	</div>
+	{/if}
 {/if}
