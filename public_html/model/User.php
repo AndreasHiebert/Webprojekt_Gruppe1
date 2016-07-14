@@ -78,7 +78,14 @@ class User {
             $allfitnesspoints = $allfitnesspoints + $fitnesspoint;
         }
         
-        return $allfitnesspoints/$amount;
+        if($amount == 0){
+            return $allfitnesspoints;
+        }
+        else{
+            return $allfitnesspoints/$amount;
+        }
+        
+        
     }
 
     public function getFitnesspoints($user){
