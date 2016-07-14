@@ -17,7 +17,7 @@ class LoginController {
   public function RegisterUser(){
       global $smarty;
       $UserRepo = new UserRepository();
-      $UserMail = $_POST["username_txt"];
+      $UserMail = $_POST["email_txt"];
       $UserPassword = $_POST["pass_txt"];
 
       $UserExists = $UserRepo->checkUserAvailability($UserMail);
@@ -83,7 +83,7 @@ class LoginController {
   public function RegisterInstructor(){
     global $smarty;
       $InstructorRepo = new InstructorRepository();
-      $InstructorMail = $_POST["username_txt"];
+      $InstructorMail = $_POST["email_txt"];
       $InstructorPassword = $_POST["pass_txt"];
       $InstructorExists = $InstructorRepo->checkInstructorAvailability($InstructorMail);
 
