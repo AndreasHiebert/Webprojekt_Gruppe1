@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-07-11 13:36:26
+/* Smarty version 3.1.29, created on 2016-07-14 08:34:14
   from "C:\xampp\htdocs\WebProjekt\public_html\view\show_UserRegistration.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_578384ba299ee5_59755801',
+  'unifunc' => 'content_578732668058b9_26832095',
   'file_dependency' => 
   array (
     '208a68e5298e8a434de1b7959cf34f14f567f4e3' => 
     array (
       0 => 'C:\\xampp\\htdocs\\WebProjekt\\public_html\\view\\show_UserRegistration.html',
-      1 => 1468236984,
+      1 => 1468399775,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_578384ba299ee5_59755801 ($_smarty_tpl) {
+function content_578732668058b9_26832095 ($_smarty_tpl) {
 ?>
   <form role="form" action="index.php?controller=LoginController&action=RegisterUser" method="post">
     <div class="form-group">
