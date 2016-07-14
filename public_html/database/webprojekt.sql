@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 11. Jul 2016 um 12:21
+-- Erstellungszeit: 13. Jul 2016 um 02:30
 -- Server-Version: 10.1.13-MariaDB
--- PHP-Version: 7.0.6
+-- PHP-Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,7 +30,7 @@ CREATE TABLE `achievements` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `code` varchar(14) NOT NULL,
-  `currentDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createdDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `value` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,9 +38,9 @@ CREATE TABLE `achievements` (
 -- Daten für Tabelle `achievements`
 --
 
-INSERT INTO `achievements` (`id`, `name`, `code`, `currentDate`, `value`) VALUES
-(1, 'Gebe einen Fitnesscode ein!', '0000-0000-0000', '2016-06-26 13:07:18', 50),
-(2, 'CodeTest', '1000-1000-1000', '2016-06-27 11:10:47', 32);
+INSERT INTO `achievements` (`id`, `name`, `code`, `createdDate`, `value`) VALUES
+(1, 'Gebe einen Fitnesscode ein!', '0000-0000-0000', '2016-06-26 11:07:18', 50),
+(2, 'CodeTest', '1000-1000-1000', '2016-06-27 09:10:47', 32);
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ INSERT INTO `fitnesspoints` (`id`, `user_id`, `achievement_id`) VALUES
 CREATE TABLE `grades` (
   `id` int(11) NOT NULL,
   `grade` decimal(10,2) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `user_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -101,7 +101,7 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`id`, `grade`, `date`, `user_id`, `module_id`) VALUES
-(43, '1.56', '2016-07-11 08:21:44', 1, 2);
+(43, '1.65', '2016-07-11 10:37:43', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -122,14 +122,11 @@ CREATE TABLE `instructors` (
 --
 
 INSERT INTO `instructors` (`id`, `name`, `email`, `password`, `approved`) VALUES
-(1, 'boeseradmin', 'boeseradmin@boese.admin', 'toboese', b'01'),
-(2, 'guntherApproved', 'guntherApproved@hshl.de', 'guntherApproved', b'01'),
-(3, 'guntherNotApproved', 'guntherNotApproved@hshl.de', 'guntherNotApproved@hshl.de', b'01'),
-(4, 'test', 'testi', 'test123', b'01'),
-(5, 'test', 'testi', 'test123', b'00'),
-(6, 'test', 'testi', 'test123', b'00'),
-(7, 'test', 'testi', 'test123', b'01'),
-(8, 'test', 'testi', 'test123', b'00');
+(1, 'boeseradmin', 'boeseradmin@boese.admin', 'toboese', b'00'),
+(2, 'guntherApproved', 'guntherApproved@hshl.de', 'guntherApproved', b'00'),
+(3, 'guntherNotApproved', 'guntherNotApproved@hshl.de', 'guntherNotApproved@hshl.de', b'00'),
+(4, 'Christian', 'Big@Chris.de', '1234', b'01'),
+(5, 'Test', 'Test@approved.com', '1234', b'00');
 
 -- --------------------------------------------------------
 
@@ -197,8 +194,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `regDate`, `email`, `activeCourse`) VALUES
-(1, 'Tim', '1234', '2016-05-30 23:11:43', 'example1@stud.hshl.de', 1),
-(2, 'Timey', '12345', '2016-05-30 23:33:44', 'example2@stud.hshl.de', 1);
+(1, 'Tim', '1234', '2016-05-30 21:11:43', 'example1@stud.hshl.de', 1),
+(2, 'Timey', '12345', '2016-05-30 21:33:44', 'example2@stud.hshl.de', 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -256,7 +253,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `courses`
 --
@@ -276,7 +273,7 @@ ALTER TABLE `grades`
 -- AUTO_INCREMENT für Tabelle `instructors`
 --
 ALTER TABLE `instructors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT für Tabelle `modules`
 --
@@ -286,7 +283,7 @@ ALTER TABLE `modules`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints der exportierten Tabellen
 --
